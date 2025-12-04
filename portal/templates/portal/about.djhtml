@@ -1,0 +1,220 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}About Ideal Spaces{% endblock %}
+{% block og_title %}About Ideal Spaces{% endblock %}
+{% block twitter_title %}About Ideal Spaces{% endblock %}
+
+{% block meta_description %}Who we are, where we came from, what do we do? Meet our innovative team!{% endblock %}
+{% block og_description %}Who we are, where we came from, what do we do? Meet our innovative team!{% endblock %}
+{% block twitter_description %}Who we are, where we came from, what do we do? Meet our innovative team!{% endblock %}
+
+{% block content %}
+<div class="main fixed-width-container">
+    <div class="main-inner">
+        <div class="content">
+            <div class="container">
+
+                <!--==================== About us HEADER ====================-->
+                <div class="landing-header">
+                    <div class="banner-img-9">
+                        <img src="/static/img/about-idealspaces.png" class="img-fluid hide-on-mobile" alt="Idealspaces.com" />
+
+                        <!-- Main Title -->
+                        <div class="main-title">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-5">
+                                        <div class="hero-title">
+                                            <p>About US</p>
+                                            <h1>
+                                               <b> 
+                                                We help you find and book the right place at the right price hassle-free
+                                               </b>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Main Title -->
+                    </div>
+                    <!--  // Contact Modal -->
+                    <!--==================== NEW INSURANCE ====================-->
+                    <hr />
+                    <div class="space bg-image mt-4">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-5 hide-on-mobile">
+                                    <img src="{% static "img/idealspaces-startup-growth.png" %}" class="img-fluid" alt="idealspaces.com about"  />
+                                </div>
+                                <div class="col-md-12 col-lg-7">
+                                    <div class="insurance-title_wrap">
+                                        <div class="">
+                                            <h6>Startup growth</h6>
+                                            <p>
+                                                There is a significant growth of entrepreneurs and freelancers all over the globe and UAE is not an exception. Increased numbers of start-ups and freelancers are forming different market approach where people are forced to search for alternative and more efficient ways regarding finding their workspaces. Dubai is the hub of Middle-east which means it will attract more and more foreign investment. In 2018, IdealSpaces were founded to provide a solution for the increased demand of working spaces.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="py-5"></div>
+                            <div class="row">
+                                
+                                <div class="col-md-12 col-lg-7">
+                                    <div class="insurance-title_wrap">
+                                        <div class="align-items-center">
+                                            <h6>Mision &amp; Vision</h6>
+                                            <p>
+                                                Our mission is to provide the easiest and flexible way to do business whether you are seeking a serviced office, looking for a meeting room or just a simple co-working space where you can meet like-minded people. Our goal is to connect all GCC and international markets by constantly putting efforts in advancing technology to provide the best solutions for those who seek efficient ways to do business. We aim to inspire in achieving a collaborative society where space owners and seekers create longterm relationships.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-5 hide-on-mobile">
+                                    <img src="{% static "img/idealspaces-vision.png" %}" class="img-fluid" alt="idealspaces.com vision"  />
+                                </div>
+                            </div>
+
+                            <div class="py-5"></div>
+                            <hr />
+                            <div class="py-5"></div>
+                            <center class=mb-5><h3>The importance of flexible workspaces</h3></center>
+                            <div class="row justify-content-md-center">
+                                <div class="col-lg-6 col-md-6 col-sm-12 mb-5">
+                                    <div class="about-chart-description">
+                                        <div class="donut-chart chart1">
+                                            <div class="slice outer"></div>
+                                            <div class="slice one"></div>
+                                            <div class="slice two"></div>
+                                            <div class="chart-center">
+                                                <span></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="content">
+                                            All of workspaces globally will be some form of flexible by 2030.
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-12 mb-5">
+                                    <div class="about-chart-description">
+                                        <div class="donut-chart chart2">
+                                            <div class="slice outer"></div>
+                                            <div class="slice one"></div>
+                                            <div class="slice two"></div>
+                                            <div class="chart-center">
+                                                <span></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="content">
+                                            Middle East entrepreneurs are less than 35 years old.
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-12 mb-5">
+                                    <div class="about-chart-description">
+                                        <div class="donut-chart chart3">
+                                            <div class="slice one"></div>
+                                            <div class="slice two"></div>
+                                            <div class="chart-center">
+                                                <span></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="content">
+                                            Middle East workforce will be younger generation by 2025.
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-12 mb-5">
+                                    <div class="about-chart-description">
+                                        <div class="donut-chart chart4">
+                                            <div class="slice one"></div>
+                                            <div class="slice two"></div>
+                                            <div class="chart-center">
+                                                <span></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="content">
+                                            Total office demands in GCC will be flexible workspaces by 2025.
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-12 mb-5">
+                                    <div class="about-chart-description">
+                                        <div class="donut-chart chart5">
+                                            <div class="slice one"></div>
+                                            <div class="slice two"></div>
+                                            <div class="chart-center">
+                                                <span></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="content">
+                                            Say that flexible workspaces helped to manage changeable market in UAE.
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-12 mb-5">
+                                    <div class="about-chart-description">
+                                        <div class="donut-chart chart6">
+                                            <div class="slice one"></div>
+                                            <div class="slice two"></div>
+                                            <div class="chart-center">
+                                                <span></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="content">
+                                            Believe that flexible workspaces help with cost optimization in UAE.
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-12 mb-5">
+                                    <div class="about-chart-description">
+                                        <div class="donut-chart chart7">
+                                            <div class="slice one"></div>
+                                            <div class="slice two"></div>
+                                            <div class="chart-center">
+                                                <span></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="content less">
+                                            Out of it's 18,000 respondents say that flexible working spaces are helping to grow business in UAE.
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//END NEW INSURANCE -->
+                </div>
+
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.main-inner -->
+</div>
+<!-- /.main -->
+{% endblock %}

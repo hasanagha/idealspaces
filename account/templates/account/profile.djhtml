@@ -1,0 +1,89 @@
+{% extends "account/base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}Company Settings{% endblock %}
+
+{% block account_content %}
+<div class="dashboard-header text-center">
+    <h1>Company Settings</h1>
+</div>
+
+{% if request.GET.success %}
+  <div class="alert-message success">Settings updated successfully</div>
+{% endif %}
+
+<div class="col col-lg-12 account-forms">
+    <h3>Company</h3>
+    <hr />
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="c-field u-mb-small">
+                <label for="id_company_name">Company Name</label> 
+                <input class="c-input" type="text" id="id_company_name" name="company_name" placeholder="Enter company name"> 
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="c-field u-mb-small">
+                <label for="lastName">Company Address</label> 
+                <input class="c-input" type="text" id="lastName" placeholder="Clark"> 
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="c-field u-mb-small">
+                <label for="bio">Inquiry Email</label>
+                <input class="c-input" id="email" type="email" placeholder="jason@clark.com">
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="c-field u-mb-small">
+                <label for="bio">Phone Number</label>
+                <input class="c-input" id="email" type="email" placeholder="jason@clark.com">
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="c-field u-mb-small">
+                <label for="bio">Receive Inquiry Emails</label>
+                <input class="c-input" id="email" type="checkbox" />
+            </div>
+        </div>
+    </div>
+    <br />
+    <h3>User Profile</h3>
+    <hr />
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="c-field u-mb-small">
+                <label for="companyName">First Name</label>
+                <input class="c-input" id="companyName" type="text" />
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="c-field u-mb-small">
+                <label for="companyName">Last Name</label>
+                <input class="c-input" id="companyName" type="text" />
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="c-field u-mb-small">
+                <label for="companyName">Username/Email</label>
+                <input class="c-input" id="companyName" type="text" placeholder="" value="{{ request.user.username }}" readonly />
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="c-field u-mb-small">
+                <label for="website">Phone</label>
+                <input class="c-input" id="website" type="text" placeholder="zawiastudio.com">
+            </div>  
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-5">
+            <button class="btn btn-lg btn-primary" type="submit">Save Settings</button>
+            <a class="ml-4" href="{% url 'account:user-change-password' %}">Change Password</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

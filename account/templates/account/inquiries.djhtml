@@ -1,0 +1,69 @@
+{% extends "account/base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}Inquiries - My Account{% endblock %}
+
+{% block account_content %}
+    <div class="dashboard-header">
+        <h1>Inquiries</h1>
+    </div>
+    <div class="container-fluid">
+        <div class="c-table-responsive@desktop">
+            <table class="c-table c-table--zebra u-mb-small">
+                <thead class="c-table__head">
+                    <tr class="c-table__row">
+                      <th class="c-table__cell c-table__cell--head">Space</th>
+                      <th class="c-table__cell c-table__cell--head">Date</th>
+                      <th class="c-table__cell c-table__cell--head">User + Inquiry</th>
+                      <th class="c-table__cell c-table__cell--head">Contact Details</th>
+                      <th class="c-table__cell c-table__cell--head">Status</th>
+                      <th class="c-table__cell c-table__cell--head">
+                          <span class="u-hidden-visually">Actions</span>
+                      </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for inquiry in inquiries %}
+                    <tr class="c-table__row">
+                        <td class="c-table__cell">
+                            <div class="o-media__img u-mr-xsmall">
+                                <div class="c-avatar c-avatar--xsmall">
+                                    <img class="c-avatar__img" src="{{ inquiry.listing.get_default_image }}" alt="Adam's Face">
+                                </div>
+                            </div>
+                            <a href="{{ inquiry.listing.get_listing_url }}">{{ inquiry.listing.title }}</a>
+                            <small class="u-block u-text-mute">{{ inquiry.listing.get_location }}</small>
+                        </td>
+
+                        <td class="c-table__cell">{{ inquiry.created_on }}
+                            <small class="u-block u-text-mute">{{ inquiry.created_on_days_ago }}</small>
+                        </td>
+
+                        <td class="c-table__cell">
+                            <div class="o-media">
+                                <div class="o-media__body">
+                                    {{ inquiry.name }}
+                                </div>
+                            </div>
+                        </td>
+
+                        <td class="c-table__cell">{{ inquiry.phone }}
+                            <small class="u-block u-text-mute">{{ inquiry.email }}</small>
+                        </td>
+
+                        <td class="c-table__cell">
+                            <i class="fa fa-circle-o u-color-{% if inquiry.status == 'new' %}info{% elif inquiry.status == 'working'%}warning{% elif inquiry.status == 'closed' %}danger{% else %}info{% endif %} u-mr-xsmall"></i>
+                            {{ inquiry.get_status_display }}
+                        </td>
+                        <td class="c-table__cell">
+                            <a href="#" class="btn btn-sm btn-primary">View</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

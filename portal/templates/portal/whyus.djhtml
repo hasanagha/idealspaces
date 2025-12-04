@@ -1,0 +1,85 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}Why IdealSpaces{% endblock %}
+
+{% block content %}
+<div class="main fixed-width-container">
+    <div class="main-inner">
+        <div class="content">
+            <div class="container">
+
+                <!--==================== About us HEADER ====================-->
+                <div class="landing-header">
+                    <div class="banner-img-9">
+
+                        <!-- Main Title -->
+                        <div class="main-title">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-5">
+                                        <h1>
+                                           <b> 
+                                            Why IdealSpaces?
+                                           </b>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Main Title -->
+                    </div>
+                    <!--  // Contact Modal -->
+                </div>
+                <!--//END HEADER -->
+
+
+                <!--==================== CONTENT SECTION ====================-->
+                <section class="content-wrap">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="content-box content-box1">
+                                    <h5>Which are the network hospitals in your vicinity?</h5>
+                                    <p>To avail a cashless settlement of your claim, you should be admitted in a network hospital.
+                                        A company has a list of such hospitals and you need to find out whether the hospital in the
+                                        company’s network is your preferred choice of hospital and/or located in your area.</p>
+                                </div>
+                                <div class="content-box">
+                                    <h5>What are the documents required for claiming?</h5>
+                                    <p>A pre-authorization form is required in case of cashless claims which are to be submitted to
+                                        the TPA. Other documents might also be required and you should have the knowledge of the
+                                        required documents.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="content-box content-box1">
+                                    <h5>Will I get covered for my pre-existing illnesses?</h5>
+                                    <p>Every insurer excludes coverage on the pre-existing illnesses for certain tenure at the
+                                        starting of the policy. You need to find out what this waiting period for your pre-existing
+                                        illness is and how soon can you be covered for your pre-existing illnesses. </p>
+                                </div>
+                                <div class="content-box">
+                                    <h5>Is maternity covered in health insurance policies?</h5>
+                                    <p>No. As health insurance policy is designed to cover unforeseen medical expenses a normal
+                                        health insurance policy does not cover maternity expenses. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.main-inner -->
+</div>
+<!-- /.main -->
+{% endblock %}

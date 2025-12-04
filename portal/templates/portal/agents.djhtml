@@ -1,0 +1,94 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}
+Our Agents
+{% endblock %}
+
+{% block content %}
+<div id="agents">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-12 col-xl-10">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="{% url "portal:portal-home" %}">
+                                Home
+                            </a>
+                        </li>
+                        <li aria-current="page" class="breadcrumb-item active">
+                            Agents
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="property-single" id="content">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-12 col-xl-10">
+                    <div class="row has-sidebar">
+                        <div class="col-md-12 col-lg-12 col-xl-12">
+                            <div class="page-header bordered mt0">
+                                <h1>
+                                    Agents
+                                    <small>
+                                        Save the hassle. Choose one of our Agent
+                                    </small>
+                                </h1>
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                            <div class="item-listing list">
+                                {% for agent in agents %}
+                                <div class="item">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="item-image agent-image">
+                                                <a href="{% url 'portal:agents-detail' agent.pk %}">
+                                                    <img alt="{{ agent.get_full_name }}" class="img-fluid" src="{{ agent.userprofile.get_default_image }}" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <a class="btn btn-primary float-right" href="{% url 'portal:agents-detail' agent.pk %}">
+                                                View Profile
+                                            </a>
+                                            <h3 class="item-title">
+                                                <a href="{% url 'portal:agents-detail' agent.pk %}">
+                                                    {{ agent.get_full_name }}
+                                                </a>
+                                            </h3>
+                                            {% if agent.userprofile.address %}
+                                            <div class="item-location">
+                                                <i class="fa fa-map-marker">
+                                                </i>
+                                                {{ agent.userprofile.address }}
+                                            </div>
+                                            {% endif %}
+                                            <div class="item-description">
+                                                {{ agent.userprofile.about }}
+                                            </div>
+                                            <div class="item-actions">
+                                                <a href="tel:{{ agent.userprofile.phone }}">
+                                                    <i class="fa fa-phone">
+                                                    </i>
+                                                    {{ agent.userprofile.phone }}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

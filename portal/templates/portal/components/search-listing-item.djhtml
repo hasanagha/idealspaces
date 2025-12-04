@@ -1,0 +1,59 @@
+{% load static %}
+{% load humanize %}
+
+{% for listing in listings %}
+<div class="listing-row">
+    <div class="listing-row-inner">
+        <div class="listing-row-image" style="background-image: url('{{ listing.get_default_image }}');">
+            {% comment %}
+                <span class="listing-row-image-links">
+                            <a href="{{ listing.get_listing_url }}">
+                                <i class="fa fa-heart"></i>
+                                <span>Add to favorites</span>
+                            </a>
+                            <a href="{{ listing.get_listing_url }}">
+                                <i class="fa fa-search"></i>
+                                <span>View detail</span>
+                            </a>
+                        </span>
+            {% endcomment %}
+        </div>
+        <div class="listing-row-content">
+            <h3>
+                <a href="{{ listing.get_listing_url }}">{{ listing.title }}</a>
+            </h3>
+            <h4>
+                $ 40.000
+            </h4>
+            <ul class="listing-row-attributes">
+                <li>
+                    <strong><i class="fa fa-map-marker"></i> Location</strong>
+                    <span>{{ listing.get_location }}</span>
+                </li>
+                <li>
+                    <strong><i class="fa fa-building"></i> Category</strong>
+                    <span>{{ listing.get_category_display }}</span>
+                </li>
+                <li>
+                    <strong><i class="fa fa-users"></i>Capacity</strong>
+                    <span>{{ listing.capacity }}</span>
+                </li>
+                <li>
+                    <strong><i class="fa fa-arrows-alt"></i>Venue Type</strong>
+                    <span>{{ listing.get_venue_type }}</span>
+                </li>
+                <li>
+                    <strong><i class="fa fa-umbrella"></i> Layout</strong>
+                    <span>{{ listing.get_layout_display }}</span>
+                </li>
+                <li>
+                    <strong><i class="fa fa-bed"></i>Amenities</strong>
+                    <span>{{ listing.amenities }}</span>
+                </li>
+            </ul>
+        </div>
+        <!-- /.listing-row-content -->
+    </div>
+    <!-- /.listing-row-inner -->
+</div>
+{% endfor %}

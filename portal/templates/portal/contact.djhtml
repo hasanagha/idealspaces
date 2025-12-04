@@ -1,0 +1,219 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}Contact Ideal Spaces{% endblock %}
+{% block og_title %}Contact Ideal Spaces{% endblock %}
+{% block twitter_title %}Contact Ideal Spaces{% endblock %}
+
+{% block meta_description %}Contact us by email hello@idealspaces.com, phone +971 52 1095 308 and social media whatever your query. Our team's rock stars are here to help!{% endblock %}
+{% block og_description %}Contact us by email hello@idealspaces.com, phone +971 52 1095 308 and social media whatever your query. Our team's rock stars are here to help!{% endblock %}
+{% block twitter_description %}Contact us by email hello@idealspaces.com, phone +971 52 1095 308 and social media whatever your query. Our team's rock stars are here to help!{% endblock %}
+
+{% block content %} 
+<div class="main fixed-width-container">
+    <div class="main-inner">
+        <div class="content">
+            <div class="container">
+                <div class="landing-header">
+                    <div class="banner-img-9">
+                        <img src="/static/img/contact-idealspaces.png" class="hide-on-mobile img-fluid" alt="Idealspaces.com" />
+
+                        <!-- Main Title -->
+                        <div class="main-title">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-5 col-sm-12">
+                                        <div class="hero-title">
+                                            <p>Contact US</p>
+                                            <h1>
+                                               <b>We would like to hear from you!</b>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Main Title -->
+                    </div>
+                    <hr />
+                    <div class="space bg-image mt-4">
+                        <div class="container">
+                            <div class="row justify-content-md-center">
+                                <div class="col col-lg-8 col-sm-10">
+                                    {% if request.GET.success %}
+                                        <center>
+                                            <p class="success">
+                                                <i class="fa fa-check fa-5x text-success mb20 animated zoomIn">
+                                                </i>
+                                                <br/>
+                                                <h4>
+                                                    Success!
+                                                </h4>
+                                                Your message is right on its way to our system.
+                                                <br>
+                                                    <br>
+                                                        Please bear with us as we are making sure that every message we receive are treated with importance.
+                                                        <br>
+                                                            <br>
+                                                                You will receive an email confirmation in a while
+                                                            </br>
+                                                        </br>
+                                                    </br>
+                                                </br>
+                                            </p>
+                                        </center>
+                                    {% else %}
+                                        <center><strong>
+                                            <p class="mb-2">Are you looking for a business center or a meeting room?</p>
+
+                                            <p>If you have any questions, please feel free to drop us a message, and one of our team members will contact you.</p>
+                                        </strong>
+                                        </center>
+                                        <br />
+                                        <br />
+
+                                        <div class="row justify-content-md-center">
+                                            <div class="col col-lg-9 col-sm-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-sm-12 mx-auto bg-warning p-5">
+                                                        <center>
+                                                            <a href="mailto:hello@idealspaces.com">
+                                                                <img src="{% static "img/email.png" %}" class="mb-1" width=70 alt="email idealspaces.com" /><br />
+                                                                hello@idealspaces.com
+                                                            </a>
+                                                        </center>
+                                                    </div>
+                                                    {% comment %} <div class="col-lg-6 col-sm-12 mx-auto bg-light p-5">
+                                                        <center>
+                                                            <a href="tel:+971521095308">
+                                                                <img src="{% static "img/phone.png" %}" class="mb-1" width=70 alt="call idealspaces.com" /><br />
+                                                                +971 52 1095 308
+                                                            </a>
+                                                        </center>
+                                                    </div> {% endcomment %}
+                                                </div>  
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-md-center mt-5">
+                                            <div class="col-lg-9 col-sm-12 mx-auto bg-white p-5">
+                                                {% if form.errors %}
+                                                <ul class="form-group">
+                                                    {% for key, value in form.errors.items %}
+                                                    <li class="error">
+                                                        {{ value|escape }}
+                                                    </li>
+                                                    {% endfor %}
+                                                </ul>
+                                                {% endif %}
+                                                <form method="post">
+                                                    {% csrf_token %}
+                                                    <div class="form-group">
+                                                        <label for="id_name">
+                                                            Full Name *
+                                                        </label>
+                                                        <input class="form-control" id="id_name" name="name" placeholder="Your full name" required="" type="text" value="{% if form.name.value %}{{form.name.value}}{% endif %}"/>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="id_email">
+                                                            Email *
+                                                        </label>
+                                                        <input class="form-control" id="id_email" name="email" placeholder="Your email address" type="email" value="{% if form.email.value %}{{form.email.value}}{% endif %}"/>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="id_phone">
+                                                            Phone
+                                                        </label>
+                                                        <input class="form-control" id="id_phone" maxlength="14" name="phone" placeholder="Your phone number" type="number" value="{% if form.phone.value %}{{form.phone.value}}{% endif %}"/>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="id_message">
+                                                            Message
+                                                        </label>
+                                                        <textarea class="form-control" id="id_message" placeholder="Message" rows="4" name="message">{% if form.message.value %}{{form.message.value}}{% endif %}</textarea>
+                                                    </div>
+                                                    <script src='https://www.google.com/recaptcha/api.js'></script>
+                                                    <div class="form-group">
+                                                        <div class="g-recaptcha" data-sitekey="{{ google_captcha_site_key }}"></div>
+                                                    </div>
+                                                    <button class="btn btn-lg btn-primary" type="submit">
+                                                        Send Message
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <center><strong>Are you a business center or a meeting room manager?</strong></center>
+
+                                        <div class="mt-4 row justify-content-md-center">
+                                            <div class="col-lg-9 col-sm-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-sm-12 mx-auto bg-warning p-5">
+                                                        <center>
+                                                            <a href="mailto:support@idealspaces.com">
+                                                                <img src="{% static "img/email.png" %}" class="mb-1" width=70 alt="email idealspaces.com" /><br />
+                                                                support@idealspaces.com
+                                                            </a>
+                                                        </center>
+                                                    </div>
+                                                    {% comment %} <div class="col-lg-6 col-sm-12 mx-auto bg-light p-5">
+                                                        <center>
+                                                            <a href="tel:+971521095308">
+                                                                <img src="{% static "img/phone.png" %}" class="mb-1" width=70 alt="call idealspaces.com" /><br />
+                                                                +971 52 1095 308
+                                                            </a>
+                                                        </center>
+                                                    </div> {% endcomment %}
+                                                </div>  
+                                            </div>
+                                        </div>
+                                        <center class="mt-4">
+                                            <a href="{% url 'portal:list-space' %}" class="btn btn-primary">List your space</a>
+                                        </center>
+
+
+                                        <div class="mt-5">
+                                            <center>
+                                            <h3>Our Address</h3>
+                                                <strong>
+                                                Office 1501, 15th Floor, City Towers 2,<br />
+                                                Sheikh Zayed Road <br />
+                                                Dubai, United Arab Emirates</strong>
+                                            </center>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//END NEW INSURANCE -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<style type="text/css">
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
+</style>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $("input[type=number]").keypress(function (e) {
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            return false;
+        }
+    });
+});
+</script>
+{% endblock %}

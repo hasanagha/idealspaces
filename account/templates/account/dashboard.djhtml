@@ -1,0 +1,111 @@
+{% extends "account/base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}My Account{% endblock %}
+
+{% block account_content %}
+<div class="dashboard-header">
+    <h1>Dashboard</h1>
+</div>
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm-12">
+              <div class="u-mv-large u-text-center">
+                  <h2 class="u-mb-xsmall">Hi {{ request.user|title }}! Welcome back to the idealspaces.</h2>
+                  <p class="u-text-mute u-h6">Check out your past searches and the inquiries for your spaces. </p>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-12 col-lg-6 col-xl-3">
+              <div class="c-state-card" data-mh="state-cards" style="height: 125px;">
+                  <div class="c-state-card__icon c-state-card__icon--info">
+                      <i class="fa fa-bar-chart"></i>
+                  </div>
+
+                  <div class="c-state-card__content">
+                      <h5 class="c-state-card__number">$9,587</h5>
+                      <p class="c-state-card__meta">Hits <span class="u-text-success">Last 7 days</span></p>
+                  </div>
+              </div>
+          </div><!-- // .col-md-3 -->
+
+          <div class="col-sm-12 col-lg-6 col-xl-3">
+              <div class="c-state-card" data-mh="state-cards" style="height: 125px;">
+                  <div class="c-state-card__icon c-state-card__icon--fancy">
+                      <i class="fa fa-tasks"></i>
+                  </div>
+
+                  <div class="c-state-card__content">
+                      <h5 class="c-state-card__number">$2,190</h5>
+                      <p class="c-state-card__meta">Inquiries <span class="u-text-success">Last 7 Days</span></p>
+                  </div>
+              </div>
+          </div><!-- // .col-md-3 -->
+
+          <div class="col-sm-12 col-lg-6 col-xl-3">
+              <div class="c-state-card" data-mh="state-cards" style="height: 125px;">
+                  <div class="c-state-card__icon c-state-card__icon--warning">
+                      <i class="fa fa-bar-chart"></i>
+                  </div>
+
+                  <div class="c-state-card__content">
+                      <h5 class="c-state-card__number">93</h5>
+                      <p class="c-state-card__meta">Hits <span class="u-text-danger">Today</span></p>
+                  </div>
+              </div>
+          </div><!-- // .col-md-3 -->
+
+          <div class="col-sm-12 col-lg-6 col-xl-3">
+              <div class="c-state-card" data-mh="state-cards" style="height: 125px;">
+                  <div class="c-state-card__icon c-state-card__icon--success">
+                      <i class="fa fa-tasks"></i>
+                  </div>
+
+                  <div class="c-state-card__content">
+                      <h5 class="c-state-card__number">$431</h5>
+                      <p class="c-state-card__meta">Inquiries <span class="u-text-success">Today</span></p>
+                  </div>
+              </div>
+          </div><!-- // .col-md-3 -->
+      </div>
+
+      <div class="row mt-4">
+          <div class="col-sm-12 col-lg-4">
+              <div class="c-card u-p-large u-text-center u-mb-medium" data-mh="landing-cards" style="height: 330px;">
+                  <img class="u-mb-small" src="/static/img/icon-intro1.svg" alt="iPhone icon">
+
+                  <h4 class="u-h6 u-text-bold u-mb-small">
+                      Check your performance. See the results of all your active campaings.
+                  </h4>
+                  <a class="btn btn-primary" href="#">Post new listing</a>
+              </div>
+          </div>
+
+          <div class="col-sm-12 col-lg-4">
+              <div class="c-card u-p-large u-text-center u-mb-medium" data-mh="landing-cards" style="height: 330px;">
+
+                  <img class="u-mb-small" src="/static/img/icon-intro2.svg" alt="iPhone icon">
+
+                  <h4 class="u-h6 u-text-bold u-mb-small">
+                      Start console and prepare new stuff for your customers or community!
+                  </h4>
+                  <a class="btn btn-primary" href="#">Check Inquires</a>
+              </div>
+          </div>
+
+          <div class="col-sm-12 col-lg-4">
+              <div class="c-card u-p-large u-text-center u-mb-medium" data-mh="landing-cards" style="height: 330px;">
+
+                  <img class="u-mb-small" src="/static/img/icon-intro3.svg" alt="iPhone icon">
+
+                  <h4 class="u-h6 u-text-bold u-mb-small">
+                      All Files ready? <br>Start promoting your apps today.
+                  </h4>
+                  <a class="btn btn-primary" href="#">Check listing</a>
+              </div>
+          </div>
+      </div>
+    </div>
+{% endblock %}

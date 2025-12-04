@@ -1,0 +1,113 @@
+{% extends 'base.djhtml' %}
+{% load el_pagination_tags %}
+{% load markdown_deux_tags %}
+
+{% block page_title %}{% if selected_category %}{{ selected_category.get_meta_title }}{% else %}Ideal Spaces Blog - Read Startups Tips & Advice{% endif %}{% endblock %}
+{% block og_title %}{% if selected_category %}{{ selected_category.get_meta_title }}{% else %}Ideal Spaces Blog - Read Startups Tips & Advice{% endif %}{% endblock %}
+{% block twitter_title %}{% if selected_category %}{{ selected_category.get_meta_title }}{% else %}Ideal Spaces Blog - Read Startups Tips & Advice{% endif %}{% endblock %}
+{% block meta_description %}{% if selected_category %}{{ selected_category.get_meta_description }}{% else %}Tips and Advice to grow your business and doing business in UAE. Read tips, advice and inspiration from the Ideal Spaces rock stars!{% endif %}{% endblock %}
+{% block og_description %}{% if selected_category %}{{ selected_category.get_meta_description }}{% else %}Tips and Advice to grow your business and doing business in UAE. Read tips, advice and inspiration from the Ideal Spaces rock stars!{% endif %}{% endblock %}
+{% block twitter_description %}{% if selected_category %}{{ selected_category.get_meta_description }}{% else %}Tips and Advice to grow your business and doing business in UAE. Read tips, advice and inspiration from the Ideal Spaces rock stars!{% endif %}{% endblock %}
+
+
+{% block content %}
+
+<div class="main blog blog-list">
+    <div class="main-inner">
+        <div class="container mt-4">
+            <ol class="breadcrumb">
+                <li class="separator">
+                    <a href="{% url 'portal:portal-home' %}">
+                        Home
+                    </a>
+                </li>
+                {% if selected_category %}
+                <li class="separator">
+                    <a href="{% url 'speedyblog:blog_index' %}" class="active">Blogs</a>
+                </li>
+                <li>{{ selected_category }}</li>
+                {% else %}
+                <li>
+                    <a href="{% url 'speedyblog:blog_index' %}" class="active">Blogs</a>
+                </li>
+                {% endif %}
+            </ol>
+            <div class="row has-sidebar">
+                <div class="col-md-8 col-lg-9 col-xl-9">
+
+                    <div class="posts">
+                    {% if posts %}
+                        {% paginate posts %}
+
+                        {% for post in posts %}
+                            <div class="post">
+                                <div class="post-date">
+                                    <strong>{{ post.created_on|date:'d' }}</strong>
+                                    <span>{{ post.created_on|date:'M' }}</span>
+                                </div>
+                                <div class="post-image">
+                                    <a class="post-image-link" href="{{ post.get_absolute_url }}" style="background-image: url('{% if post.image %}{{ post.image }}{% else %}http://via.placeholder.com/440x310{% endif %}');">
+                                    </a>
+                                    <div class="post-author">
+                                        <span class="post-author-image">
+                                            <a href="{{ post.get_absolute_url }}" style="background-image:url({% if post.image %}{{ post.image }}{% else %}http://via.placeholder.com/440x310{% endif %});">
+                                            </a>
+                                        </span>
+                                        <!-- /.post-author-image -->
+                                        <a href="{{ post.get_absolute_url }}">
+                                            <span class="post-author-name">{{ post.category.name }}</span>
+                                        </a>
+                                    </div>
+                                    <!-- /.post-author -->
+                                </div>
+                                <!-- /.post-image -->
+                                <div class="post-title">
+                                    <h2>
+                                        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                    </h2>
+                                </div>
+                                <!-- /.post-title -->
+                                <div class="post-meta">
+                                    <div class="post-meta-item">
+                                        Posted by 
+                                        <a href="{{ post.get_absolute_url }}">{{ post.posted_by }}</a>
+                                    </div>
+                                    <!-- /.post-meta-item -->
+                                    <div class="post-meta-item">
+                                        <i class="fa fa-calendar"></i>
+                                        {{ post.updated_on|date:'d M, Y' }}
+                                    </div>
+                                    <!-- /.post-meta-item -->
+                                    <div class="post-meta-item">
+                                        <i class="fa fa-comment">
+                                        </i>
+                                        <a href="{{ post.get_absolute_url }}">{{ post.get_comments_count }} comments</a>
+                                    </div>
+                                    <!-- /.post-meta-item -->
+                                </div>
+                                <!-- /.post-meta -->
+                                <div class="post-content">
+                                    <p>{{ post.description|slice:":150" }}...</p>
+                                </div>
+                                <!-- /.post-content -->
+                                <div class="post-read-more">
+                                    <a href="{{ post.get_absolute_url }}">Read More <i class="fa fa-chevron-right"></i></a>
+                                </div>
+                                <!-- /.post-read-more -->
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <br>
+                        <p>There are no blog posts.</p>
+                    {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3">
+                    {% include 'speedyblog/includes/sidebar.html' %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

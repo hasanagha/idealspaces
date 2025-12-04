@@ -1,0 +1,58 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}
+About Us
+{% endblock %}
+
+{% block content %}
+<div id="about">
+    <div class="rent-for-a-fixed-fee" id="content">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-12 col-xl-12">
+                    <div class="page-header">
+                        <h1>
+                            With one fixed fee,<br>
+                            Everything would be hassle free!
+                        </h1>
+                        <p>A shelter is one basic need of a man. Most especially here in Dubai, this need must be given much importance as it would affect the way that a person could live. And it shouldn’t be just a shelter but a home that is affordable, secured, and accessible. Securing an affordable place to stay in Dubai could be a rare find nowadays. This is why Right Doors is making a leap into the real estate market.</p>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="row block justify-content-md-center">
+                <div class="col col-lg-12 col-xl-10">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12">
+                            <img src="{% static "img/rent-save.jpg" %}" />
+                        </div>
+                        <div class="col-lg-6 col-sm-12">
+                            <h2>Rent and Save</h2>
+                            <p>Finding the best place to rent is a necessity. But finding the best place to rent with fixed fee and no commission is our expertise! This is the advantage that you get when you partner with us. Just imagine living here in Dubai while having the right place, the right people, and the right price! Everything will lead you to the right way!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row block grey-bg justify-content-md-center">
+            <div class="col-lg-10 col-xl-8">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <h2>One off fixed fee</h2>
+                        <p>Just like you, we also believe in practicality. We are establishing a new trend for the real estate industry which focuses more on your finances. No matter the cost of rental you desire to have, you still pay AED999! Imagine how much you save from commission costs.</p>
+
+                        <p>Our goal is to focus on your satisfaction. We also ensure that all transactions for your rental are transparent, and there would be no hidden charges from our end. We take away the hassle of high costs, and replace it with affordable services, with the best quality we could offer.</p>
+
+                        <p>Now that you have already headed to the right door, our commitment is to secure that you deserve all the best from our end.</p>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="{% static "img/rent-apartement-dubai.jpg" %}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

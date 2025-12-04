@@ -1,0 +1,197 @@
+{% extends "account/base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}
+Contracts
+{% endblock %}
+
+{% block account_content %}
+
+  <div class="dashboard-header">
+      <h1>Contracts</h1>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="c-card u-mb-medium" data-mh="invoices-cards">
+                <div class="c-card__header c-card__header--transparent o-line u-border-bottom-zero">
+                    <h3 class="c-card__title">Account Summary
+                        {% comment %}
+                            <span class="u-block u-text-mute u-text-xsmall">
+                                February 2017 (12 Days Remaining)
+                            </span>
+                        {% endcomment %}
+                    </h3>                    
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="c-summary has-divider">
+                            <h5 class="c-summary__title">Live Spaces</h5>
+                            <h5 class="c-summary__number">{{ published_spaces }}</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="c-summary has-divider">
+                            <h5 class="c-summary__title">Unpublished Spaces</h5>
+                            <h5 class="c-summary__number">{{ unpublished_spaces }}</h5>
+                        </div>
+                    </div>
+                </div><!-- // .row -->
+            </div><!-- // .c-card -->
+        </div>
+    </div>
+
+    <div class="row u-mb-large">
+        <div class="col-md-12">
+            <div class="c-table-responsive@wide">
+                <caption class="c-table__title">
+                    <h2>Contract</h2>
+                </caption>
+                <table class="c-table">
+                    <thead class="c-table__head c-table__head--slim">
+                        <tr class="c-table__row">
+                            <th class="c-table__cell c-table__cell--head">Spaces Allowed</th>
+                            <th class="c-table__cell c-table__cell--head">Featured Allowed</th>
+                            <th class="c-table__cell c-table__cell--head">Contract Start Date</th>
+                            <th class="c-table__cell c-table__cell--head">Contract Expiry Date</th>
+                            <th class="c-table__cell c-table__cell--head">Current Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for contract in contracts %}
+                        <tr class="c-table__row">
+                            <td class="c-table__cell"><span class="u-text-mute">{{ contract.listings_allowed }}</span></td>
+                            <td class="c-table__cell"><span class="u-text-mute">{{ contract.featured_allowed }}</span></td>
+                            <td class="c-table__cell">{{ contract.start_date }}</td>
+                            <td class="c-table__cell">{{ contract.expiry_date }}</td>
+                            <td class="c-table__cell">
+                                {% if contract.expired %}
+                                    <span class="c-badge c-badge--small c-badge--danger">Expired</span>
+                                {% else %}
+                                    <span class="c-badge c-badge--small c-badge--success">Active</span>
+                                {% endif %}
+                            </td>
+                        </tr><!-- // .table__row -->
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div><!-- // .c-card -->
+        </div>
+    </div><!-- // .row -->
+
+
+
+{% comment %}
+    <h2>Single invoice for next page.</h2>
+<div class="row u-mb-medium u-justify-center">
+    <div class="col-xl-9">
+        <div class="c-invoice">
+
+            <div class="c-invoice__header">
+                <div class="c-invoice__brand">
+                    <img class="c-invoice__brand-img" src="/static/favicon.png" alt="Dashboard's Logo"> 
+                    <h1 class="c-invoice__brand-name">Dashboard Pty Ltd</h1>
+                </div>
+
+                <div class="c-invoice__title">
+                    <h4>Invoice</h4>
+                    <div class="c-invoice__date">22 December 2017</div>
+                </div>
+            </div>
+            
+            <div class="c-invoice__details">
+                <div class="c-invoice__company">
+                    <span class="u-text-mute u-text-uppercase u-text-xsmall">From:</span>
+                    <div class="c-invoice__company-name">
+                        Dashboard Inc
+                    </div>
+
+                    <div class="c-invoice__company-address">
+                        39 Timber Road,<br>
+                        Los Angeles, CA 97446<br>
+                        United States
+                    </div>
+                </div>
+
+                <div class="c-invoice__company">
+                    <span class="u-text-mute u-text-uppercase u-text-xsmall">To:</span>
+                    <div class="c-invoice__company-name">
+                        Client Inc
+                    </div>
+
+                    <div class="c-invoice__company-address">
+                        248 Turkey Ave,<br>
+                        Columbus, AL 31901<br>
+                        United States
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-invoice__body">
+                <div class="c-invoice__desc">
+                    Invoice # <br> 
+                    <span class="c-invoice__number">HSFB 342823</span>
+                </div>
+                <div class="c-invoice__table">
+                    <table class="c-table">
+                        <thead class="c-table__head c-table__head--slim">
+                            <tr class="c-table__row">
+                                <th class="c-table__cell c-table__cell--head">Description</th>
+                                <th class="c-table__cell c-table__cell--head">Qty</th>
+                                <th class="c-table__cell c-table__cell--head">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="c-table__row">
+                                <td class="c-table__cell">Website Design</td>
+                                <td class="c-table__cell">2</td>
+                                <td class="c-table__cell">$4,500</td>
+                            </tr>
+                            <tr class="c-table__row">
+                                <td class="c-table__cell">UI Development</td>
+                                <td class="c-table__cell">3</td>
+                                <td class="c-table__cell">$7,500</td>
+                            </tr>
+                            <tr>
+                                <td class="c-table__cell">Landing Page</td>
+                                <td class="c-table__cell">1</td>
+                                <td class="c-table__cell">$2,320</td>
+                            </tr>
+                        </tbody>
+
+                        <tfoot>
+                            <tr class="c-table__row">
+                                <td class="c-table__cell" colspan="2"><strong>Total</strong></td>
+                                <td class="c-table__cell"><strong>$15,490</strong></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <div class="c-invoice__terms">
+                        All amounts shown on this invoice are in US dollars.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="c-invoice__footer">
+
+                <div class="c-invoice__footer-brand">
+                    <img src="/static/favicon.png" alt="Dashboard Logo">
+                    <span>Dashboard UI Kit</span>
+                </div>
+
+                <div class="c-invoice__footer-info">
+                    <span>hello@dashboard.com</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endcomment %}
+
+{% endblock %}

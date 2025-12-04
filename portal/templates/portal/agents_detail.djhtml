@@ -1,0 +1,148 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}
+{{ agent.get_full_name }} | Our Agents
+{% endblock %}
+
+{% block content %}
+<div id="agents">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-12 col-xl-10">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="{% url "portal:portal-home" %}">
+                                Home
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="{% url "portal:agents" %}">
+                                Agents
+                            </a>
+                        </li>
+                        <li aria-current="page" class="breadcrumb-item active">
+                            {{ agent.get_full_name }}
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="property-single" id="content">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-12 col-xl-10">
+                    <div class="row has-sidebar">
+                        <div class="col-md-5 col-lg-4 col-xl-4">
+                            <div class="sidebar-left" id="sidebar">
+                                <div class="sidebar_inner">
+                                    <div class="agent-details">
+                                        <img alt="" class="img-fluid img-rounded agent-thumb" src="{{ agent.userprofile.get_default_image }}"/>
+                                        <h3 class="subheadline">
+                                            {{ agent.get_full_name }}
+                                        </h3>
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <a href="tel:{{ agent.userprofile.phone }}">
+                                                    <i aria-hidden="true" class="fa fa-phone fa-fw">
+                                                    </i>
+                                                    {{ agent.userprofile.phone }}
+                                                </a>
+                                            </li>
+                                            {% if agent.email %}
+                                            <li>
+                                                <a href="mailto:{{ agent.email }}">
+                                                    <i aria-hidden="true" class="fa fa-envelope fa-fw">
+                                                    </i>
+                                                    {{ agent.email }}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-lg-8 col-xl-8">
+                            <div class="page-header mt-0">
+                                <h1>
+                                    About {{ agent.get_full_name }}
+                                    {% if agent.userprofile.address %}
+                                    <small>
+                                        <i class="fa fa-map-marker">
+                                        </i>
+                                        {{ agent.userprofile.address }}
+                                    </small>
+                                    {% endif %}
+                                </h1>
+                            </div>
+                            <p>
+                                {{ agent.userprofile.about }}
+                            </p>
+                            <hr/>
+                            {% if listings %}
+                                <div class="lead">
+                                    Recent properties by {{ agent.get_full_name }}
+                                </div>                            
+                                <div class="clearfix">
+                                </div>
+                                <div class="item-listing list">
+                                    {% for listing in listings %}
+                                        {% include 'portal/components/search-listing-item.djhtml' %}
+                                    {% endfor %}
+                                </div>
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination">
+                                        {% if listings.has_previous %}
+                                            <li class="page-item">
+                                                <a class="page-link" href="?page={{ listings.previous_page_number }}">
+                                                    «
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                        {% for page_number in listings.paginator.page_range %}
+                                            <li class="page-item {% if listings.number == page_number %}active{% endif %}">
+                                                <a class="page-link" href="?page={{ page_number }}">
+                                                    {{ page_number }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                        {% if listings.has_next %}
+                                            <li class="page-item">
+                                                <a class="page-link" href="?page={{ listings.next_page_number }}">
+                                                    »
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                    </ul>
+                                </nav>
+                            {% else %}
+                                <p>There are no properties by {{ agent.get_full_name }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript">
+$('.show-number').click(function(e) {
+    if(Utils.Check.isDesktop())
+        e.preventDefault();
+
+    $(this).hide();
+    $(this).parent().find('.agent-number').show();
+
+    $.post('/record-call/' + $(this).parent().data('id') + '/');
+
+});
+</script>
+{% endblock %}

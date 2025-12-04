@@ -1,0 +1,19 @@
+{% load static %}
+<div class="sidebar">
+    <div class="widget">
+        <h2 class="widgettitle">Categories</h2>
+        {% if categories %}
+            <ul class="menu nav nav-stacked">
+            {% for category in categories %}
+            <li class="nav-item{% if selected_category and selected_category == category %} active{% endif %}">
+                <a href="{{ category.get_absolute_url }}" class="nav-link">
+                    <i class="fa fa-chevron-right"></i> {{ category.name }}
+                </a>
+            </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No category found</p>
+        {% endif %}
+    </div>
+</div>

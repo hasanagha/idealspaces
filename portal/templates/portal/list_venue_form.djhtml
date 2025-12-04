@@ -1,0 +1,298 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}List your Business Center & Meeting Room Spaces for Free!{% endblock %}
+{% block og_title %}List your Business Center & Meeting Room Spaces for Free!{% endblock %}
+{% block twitter_title %}List your Business Center & Meeting Room Spaces for Free!{% endblock %}
+{% block meta_description %}List your space in Minutes! Reach thousands of potential seekers and get your venues filled with new customers! List Today!{% endblock %}
+{% block og_description %}List your space in Minutes! Reach thousands of potential seekers and get your venues filled with new customers! List Today!{% endblock %}
+{% block twitter_description %}List your space in Minutes! Reach thousands of potential seekers and get your venues filled with new customers! List Today!{% endblock %}
+
+{% block content %}
+<div class="main fixed-width-container">
+    <div class="main-inner">
+        <div class="content">
+            <div class="container">
+                <!--==================== HEADER ====================-->
+                <div class="landing-header">
+                    <div class="banner-img">
+                        <img src="/static/img/landing/header.png" class="img-fluid hide-on-mobile" alt="list with IdealSpaces" width="700" />
+
+                        <!-- Main Title -->
+                        <div class="main-title">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-5">
+                                        <div class="hero-title">
+                                            <p>Join UAE's leading online</p>
+                                            <h1>
+                                               <b> 
+                                                Marketplace for Business centers and meeting rooms
+                                               </b>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Main Title -->
+                    </div>
+                    <!--  // Contact Modal -->
+                    <!--==================== NEW INSURANCE ====================-->
+                    <hr>
+                    <div class="space bg-image">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="center-title">
+                                        <h2><strong>How it works</strong></h2>
+                                        <div class="col-md-12 col-lg-9 mx-auto">
+                                            <h6>List your space for 3 months FREE! and Reach thousands of potential seekers</h6>
+                                            <p>We are glad to make that special offer for first-time listings on our website. We value your trust and cooperation. Our goal is to help you to reach your business heights.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-lg-7 ml-auto">
+                                    <div class="insurance-title_wrap">
+                                        <div class="insurance-type d-flex align-items-center">
+                                            <img src="/static/img/landing/tick.png" alt="#">
+                                            <div class="insurance-type_title">
+                                                <h6>List your space for free</h6>
+                                                <p>Register for free. No commission. No Subscription Fee. No Hidden Charges.</p>
+                                            </div>
+                                        </div>
+                                        <div class="insurance-type d-flex align-items-center">
+                                            <img src="/static/img/landing/tick.png" alt="#">
+                                            <div class="insurance-type_title">
+                                                <h6>We don’t charge seekers</h6>
+                                                <p>We don't add anything onto the price. We display the price you set unlike other platforms which often charge seekers their prices.</p>
+                                            </div>
+                                        </div>
+                                        <div class="insurance-type d-flex align-items-center">
+                                            <img src="/static/img/landing/tick.png" alt="#">
+                                            <div class="insurance-type_title">
+                                                <h6>Maximize your visibility</h6>
+                                                <p>Get your venues filled with new seekers and increase your space exposure online.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="banner-img-2">
+                            <img src="/static/img/landing/banner.svg" width="420" class="img-fluid hide-on-mobile" alt="How idealspaces.com works" />
+                        </div>
+                    </div>
+                    <!--//END NEW INSURANCE -->
+                </div>
+                <!--//END HEADER -->
+
+
+
+
+
+                <!--==================== start ====================-->
+                <section class="add-section clearfix collapse-wrap">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10">
+                                <div class="add-box">
+                                    <img src="{% static "img/advertising1.png" %}" class="img-fluid shield" alt="idealspaces promotion" />
+                                    <div class="add-content">
+                                        <h3>Claim your 3 months free advertisement right now!</h3>
+                                    </div>
+                                    <div class="add-btn">
+                                        <a href="#list-property-form" class="btn btn-primary">Get started</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--//END start -->
+
+
+                <div class="pt-5">
+                    <hr>
+                </div>
+
+                <!--==================== EASY CLAIMS ====================-->
+                <section class="space getting-started">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="center-title">
+                                    <h2><strong>How to get started on IdealSpaces</strong></h2>
+                                    <p>Easy as One, Two, Three</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <iframe class="video-iframe" width="100%" height="315" src="https://www.youtube.com/embed/Ok7c1bE_WvU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="item-box howit-block">
+                                            <div class="item-icon color3">
+                                                <span>1</span>
+                                            </div>
+                                            <p class="desc">Fill out the enquiry form and receive a confirmation email with your user name credentials.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="item-box howit-block_af">
+                                            <div class="item-icon color3">
+                                                <span>2</span>
+                                            </div>
+                                            <p class="desc single-line-lg single-line-md single-line-sm">Login and list your space.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="item-box">
+                                            <div class="item-icon color3">
+                                                <span>3</span>
+                                            </div>
+                                            <p class="desc single-line-lg">Press publish and get ready to fill up your all vacant spaces.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </section>
+                <!--// END EASY CLAIMS -->
+
+
+
+                <div class="pt-4">
+                    <hr>
+                </div>
+
+                <!--==================== TESTIMONIAL ====================-->
+                {% comment %}
+                <section class="testimonial">
+                    <div class="container">
+                        <div class="row d-flex">
+                            <div class="col-md-12 col-lg-7 align-items-center">
+                                <div class="testi-content_block">
+                                    <img src="/static/img/landing/quote.png" class="img-fluid" alt="#">
+                                    <h3>Ideal Spaces is my new go to place to find good venues for parties and events. I had no idea we could find reasonably priced venues in Dubai until coming across Ideal Spaces!</h3>
+                                    <span>Matthew Young</span>
+                                    <p>Dubai</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-img_wrap">
+                        <img src="/static/img/landing/testi-img.png" class="img-fluid" alt="#" width="650">
+                    </div>
+                    <div class="bg-img3"><img src="/static/img/landing/bg-image3.png" class="img-fluid" alt="#"></div>
+                </section>
+                {% endcomment %}
+                <a name="list"></a>
+                <section class="space  pt-5" id="list-property-form">
+                    <div class="mt-5">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="center-title">
+                                    <h2><strong>I would like to list my business center and meeting room </strong></h2>
+                                    <p>Fill up the following form, and we will get in touch with you.</p>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7 col-lg-6  mx-auto bg-light p-5">
+                                {% if request.GET.success %}
+                                <center>
+                                    <p class="success">
+                                        <i class="fa fa-check fa-5x text-success mb20 animated zoomIn"></i>
+                                        <br/>
+                                        <h4>Success!</h4>
+                                        Your message is right on its way to our system.
+                                        <br />
+                                        <br />
+                                        Please bear with us as we are making sure that every message we receive are treated with importance.
+                                        <br />
+                                        <br />
+                                        You will receive an email confirmation in a while
+                                    </p>
+                                </center>
+                                {% else %}
+                                {% if form.errors %}
+                                <ul class="form-group">
+                                    {% for key, value in form.errors.items %}
+                                    <li class="error">
+                                        {{ value|escape }}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="id_name">Full Name *</label>
+                                        <input class="form-control" id="id_name" name="name" placeholder="Your full name" required="" type="text" value="{% if form.name.value %}{{form.name.value}}{% endif %}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id_email">Email *</label>
+                                        <input class="form-control" id="id_email" name="email" placeholder="Your email address" type="email" value="{% if form.email.value %}{{form.email.value}}{% endif %}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id_phone">Phone</label>
+                                        <input class="form-control" id="id_phone" maxlength="14" name="phone" placeholder="Your phone number" type="number" value="{% if form.phone.value %}{{form.phone.value}}{% endif %}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id_message">
+                                            Message
+                                        </label>
+                                        <textarea class="form-control" id="id_message" placeholder="Message" rows="4" name="message">{% if form.message.value %}{{form.message.value}}{% else %}Hello, I am interested in listing my business center [name of your business center] and/or a meeting room.{% endif %}</textarea>
+                                    </div>
+                                    <script src='https://www.google.com/recaptcha/api.js'></script>
+                                    <div class="form-group">
+                                        <div class="g-recaptcha" data-sitekey="{{ google_captcha_site_key }}"></div>
+                                    </div>
+                                    <button class="btn btn-lg btn-primary d-flex mx-auto px-5" type="submit">
+                                        Submit
+                                    </button>
+                                </form>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.main-inner -->
+</div>
+<!-- /.main -->
+{% endblock %}
+
+{% block extra_js %}
+<style type="text/css">
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none;
+        margin: 0; 
+    }
+</style>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $("input[type=number]").keypress(function (e) {
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            return false;
+        }
+    });
+});
+</script>
+{% endblock %}

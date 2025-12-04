@@ -1,0 +1,167 @@
+.home-search .search-form-container {
+	max-width: 900px;
+	margin: auto;
+	.reset-search-form {
+		display: none;
+	}
+	.advance { 
+		color: #FFF;
+		bottom: -25px;
+	}
+	label {
+		// color: #FFF;
+		// text-align: left;
+		// width: 100%;
+		// text-transform: normal;
+		display: none;
+	}
+}
+.search-form-container {
+	position: relative;
+	.select2-selection {
+        padding: 9px;
+        border-radius: 0px !important;
+    }
+
+    .advance-field {
+    	display: none !important;
+    	&.show {
+    		display: inline-block !important;
+    	}
+    }
+
+	button.close-panel {
+		display: none;
+	}
+	.temp-height-class {
+		height: 47px;
+    	color: #FFF;
+    }
+	.search_button {
+		font-size: 19px;
+		border-radius: 0px;
+	}
+
+	.reset-search-form {
+		color: #777;
+		cursor: pointer;
+		text-align: left;
+		position: absolute;
+		bottom: -10px;
+		left: 0px;
+	}
+
+	.advance {
+		color: #777;
+		cursor: pointer;
+		text-align: right;
+		bottom: -10px;
+    	right: 5px;
+		position: absolute;		
+		letter-spacing: normal;
+		// @include breakpoint-max(sm) {
+		// 	display: none;
+		// }
+	}
+
+	.advance-field {
+		display: none;
+
+		&.show {
+			display: inline-block;
+		}
+	}
+	.select2-container {
+		width: 100% !important; 
+
+		.select2-selection--single {
+			height: 50px;
+			.select2-selection__rendered {
+				line-height: 31px;
+				display: table-row;
+			}
+			.select2-selection__arrow {
+				height: 47px;
+				right: 3px;
+			}
+			.select2-selection__placeholder {
+				color: #757575;
+				display: table-row;
+			}
+		}
+
+	}
+
+	.form-control {
+		&.form-control-lg {
+			border-radius: 0px;
+			border: 1px solid #ced4da;
+			line-height: 1.6;
+			font-size: 18px;
+			&:focus {
+				border: 1px solid #ced4da;
+			}
+		}
+	}
+
+	.reset-search-form.show-mobile-only {
+		display: none;
+	}
+
+	&.mobile-filter {
+		top: 0;
+		right: 0;
+		margin: 0;
+		background-color: #FFF;
+		position: fixed;
+		width: 100%;
+		margin: 0px;
+		margin-top: -70px !important;
+		padding: 10px;
+		height: 100%;
+		z-index: 1050;
+		background: #FFF;
+		top: 0px;
+		padding-top: 70px;
+		.advance-field {
+			display: inline-block;
+			padding-bottom: 10px;
+		}
+		.card {
+			background-color: #FFF !important;
+			box-shadow: none !important;
+			padding: 10px 20px !important;
+			overflow: auto;
+		}
+		.form-group {
+			margin-bottom: 0px;
+		}
+		button.close-panel {
+			display: block;
+			margin: 10px 5px;
+		}
+		@for $i from 1 through 12 {
+		    .col-lg-#{$i} { margin-bottom: 10px; }
+		}
+		.mobile-filter-submit {
+			position: fixed;
+			width: 100%;
+			background: #FFF;
+			bottom: 0px;
+			padding: 14px;
+			margin: 0px;
+			left: 0px;
+		}
+		.reset-search-form {
+			display: none;
+			&.show-mobile-only {
+				display: inline-block;
+				color: #000;
+				right: 15px;
+				top: 100px;
+				z-index: 1055;
+				left: auto;
+			}
+		}
+	}
+}

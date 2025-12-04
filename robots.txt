@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /s/?*
+Disallow: /locations
+
+Sitemap: https://www.idealspaces.com/sitemap.xml
+
+# IDEAL -~- SPACES -~- 2 0 1 9

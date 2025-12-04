@@ -1,0 +1,115 @@
+{% load static %}
+<html>
+    <head>
+        <style type="text/css">
+            .quick-action-widget .dashboard-item-content {
+                text-align: center;
+            }
+            .quick-action-widget .dashboard-item-content ul {
+                width: 31%;
+                padding: 10px !important;
+                display: inline-table;
+                text-align: left;
+            }
+            .quick-action-widget a.highlight {
+                background-color: #c14747 !important;
+                padding: 1px 5px;
+                color: #FFF !important;
+                border-radius: 50%;
+                margin-right: -3px;
+            }
+            @media (max-width: 960px) {
+                .quick-action-widget .dashboard-item-content ul {
+                    display: inline;
+                    padding: 0px !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="quick-action-widget">
+            <div class="dashboard-item-content">
+                <ul>
+                    <li class="contrast">
+                        <a href="/admin/portal/listing/" title="">
+                            Spaces
+                        </a>
+                    </li>
+                    <li>
+                        <span class="float-right">
+                            <a href="/admin/portal/listing/?status__exact=P" title="Live listings">
+                            	<strong>{{ published_listings }}</strong>
+                            </a>
+                        </span>
+                        <a href="/admin/portal/listing/?status__exact=P" title="live listings">
+                            Live (Published)
+                        </a>
+                    </li>
+                    <li>
+                        <span class="float-right">
+                            <a class="{% if inreview_listings %}highlight{% endif %}" href="/admin/portal/listing/?approval_status__exact=R" title="listings waiting for review">
+                            	<strong>{{ inreview_listings }}</strong>
+                            </a>
+                        </span>
+                        <a href="/admin/portal/listing/?approval_status__exact=R" title="listings waiting for review">
+                            Pending Reviewal
+                        </a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="contrast">
+                        <a href="/admin/portal/listingenquiry/" title="Listing Enquiries">
+                            Inquiries
+                        </a>
+                    </li>
+                    <li>
+                        <span class="float-right">
+                            <a class="{% if new_enquiries %}highlight{% endif %}" href="/admin/portal/listingenquiry/?is_enquiry__exact=1&status__exact=N" title="New">
+                                {{ new_enquiries }}
+                            </a>
+                        </span>
+                        <a href="/admin/portal/listingenquiry/?is_enquiry__exact=1&status__exact=N" title="New Enquiries">
+                            NEW
+                        </a>
+                    </li>
+                    <li>
+                        <span class="float-right">
+                            <a href="/admin/portal/listingenquiry/?is_enquiry__exact=1&status__exact=W" title="In Progress">{{ working_enquiries }}
+                            </a>
+                        </span>
+                        <a href="/admin/portal/listingenquiry/?is_enquiry__exact=1&status__exact=W" title="Enquiries in progress">
+                            In Progress
+                        </a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="contrast">
+                        <a href="/admin/portal/contactusenquiry/" title="">
+                            Contact Form
+                        </a>
+                    </li>
+                    <li>
+                        <span class="float-right">
+                            <a class="{% if new_contact %}highlight{% endif %}" href="/admin/portal/contactusenquiry/?status__exact=N" title="Contact Form New">
+                            	<strong>{{ new_contact }}</strong>
+                            </a>
+                        </span>
+                        <a href="/admin/portal/contactusenquiry/?status__exact=N" title="Contact Form New">
+                            New
+                        </a>
+                    </li>
+                    <li>
+                        <span class="float-right">
+                            <a href="/admin/portal/contactusenquiry/?status__exact=W" title="Contact Form Working">
+                            	<strong>{{ working_contact }}</strong>
+                            </a>
+                        </span>
+                        <a href="/admin/portal/contactusenquiry/?status__exact=W" title="Contact Form Working">
+                            Working
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

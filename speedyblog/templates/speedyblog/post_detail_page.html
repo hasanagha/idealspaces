@@ -1,0 +1,43 @@
+{% load el_pagination_tags %}
+{% load markdown_deux_tags %}
+
+
+{% if comments %}
+	{% paginate comments %}
+	{% for comment in comments %}
+		<ul class="comments">
+		    <li>
+		        <div class="comment">
+		            <div class="comment-author">
+		                <a href="#" style="background-image: url('/static/img/tmp/agent-1.jpg');">
+		                </a>
+		            </div>
+		            <!-- /.comment-author -->
+		            <div class="comment-content">
+		                <div class="comment-meta">
+		                    <div class="comment-meta-author">
+		                        Posted by {{ comment.user_name }}
+		                    </div>
+		                    <div class="comment-meta-date">
+		                        <span>
+		                            {{ comment.created_on|date:'d M, Y' }}
+		                        </span>
+		                    </div>
+		                </div>
+		                <!-- /.comment -->
+		                <div class="comment-body">
+		                    {{ comment.comment|markdown }}
+		                </div>
+		                <!-- /.comment-body -->
+		            </div>
+		            <!-- /.comment-content -->
+		        </div>
+		        <!-- /.comment -->
+		    </li>
+		</ul>
+
+	{% endfor %}
+
+	{% show_more "Load more comments" %}
+
+{% endif %}

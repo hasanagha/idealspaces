@@ -1,0 +1,74 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}
+What's Included
+{% endblock %}
+
+{% block content %}
+<div id="whats-included">
+  <div id="content">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-12 col-xl-10">
+          <center>
+            <h2 class="centered">What's included in our packages?</h2>
+          </center>
+          <div class="lead text-center ">
+            <strong>
+              We close deals at best prices.
+            </strong>
+          </div>
+          <br><br>
+          <div class="row justify-content-md-center">
+            <div class="col-lg-6 col-md-6 col-sm-12">  
+              <h1>Fixed fee. Full service.</h1>
+              <br/>
+              <h4>Outstanding benefits and great features.</h4>
+              <p>Pay a competitve price and receive a full professional service. Right Doors agents are skilled and professionally trained and have the support of state-of-the-art systems. </p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">  
+              <img src="{% static "img/benefits.jpg" %}" width="400" />
+            </div>
+            
+          </div>
+          <br><br>
+          <div class="row justify-content-md-center">
+            <div class="col-lg-6 col-md-6 col-sm-12">  
+              <img src="{% static "img/agent.jpg" %}" width="400" />
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <h4>Experience property agent</h4>
+              <p>Benefit of dedicated and full time real estate agent to valuate, list and sell your property.</p><br>
+              <h4>Advertise and expose your property</h4>
+              <p>Your property will be close to millions of buyers through our best advertising and exposure.</p>
+            </div>
+          </div>
+          
+          <br><br>
+          <div class="row justify-content-md-center">
+            <div class="col-lg-6 col-md-6 col-sm-12">  
+              <h4>24/7 Access</h4>
+              <p>All the information about your property is available online. You can easily track the viewers or the buyers looking at your property and you can check their interest levels as well.</p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">  
+              <img src="{% static "img/website-laptop.png" %}" width="400" />
+            </div>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="strip">
+        <h2>We are local property experts.</h2>
+        <a href="{% url 'account:login' %}" class="btn btn-pink">Get Started Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

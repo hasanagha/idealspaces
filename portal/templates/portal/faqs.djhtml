@@ -1,0 +1,200 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}
+Frequently Asked Questions
+{% endblock %}
+
+{% block content %}
+<div id="about">
+    <div class="property-single" id="content">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-12 col-xl-8">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a %}"="" href="{% url " portal:portal-home"="">
+                                    Home
+                                </a>
+                            </li>
+                            <li aria-current="page" class="breadcrumb-item active">
+                                FAQ's
+                            </li>
+                        </ol>
+                    </nav>
+                    <div class="page-header v2 bordered">
+                        <h1>
+                            Frequently Asked Questions
+                            <small>
+                                Right Doors
+                            </small>
+                        </h1>
+                    </div>
+                    <div id="accordion">
+                        <h4 class="title">
+                            What is Right Doors?
+                        </h4>
+                        <p> We're a brand new operated fixed fee Real Estate Agency in Dubai and in MENA Region.</p>
+                        <p>We help you with everything you would expect from a traditional real estate agent, plus a lot more. Our fixed-fee is affordable, so your savings are high, by keeping our overheads low.</p><br>
+
+                        <div class="">
+                            <div class="card-header" id="headingTwo" aria-controls="collapseTwo" aria-expanded="true" data-target="#collapseTwo" data-toggle="collapse">
+                                <h5 class="m-0">
+                                    <div>
+                                        Why should you list with RightDoors?
+                                    </div>
+                                </h5>
+                            </div>
+                            <div aria-labelledby="headingTwo" class="collapse" data-parent="#accordion" id="collapseTwo">
+                                <div class="card-body">
+                                    By choosing to list your property with RightDoors, the chances of your property being rented are way much faster comparing with any other real estate portal. <br><br>
+                                    We do this with just a fixed fee of AED 999 from the tenant and no commission on top of that. Tenants have now the chance to keep themselves far from high commission and rather go for one fixed fee. This seems fair.
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <div class="card-header" id="headingThree" aria-controls="collapseThree" aria-expanded="true" data-target="#collapseThree" data-toggle="collapse">
+                                <h5 class="m-0">
+                                    <div>
+                                        How could you reach RightDoors?
+                                    </div>
+                                </h5>
+                            </div>
+                            <div aria-labelledby="headingThree" class="collapse" data-parent="#accordion" id="collapseThree">
+                                <div class="card-body">
+                                    You are only one click away. Visit our website: <a href="https://www.rightdoors.com">www.rightdoors.com</a>, select ADD listing and fill in your property details. Once you have submitted your property details and finalized your payment, our experts will be carefully reviewing your listing and schedule an inspection. Your property listing will be live within 3 business days, of course after approval of our experts. <br><br>
+                                    One call way. Feel free to contact us at 800-99-99-99 where one of our customer representatives will be in touch with you for all your details and set an appointment for further work on the process.
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="card-header" id="headingFour" aria-controls="collapseFour" aria-expanded="true" data-target="#collapseFour" data-toggle="collapse">
+                                <h5 class="m-0">
+                                    <div>
+                                        How is the property inspection going and why we do it?
+                                    </div>
+                                </h5>
+                            </div>
+                            <div aria-labelledby="headingFour" class="collapse" data-parent="#accordion" id="collapseFour">
+                                <div class="card-body">
+                                    Well, the property inspection is done for the purpose of proving the authenticity of the property or the unit. This is procedure is done on all properties so we can verify the authenticity of every listing that has been published, their living conditions and the safety.<br><br>
+
+                                    The property inspection is essential for us to make sure that all properties meet unto the standards of RightDoors. 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="card-header" id="headingFive" aria-controls="collapseFive" aria-expanded="true" data-target="#collapseFive" data-toggle="collapse">
+                                <h5 class="m-0">
+                                    <div>
+                                        What are the Required Documents?
+                                    </div>
+                                </h5>
+                            </div>
+                            <div aria-labelledby="headingFive" class="collapse" data-parent="#accordion" id="collapseFive">
+                                <div class="card-body">
+                                    With respect to the documentation, we require the following:<br>
+                                    <ul>
+                                        <li>Title Deed of the Property;</li>
+                                        <li>RERA Permit Number;</li>
+                                        <li>Copy of Emirates ID if you’re a local resident or Passport Copy.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="card-header" id="headingSix" aria-controls="collapseSix" aria-expanded="true" data-target="#collapseSix" data-toggle="collapse">
+                                <h5 class="m-0">
+                                    <div>
+                                        What is the Responsibility of issuing Ejari, from a tenant perspective?
+                                    </div>
+                                </h5>
+                            </div>
+                            <div aria-labelledby="headingSix" class="collapse" data-parent="#accordion" id="collapseSix">
+                                <div class="card-body">
+                                    As per Dubai Government laws, the tenant must present to all government entities landlords’ permissions or an approved Power of Attorney (POA). 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="card-header" id="headingSeven" aria-controls="collapseSeven" aria-expanded="true" data-target="#collapseSeven" data-toggle="collapse">
+                                <h5 class="m-0">
+                                    <div>
+                                        Which services will I receive? Or What are the services we offer?
+                                    </div>
+                                </h5>
+                            </div>
+                            <div aria-labelledby="headingSeven" class="collapse" data-parent="#accordion" id="collapseSeven">
+                                <div class="card-body">
+                                    You will have your dedicated real estate agent specialized in your areas. Your own agent together with his support team will be with you at every step of the way regarding the selling/buying and renting process, starting from your property valuation to getting your property ready for sale.<br><br>
+
+                                    The services included in the fee are: marketing and exposure to millions of buyers in Dubai and across UAE, professional photography, negotiating with your potential buyers and the most important thing the sale or the purchase.
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="card-header" id="headingEight" aria-controls="collapseEight" aria-expanded="true" data-target="#collapseEight" data-toggle="collapse">
+                                <h5 class="m-0">
+                                    <div>
+                                        What are the benefits of renting with RightDoors? 
+                                    </div>
+                                </h5>
+                            </div>
+                            <div aria-labelledby="headingEight" class="collapse" data-parent="#accordion" id="collapseEight">
+                                <div class="card-body">
+                                    Summary of the benefits of renting with Right Doors:<br><br>
+  
+                                    <li>No big upfront costs, e.g. marketing and advertising, photos, letting fee, ingoing reports etc., ways which would see your first month’s rent disappear with a traditional real estate agency.</li>
+                                    <li>You will have a true understanding of what our fees are, there is no hidden fees.</li>
+                                    <li>When rents increase we don’t charge any more, yet % based agencies will.</li>
+                                    <li>Simplicity and ease to plan for the future.</li>
+                                    <li>We only charge the fee once the tenant is the right one and paying you the rent.</li>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="title">
+                            Other Questions
+                        </h4>
+                        <div class="">
+                            <div class="card-header" id="headingNine" aria-controls="collapseNine" aria-expanded="true" data-target="#collapseNine" data-toggle="collapse">
+                                <h5 class="m-0">
+                                    <div>
+                                        How can I be up to date with the property sale progress?
+                                    </div>
+                                </h5>
+                            </div>
+                            <div aria-labelledby="headingNine" class="collapse" data-parent="#accordion" id="collapseNine">
+                                <div class="card-body">
+                                    Right Doors online platform provides you a real-time view of buyer enquiries, offers and interests. We will send you on regular basis reminders with checklists, some tricks and tips from our side with regards to your property to keep it looking perfect during important showings.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <div class="card-header" id="headingTen" aria-controls="collapseTen" aria-expanded="true" data-target="#collapseTen" data-toggle="collapse">
+                                <h5 class="m-0">
+                                    <div >
+                                        How fast will my listing be on all the property website?
+                                    </div>
+                                </h5>
+                            </div>
+                            <div aria-labelledby="headingTen" class="collapse" data-parent="#accordion" id="collapseTen">
+                                <div class="card-body">
+                                    Once approved by our property specialists, your listing will be published on best Dubai and UAE property websites: Property Finder and Dubizzle.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

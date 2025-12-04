@@ -1,0 +1,80 @@
+{% extends 'base.djhtml' %}
+{% load markdown_deux_tags %}
+
+{% block page_title %}{{ post.get_meta_title }}{% endblock %}
+{% block og_title %}{{ post.get_meta_title }}{% endblock %}
+{% block twitter_title %}{{ post.get_meta_title }}{% endblock %}
+
+{% block meta_description %}{{ post.get_meta_description|striptags|truncatewords:27 }}{% endblock %}
+{% block og_description %}{{ post.get_meta_description|striptags|truncatewords:27 }}{% endblock %}
+{% block twitter_description %}{{ post.get_meta_description|striptags|truncatewords:27 }}{% endblock %}
+
+{% block content %}
+<div class="main blog blog-detail">
+    <div class="main-inner">
+        <div class="container mt-4">
+            <ol class="breadcrumb">
+                <li class="separator">
+                    <a href="{% url 'portal:portal-home' %}">
+                        Home
+                    </a>
+                </li>
+                <li class="separator">
+                    <a href="{% url 'speedyblog:blog_index' %}">Blog</a>
+                </li>
+                <li class="separator">
+                    <a href="{{ post.category.get_absolute_url }}">{{ post.category.name }}</a>
+                </li>
+                <li>
+                    {{ post.title }}
+                </li>
+            </ol>
+            <div class="row">
+                <div class="col-md-8 col-lg-9">
+                    <h1>{{ post.title }}</h1>
+                    <div class="content">
+                        <div class="post-detail">
+                            {% if post.image %}
+                                <img alt="" class="img-fluid mb-4" src="{{ post.image }}" /><br />
+                            {% endif %}
+
+                            <div class="item-detail">
+                                {{ post.description|markdown }}
+                            </div>
+                            <hr class="mb-4" />
+
+                            {% if post.allow_comments %}
+                                {% if post.get_comments_count %}
+                                <h2>{{ post.get_comments_count }} comments in this topic</h2>
+                                {% endif %}
+
+                                {% include page_template %}
+
+                                {% include 'speedyblog/includes/post_form.html' %}
+                            {% else %}
+                            <p>
+                                Comments are disabled for this post.
+                            </p>
+                            {% endif %}
+                            <!-- /.comment-create -->
+                        </div>
+                        <!-- /.post-detail -->
+                    </div>
+                    <!-- /.content -->
+                </div>
+                <!-- /.col-* -->
+                <div class="col-md-4 col-lg-3">
+                    {% include 'speedyblog/includes/sidebar.html' %}
+                </div>
+                <!-- /.col-* -->
+            </div>
+            <!-- /.row -->
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src='https://www.google.com/recaptcha/api.js'></script>
+{% endblock %}

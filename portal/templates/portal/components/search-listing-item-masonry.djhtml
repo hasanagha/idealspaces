@@ -1,0 +1,69 @@
+{% load static %}
+{% load humanize %}
+<h1 class="search-h1">
+    {{listings.paginator.count}} {{ search_title }}
+</h1>
+<div class="row listing-box-wrapper listing-box-simple-wrapper-small masonry-layout">
+    {% for listing in listings %}
+    <div class="col-lg-4 col-md-6 col-sm-6 listing-box-masonry">
+        <div class="masonry-layout__panel-content listing-box listing-box-simple">
+            <a href="{{ listing.get_listing_url }}">
+                <div class="listing-box-image" style="background-image: url('{{ listing.get_default_image }}')">
+                    {% if listing.is_featured %}
+                        <div class="listing-box-image-label">Featured</div>
+                    {% endif %}
+                    &nbsp;
+                    <div class="listing-box-price">
+                        {% if frequency == 'hourly' %}
+                            {{ currency }} {{ listing.price_hourly|intcomma }}
+                            <span class="price-frequency-display">per hour</span>
+                        {% elif frequency == 'daily'%}
+                            {{ currency }} {{ listing.price_daily|intcomma }}
+                            <span class="price-frequency-display">per day</span>
+                        {% elif frequency == 'weekly'%}
+                            {{ currency }} {{ listing.price_weekly|intcomma }}
+                            <span class="price-frequency-display">per week</span>
+                        {% elif frequency == 'yearly'%}
+                            {{ currency }} {{ listing.price_yearly|intcomma }}
+                            <span class="price-frequency-display">per year</span>
+                        {% else %}
+                            {{ currency }} {{ listing.get_price_display|safe }}
+                        {% endif %}
+                    </div>
+                </div>
+            </a>
+            <!-- /.listing-box-image -->
+            <div class="listing-box-title">
+                <h2 title="{{ listing.title }}"><a href="{{ listing.get_listing_url }}">{{ listing.title }} {{ listing.title }}</a></h2>
+            </div>
+            <!-- /.listing-box-title -->
+            <div class="listing-box-content">
+                <div class="location">{{ listing.get_location }}</div>
+            </div>
+            {% comment %}
+            <div class="listing-box-content">
+                <dl>
+                    <dt>Category</dt>
+                    <dd>{{ listing.get_category_display }}</dd>
+                    <dt>Location</dt>
+                    <dd>{{ listing.get_location }}</dd>
+                    <dt>Capacity</dt>
+                    <dd>{{ listing.capacity_min }} - {{ listing.capacity_max }} persons</dd>
+                    <dt>
+                        {% for value in listing.get_amenities %}
+                            <span title="{{ value }}" class="amenities-item {{ value|slugify }}"></span>
+                            
+                                <span title="{{ value }}" class="badge badge-default {{ value|slugify }}">{{ value }}</span>
+                            
+                        {% endfor %}
+                    </dt>
+                </dl>
+            </div>
+            {% endcomment %}
+            <!-- /.listing-box-cotntent -->
+        </div>
+        <!-- /.listing-box-image -->
+        <!-- /.listing-box -->
+    </div>
+    {% endfor %}
+</div>

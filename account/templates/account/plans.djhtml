@@ -1,0 +1,124 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}
+    Choose a Plan and get started with us
+{% endblock %}
+
+{% block content %}
+    <div id="user_signup">
+        <div id="content">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col col-lg-12 col-xl-10">
+
+                        <h1 class="main-title centered"><span>Oops! Looks like you’ve reached the maximum slots available for your properties</span></h1>
+                        <div class="lead text-center ">
+                            If you wish to include more, please contact us at that could help you add additional properties.
+                        </div>
+                        
+                        <div class="pricing">
+    <div class="row">
+        <div class="pricing-col-wrapper col-lg-4">
+            <div class="pricing-col">
+                <h2 class="pricing-title">Startup</h2>
+
+                <div class="pricing-price">
+                    <span class="pricing-currency">$</span> 8.90
+                </div><!-- /.pricing-price -->
+
+                <div class="pricing-description">
+                    Small business solution
+                </div><!-- /.pricing-description -->
+
+                <ul class="pricing-features">
+                    <li>10 Properties</li>
+                    <li>Up To 3 Agents</li>
+                    <li>Agency Management</li>
+                    <li>1 Year Updates</li>
+                    <li>Mail Support</li>           
+                </ul><!-- /.pricing-featured -->
+
+                <a href="#" class="pricing-btn">Choose Plan</a>
+            </div><!-- /.pricing-col -->
+        </div><!-- /.pricing-col-wrapper-->
+
+        <div class="pricing-col-wrapper col-lg-4">
+            <div class="pricing-col">
+                <h2 class="pricing-title">Business</h2>
+
+                <div class="pricing-price">
+                    <span class="pricing-currency">$</span> 19.90
+                </div><!-- /.pricing-price -->
+
+                <div class="pricing-description">
+                    Small business solution
+                </div><!-- /.pricing-description -->
+
+                <ul class="pricing-features">
+                    <li>100 Properties</li>
+                    <li>Up To 10 Agents</li>
+                    <li>Agency Management</li>
+                    <li>2 Year Updates</li>
+                    <li>Mail Support</li>           
+                </ul><!-- /.pricing-featured -->
+
+                <a href="#" class="pricing-btn">Choose Plan</a>
+            </div><!-- /.pricing-col -->
+        </div><!-- /.pricing-col-wrapper -->
+                            
+        <div class="pricing-col-wrapper col-lg-4">
+            <div class="pricing-col">
+                <h2 class="pricing-title">Professional</h2>
+
+                <div class="pricing-price">
+                    <span class="pricing-currency">$</span> 49.90
+                </div><!-- /.pricing-price -->
+
+                <div class="pricing-description">
+                    Small business solution
+                </div><!-- /.pricing-description -->
+
+                <ul class="pricing-features">
+                    <li>Unlimited Properties</li>
+                    <li>Unlimited Agents</li>
+                    <li>Agency Management</li>
+                    <li>Updates Forever</li>
+                    <li>Mail Support</li>           
+                </ul><!-- /.pricing-featured -->
+
+                <a href="#" class="pricing-btn">Choose Plan</a>
+            </div><!-- /.pricing-col -->
+        </div><!-- /.pricing-col-wrapper -->
+    </div><!-- /.row -->
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+    <script src="https://cdn.checkout.com/sandbox/js/checkout.js"></script>
+    <script src="{% static "account/payment.js" %}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.addons input').change(function() {
+                var price = $(this).data('price');
+                var saver_price = {{ packages.saver.price }};
+
+                var total = 0;
+                $('.addons input').each(function() {
+                    if($(this).is(":checked")) {
+                        total += $(this).data('price');
+                    }
+                })
+
+                $('.package-saver').html('AED ' + (saver_price + total));
+
+            });
+        });
+    </script>
+{% endblock %}

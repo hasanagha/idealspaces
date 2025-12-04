@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html data-country="ae" data-domain="idealspaces.com" data-lang="en" data-type="hybrid" lang="en">
+    <head>
+        <title>Serviced Offices, Banquets, Co-working spaces, Meeting Rooms | IdealSpaces.com</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,300,700&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+        <link href="{% static "fonts/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "libs/owl-carousel/owl.carousel.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "libs/chartist/chartist.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "libs/select2/css/select2.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "dist/style.min.css" %}" rel="stylesheet" type="text/css" id="css-primary" />
+        <link rel="shortcut icon" type="image/x-icon" href="{% static "favicon.png"%}" />
+        <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+
+        <script type="text/javascript" src='{% static "js/jquery.js"%}'></script>
+    </head>
+    <body style="background-color: #FFF">
+        <div class="page-wrapper">
+
+            <center style="margin-top: 100px">
+                <img src="https://s3-ap-southeast-1.amazonaws.com/idealspaces-static/idealspaces-logo-magenta.png" width="300" />
+                <h1 style="color: #4F5153">Coming Soon</h1>
+            </center>
+        </div>
+    </body>
+</html>

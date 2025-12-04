@@ -1,0 +1,42 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}
+Careers
+{% endblock %}
+
+{% block content %}
+<div id="careers">
+  <div id="content" class="property-single">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-12 col-xl-8">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url "portal:portal-home" %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Careers</li>
+            </ol>
+            </nav>
+        <div class="page-header v2 bordered">
+        <h1>Careers <small>Join Us</small></h1>
+        </div>
+        <script>
+          var s = document.createElement('script');
+          s.src = "https://s3.amazonaws.com/stowhire-embed/sh_embed_v1.min.js";
+          s.async = true;
+          window.stowhire_options = { embed_token: '65b21473e3938d' };
+          document.body.appendChild(s);
+        </script>
+        <div data-stowhire-company-identifier='63a5efff7ce2' data-stowjob-apply='true' ></div>
+        {% comment %}
+          <div id='freshteam-widget'></div> 
+        <script src='https://s3.amazonaws.com/files.freshteam.com/production/5410/attachments/2000050869/original/2000002704_widget.js?1523454806'></script>
+        {% endcomment %}
+      </div>
+    </div>
+  </div>
+</div>
+  
+</div>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% load static %}
+<div class="search-form-container">
+    <form action="{% url 'portal:portal-search' %}" id="search_form" name="search_form">
+        <div class="row justify-content-md-center">
+            <div class="form-group col-lg-6 col-sm-3 pr-0">
+                <label>{{ search_form.location.label }}</label>
+                {{ search_form.location }}
+            </div>
+            <!-- /.form-group -->
+            <div class="form-group mobile-collapsed-fields col-lg-3 col-sm-3 pr-0">
+                <label>{{ search_form.category.label }}</label>
+                {{ search_form.category }}
+            </div>
+
+            <div class="form-group mobile-collapsed-fields col-lg-3">
+                <label>{{ search_form.frequency.label }}</label>
+                {{ search_form.frequency }}
+            </div>
+
+            <div class="form-group mobile-collapsed-fields col-lg-4 col-sm-2  pr-0">
+                <label>{{ search_form.amenities.label }}</label>
+                {{ search_form.amenities }}
+            </div>
+
+            <div class="form-group mobile-collapsed-fields col-lg-2 col-sm-2 pr-0">
+                <label>{{ search_form.venue.label }}</label>
+                {{ search_form.venue }}
+            </div>
+
+            <div class="form-group mobile-collapsed-fields col-lg-2 col-sm-6 pr-0">
+                <label>{{ search_form.layout.label }}</label>
+                {{ search_form.layout }}
+            </div>
+            
+            <div class="form-group mobile-collapsed-fields col-lg-2 pr-0">
+                <label>{{ search_form.people.label }}</label>
+                {{ search_form.people }}
+            </div>
+
+            <!-- /.form-group -->
+            <div class="action-buttons form-group col-lg-2 col-sm-2">
+                <label>&nbsp;</label>
+                <button class="btn btn-primary btn-block search_button" type="button">Search</button>
+                <a href="#" class="mt-2 mobile-only mobile-more-filters">more filters</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $('.mobile-more-filters').click(function() {
+            $('.mobile-collapsed-fields').toggle('fast');
+        });
+
+        {% if selected_location_name and selected_location_id %}
+            var selected_location_name = "{{selected_location_name}}";
+            var selected_location_id = {{selected_location_id}};
+        {% else %}
+            var selected_location_name = false;
+            var selected_location_id = false;
+        {% endif %}
+
+        $('.advance').click(function() {
+            $(this).find('i').toggleClass('fa-angle-down fa-angle-up');
+            $('.advance-field').toggleClass('show');
+        });
+        $('.reset-search-form').click(function() {
+            $('#search_form select').not('#id_property_type').val('').trigger('change');
+        });
+
+        $.get('{% url "portal:locations-list" %}', function(response) {
+            locationsArray = response;
+
+            if(selected_location_name) {
+                $('#lt').val(selected_location_name);
+                $('#location').val(selected_location_id);
+            }
+        });
+        
+    });
+</script>
+{% block extra_js %}
+    <script type="text/javascript" src='{% static "js/search.js" %}?v=1.1'></script>
+{% endblock %}

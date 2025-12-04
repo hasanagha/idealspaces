@@ -1,0 +1,203 @@
+{% extends "account/base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}
+    My Properties
+{% endblock %}
+
+{% block account_content %}
+    <div class="page-header bordered">
+        {% if listing %}
+            <h1>Edit: {{ listing }}</h1>
+        {% else %}
+            <h1>Add property</h1>
+        {% endif %}
+    </div>
+    {% if form.errors %}
+    <div class="alert-message error">
+        <h3>Error(s) occurred.</h3>
+        Please check all the required fields.
+    </div>
+    {% endif %}
+    {{ form.media }}
+    <form method="POST">
+        {% csrf_token %}
+        <h3 class="subheadline">
+            Basic Details
+
+            {% if not listing %}
+            <span class="figures">Available Slots | Rent: {{ available_slots.rental_slots }}{% comment %}
+                , Sales: {{ available_slots.sales_slots }}
+            {% endcomment %}</span>
+            {% endif %}
+        </h3>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    {% if form.property_type %}
+                        {{ form.property_type.label_tag }}
+                        {{ form.property_type }}
+                    {% else %}
+                        <label>Property Type: </label>
+                        <strong>{{ listing.get_property_type_display }}</strong>
+                    {% endif %}
+                    {{ form.property_type.errors }}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ form.title.label_tag }} *
+            <input placeholder="Eg: Villa for sale in Dubai Sports City" type="text" name="title" class="form-control form-control-lg" required="" id="id_title" value="{% if form.title.value %}{{ form.title.value }}{% endif %}">
+            {{ form.title.errors }}
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    {{ form.category.label_tag }} *
+                    {{ form.category }}
+                    {{ form.category.errors }}
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    {{ form.price.label_tag }} (AED) *
+                    {{ form.price }}
+                    {{ form.price.errors }}
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    {{ form.bedrooms.label_tag }} *
+                    {{ form.bedrooms }}
+                    {{ form.bedrooms.errors }}
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    {{ form.bathrooms.label_tag }} *
+                    {{ form.bathrooms }}
+                    {{ form.bathrooms.errors }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    {{ form.built_up_area.label_tag }} *
+                    {{ form.built_up_area }}
+                    {{ form.build_up_area.errors }}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    {{ form.plot_area.label_tag }}
+                    {{ form.plot_area }}
+                    {{ form.plot_area.errors }}
+                </div>
+            </div>
+        </div>
+
+        <h3 class="subheadline">Location</h3>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    {{ form.location.label_tag }} *
+                    {{ form.location }}
+                    {{ form.location.errors }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    {{ form.is_furnished.label_tag }}
+                    {{ form.is_furnished }}
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    {{ form.is_fitted.label_tag }}
+                    {{ form.is_fitted }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form.description.label_tag }}
+            <textarea class="form-control" name="description" id="id_description" placeholder="Describe your property">{{ form.description.value }}</textarea>
+            {{ form.description.errors }}
+        </div>
+        <div class="form-group">
+            <h3 class="subheadline">RERA Title Deed Number {{ form.title_deed_number.errors }}</h3>
+            {{ form.title_deed_number }}
+            <div class="clear"></div>
+        </div>
+        <div class="form-group">
+            <h3 class="subheadline">Title Deed {{ form.title_deed.errors }}</h3>
+            <small>(jpg, jpeg, png or pdf only)</small>
+            {{ form.title_deed }}
+            <div class="clear"></div>
+        </div>
+        <div class="form-group">
+            <h3 class="subheadline">Passport Copy {{ form.passport_copy.errors }}</h3>
+            <small>(jpg, jpeg, png or pdf only)</small>
+            {{ form.passport_copy }}
+            <div class="clear"></div>
+        </div>
+        <div class="form-group">
+            <h3 class="subheadline">Upload Pictures of your Property</h3>
+            <div class="ui-dropzone dropzone-images">
+                <input data-uploader-url="{% url 'account:docs-upload' %}" type="file" name="files" class="form-control form-control-lg" multiple data-fileuploader-files='{{ listing_images|safe }}' />
+                <a href="javascript:" class="delete-all">Delete All</a>
+            </div>
+        </div>
+        <div class="form-group">
+            <h3 class="subheadline">Upload Floorplans</h3>
+            <div class="ui-dropzone dropzone-fp">
+                <input data-uploader-url="{% url 'account:docs-upload' %}" type="file" name="floorplans" class="form-control form-control-lg" multiple data-fileuploader-files='{{ listing_floorplans|safe }}' />
+                <a href="javascript:" class="delete-all">Delete All</a>
+            </div>
+        </div>
+        <div class="form-group">
+            <h3 class="subheadline">Additional Features (Amenities)</h3>
+            <div class="feature-list three_cols" style="overflow: hidden;">
+              {{form.amenities}}
+            </div>
+        </div>
+
+        <div class="form-group">
+            
+                {% if form.status %}
+                <div class="row">
+                    <div class="col-12">
+                        {{ form.status.label_tag }}
+                        {{ form.status }}
+                    </div>
+                </div><div class="clear"></div>
+                <br>
+                {% endif %}
+                <div class="row">
+                    <div class="col-12 mt-2">
+                        <button type="submit" class="btn btn-lg btn-primary">Submit Property</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static "lib/fileuploader/jquery.fileuploader.css" %}" />
+{% endblock %}
+{% block extra_js %}
+    <script type="text/javascript" src="{% static "js/account.js" %}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="{% static "lib/tinymce/jquery.tinymce.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "lib/fileuploader/jquery.fileuploader.min.js" %}"></script>
+{% endblock %}

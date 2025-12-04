@@ -1,0 +1,44 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}
+Account Activation
+{% endblock %}
+
+{% block content %}
+<div id="user_signup">
+  <div id="content">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-12 col-xl-10">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url "portal:portal-home" %}">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Account Activation</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-8">
+          <div class="error-template text-center"> 
+            {% if valid %}
+            <i class="fa fa-check fa-5x text-success mb50 animated zoomIn"></i>
+            <h3 class="main-title centered"><span>Success!</span></h3>
+            <div class="main-title-description">Your account activated successfully.</div>
+            <div class="error-actions"><a href="{% url 'account:login'%}" class="btn btn-primary btn-lg">Login </a> </div>
+            {% else %}
+            <i class="fa fa-times fa-5x text-error mb20 animated zoomIn"></i>
+            <h3 class="main-title centered"><span>Error!</span></h3>
+            <div class="main-title-description">Either the link is expired or your account is already active.</div>
+            <div class="error-actions"><a href="{% url 'account:login'%}" class="btn btn-primary btn-lg">Login </a> </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

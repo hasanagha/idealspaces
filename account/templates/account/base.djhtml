@@ -1,0 +1,74 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block body_class %}account-panel{% endblock %}
+{% block page_title %}My Account{% endblock %}
+
+{% block content %}
+<div class="s-layout">
+  <!-- Sidebar -->
+  <div class="s-layout__sidebar">
+    <a class="s-sidebar__trigger" href="#0">
+       <i class="fa fa-bars"></i>
+    </a>
+
+    <nav class="s-sidebar__nav">
+       <ul>
+          <li>
+             <a class="s-sidebar__nav-link {% if request.resolver_match.url_name == 'user-dashboard'%}active{% endif%}" href="{% url "account:user-dashboard"%}">
+                <i class="fa fa-columns"></i><em>Dashboard</em>
+             </a>
+          </li>
+          <li>
+             <a class="s-sidebar__nav-link {% if request.resolver_match.url_name == 'user-listings'%}active{% endif%}" href="{% url 'account:user-listings' %}">
+               <i class="fa fa-building"></i><em>My Spaces</em>
+             </a>
+          </li>
+          <li>
+             <a class="s-sidebar__nav-link {% if request.resolver_match.url_name == 'listing-inquiries'%}active{% endif%}" href="{% url 'account:listing-inquiries' %}">
+                <i class="fa fa-envelope"></i><em>Inquiries</em>
+             </a>
+          </li>
+          <li>
+             <a class="s-sidebar__nav-link {% if request.resolver_match.url_name == 'stats'%}active{% endif%}" href="{% url 'account:stats' %}">
+                <i class="fa fa-pie-chart"></i><em>Statistics</em>
+             </a>
+          </li>
+          <hr />
+          <li>
+              <a href="{% url "account:user-profile" %}" class="s-sidebar__nav-link {% if request.resolver_match.url_name == 'user-profile'%}active{% endif%}">
+                  <i class="fa fa-cog"></i> <em>Company Settings</em>
+              </a>
+          </li>
+
+          <li>
+              <a class="s-sidebar__nav-link {% if request.resolver_match.url_name == 'contracts'%}active{% endif%}" href="{% url 'account:contracts' %}">
+                  <i class="fa fa-file"></i> <em>Contracts</em>
+              </a>
+          </li>
+
+          <li>
+              <a class="s-sidebar__nav-link {% if request.resolver_match.url_name == 'user-listingss'%}active{% endif%}" href="{% url "account:logout" %}">
+                  <i class="fa fa-globe"></i> <em>Logout</em>
+              </a>
+          </li>
+       </ul>
+    </nav>
+  </div>
+
+  <!-- Content -->
+  <main class="s-layout__content">
+      <div class="dashboard-wrapper">
+          <div class="dashboard-content">
+              <div class="container-fluid">
+                  <div class="row">
+                      {% block account_content %}{% endblock %}
+                  </div>
+              </div>
+          </div>
+      </div>
+  </main>
+</div>
+{% endblock %}
+

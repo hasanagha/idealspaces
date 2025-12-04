@@ -1,0 +1,120 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}Privacy Policy - Ideal Spaces{% endblock %}
+{% block og_title %}Privacy Policy - Ideal Spaces{% endblock %}
+{% block twitter_title %}Privacy Policy - Ideal Spaces{% endblock %}
+{% block meta_description %}This privacy policy describes the types of information we may collect from you or that you may provide when you visit our Sites or use our Services{% endblock %}
+{% block og_description %}This privacy policy describes the types of information we may collect from you or that you may provide when you visit our Sites or use our Services{% endblock %}
+{% block twitter_description %}This privacy policy describes the types of information we may collect from you or that you may provide when you visit our Sites or use our Services{% endblock %}
+
+{% block content %}
+<div class="main fixed-width-container">
+    <div class="main-inner">
+        <div class="content">
+            <div class="container">
+
+                <!--==================== About us HEADER ====================-->
+                <div class="landing-header">
+                    <div class="banner-img-9">
+                        <!-- Main Title -->
+                        <div class="main-title">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-5">
+                                        <div class="">
+                                            <p>IdealSpaces</p>
+                                            <h1>Privacy Policy</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Main Title -->
+                    </div>
+                    <!--  // Contact Modal -->
+                    <!--==================== NEW INSURANCE ====================-->
+                    <hr />
+                    <div class="mt-5">
+                        <div class="container">
+                            <h4>Data Protection and Privacy Statement</h4>
+                            <p class="mt-2">
+                                IdealSpaces understands that you have full rights to your privacy and promises to respect it. This Privacy Policy is therefore a clear declaration of how IdealSpaces collects collects, uses, maintains and discloses information that has been collected from each users that reaches our website, affiliated links and mobile site. This policy expands to our site, our products and our services. However, unless stated otherwise in writing, IdealSpaces holds the Data Controller authority to control data under the Data Protection Act 1998 and for the purposes of the General Data Protection Regulation when the GDPR comes into force on 25 May 2018.</p>
+
+                            <h4 class="mt-4">Types of data we collect and/or process.</h4>
+
+                            <ul class="mt-4">
+                                <li class="mb-2 ml-2">- Basic data – user’s name, company name etc.
+                                <li class="mb-2 ml-2">- Contact information – user’s email address, phone number etc.</li>
+                                <li class="mb-2 ml-2">- Content data - (e.g. content entries, photos, videos, rates, reviews, offers, availability etc).</li>
+                                <li class="mb-2 ml-2">- Payments information - (e.g. card details for future transactions, bank information for payments etc.)</li>
+                                <li class="mb-2 ml-2">- Usage data – (e.g. Websites visited, Websites visited, interest in content, access times, favorite posts etc) and</li>
+                                <li class="mb-2 ml-2">- Meta data - (e.g. device information, IP addresses).</li>
+                            </ul>
+
+                            <h4 class="mt-4">Purpose of information we collect and/or process:</h4>
+
+                            <p class="mt-2">We would like to let our visitors know that when they visit our website, two general levels of information is retained about their visit. In level one, statistical information and any other analytical information is collected on a n aggregate and non-individual specific basis of all browsers who visit the site. The second level of information that is retained is personal information or information that is related to a specific visitor who knowingly chooses to provide that information.</p>
+
+                            <p class="mt-2">The statistical and analytical information collected is general to the user and not a specific information individually which revolves around the number of people who visit our site, the number of people who return to this site, what pages they visit, where they came from and the pages that they made an exit on. This general visitor information helps us understand and analyze site traffic which further helps us in improving our site efficiency and capacity. This information also helps us in analyzing which site areas are most popular amongst the visitors and user behaviors on each page to further rectify any errors that may be causing visitors to go away.</p>
+
+                            <p class="mt-2">If you are using our "Contact Us", "enquiry" or our "sign-up" page, you agree to send us your required information through which we will be able to send you newsletters, offers, alerts or help you with your query. You will also leave information when you complete a meeting room booking or instant quote. When you opt to enter this information, you will be entering some levels of information which may include name, email address, number etc. This information will only be used by us in the following manner,</p>
+
+                            <ul class="mt-4">
+                                <li class="mb-2 ml-2">- The purposes for which it was provided by you.</li>
+                                <li class="mb-2 ml-2">- Verification purposes and statistical analysis. </li>
+                                <li class="mb-2 ml-2">- Marketing (If you have consented to opt-in).</li>
+                                <li class="mb-2 ml-2">- Administration purposes.</li>
+                                <li class="mb-2 ml-2">- In the case of missing information left when booking or receiving an instant quote for meeting rooms.</li>
+                                <li class="mb-2 ml-2">- Your information will also be available to the hotel or conference venue in question.</li>
+                            </ul>
+
+                            <h4 class="mt-4">Payment processing</h4>
+                            <p class="mt-2">All the payment details received by our company by you are encrypted using 256-bit secure socket layers (SSL) technology before being submitted to the internet for safe keeping of your information. If you are making a payment through application, it will be processed through payment gateway provider.</p>
+
+                            <h4 class="mt-4">Accessing your own Data</h4>
+
+                            <p class="mt-2">If you wish to get a copy of your personal data/ information held my IdealSpaces, You have the right to do so and we will comply to it subjected to reasonable frequency of requests.</p>
+
+                            <p class="mt-2">Usually, there is no fee charged to comply with such requests, however, we may charge a "moderate fee" where the request is subjected to excessive implication or is manifestly unfounded. This fee is only to cover the administration costs undergone in meeting the request.</p>
+                            <p class="mt-2">We can also charge a reasonable fee if the "user" or "you" requests further copies of your data following a request. We base the fee on the administrative costs of providing further copies.</p>
+
+                            <p class="mt-2">If you require a copy of your data, please email <a href="mailto:support@idealspaces.com">support@idealspaces.com</a></p>
+
+                            <h4 class="mt-4">Governing Law</h4>
+
+                            <p class="mt-2">This legal notice and terms and conditions of use and all issues regarding this Website shall be governed by the laws of United Arab Emirates (UAE).</p>
+
+                            <h4 class="mt-4">General</h4>
+
+                            <p class="mt-2">You may not transfer any of your rights under this privacy policy to any other person. We may transfer our rights under this privacy policy where we reasonably believe your rights will not be affected.</p>
+
+                            <p class="mt-2">If any court or competent authority finds that any provision of this privacy policy (or part of any provision) is invalid, illegal or unenforceable, that provision or part-provision will, to the extent required, be deemed to be deleted, and the validity and enforceability of the other provisions of this privacy policy will not be affected.</p>
+
+                            <p class="mt-2">Unless otherwise agreed, no delay, act or omission by a party in exercising any right or remedy will be deemed a waiver of that, or any other, right or remedy.</p>
+
+                            <h4 class="mt-4">Changes to this privacy policy</h4>
+
+                            <p class="mt-2">IdealSpaces has the right to change its privacy policy at any time that we deem necessary from time to time or when it is required by the law. Changes made to our privacy policy will be immediately posted on the website. If you have subscribed to our site, we will also send you an email notification of our policy change. It should be noted that you are deemed to have accepted our terms of the privacy policy when you use our site for the first time.</p>
+
+                            <p class="mt-2">You can visit our privacy policy on our site at any time.</p>
+
+                            <h4 class="mt-4">Copyright Statement</h4>
+
+                            <p class="mt-2">Our site is completely protected by Copyrights, trade mark, database right, sui generis right and other intellectual property laws under national laws and international treaties  which covers all the information, content, graphics, text, images, trademarks, trade names and logos and the materials contained on this website.</p>
+                            <p class="mt-2">This site may be copied for the purpose of viewing. But may not be permanently stored or copied for further distribution.</p>
+                        </div>
+                    </div>
+                    <!--//END NEW INSURANCE -->
+                </div>
+                <!--//END HEADER -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.main-inner -->
+</div>
+<!-- /.main -->
+{% endblock %}

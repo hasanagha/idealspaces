@@ -1,0 +1,92 @@
+{% load static %}
+<div class="search-form-container">
+    <form action="{% url 'portal:portal-search' %}" id="search_form" name="search_form">
+        <div class="row justify-content-md-center">
+            <div class="form-group col-lg-8 col-sm-3">
+                <label>{{ search_form.location.label }}</label>
+                {{ search_form.location }}
+            </div>
+            <!-- /.form-group -->
+            <div class="form-group col-lg-2 col-sm-3">
+                <label>{{ search_form.category.label }}</label>
+                {{ search_form.category }}
+            </div>
+
+            <div class="form-group col-lg-2 p-0 advance-field">
+                <label>{{ search_form.frequency.label }}</label>
+                {{ search_form.frequency }}
+            </div>
+
+            <div class="form-group col-lg-2 col-sm-2 p-0 advance-field">
+                <label>{{ search_form.venue.label }}</label>
+                {{ search_form.venue }}
+            </div>
+
+            <div class="form-group col-lg-2 col-sm-6 p-0 advance-field">
+                <label>{{ search_form.layout.label }}</label>
+                {{ search_form.layout }}
+            </div>
+            
+            <div class="form-group col-lg-2 p-0 advance-field">
+                <label>{{ search_form.people.label }}</label>
+                {{ search_form.people }}
+            </div>
+
+            <div class="form-group col-lg-4 p-0 advance-field">
+                <label>{{ search_form.amenities.label }}</label>
+                {{ search_form.amenities }}
+            </div>
+
+            <!-- /.form-group -->
+            <div class="form-group col-lg-2 col-sm-2">
+                <label>&nbsp;</label>
+                <button class="btn btn-primary btn-block search_button" type="button">Search</button>
+            </div>
+
+            <div class="reset-search-form">
+                <i class="fa fa-refresh"></i> Reset
+            </div>
+            <div class="advance">
+                <i class="fa fa-angle-down"></i> More filters
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        {% if selected_location_name and selected_location_id %}
+            var selected_location_name = "{{selected_location_name}}";
+            var selected_location_id = {{selected_location_id}};
+        {% else %}
+            var selected_location_name = false;
+            var selected_location_id = false;
+        {% endif %}
+
+        $('.advance').click(function() {
+            $(this).find('i').toggleClass('fa-angle-down fa-angle-up');
+            $('.advance-field').toggleClass('show');
+        });
+        $('.reset-search-form').click(function() {
+            $('#search_form select').not('#id_property_type').val('').trigger('change');
+        });
+
+        $.get('{% url "portal:locations-list" %}', function(response) {
+            locationsArray = response;
+
+            $.each(locationsArray, function(k, v){
+                $("#id_location").append(new Option(v.name, k));
+            });
+
+            if(selected_location_name) {
+                $('#lt').val(selected_location_name);
+                $('#location').val(selected_location_id);
+            }
+        });
+        
+    });
+</script>
+{% block extra_js %}
+    <script type="text/javascript" src='{% static "js/search.js" %}?v=1.1'></script>
+{% endblock %}

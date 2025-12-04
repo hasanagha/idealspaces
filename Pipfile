@@ -1,0 +1,32 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django-jet = "==1.0.8"
+django-htmlmin = "==0.10.0"
+django-s3direct = "==1.0.4"
+django-runas = "*"
+django-el-pagination = "==3.2.4"
+django-markdown-deux = "==1.0.5"
+django-pagedown = "==1.0.6"
+django-multiselectfield = "==0.1.8"
+psycopg2 = "==2.7.5"
+django-rest-framework = "==0.1.0"
+treelib = "==1.5.3"
+short-url = "==1.2.2"
+requests = "==2.19.1"
+sendwithus = "==5.0.0"
+boto3 = "==1.8.9"
+Django = "==2.1.1"
+ipdb = "*"
+phonenumbers = "*"
+pytz = "*"
+twilio = "*"
+sentry-sdk = "*"
+
+[requires]
+python_version = "3.7"

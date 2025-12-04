@@ -1,0 +1,290 @@
+{% load static %}
+<!DOCTYPE html>
+<html data-country="ae" data-domain="idealspaces.com" data-lang="en" data-type="hybrid" lang="en">
+    <head>
+        <title>{% block page_title %}Serviced Offices, Banquets, Co-working spaces, Meeting Rooms{% endblock %}</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+        <meta name="description" content="{% block meta_description %}{% endblock %}" />
+
+        <meta property="og:locale" content="en_AE" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="{% block og_title %}Serviced Offices, Banquets, Co-working spaces, Meeting Rooms{% endblock %}" />
+        <meta property="og:description" content="{% block og_description %}{% endblock %}" />
+        <meta property="og:url" content="https://www.idealspaces.com{{ request.get_full_path|slice:":-1" }}" />
+        <meta property="og:site_name" content="IDEAL SPACES" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="{% block twitter_title %}Serviced Offices, Banquets, Co-working spaces, Meeting Rooms{% endblock %}" />
+        <meta name="twitter:description" content="{% block twitter_description %}{% endblock %}" />
+
+        {% block canonical %}<link rel="canonical" href="{{ current_page_canonical }}" />{% endblock %}
+
+        {% block extra_head_tags %}{% endblock %}
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+
+        <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+        <link href="{% static "libs/owl-carousel/owl.carousel.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "libs/chartist/chartist.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "libs/select2/css/select2.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "libs/lightbox/simplelightbox.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "dist/style.min.css" %}?v=1.1" rel="stylesheet" type="text/css" id="css-primary" />
+        <link rel="shortcut icon" type="image/x-icon" href="{% static "favicon.png"%}" />
+
+        <script type="text/javascript" src='{% static "js/jquery.js"%}'></script>
+
+        {% block ld_schema %}{% endblock %}
+
+        {% if not debug %}
+        <script src="https://browser.sentry-cdn.com/5.6.3/bundle.min.js" integrity="sha384-/Cqa/8kaWn7emdqIBLk3AkFMAHBk0LObErtMhO+hr52CntkaurEnihPmqYj3uJho" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Sentry.init({ dsn: 'https://681fb7efcfdb467b8a0ac388abeeaff4@sentry.io/1766865' });
+        </script>
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148412520-1"></script>
+        <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'UA-148412520-1');
+        </script>
+        {% endif %}
+    </head>
+    <body id="{% block page_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">
+        <div class="page-wrapper">
+            <div class="header-wrapper ">
+                <div class="header header-small">
+                    <div class="header-inner">
+                        <div class="container-fluid">
+                            <div class="header-top">
+                                <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+                                    <a class="header-logo navbar-brand ml-0" href="{% url 'portal:portal-home' %}">
+                                        {% if request.resolver_match.url_name == '' or request.resolver_match.url_name == 'portal-home' %}
+                                        <img alt="List your Spaces with Ideal Spaces" src="{% static "logos/idealspaces-logo-horizontal-home.png" %}" />
+                                        {% else %}
+                                        <img alt="List your Spaces with Ideal Spaces" src="{% static "logos/idealspaces-logo-horizontal.png" %}" />
+                                        {% endif %}
+                                    </a>
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+
+                                    <div class="collapse navbar-collapse nav-primary" id="navbarSupportedContent">
+                                        <ul class="navbar-nav ml-auto">
+                                            <li class="nav-item nav-cta">
+                                                <a href="{% url 'portal:list-space' %}#list" class="btn-primary btn-sm btn-block m-t-5">List your space</a>
+                                            </li>
+                                            <li class="nav-item {% if request.resolver_match.url_name == ''%}active{% endif %}">
+                                                <a class="nav-link" href="{% url 'portal:portal-home' %}">
+                                                    Home
+                                                </a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle {% if request.resolver_match.url_name == 'portal-search'%}active{% endif %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{% url 'portal:portal-search' %}">
+                                                    Spaces
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                    <a class="dropdown-item" href="{% url 'portal:search-by-category' category='serviced-offices' %}">
+                                                        Serviced Offices
+                                                    </a>
+                                                    {% comment %}
+                                                        <a class="dropdown-item" href="{% url 'portal:search-by-category' category='banquet-halls' %}">
+                                                            Banquet Halls
+                                                        </a>
+                                                        <a class="dropdown-item" href="{% url 'portal:search-by-category' category='coworking-spaces' %}">
+                                                            Co-working Spaces
+                                                        </a>
+                                                    {% endcomment %}
+                                                    <a class="dropdown-item" href="{% url 'portal:search-by-category' category='meeting-rooms' %}">
+                                                        Meeting Rooms
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" id="moreDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                                                    More
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="moreDropdown">
+                                                    <a class="dropdown-item" href="{% url 'portal:about' %}">
+                                                        About IdealSpaces.com
+                                                    </a>
+                                                    <a class="dropdown-item" href="{% url 'portal:contact' %}">
+                                                        Contact
+                                                    </a>
+                                                    <a class="dropdown-item" href="{% url 'speedyblog:blog_index' %}">
+                                                        Blogs
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            {% if request.user.is_authenticated %}
+                                            <li class="nav-item user-account">
+                                                <a class="nav-link dropdown-toggle" id="myAccountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{% url 'account:user-dashboard'%}">
+                                                    My Account
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="myAccountDropdown">
+                                                    <a class="dropdown-item" href="{% url "account:user-profile" %}">
+                                                        Profile
+                                                    </a>
+                                                    <a class="dropdown-item" href="{% url "account:user-listings" %}">
+                                                        Listings
+                                                    </a>
+                                                    {% comment %}
+                                                    <a class="dropdown-item" href="{% url "account:user-favorites" %}">
+                                                        Favorites
+                                                    </a>
+                                                    
+                                                    <a class="dropdown-item" href="{% url "account:user-payments" %}">Payments</a>
+                                                    {% endcomment %}
+                                                    <a class="dropdown-item" href="{% url "account:logout" %}">
+                                                        Logout
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </nav>
+                                <div class="header-top-inner">
+                                   
+                                </div>
+                                <!-- /.header-top-inner -->
+                            </div>
+                            <!-- /.header-top -->
+                        </div>
+                        <!-- /.container -->
+                    </div>
+                    <!-- /.header-inner -->
+                </div>
+                <!-- /.header -->
+            </div>
+            <!-- /.header-wrapper-->
+            <div class="main-wrapper">
+                <!-- /.main -->
+                {% block content %}{% endblock %}
+            </div>
+            <!-- /.main-wrapper -->
+            <div class="footer-wrapper">
+                <div class="container">
+                    <div class="footer-inner">
+                        <div class="footer-top">
+                            <div class="footer-top-left">
+                                <img class="is-logo-footer" src="{% static "logos/idealspaces-logo-horizontal-home.png" %}" />
+                                <p>Ideal Spaces is a marketplace platform which helps to advertise business centers, meeting rooms, and co-working spaces. Our platform is a perfect solution for both business center owners and customers. We will help to grow businesses and diminish the time spent searching online by using the latest technology in the market. </p>
+                                <br />
+                                <div class="social">
+                                    <a href="{{ facebook_link }}" target="_blank">
+                                        <i class="fa fa-facebook-f"></i>
+                                    </a>
+                                    <a href="{{ twitter_link }}" target="_blank">
+                                        <i class="fa fa-twitter">
+                                        </i>
+                                    </a>
+                                    <a href="{{ instagram_link }}" target="_blank">
+                                        <i class="fa fa-instagram">
+                                        </i>
+                                    </a>
+                                </div>
+                                <!-- /.social -->
+                            </div>
+                            <!-- /.footer-top-left -->
+                            <div class="footer-top-right">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul class="nav">
+                                            <li>
+                                                <a href="{% url 'portal:about' %}">About Us</a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'portal:contact' %}">Contact Us</a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'portal:policy' %}">Privacy Policy</a>
+                                            </li>
+                                            {% comment %}
+                                            <li>
+                                                <a href="{% url 'portal:terms' %}">Terms &amp; Conditions</a>
+                                            </li>
+                                            {% endcomment %}
+                                            <li>
+                                                <a href="{% url 'portal:cancellation-policy' %}">Cancellation Policy</a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'speedyblog:blog_index' %}">Blog</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul class="nav">
+                                            {% comment %}
+                                                <li>
+                                                    <a href="{% url 'portal:why-us' %}">Why list with us?</a>
+                                                </li>
+                                            {% endcomment %}
+                                            <li>
+                                                <a href="{% url 'portal:list-space' %}#list">List your space</a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'account:login' %}">Client Login</a>
+                                            </li>
+                                            <li class="ml-2">
+                                                <br />
+                                                <h6 class="mb-1 white">Coming Soon</h6>
+                                                <a title="comming soon" href="#" class="m-0">
+                                                    <img class="mr-2" title="coming soon" src="{% static "img/appstore.png" %}" width="70" />
+                                                    <img title="coming soon" src="{% static "img/playstore.png" %}" width="70"/>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.footer-top-right -->
+                        </div>
+                        <div class="copyright">Made with <img class="mr-1 ml-1" src="{% static "img/idealspaces-heart.png" %}" alt=""> in Dubai <a href="https://www.flagpictures.com/country-flags/united-arab-emirates/" target="_blank"><img src="https://www.flagpictures.com/static/flags/vector/ae.svg" alt="UAE Flag" width="20"></a> &copy; {% now 'Y' %} IdealSpaces.com. All Rights Reserved.</div>
+                    </div>
+                    <!-- /.footer-inner -->
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /.footer-wrapper -->
+        </div>
+        <!-- /.page-wrapper -->
+        {% comment %}
+            <script src="//maps.googleapis.com/maps/api/js" type="text/javascript"></script>
+        {% endcomment %}
+        <script type="text/javascript" src="{% static 'libs/sticky-sidebar/ResizeSensor.min.js'%}"></script>
+        <script type="text/javascript" src="{% static 'libs/sticky-sidebar/theia-sticky-sidebar.min.js'%}"></script>
+        <script type="text/javascript" src='{% static "js/jquery.ezmark.min.js"%}'></script>
+        <script type="text/javascript" src='{% static "js/tether.min.js"%}'></script>
+        <script type="text/javascript" src='{% static "js/bootstrap.min.js"%}'></script>
+        {% comment %}
+        <script type="text/javascript" src='{% static "js/gmap3.min.js"%}'></script>
+        <script type="text/javascript" src='{% static "libs/chartist/chartist.min.js"%}'></script>
+        {% endcomment %}
+        <script type="text/javascript" src='{% static "js/custom.js"%}'></script>
+        <script type="text/javascript" src='{% static "libs/select2/js/select2.min.js"%}'></script>
+        <script type="text/javascript" src='{% static "js/utils.js" %}'></script>
+
+        {% block extra_js %}{% endblock %}
+
+        {% if not debug %}
+        {% comment %}
+            <script type="text/javascript">
+                var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:"258920d05c11d49a7d3a487622ae9933444d9f8c21ed9606099a11492e2221eeb969b17d3a2703ff577e982047290a3e", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");
+                </script>
+        {% endcomment %}
+
+        {% comment %}
+            <script>
+                  (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+                    t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+                  })(window, document, '_gscq','script','//widgets.getsitecontrol.com/192100/script.js');
+                </script>
+        {% endcomment %}
+        {% endif %}
+    </body>
+</html>

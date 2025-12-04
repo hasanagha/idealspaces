@@ -1,0 +1,41 @@
+{% load static %}
+{% load humanize %}
+
+<div class="row">
+{% for listing in listings %}                                
+    <div class="col-md-6 col-lg-4">
+        <div class="listing-box">
+            <a href="{{ listing.get_listing_url }}">
+            <div class="listing-box-image" style="background-image: url('{{ listing.get_default_image }}')">
+                {% if listing.is_featured %}
+                    <div class="listing-box-image-label">Featured</div>
+                {% endif %}
+                &nbsp;
+            </div>
+            </a>
+            <!-- /.listing-box-image -->
+            <div class="listing-box-title">
+                <h2>
+                    <a href="{{ listing.get_listing_url }}">{{ listing.title }}</a>
+                </h2>
+                <h3>
+                    AED {{ listing.price_monthly|intcomma }}
+                </h3>
+            </div>
+            <!-- /.listing-box-title -->
+            <div class="listing-box-content">
+                <dl>
+                    <dt>Type</dt>
+                    <dd>{{ listing.get_category_display }}</dd>
+                    <dt>Location</dt>
+                    <dd>{{ listing.get_location }}</dd>
+                    <dt>Amenities</dt>
+                    <dd>{{ listing.amenities }}</dd>
+                </dl>
+            </div>
+            <!-- /.listing-box-cotntent -->
+        </div>
+        <!-- /.listing-box -->
+    </div>
+{% endfor %}
+</div>

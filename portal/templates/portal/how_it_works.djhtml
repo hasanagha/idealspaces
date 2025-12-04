@@ -1,0 +1,78 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}
+How it Works
+{% endblock %}
+
+{% block content %}
+<div id="about">
+  <div id="content" class="how-it-works">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-12 col-xl-10">
+        <div class="page-header">
+          <h1>
+            <center>
+              <strong>How to rent your property online?</strong><br>
+              Right Doors is your right place to rent your property.
+            </center>
+          </h1>
+        </div>
+
+        <div class="row block">
+          <div class="col-lg-6">
+            <div class="big-label">1. Find</div>
+            <p>We got you covered with all the best properties in Dubai that you can browse from our site. There are a lot options to choose from! Wherever your location may be in Dubai, there will always be a suitable place for your need. Don’t worry about the hassle of finding a new place to rent here in Dubai. Just select your preferred location, choose your desired property according to your budget, and now you are ready for the next step.</p>
+          </div>
+          <div class="col-lg-6">
+            <img src="{% static "img/find-property.jpg" %}" />
+          </div>
+        </div>
+
+        <div class="row block">
+          <div class="col-lg-6">
+            <img src="{% static "img/view-property.jpg" %}" />
+          </div>
+          <div class="col-lg-6">
+            <div class="big-label">2. View</div>
+            <p>Our property experts will accompany you to your chosen property to rent. You will be able to see every inch of detail of the place so you can make your considerations. We will always be after your satisfaction for your rental. So be particular with what you need and our experts would willingly help to find the place that suits you.</p>
+          </div>
+          
+        </div>
+
+        <div class="row block">
+          <div class="col-lg-6">
+            <div class="big-label">3. Offer</div>
+            <p>Now you are a step closer to your desired property to rent in Dubai. Our aim is to make sure that you get the best property deals with our precise negotiations. And because you are our priority, we will do our best to secure that every negotiation we make would lead you to the right way.  Our property experts will ensure that all negotiations would be smooth and hassle free, by coming up with the best possible deals that suits your interest.</p>
+          </div>
+          <div class="col-lg-6">
+            <img src="{% static "img/tenancy-agreement.jpg" %}" />
+          </div>
+        </div>
+
+        <div class="row block">
+          <div class="col-lg-6">
+            <img src="{% static "img/move.jpg" %}" />
+          </div>
+          <div class="col-lg-6">
+            <div class="big-label">4. Move</div>
+            <p>That’s how easy it is! Now you can prepare your things and begin a new journey on your new space here in Dubai. Make sure that you bring all the things that you need on your new place to rent. And after that, you can just sit back and relax, and enjoy! Renting a property in Dubai has never been this easy!</p>
+          </div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <div class="strip">
+      <h2>We are local property experts.</h2>
+      <a href="{% url 'account:login' %}" class="btn btn-pink">Get Started Now</a>
+    </div>
+  </div>
+</div>
+  
+</div>
+{% endblock %}

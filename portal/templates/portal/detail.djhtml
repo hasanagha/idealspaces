@@ -1,0 +1,597 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+{% load markdown_deux_tags %}
+
+{% block page_title %}{{ meta_title }}{% endblock %}
+{% block og_title %}{{ meta_title }}{% endblock %}
+{% block twitter_title %}{{ meta_title }}{% endblock %}
+
+{% block meta_description %}{{ meta_description|markdown|striptags|slice:'150' }}{% endblock %}
+{% block og_description %}{{ meta_description|markdown|striptags|slice:'150' }}{% endblock %}
+{% block twitter_description %}{{ meta_description|markdown|striptags|slice:'150' }}{% endblock %}
+
+{% block page_id %}listing_detail{% endblock %}
+{% block ld_schema %}
+    <script type="application/ld+json">
+    {
+        "name": "{{ meta_title }}",
+        "telephone": "+971 52 1095 306",
+        "email": "support@idealspaces.com",
+        "url": "{{ request.build_absolute_uri }}",
+        "hasMap": "https://www.google.com/maps/@{{ listing.get_latitude }},{{ listing.get_longitude }},15z",
+        "address": {
+            "@type" : "PostalAddress",
+            "streetAddress" : "{{ listing.get_location }}",
+            "addressLocality": "Dubai",
+            "postalCode": "",
+            "addressCountry": "AE"
+        },
+        "image": "{% if listing.get_images %}{{ listing.get_images.0.url }}{% endif %}",
+        "description": "{{ listing.description|striptags }}",
+        "@type": "Store",
+        "priceRange": "Starting from {{ pricing_meta }}"
+    }
+    </script>
+{% endblock %}
+
+{% block content %}
+
+<div class="main">
+
+    <div class="main-inner">
+        <div class="content">
+            {% if listing.get_images %}
+            <div class="six-gallery">
+                <div class="six-gallery__container row">
+                    {% for image in listing.get_images %}
+                        {% if forloop.counter == 1 %}
+                            <div class="six-image__first">
+                                <div class=" six-image__first_one six-image" style="background-image:url({{ image.url }})"></div>
+                            </div>
+                        {% elif forloop.counter == 2 or forloop.counter == 3 %}
+                            {% if forloop.counter == 2 %}
+                            <div class="six-image__second">
+                                <div class="six-image__second_one six-image" style="background-image:url({{ image.url }})"/>
+                                </div>
+                            {% endif %}
+                            {% if forloop.counter == 3 %}
+                                <div class="six-image__second_two six-image" style="background-image:url({{ image.url }})"/>
+                                </div>
+                            </div>
+                            {% endif %}
+                        {% elif forloop.counter == 4 or forloop.counter == 5 %}
+                            {% if forloop.counter == 4 %}
+                            <div class="six-image__third">
+                                <div class="six-image__third_one six-image" style="background-image:url({{ image.url }})"/>
+                                </div>
+                            {% endif %}
+                            {% if forloop.counter == 5 %}
+                                <div class="six-image__third_two six-image" style="background-image:url({{ image.url }})"/>
+                                </div>
+                            </div>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="six-gallery-more">
+                    <a href="#"> view more</a>
+                </div>
+                <h1 class="title">{{ listing.title }}</h1>
+            </div>
+            {% endif %}
+            {% comment %}
+            {% if listing.get_images %}
+            <div class="gallery">
+                {% for image in listing.get_images %}
+                    <div class="gallery-item" style="background-image: url('{{ image.url }}');">
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endcomment %}
+            <div class="fixed-width-container listing-detail-attributes">
+                <div class="container">
+                    <div class="row">
+                        <div class="listing-detail-attribute col-lg-6">
+                            <div class="key">
+                                Location
+                            </div>
+                            <div class="value">
+                                {{ listing.get_location }}
+                            </div>
+                        </div>
+                        <div class="listing-detail-attribute col-lg-3">
+                            <div class="key">
+                                Category
+                            </div>
+                            <div class="value">
+                                {{ listing.get_category_display }}
+                            </div>
+                        </div>
+                        <div class="listing-detail-attribute col-lg-3 text-right">
+                            <div class="key">
+                                Price
+                            </div>
+                            <div class="value">
+                                AED {{ listing.get_price_display|safe }}
+                            </div>
+
+                            <a href="#enquiry_form" class="mt-3 mobile-only mobile-button btn btn-primary">Enquire Now</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fixed-width-container">
+                <div class="container">                    
+                    <div class="row">
+                        <div class="listing-detail col-md-8 col-lg-8">
+                            <div class="row overview">
+                                <div class="col-sm-3 col-md-4">
+                                    <h2>
+                                        Attributes
+                                    </h2>
+                                </div>
+                                <div class="col-sm-9 col-md-8">
+                                    <ul>
+                                        {% comment %}
+                                            <li>
+                                                <strong>Reference No.</strong>
+                                                <span>
+                                                    {{ listing.get_reference_code }}
+                                                </span>
+                                            </li>
+                                        {% endcomment %}
+                                        <li>
+                                            <strong>Venue Type</strong>
+                                            <span>
+                                                {{ listing.get_venue_display }}
+                                            </span>
+                                        </li>
+                                        {% if listing.layout %}
+                                        <li>
+                                            <strong>Available Layouts</strong>
+                                            <span>
+                                                {{ listing.layout }}
+                                            </span>
+                                        </li>
+                                        {% endif %}
+                                        {% if listing.parking %}
+                                        <li>
+                                            <strong>Parking</strong>
+                                            <span>
+                                                {{ listing.parking }}
+                                            </span>
+                                        </li>
+                                        {% endif %}
+                                        {% if listing.deposit %}
+                                        <li>
+                                            <strong>Deposit</strong>
+                                            <span>
+                                                {{ listing.deposit|intcomma }}
+                                            </span>
+                                        </li>
+                                        {% endif %}
+                                        {% if listing.deposit %}
+                                        <li>
+                                            <strong>Minimum Term</strong>
+                                            <span>
+                                                {{ listing.mimimum_term }}
+                                            </span>
+                                        </li>
+                                        {% endif %}
+                                        {% if listing.area %}
+                                        <li>
+                                            <strong>Area</strong>
+                                            <span>
+                                                {{ listing.area }} sqft
+                                            </span>
+                                        </li>
+                                        {% endif %}
+                                        {% if listing.capacity_min or listing.capacity_max %}
+                                        <li>
+                                            <strong>Capacity</strong>
+                                            <span>
+                                                {% if listing.capacity_min %}{{ listing.capacity_min }}{% endif %}
+                                                {% if listing.capacity_min or listing.capacity_max %}-{% endif %}
+                                                {% if listing.capacity_max %}{{ listing.capacity_max }}{% endif %}
+                                            </span>
+                                        </li>
+                                        {% endif %}
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <hr class="mt-5 mb-4" />
+                                <div class="col-sm-3 col-md-4">
+                                    <h2>Pricing</h2>
+                                </div>
+                                <div class="col-sm-9 col-md-8">
+                                    <div class="overview">
+                                        <ul>
+                                            <li>
+                                                <strong>Hourly</strong>
+                                                <span>
+                                                    {% if listing.price_hourly %}
+                                                        AED {{ listing.price_hourly|intcomma }}
+                                                    {% else %}
+                                                        N/A
+                                                    {% endif %}
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <strong>Daily</strong>
+                                                <span>
+                                                    {% if listing.price_daily %}
+                                                        AED {{ listing.price_daily|intcomma }}
+                                                    {% else %}
+                                                        N/A
+                                                    {% endif %}
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <strong>Weekly</strong>
+                                                <span>
+                                                    {% if listing.price_weekly %}
+                                                        AED {{ listing.price_weekly|intcomma }}
+                                                    {% else %}
+                                                        N/A
+                                                    {% endif %}
+                                                </span>
+                                            </li>
+                                            {% if listing.category != 'meeting-rooms' %}
+                                            <li>
+                                                <strong>Monthly</strong>
+                                                <span>
+                                                    {% if listing.price_monthly %}
+                                                        AED {{ listing.price_monthly|intcomma }}
+                                                    {% else %}
+                                                        N/A
+                                                    {% endif %}
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <strong>Yearly</strong>
+                                                <span>
+                                                    {% if listing.price_yearly %}
+                                                        AED {{ listing.price_yearly|intcomma }}
+                                                    {% else %}
+                                                        N/A
+                                                    {% endif %}
+                                                </span>
+                                            </li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <hr class="mt-5 mb-4" />
+                                <div class="col-sm-3 col-md-4">
+                                    <h2>Description</h2>
+                                </div>
+                                <div class="col-sm-9 col-md-8">
+                                    <div class="overview">
+                                        {{ listing.description|markdown }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <hr class="mt-5 mb-4" />
+                                <div class="col-sm-3 col-md-4">
+                                    <h2>Facilities</h2>
+                                </div>
+                                <div class="col-sm-9 col-md-8">
+                                    <ul class="amenities">
+                                        {% for value in amenities %}
+                                            <li class="yes">{{value}}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="row map-container">
+                                <hr class="mt-5 mb-4" />
+                                <h2>Location</h2>
+                                <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
+                                  <li class="nav-item col-sm-6 p-0">
+                                    <a class="nav-link active" id="map-view-tab" data-toggle="tab" href="#map-view" role="tab" aria-controls="map-view" aria-selected="true">Map</a>
+                                  </li>
+                                  <li class="nav-item col-sm-6 p-0">
+                                    <a class="nav-link" id="street-tab" data-toggle="tab" href="#street" role="tab" aria-controls="street" aria-selected="false">Street view</a>
+                                  </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="map-view" role="tabpanel" aria-labelledby="map-view-tab">
+                                        <div id="map" style="width: 100%; height: 500px" data-lat="{{ listing.get_latitude }}" data-lon="{{ listing.get_longitude }}"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="street" role="tabpanel" aria-labelledby="street-tab">
+                                        <div style="width: 100%; height: 500px" id="streetview" role="tabpanel"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.col-* -->
+                        <div id="sticky-container" class="col-md-4 col-lg-4">
+                            <a name="enquiry_form"></a>
+                            <!-- /.widget -->
+                            <div class="widget widget-background-white">
+                                
+                                <h3 class="widgettitle">
+                                    Enquire for this space
+                                </h3>
+                                <div id="leadform">
+                                    <form method="post" id="enquiry_form" name="enquiry_form">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="is_enquiry" id="id_is_enquiry" value="1" />
+                                        <div class="form-group">
+                                            <label>Name *</label>
+                                            {{ enquiry_form.name }}
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email *</label>
+                                            {{ enquiry_form.email }}
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Phone</label>
+                                            {{ enquiry_form.phone }}
+                                        </div>
+                                        <div class="for-enquiry-only form-group">
+                                            <label>Message</label>
+                                            <textarea name="message" class="form-control" id="id_message" rows="4">Hi, I found a space with ref: {{ listing.get_reference_code }} on Idealspaces. Please contact me. Thank you.</textarea>
+                                        </div>
+                                        <script src='https://www.google.com/recaptcha/api.js'></script>
+                                        <div class="form-group">
+                                            <div class="g-recaptcha" data-sitekey="{{ google_captcha_site_key }}"></div>
+                                        </div>
+                                        {% if captcha_error %}
+                                        <span class="error">{{ captcha_error }}</span>
+                                        {% endif%}
+                                        <div class="form-group-btn">
+                                            <button class="enquiry-submit btn btn-primary btn-block" type="button">
+                                                Send Message
+                                            </button>
+                                        </div>
+                                        <br>
+                                        <small class="for-enquiry-only ">By submitting this form, I agree to the <a href="{% url "portal:policy" %}" target="_blank">Terms &amp; Conditions and Privacy Policy</a> of the website</small>
+                                    </form>
+                                </div>
+                            </div>
+
+                            {% comment %}
+                                <div class="widget">
+                                    <ul class="nav nav-stacked nav-style-primary">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" data-target="#sharethis" data-toggle="modal">
+                                                <i class="fa fa-share-alt">
+                                                </i>
+                                                Share Property
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                               <i class="fa fa-warning"></i> Report Abuse
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-style-primary -->
+                                </div>
+                            {% endcomment %}
+                        </div>
+                        <!-- /.col-* -->
+                    </div>
+                    <!-- /.row -->
+
+                    <div class="row">
+                        <div class=" col-12 mb-2">
+                            <h3>Related Spaces</h3>
+                        </div>
+                    </div>
+                    {% if similar_listings %}
+                    <div class="row">
+                        {% for listing in similar_listings %}
+                        <div class="col-md-6 col-lg-4">
+                            <div class="listing-box">
+                                <div class="listing-box-image" style="background-image: url('{{ listing.get_default_image }}')">
+                                    {% if listing.is_featured %}
+                                    <div class="listing-box-image-label">Featured</div>
+                                    {% endif %}
+                                    {{ frequency }}
+                                    <div class="listing-box-price">
+                                        {{ currency }} {{ listing.get_price_display|safe }}
+                                    </div>
+                                </div><!-- /.listing-box-image -->
+
+                                <div class="listing-box-title">
+                                    <h2 title="{{ listing.title }}"><a href="{{ listing.get_listing_url }}">{{ listing.title }} {{ listing.title }}</a></h2>
+                                </div>
+                                <div class="listing-box-content">
+                                    <div class="location">{{ listing.get_location }}</div>
+                                </div>                               
+                                <!-- /.listing-box-title -->
+                            </div><!-- /.listing-box -->            
+                        </div><!-- /.col-* -->
+                        {% endfor %}                     
+                    </div>
+                    {% else %}
+                    <p>No related spaces found.</p>
+                    {% endif %}
+                </div>
+            </div>
+            <!-- /.container -->
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block extra_js %}
+    <script type="text/javascript" src="{% static "libs/lightbox/simplelightbox.min.js" %}"></script>
+    <script type="text/javascript">
+    var map_container = $('#map');
+    var stv_container = $('#streetview');
+    var map;
+    var marker;
+    var panorama;
+    var stv_loaded = false;
+
+    // Generates map coordinates
+    var lat = map_container.data('lat');
+    var lon = map_container.data('lon');
+
+    var map;
+    var paloAlto;
+    var sv;
+    var panorama;
+
+    function initialize() {
+        paloAlto = new google.maps.LatLng(lat, lon);
+        sv = new google.maps.StreetViewService();
+        panorama = new google.maps.StreetViewPanorama(stv_container[0]);
+
+        var mapOptions = {
+            center: paloAlto,
+            zoom: 16,
+            streetViewControl: false,
+        };
+        map = new google.maps.Map(map_container[0], mapOptions);
+
+        marker = new google.maps.Marker({
+            position: paloAlto,
+            map: map,
+            icon: '{% static "img/marker.png" %}'
+        });
+
+        // Set the initial Street View camera to the center of the map
+        sv.getPanoramaByLocation(paloAlto, 500, processSVData);
+    }
+
+    function processSVData(data, status) {
+      if (status == google.maps.StreetViewStatus.OK) {
+        panorama.setPano(data.location.pano);
+        panorama.setPov({
+          heading: 270,
+          pitch: 0
+        });
+        panorama.setVisible(true);
+      } else {
+        $('.streetview-trigger').hide();
+      }
+    }
+    </script>
+
+    <script type="text/javascript">
+    
+
+    $(document).ready(function() {
+        $('.viewing-btn').click(function() {
+            $('#leadform .media-heading span').html('Book a viewing');
+            $('.for-enquiry-only').hide();
+            $('#id_is_enquiry').val(0);
+        });
+
+        $('.booking-btn').click(function() {
+            $('#leadform .media-heading span').html('Request details for');
+            $('.for-enquiry-only').show();
+            $('#id_is_enquiry').val(1);
+        });
+
+        $('.six-gallery-more, .six-image').click(function() {
+            SimpleLightbox.open({
+                items: [{% for image in listing.get_images %}"{{image.url}}"{% if not forloop.last %},{% endif %}{% endfor %}]
+            });
+        });
+
+        $('.trigger-favorite').click(function() {
+            var elem = $(this);
+            elem.find('i').addClass('fa-spinner fa-spin');
+            $.post('/account/favorites/ae/', {'listing_id': {{ listing.id }}}, function(response){
+                if(response && response.status == 'success') {
+                    if(response.msg == 'added') {
+                        elem.addClass('active');
+                    } else {
+                        elem.removeClass('active');
+                    }
+                } else if(response && response.status == 'error') {
+                    if(response.msg == 'signin') {
+                        window.location.href = '/account/login';
+                    }
+                }
+                elem.find('i').removeClass('fa-spinner fa-spin');
+            });
+        });
+
+        $('.enquiry-submit').click(function() {
+            var loader = $(this).find('.loader');
+            var label = $(this).find('.label');
+
+            loader.show(); label.hide();
+            $.post(window.location, $('#enquiry_form').serialize(), function(response) {
+              if(!response.success) {
+                $('.error').remove();
+                $.each(response.errors, function(k, v) {
+                    if($('#id_' + k).length) {
+                        $('#id_' + k).after('<div class="error">' + v + '</div>');
+                    }
+                    if(k=='captcha') {
+                        $('.g-recaptcha').after('<div class="error">' + v + '</div>');
+                    }
+                });
+              } else {
+                $('#leadform').html("<center><p class='success'><i class='fa fa-check fa-5x text-success mb20 animated zoomIn'></i><br></p><h4>Success</h4><p>Your request has been sumitted</p><p>One of our team member will be in touch with you soon.</p></center>");
+              }
+              label.show(); loader.hide();
+            });
+        });
+
+        $('.agent-number').click(function(e) {
+            if(Utils.Check.isDesktop())
+                e.preventDefault();
+        });
+        $('.show-number').click(function(e) {
+            if(Utils.Check.isDesktop())
+                e.preventDefault();
+
+            $(this).hide();
+            $('.agent-number').show();
+
+            $.post('/record-call/' + $(this).data('id') + '/');
+
+        });
+
+        $('.short-url').click(function() {
+            if($('.tiny-url').html()) return;
+
+            $.ajax({
+                url: 'https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyDnQoy7P4Kk97l4Sh_f2fFPw_uev5YOn1s',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                data: '{ "longUrl": "' + window.location.href +'"}',
+                dataType: 'json',
+                success: function(response) {
+                    $('.tiny-url').html('<a href="'+response.id+'" target="_blank">' + response.id + '</a>');
+                }
+            });
+        });
+
+        $('[aria-controls=street]').on('click', function() {
+            if(!stv_loaded) {
+                setTimeout(function(){
+                    panorama.setVisible(true);
+                    stv_loaded = true;
+                }, 1000);
+            }
+        });
+    });
+
+  </script>
+  {% comment %}
+      <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5af0be86e12a39001287dddb&product=custom-share-buttons"></script>
+  {% endcomment %}
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRcnwxK1SQd0-C--lSREGrN-Yx_AsRiH0&callback=initialize" 
+  type="text/javascript"></script>
+{% endblock %}

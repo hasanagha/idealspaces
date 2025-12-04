@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__
+*.pyc
+__common_static
+shapp/localsettings.py
+
+db.sqlite3
+
+env
+envpy312
+static
+node_modules
+.idea
+
+npm-debug.log
+
+log/*.log

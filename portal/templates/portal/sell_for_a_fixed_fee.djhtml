@@ -1,0 +1,60 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}
+Sell for a fixed fee
+{% endblock %}
+
+{% block content %}
+<div id="whats-included">
+  <div id="content">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-12 col-xl-10">
+          <center>
+            <h2 class="centered">Changing the way properties are sold</h2>
+          </center>
+          <div class="lead text-center ">
+            <strong>
+              Right Doors is a Hybrid Estate Agent offering a full professional <br>service for a highly cost effective fixed fee.
+            </strong>
+          </div>
+          <br><br>
+          <div class="row justify-content-md-center">
+            <div class="col-lg-6 col-md-6 col-sm-12">  
+              <h1>Got More. Pay Less.</h1>
+              <p>At Right Doors, our core mission is to bring down the high cost of selling a property and pass those savings back to our clients. As its 'fixed fee' suggests, instead of paying a high-commission to a real estate agent, you pay a set, fixed fee to an agency.</p>
+
+              <p>That fixed fee includes the full spectrum of services given by a traditional agent, starting with a consultation, property valuation, scheduling showings, professional photography, marketing and advertising and so much more. On top of all this your property will be listed on thousands of websites. Your property will be exposed to millions of buyers.</p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">  
+              <img src="{% static "img/real-estate-buy.jpg" %}" width="400" />
+            </div>
+            
+          </div>
+          <br><br>
+          <div class="row justify-content-md-center">
+            <div class="col-lg-6 col-md-6 col-sm-12">  
+              <img src="{% static "img/property-sold.jpg" %}" width="400" />
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <p>Very often happends that a real estate agent will cost more to sell a higher priced property than a lower priced one. Traditional real estate agents provide an admirable service, but why you should pay thousands of dirhams more for the same full professional service.</p>
+
+              <p>By changing the commission ration, the amount you pay to a real estate agent for selling your property will be affected. Why not rest assured, pay a fixed fee and save yourself thousands of dirhams.</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="strip">
+        <h2>We are local property experts.</h2>
+        <a href="{% url 'account:login' %}" class="btn btn-pink">Get Started Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

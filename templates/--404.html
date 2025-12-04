@@ -1,0 +1,51 @@
+{% extends "base.djhtml" %}
+{% load static %}
+
+{% block page_title %}Page not found - Ideal Spaces{% endblock %}
+
+{% block content %}
+
+<div class="main fixed-width-container">
+    <div class="main-inner">
+        <div class="content">
+            <div class="container">
+                <!--==================== About us HEADER ====================-->
+                <div class="landing-header">
+                    <div class="banner-img-9">
+                        <img src="{% static "img/404_1.png" %}" class="img-fluid hide-on-mobile" alt="Idealspaces.com" />
+
+                        <!-- Main Title -->
+                        <div class="main-title">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-5">
+                                        <div class="hero-title">
+                                            <p>Looks like the page is gone...</p>
+                                            <h1>
+                                               <b>Oops!</b>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Main Title -->
+                    </div>
+                    <!--  // Contact Modal -->
+                    <!--==================== NEW INSURANCE ====================-->
+                    <div class="row justify-content-md-center mt-5">
+                        <div class="col-lg-12 col-sm-12 mx-auto p-5">
+                            <a href="{% url "portal:portal-home" %}" class="btn btn-lg btn-primary">Take me to Home page</a>
+                            <a href="{% url 'portal:portal-search' %}" class="btn btn-primary">List your space</a>
+                        </div>
+                    </div>
+                    <!--//END NEW INSURANCE -->
+                </div>
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.main-inner -->
+</div>
+{% endblock %}

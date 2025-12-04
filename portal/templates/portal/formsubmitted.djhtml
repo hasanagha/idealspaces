@@ -1,0 +1,74 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}Contact Ideal Spaces{% endblock %}
+{% block og_title %}Contact Ideal Spaces{% endblock %}
+{% block twitter_title %}Contact Ideal Spaces{% endblock %}
+
+{% block meta_description %}Contact us by email hello@idealspaces.com, phone +971 52 1095 308 and social media whatever your query. Our team's rock stars are here to help!{% endblock %}
+{% block og_description %}Contact us by email hello@idealspaces.com, phone +971 52 1095 308 and social media whatever your query. Our team's rock stars are here to help!{% endblock %}
+{% block twitter_description %}Contact us by email hello@idealspaces.com, phone +971 52 1095 308 and social media whatever your query. Our team's rock stars are here to help!{% endblock %}
+
+{% block content %} 
+<div class="main fixed-width-container">
+    <div class="main-inner">
+        <div class="content">
+            <div class="container">
+                <div class="landing-header">
+                    <div class="banner-img-9">
+                        <img src="{% static "img/contact-idealspaces.png" %}" class="hide-on-mobile img-fluid" alt="Idealspaces.com" />
+                        <!-- Main Title -->
+                        <div class="main-title">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-5 col-sm-12">
+                                        <div class="hero-title">
+                                            <p>Thank You</p>
+                                            <h1>
+                                               <b>We have got your details</b>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Main Title -->
+                    </div>
+                    <hr />
+                    <div class="space bg-image mt-4">
+                        <div class="container">
+                            <div class="row justify-content-md-center">
+                                <div class="col col-lg-8 col-sm-10">
+                                    <center>
+                                        <p class="success">
+                                            <i class="fa fa-check-circle fa-5x text-success mb20 animated zoomIn">
+                                            </i>
+                                            <br/>
+                                            <br/>
+                                            <h4>Success!</h4>
+                                            Your message is right on its way to our system.
+                                            <br>
+                                                <br>
+                                                    Please bear with us as we are making sure that every message we receive are treated with importance.
+                                                    <br>
+                                                        <br>
+                                                            You will receive an email confirmation in a while.
+                                                        </br>
+                                                    </br>
+                                                </br>
+                                            </br>
+                                        </p>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//END NEW INSURANCE -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

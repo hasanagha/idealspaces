@@ -1,0 +1,203 @@
+{% extends 'base.djhtml' %}
+{% load static %}
+{% load humanize %}
+
+{% block page_id %}search{% endblock %}
+{% block page_title %}{{ page_title }}{% endblock %}
+{% block og_title %}{{ page_title }}{% endblock %}
+{% block twitter_title %}{{ page_title }}{% endblock %}
+
+{% block meta_description %}{{ meta_description }}{% endblock %}
+{% block og_description %}{{ meta_description }}{% endblock %}
+{% block twitter_description %}{{ meta_description }}{% endblock %}
+
+{% block extra_head_tags %}
+    {% if prev_page %}
+        {% if prev_page == 1 %}
+        <link rel="prev" href="https://{{ request.META.HTTP_HOST }}{{ request.path }}{% if qs %}?{{ qs }}&{% endif %}" />
+        {% else %}
+        <link rel="prev" href="https://{{ request.META.HTTP_HOST }}{{ request.path }}?{% if qs %}{{ qs }}&{% endif %}page={{ prev_page }}" />
+        {% endif %}
+    {% endif %}
+    {% if next_page %}
+        <link rel="next" href="https://{{ request.META.HTTP_HOST }}{{ request.path }}?{% if qs %}{{ qs }}&{% endif %}page={{ next_page }}" />
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="main">
+        <div class="main-inner">
+            {% comment %}
+                <div class="content-title">
+                    <div class="content-title-inner">
+                        <div class="container">
+                            <h1>
+                                {{ search_title }}
+                            </h1>
+                            
+                        </div>
+                        <!-- /.container -->
+                    </div>
+                    <!-- /.content-title-inner -->
+                </div>
+            {% endcomment %}
+            
+            <!-- /.content-title -->
+            
+            <div class="content">
+
+                <div class="container-fluid p-0">
+                    <!-- /.filter -->
+                    <div class="row m-0">                        
+                        <div class="col-md-8 col-lg-8 p-0">
+                            <div class="search-results-container">
+                                {% include 'portal/components/search_form_inner.djhtml' %}
+
+                                {% if listings %}
+                                    {% include 'portal/components/search-listing-item-masonry.djhtml' %}
+
+                                    <ul class="pagination mt-5">
+                                        <li class="page-item disabled">
+                                            <a {% if prev_page %}class="page-link" href="{{ request.path }}?{% if qs %}{{ qs }}&{% endif %}{% if prev_page != 1 %}page={{ prev_page }}{% endif %}" {% else %} class="page-link disabled" href="#"{% endif %} aria-label="Previous">
+                                                <span aria-hidden="true">«</span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                        </li>
+                                        {% for page_number in listings.paginator.page_range %}
+                                            <li class="page-item {% if page_number == current_page %}active{% endif %}">
+                                                {% if page_number == 1 %}
+                                                <a data-page="1" class="page-link" href="{{ request.path }}{% if qs %}?{{ qs }}{% endif %}">{{ page_number }}</a>
+                                                {% else %}
+                                                <a data-page="{{ page_number }}" class="page-link" href="{{ request.path }}?{% if qs %}{{ qs }}&{% endif %}{% if page_number != 1 %}page={{ page_number }}{% endif %}">{{ page_number }}</a>
+                                                {% endif %}
+                                            </li>
+                                        {% endfor %}
+                                        <li class="page-item">
+                                            <a {% if next_page %}class="page-link" href="{{ request.path }}?{% if qs %}{{ qs }}&{% endif %}{% if next_page != 1 %}page={{ next_page }}{% endif %}"{% else %}class="page-link disabled" href="#"{% endif %} aria-label="Next">
+                                                <span aria-hidden="true">»</span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                {% else %}
+                                    <p>No record found</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-4 p-0 map-container-parent hide-on-mobile">
+                            <div class="map-container">
+                                <div id="map"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.main-inner -->
+    </div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRcnwxK1SQd0-C--lSREGrN-Yx_AsRiH0&callback=initMap"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        if(Utils.Check.isMobile()) {
+            $('#filters').css({'height': (screen.height - 100) + 'px'});
+        }
+
+        $('#toggle-filters').click(function(){
+            $(document).scrollTop( $("#filters").offset().top );
+        });
+
+        $('.agent-number').click(function(e) {
+            if(Utils.Check.isDesktop())
+                e.preventDefault();
+        });
+        $('.call.btn').click(function(e) {
+            if(Utils.Check.isDesktop())
+                e.preventDefault();
+
+            if($(this).find('.agent-number').length) {
+                if($(this).find('.show-number').is(':visible')) {
+                    $(this).find('.show-number').hide();
+                    $(this).find('.agent-number').show();
+                    $.post('/record-call/' + $(this).data('id') + '/');
+                }
+            }
+        });
+    });
+</script>
+{% if listings %}
+<script type="text/javascript">
+    var listing_coordinates = [
+        {% for listing in listings %}
+            {% if listing.get_latitude and listing.get_longitude %}
+            {
+                'title': '{{ listing.title }}',
+                'link': '{{ listing.get_listing_url }}',
+                'location': '{{ listing.get_location }}',
+                'image': '{{ listing.get_default_image }}',
+                'latitude': {{ listing.get_latitude }},
+                'longitude': {{ listing.get_longitude }}
+            },
+            {% endif %}
+        {% endfor %}
+    ];
+    function initMap() {
+        var bound = new google.maps.LatLngBounds();
+
+        for (i=0; i<listing_coordinates.length; i++) {
+          bound.extend(new google.maps.LatLng(listing_coordinates[i].latitude, listing_coordinates[i].longitude));
+        }
+        var center = bound.getCenter();
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: center,
+            zoomControl: true,
+            zoomControlOptions: {
+                position: google.maps.ControlPosition.LEFT_TOP
+            },
+            mapTypeControl: false,
+            scaleControl: true,
+            streetViewControl: false,
+            rotateControl: false,
+            fullscreenControl: false
+        });
+        var infowindow =  new google.maps.InfoWindow({});
+        var marker, count;
+
+        for (count = 0; count < listing_coordinates.length; count++) {
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(listing_coordinates[count].latitude, listing_coordinates[count].longitude),
+                map: map,
+                icon: '{% static "img/marker.png" %}',
+                title: listing_coordinates[count].title,
+                url: listing_coordinates[count].link,
+                location: listing_coordinates[count].location,
+                image: listing_coordinates[count].image
+            });
+            
+            google.maps.event.addListener(marker, 'click', (function (marker, count) {
+                var view_details = `${marker.title}<br>${marker.location}<br><a href="${marker.url}">View details</a>`;
+
+                // if(marker.image) {
+                //     view_details = `<img width=120 src="${marker.image}" /><br>${view_details}`;
+                // }
+
+                return function () {
+                    infowindow.setContent(view_details);
+                    infowindow.open(map, marker);
+                }
+            })(marker, count));
+        }
+    }
+  </script>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,29 @@
+/* Styling for client account */
+
+.account-panel {
+	padding-top: 53px;
+	.header-wrapper {
+		width: 100%;
+		position: fixed;
+		top: 0;
+	}
+	.footer-wrapper {
+		display: none;
+	}
+	.errorlist {
+		color: darken($red, 10%);
+		background-color: lighten($red, 20%);
+		padding: 10px 20px;
+		font-size: 12px;
+		border-radius: 4px;
+	}
+	.account-forms {
+		h3 {
+			font-size: 18px;
+		}
+		hr {
+			width: 100%;
+			margin: 10px 0;
+		}
+	}
+}

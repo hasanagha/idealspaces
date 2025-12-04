@@ -1,0 +1,363 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}Flexible Workplace | Short Term Office Spaces - Ideal Spaces{% endblock %}
+{% block og_title %}Flexible Workplace | Short Term Office Spaces - Ideal Spaces{% endblock %}
+{% block twitter_title %}Flexible Workplace | Short Term Office Spaces - Ideal Spaces{% endblock %}
+{% block meta_description %}Search over 100 flexible workplaces and short term offices (business center and serviced offices) for rent in all cities of UAE{% endblock %}
+{% block og_description %}Search over 100 flexible workplaces and short term offices (business center and serviced offices) for rent in all cities of UAE{% endblock %}
+{% block twitter_description %}Search over 100 flexible workplaces and short term offices (business center and serviced offices) for rent in all cities of UAE{% endblock %}
+
+{% block page_id %}home{% endblock %}
+{% block body_class %}cover-pull-top header-transparent fixed-width-container{% endblock %}
+
+{% block canonical %}
+    <link rel="canonical" href="https://www.idealspaces.com{{ request.get_full_path|slice:":-1" }}" />
+{% endblock %}
+
+{% block ld_schema %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Ideal Spaces",
+    "legalName": "Ideal Spaces Technologies FZCO",
+    "alternateName": ["IS"],
+    "logo": "https://www.idealspaces.com/static/logos/idealspaces-logo-horizontal-home.png",
+    "image": "https://idealspaces.com/static/img/tmp/tmp-6.jpg",
+    "url": "https://www.idealspaces.com",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Office 1501, 15th Floor, City Towers 2, Sheikh Zayed Road",
+        "addressLocality": "Dubai",
+        "postalCode": "33212",
+        "addressCountry": "AE" 
+    },
+    "telephone": "+971 52 1095 306",
+    "openingHours": ["Sun - Thurs 09: 00 - 18: 00", "Sat 09: 00 - 18: 00"],
+    "email": "support@idealspaces.com",
+    "vatID": "0",
+    "sameAs": ["https: //www.facebook.com/idealspacescom",
+        "https://twitter.com/idealspacescom",
+        "https://www.linkedin.com/company/ideal-spaces",
+        "https://www.instagram.com/idealspacescom",
+        "https://www.youtube.com/channel/UCNW1YbgRyTRX1droF09uIVg"
+    ],
+    "description": "Book your Ideal Business Centers and Meeting Rooms"
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="main">
+    <div class="main-inner">
+        <div class="content">
+            <div class="cover cover-center">
+                <div class="cover-image"></div>
+                <!-- /.cover-image -->
+                <div class="cover-title">
+                    <div class="container">
+                        <div class="cover-title-inner">
+                            <h1>
+                                Discover . Select . Get Started 
+                            </h1>
+                            <h2>
+                                Book your Ideal Business Centers and Meeting Rooms
+                            </h2>
+                        </div>
+                        <!-- /.cover-title-->
+                        <div class="home-search">
+                            {% include 'portal/components/search_form.djhtml'%}
+                        </div>
+                    </div>
+                    <!-- /.container -->
+                </div>
+                <!-- /.cover-title -->
+            </div>
+            <!-- /.cover -->
+            {% comment %}
+                <div class="information-bar">
+                    <div class="container">
+                        <i class="fa fa-star">
+                        </i>
+                        Villareal implements features like favorites, compare properties, advanced search fields. For more information check out
+                        <a href="#">
+                            full list of features
+                        </a>
+                        .
+                    </div>
+                    <!-- /.container -->
+                </div>
+            {% endcomment %}
+            <!-- /.information-bar -->
+            <div class="container">
+                <!-- /.row -->
+                <div class="push-top--">
+                    <div class="background-white fullwidth">
+                        <div class="boxes">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="box">
+                                        <div class="box-icon">
+                                            <i class="ti-search"></i>
+                                        </div>
+                                        <!-- /.box-icon -->
+                                        <div class="box-content">
+                                            <h4>
+                                                Discover
+                                            </h4>
+                                            <p>
+                                                Discover your ideal spot from the best available options in UAE at an ideal prices.
+                                            </p>
+                                        </div>
+                                        <!-- /.box-content -->
+                                    </div>
+                                    <!-- /.box -->
+                                </div>
+                                <!-- /.col-* -->
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="box">
+                                        <div class="box-icon">
+                                            <i class="ti-check-box">
+                                            </i>
+                                        </div>
+                                        <!-- /.box-icon -->
+                                        <div class="box-content">
+                                            <h4>
+                                                Select
+                                            </h4>
+                                            <p>
+                                                Select and enquire the ideal spot from our massive list of top rated spaces.
+                                            </p>
+                                        </div>
+                                        <!-- /.box-content -->
+                                    </div>
+                                    <!-- /.box -->
+                                </div>
+                                <!-- /.col-* -->
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="box">
+                                        <div class="box-icon">
+                                            <i class="ti-crown">
+                                            </i>
+                                        </div>
+                                        <!-- /.box-icon -->
+                                        <div class="box-content">
+                                            <h4>
+                                                Get Started
+                                            </h4>
+                                            <p>
+                                                Receive the confirmation email and start your business right away.
+                                            </p>
+                                        </div>
+                                        <!-- /.box-content -->
+                                    </div>
+                                    <!-- /.box -->
+                                </div>
+                                <!-- /.col-* -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.boxes -->
+                    </div>
+                </div>
+                <div class="push-bottom">
+                    <div class="page-header">
+                        <h3 class="block-title">Select your Ideal Space for your Business in UAE.</h3>
+                    </div>
+                    <!-- /.page-header -->
+                    <div class="categories">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="category category-vertical" style="background-image: url('/static/img/ideal-spaces-serviced-offices.jpg');">
+                                            <a class="category-link" href="{% url 'portal:search-by-category' category='serviced-offices' %}">
+                                                <span class="category-content">
+                                                    <span class="category-title">
+                                                        Serviced Offices
+                                                    </span>
+                                                    <span class="category-subtitle">
+                                                        {{ serviced_offices_count }} available
+                                                    </span>
+                                                    <span class="btn btn-primary">
+                                                        View All
+                                                    </span>
+                                                </span>
+                                                <!-- /.category-content -->
+                                            </a>
+                                        </div>
+                                        <!-- /.category -->
+                                    </div>
+                                    <!-- /.col-* -->
+                                    <div class="col-sm-6">
+                                        <div class="category category-vertical" style="background-image: url('/static/img/ideal-spaces-meeting-rooms.jpg');">
+                                            <a class="category-link" href="{% url 'portal:search-by-category' category='meeting-rooms' %}">
+                                                <span class="category-content">
+                                                    <span class="category-title">
+                                                        Meeting Rooms
+                                                    </span>
+                                                    <span class="category-subtitle">
+                                                        {{ meeting_rooms_count }} available
+                                                    </span>
+                                                    <span class="btn btn-primary">
+                                                        View Now
+                                                    </span>
+                                                </span>
+                                                <!-- /.category-content -->
+                                            </a>
+                                        </div>
+                                        <!-- /.category -->
+                                    </div>
+                                    <!-- /.col-* -->
+                                </div>
+                                <!-- /.row -->
+                                {% comment %}
+<div class="category" style="background-image: url('/static/img/ideal-spaces-co-working-spaces.jpg');">
+    <a class="category-link" href="{% url 'portal:search-by-category' category='coworking-spaces' %}">
+        <span class="category-content">
+            <span class="category-title">
+                Co-working Spaces
+            </span>
+            <span class="category-subtitle">
+                {{ coworking_spaces_count }} available
+            </span>
+            <span class="btn btn-primary">
+                View Now
+            </span>
+        </span>
+        <!-- /.category-content -->
+    </a>
+</div>
+                                {% endcomment %}
+                                <!-- /.category -->
+                            </div>
+                            <!-- /.col-* -->
+                            {% comment %}
+<div class="col-lg-4">
+    <div class="category category-vertical" style="background-image: url('/static/img/ideal-spaces-banquet-halls.jpg');">
+        <a class="category-link" href="{% url 'portal:search-by-category' category='meeting-rooms' %}">
+            <span class="category-content">
+                <span class="category-title">
+                    Meeting Rooms
+                </span>
+                <span class="category-subtitle">
+                    {{ meeting_rooms_count }} available
+                </span>
+                <span class="btn btn-primary">
+                    View Now
+                </span>
+            </span>
+            <!-- /.category-content -->
+        </a>
+    </div>
+    <!-- /.category -->
+</div>
+                            {% endcomment %}
+                            <!-- /.col-* -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.categories -->
+                </div>
+            </div>
+            <!-- /.container -->
+
+            <div class="image-wrapper pb-5 blogs">
+
+                <div class="page-header">
+                    <h3 class="block-title">Our Blog</h3>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        {% for post in blog_posts %}
+                        <div class="col col-lg-4 col-md-4 col-sm-12">
+                            <div class="masonry-layout__panel-content listing-box listing-box-simple">
+                                <a href="{{ post.get_absolute_url }}">
+                                    <div class="listing-box-image" style="background-image:url({% if post.image %}{{ post.image }}{% else %}http://via.placeholder.com/440x310{% endif %})">&nbsp;</div>
+                                </a>
+                                <div class="listing-box-title">
+                                    <h2 title="{{ post.title }}">
+                                        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                    </h2>
+                                    <div class="location">
+                                        <a href="{{ post.category.get_absolute_url }}">{{ post.category }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        <div class="col-md-12"><br><center><a class="btn btn-xlg btn-primary" href="{% url 'speedyblog:blog_index' %}">View More</a></center></div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /.image-wrapper -->
+            
+            {% comment %}
+                <div class="container">
+                    <div class="page-header">
+                        <h2>Featured Spaces</h2>
+                    </div>
+                    <div class="listing-box-wrapper listing-box-background">
+                        <div class="listing-carousel-wrapper">
+                            <div class="listing-carousel">
+                                {% for listing in featured_properties %}
+                                <div class="listing-box">
+                                    <div class="listing-box-image" style="background-image: url('{{ listing.get_default_image }}')">
+                                        <div class="listing-box-image-label">
+                                            Featured
+                                        </div>
+                                        <!-- /.listing-box-image-label -->
+                                        <span class="listing-box-image-links">
+                                            &nbsp;
+                                        </span>
+                                    </div>
+                                    <!-- /.listing-box-image -->
+                                    <div class="listing-box-title">
+                                        <h2>
+                                            <a href="{{ listing.get_listing_url }}">
+                                                {{ listing.title }}
+                                            </a>
+                                        </h2>
+                                        <h3>
+                                            AED {{ listing.get_price_display|safe }}
+                                        </h3>
+                                    </div>
+                                    <!-- /.listing-box-title -->
+                                    <div class="listing-box-content">
+                                        <dl>
+                                            <dt>
+                                                Type
+                                            </dt>
+                                            <dd>
+                                                {{ listing.get_category_display }}
+                                            </dd>
+                                            <dt>
+                                                Location
+                                            </dt>
+                                            <dd>
+                                                {{ listing.location }}
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <!-- /.listing-box-cotntent -->
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endcomment %}
+
+            <!-- /.container -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.main-inner -->
+    </div>
+{% endblock %}

@@ -1,0 +1,52 @@
+#listing_detail {
+	h1.title {
+		position: absolute;
+		bottom: 0px;
+		font-size: 28px;
+		padding: 10px;
+		background: rgba(0,0,0,0.4);
+		color: #FFF;
+		max-width: 50%;
+		line-height: 32px;
+	}
+
+	@include media-breakpoint-down(sm) {
+		.mobile-button {
+			display: block;
+			width: 100%;
+		}
+
+		h1.title {
+			font-size: 15px;
+			line-height: 19px;
+			max-width: 100%;
+		}
+		.six-gallery-more {
+			bottom: auto;
+			top: 10px;
+			right: 10px;
+			padding: 5px 10px;
+		}
+		.listing-detail-attribute {
+			padding-left: 0px;
+			padding-right: 0px;
+			margin-bottom: 10px;
+			&.text-right {
+				text-align: left !important;
+			}
+			.price-frequency-display {
+				display: inline-block;
+				font-weight: normal;
+				font-size: 0.7rem;
+			}
+		}
+
+		.map-container {
+			padding: 0 15px;
+			.nav-item {
+				width: 50% !important;
+				float: left;
+			}
+		}
+	}
+}

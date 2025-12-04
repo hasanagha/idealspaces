@@ -1,0 +1,11 @@
+.model-listing .field-amenities input[type=checkbox],
+.model-listing .field-layout input[type=checkbox]{
+	display: inline-block;
+}
+
+.model-listing .field-amenities #id_amenities li,
+.model-listing .field-layout #id_layout li {
+	width: 30% !important;
+	float: left;
+	margin: 5px 0;
+}

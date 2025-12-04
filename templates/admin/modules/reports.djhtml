@@ -1,0 +1,170 @@
+{% load static %}
+
+<html>
+  <head>
+    <title>Hasan Agha</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css" />
+
+    <style type="text/css">
+      .reporting-tool table.dataTable tfoot th {
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reporting-tool">
+      <div class="dashboard-item-content">
+        <ul>
+          <li class="contrast">
+            <a href="#" title="">
+                Reporting Tool
+            </a>
+          </li>
+          <li>
+            <form action="/admin/" method="get" name="reporting-form" id="reporting-form">
+              <input class="vTextField" type="date" name="start_date" id="id_start_date" value="{{ request.GET.start_date }}" />
+              <input class="vTextField" type="date" name="end_date" id="id_end_date" value="{{ request.GET.end_date }}" />
+              <button class="dt-button buttons-print" type="submit">Filter</button>
+              <button class="dt-button buttons-print" type="button" onclick="resetForm();">reset</button>
+            </form>
+          </li>
+          <li>
+            {% if request.user.is_superuser %}
+            <table id="stats" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Listing</th>
+                        <th>Manager</th>
+                        <th>Impressions</th>
+                        <th>Hits</th>
+                        <th>Email</th>
+                        <th>Call</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  {% for stat in stats %}
+                    <tr>
+                        <td> {{ stat.listing.id }}</td>
+                        <td><a href="/admin/portal/listing/{{ stat.listing.pk }}/change/" target="_blank">{{ stat.listing }}</a></td>
+                        <td> {{ stat.listing.manager.get_full_name }}</td>
+                        <td>{{ stat.impressions }}</td>
+                        <td>{{ stat.hits }}</td>
+                        <td>{{ stat.email_enquiries }}</td>
+                        <td>{{ stat.call_enquiries }}</td>
+                        <td>{{ stat.date }}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+                <tfoot>
+                  <tr>
+                      <th align="right">-</th>
+                      <th align="right">-</th>
+                      <th align="right">-</th>
+                      <th align="right">-</th>
+                      <th align="right">-</th>
+                      <th align="right">-</th>
+                      <th align="right">-</th>
+                      <th align="right">-</th>
+                  </tr>
+                </tfoot>
+            </table>
+            {% else %}
+            <p>You do not have permissions to access this module.</p>
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+    </div>
+    {% if request.user.is_superuser %}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+    <script type="text/javascript">
+      function resetForm() {
+        $('#id_start_date, #id_end_date').val('');
+        $('#reporting-form').submit();
+      }
+      $(document).ready(function() {
+        var report_title = 'RightDoors.com - Report';
+          jQuery.fn.dataTable.Api.register( 'sum()', function ( ) {
+            return this.flatten().reduce( function ( a, b ) {
+              if ( typeof a === 'string' ) {
+                a = a.replace(/[^\d.-]/g, '') * 1;
+              }
+              if ( typeof b === 'string' ) {
+                b = b.replace(/[^\d.-]/g, '') * 1;
+              }
+
+              return a + b;
+            }, 0 );
+          });
+          $('#stats').DataTable( {
+              dom: 'Bfrtip',
+              order: [[ 7, 'desc' ]],
+              select: true,
+              lengthMenu: [
+                  [ 10, 25, 50, -1 ],
+                  [ '10 records', '25 records', '50 records', 'Show all' ]
+              ],
+              buttons: [
+                  'pageLength', 'copy',
+                  {
+                    extend: 'csv',
+                    title: report_title,
+                    messageTop: '{{ messageTop }}'
+                  },
+                  {
+                    extend: 'excel',
+                    title: report_title,
+                    messageTop: '{{ messageTop }}'
+                  },
+                  {
+                    extend: 'pdf',
+                    title: report_title,
+                    messageTop: '{{ messageTop }}'
+                  },
+                  {
+                    extend: 'print',
+                    title: report_title,
+                    messageTop: '{{ messageTop }}'
+                  },
+                  {
+                    extend: 'print',
+                    text: 'Print all (not just selected)',
+                    exportOptions: {
+                      modifier: {
+                        selected: null
+                      }
+                    }
+                  }
+              ],
+              
+              footerCallback: function() {
+                var api = this.api();
+                var skipIds = [0, 1, 6];
+                $( api.column(0).footer()).html('Total');
+                for(var i=0; i<=6; i++) {
+                  if($.inArray(i, skipIds) >=0) continue;
+                  $( api.column(i).footer() ).html(
+                    api.column(i, {page:'current'} ).data().sum()
+                  );
+                }
+              }
+          });
+      });
+    </script>
+    {% endif %}
+  </body>
+  
+</html>

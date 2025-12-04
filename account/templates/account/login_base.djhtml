@@ -1,0 +1,35 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}Login to your account{% endblock %}
+{% block meta_description %}{% endblock %}
+{% block page_id %}login-register{% endblock %}
+
+{% block content %}
+
+{% block login_content %}{% endblock %}
+
+{% endblock %}
+
+{% block extra_js %}
+<style type="text/css">
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
+</style>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('nav').addClass('reverted-nav');
+        $("input[type=number]").keypress(function (e) {
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                return false;
+            }
+        });
+    });
+</script>
+{% endblock %}

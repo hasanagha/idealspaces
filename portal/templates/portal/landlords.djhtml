@@ -1,0 +1,158 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}
+Welcome to RightDoors.com
+{% endblock %}
+{% block page_id %}home{% endblock %}
+
+{% block content %}
+<div id="homepage">
+    <div id="landlords">
+        <div class="home-search">
+            <div class="main search-form">
+                <div class="container">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-12 col-lg-10">
+                            <div class="heading">
+                                <h1>Right Doors Saves Landlords Time and Money</h1>
+                                <h2>FREE PROPERTY LISTING. GAIN POTENTIAL TENANTS</h2>
+                                <a href="{% url 'account:login' %}" class="btn-landlords btn btn-xlg btn-pink">
+                                    LIST FOR FREE
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt0 pb0" id="content">
+            <div class="feature-box centered home-packages">
+                <div>
+                    <div class="container">
+                        <div class="row justify-content-md-center">
+                            <div class="col col-lg-12 col-xl-10">
+                                <div class="main-title">YOUR PROPERTY. OUR PRIORITY</div>
+                                <div class="main-title-description">List your property for free with excellent benefits and let tenants move in at the best price.</div>
+                                
+                                <div class="row model-bg">
+                                  <div class="offset-md-6 col-md-7 white-bg">
+                                    <ul>
+                                        <li>Maximum exposure to right audience</li>
+                                        <li>Detailed and precise floor plans</li>
+                                        <li>Dedicated Account Responsible</li>
+                                        <li>Free property valuation</li>
+                                        <li>24/7 Personal Account access</li>
+                                        <li>Viewer Appraisal</li>
+                                    </ul>
+                                    <br/>
+                                    <div class="mobile-centered">
+                                        <a href="{% url 'account:login' %}" class="btn btn-xlg btn-primary">LETS START!</a>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-box gray">
+                <div>
+                    <div class="container">
+                        <div class="row mobile-centered justify-content-md-center">
+                            <div class="col-lg-6 col-xl-6">
+                                <div class="main-title">Save time and effort</div><br>
+                                <div class="main-title-description">Right Door is your Right Choice. Get the best options with just a click.</div>
+                                <div class="clearfix">
+                                </div>
+                                <p>Right Doors as an experienced online letting real estate in Dubai, completely understands that finding the perfect tenant for your property is vital. Right Doors has updated and enhanced their systems to ensure that they deliver a high-end letting service, where Right Doors does all the legwork for you, and find the right tenant for your property.</p>
+                            </div>
+                            <div class="col-lg-6 col-xl-6">
+                                <img src="{% static "img/landloards-image.jpg" %}" width=100% />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-box centered">
+                <div>
+                    <div class="container">
+                        <div class="row justify-content-md-center">
+                            <div class="col col-lg-12 col-xl-10">
+                                <div class="main-title">How we do it?</div>
+                                <div class="main-title-description"></div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="content-box">
+                                            <h4>
+                                                List your Property
+                                            </h4>
+                                            <div class="image">
+                                                <img alt="" src="/static/img/home-icon.gif" width="100">
+                                                
+                                            </div>
+                                            
+                                            <div class="caption">
+                                                List your property for free and let our property consultants will contact you after reviewing your property. 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="content-box">
+                                            <h4>
+                                                Potential Viewing
+                                            </h4>
+                                            <div class="image">
+                                                <img alt="" src="/static/img/view-icon.gif" width="100">
+                                                
+                                            </div>
+                                            
+                                            <div class="caption">
+                                                We will manage all the hassle. We carefully qualify the viewers for your property and bring potential tenants.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-3">
+                                        <div class="content-box">
+                                            <h4>
+                                                Excellent Negotiators
+                                            </h4>
+                                            <div class="image">
+                                                <img alt="" src="/static/img/hands-icon.gif" width="100">
+                                            </div>
+                                            <div class="caption">
+                                                Our property experts will evaluate your property and bring you an offer you will be the happiest with.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="content-box">
+                                            <h4>
+                                                Property Rented!
+                                            </h4>
+                                            <div class="image">
+                                                <img alt="" src="/static/img/key-icon.gif" width="100">
+                                            </div>
+                                            
+                                            <div class="caption">
+                                                Your own property expert will keep you posted throughout the process. We will enhance your property rental process  all the way to completion.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <center>
+                                            <a href="{% url 'account:login' %}" class="btn btn-xlg btn-primary">LETS START!</a>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'admin/base.html' %}
+{% load i18n static %}
+
+{% block extrahead %}
+    {{ block.super }}
+
+{% endblock %}
+
+{% block blockbots %}
+    {{ block.super }}
+    <!-- FIXING SELECT 2 JQUERY ISSUE-->
+    <script src="{% static 'js/jquery.js' %}" type="text/javascript"></script>
+    <script type="text/javascript" src='https://www.gstatic.com/charts/loader.js'></script>
+{% endblock %}

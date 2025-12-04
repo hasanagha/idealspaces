@@ -1,0 +1,98 @@
+{% extends "account/base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}
+My Properties
+{% endblock %}
+
+{% block account_content %}
+<div class="dashboard-header">
+    <h1>Page Heading</h1>
+    <a class="btn btn-primary pull-right ">Add New Property</a>
+</div>
+
+<div class="item-listing list">
+  {% if listings %}
+    {% for item in listings %}
+      <div class="item" data-container="{{ item.listing.pk }}">
+          <div class="row">
+              <div class="col-lg-5">
+                  <div class="item-image" style="background-image: url({{ item.listing.get_default_image }})">
+                      <a href="{{ item.listing.get_listing_url }}">
+                          <div class="item-badges">
+                              <div class="item-badge-right">
+                                  For {{ item.listing.get_property_type_display }}
+                              </div>
+                          </div>
+                          <div class="item-meta">
+                              <div class="item-price">
+                                  AED {{item.listing.price|intcomma}}
+                              </div>
+                          </div>
+                          
+                      </a>
+                  </div>
+              </div>
+              <div class="col-lg-7">
+                  <div class="item-info">
+                      <h3 class="item-title">
+                          <a target="_blank" href="{{ item.listing.get_listing_url }}">
+                              {{ item.listing.title }}
+                          </a>
+                      </h3>
+                      <div class="item-location">
+                          <i class="fa fa-map-marker">
+                          </i>
+                          {{ item.listing.location }}
+                      </div>
+                      <div class="item-details-i">
+                        {% if item.listing.get_bedrooms %}
+                          <span class="bedrooms" data-toggle="tooltip" title="{{item.listing.get_bedrooms}}{% if listing.bedrooms %} Bedrooms{% endif %}">
+                              {{item.listing.get_bedrooms}}
+                              <i class="fa fa-bed">
+                              </i>
+                          </span>
+                        {% endif %}
+                        {% if item.listing.bathrooms %}
+                          <span class="bathrooms" data-toggle="tooltip" title="{{item.listing.bathrooms}} Bathrooms">
+                              {{item.listing.bathrooms}}
+                              <i class="fa fa-bath">
+                              </i>
+                          </span>
+                        {% endif %}
+                      </div>
+                      <div class="item-details">
+                          {{ item.listing.description|striptags|truncatewords:20|safe }}
+                      </div>
+                      <a href="{{ item.listing.get_listing_url }}" class="btn btn-primary">View Details</a>
+                      <a data-listing-id="{{ item.listing.id }}" href="javascript:" class="remove-from-favorites btn btn-secondary">Remove</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>You don't have any favorite listing.</p>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript">
+  $('.remove-from-favorites').click(function() {
+      var elem = $(this);
+      $.post('/account/favorites/ae/', {'listing_id': elem.data('listing-id')}, function(response){
+        if(response && response.status == 'success') {
+          if(response.msg == 'removed') {
+            $('[data-container="' + elem.data('listing-id') + '"]').remove();
+
+            if(!$('.item-listing .item').length) {
+              $('.item-listing').append("<p>You don't have any favorite listing.</p>");
+            }
+          }
+        }
+      });
+    });
+</script>
+{% endblock %}

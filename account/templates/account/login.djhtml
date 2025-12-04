@@ -1,0 +1,48 @@
+{% extends "account/login_base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}Welcome! Log In Here! - Ideal Spaces{% endblock %}
+{% block og_title %}Welcome! Log In Here! - Ideal Spaces{% endblock %}
+{% block twitter_title %}Welcome! Log In Here! - Ideal Spaces{% endblock %}
+{% block meta_description %}We missed you, our partner! Log In and update your venues for the world to see!{% endblock %}
+{% block og_description %}We missed you, our partner! Log In and update your venues for the world to see!{% endblock %}
+{% block twitter_description %}We missed you, our partner! Log In and update your venues for the world to see!{% endblock %}
+
+{% block login_content %}
+    <div class="o-page o-page--center">
+        <div class="o-page__card">
+            <div class="c-card u-mb-xsmall">
+                <header class="c-card__header u-pt-large">
+                    <h1 class="u-h3 u-text-center u-mb-zero">Welcome back! Please login.</h1>
+                </header>
+                <form method="post" class="c-card__body">
+                    {% csrf_token %}
+                    {% if form.errors %}
+                    <div class="alert alert-danger" role="alert">
+                        <ul class="errors">
+                            {% for key,value in form.errors.items %}
+                            <li>
+                                {{ value|escape }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    <div class="c-field u-mb-small">
+                        <label class="c-field__label" for="input1">Log in with your e-mail address</label> 
+                        <input class="c-input" type="email" id="id_username" name="username" placeholder="Email" placeholder="clark@dashboard.com"> 
+                    </div>
+                    <div class="c-field u-mb-small">
+                        <label class="c-field__label" for="input2">Password</label> 
+                        <input class="c-input" id="id_password" name="password" placeholder="Password" type="password" required=""> 
+                    </div>
+                    <button class="btn  btn-primary btn-block" type="submit">Sign in to Dashboard</button>
+                </form>
+            </div>
+            <div class="o-line">
+                <a class="u-text-mute u-text-small" href="{% url 'account:password_reset'%}">Forgot Password?</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

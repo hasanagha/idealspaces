@@ -1,0 +1,56 @@
+{% extends "base.djhtml" %}
+{% load static %}
+{% load humanize %}
+
+{% block page_title %}About Ideal Spaces{% endblock %}
+{% block og_title %}About Ideal Spaces{% endblock %}
+{% block twitter_title %}About Ideal Spaces{% endblock %}
+
+{% block meta_description %}Who we are, where we came from, what do we do? Meet our innovative team!{% endblock %}
+{% block og_description %}Who we are, where we came from, what do we do? Meet our innovative team!{% endblock %}
+{% block twitter_description %}Who we are, where we came from, what do we do? Meet our innovative team!{% endblock %}
+
+{% block content %}
+<div class="main fixed-width-container">
+    <div class="main-inner">
+        <div class="content">
+            <div class="container">
+
+                <!--==================== About us HEADER ====================-->
+                <div class="landing-header m-auto text-center">
+                    <div class="">
+                        <img src="{% static "img/404_1.png" %}" class="img-fluid hide-on-mobile" alt="Idealspaces.com" />
+
+                        <!-- Main Title -->
+                        <div class="main-title">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <div class="hero-title">
+                                            <p>Page not found</p>
+                                            <h1>
+                                               <b> 
+                                                Ooops.
+                                               </b>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Main Title -->
+                    </div>
+                    <!--  // Contact Modal -->
+                    <!--==================== NEW INSURANCE ====================-->
+                    <hr />
+                </div>
+
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.main-inner -->
+</div>
+<!-- /.main -->
+{% endblock %}

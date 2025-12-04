@@ -1,0 +1,4803 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 11.3
+-- Dumped by pg_dump version 11.3
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Data for Name: portal_location; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.portal_location (id, name, slug, is_city, is_location, is_sublocation, latitude, longitude, status, parent_id) FROM stdin;
+1	Dubai	dubai	t	f	f	\N	\N	t	\N
+2	Abu Dhabi	abu-dhabi	t	f	f	\N	\N	t	\N
+3	Sharjah	sharjah	t	f	f	\N	\N	t	\N
+4	Ajman	ajman	t	f	f	\N	\N	t	\N
+5	Umm Al Quwain	umm-al-quwain	t	f	f	\N	\N	t	\N
+6	Ras Al Khaimah	ras-al-khaimah	t	f	f	\N	\N	t	\N
+7	Fujairah	fujairah	t	f	f	\N	\N	t	\N
+8	Al Ain	al-ain	t	f	f	\N	\N	t	\N
+9	Akoya Oxygen	akoya-oxygen	f	t	f	24.9969210000000004	55.3922839999999965	t	1
+10	Technopark	technopark	f	t	f	25.2048489999999994	55.2707830000000016	t	1
+11	Liwa Street	liwa-street	f	t	f	24.4896470000000015	54.358038999999998	t	2
+12	Dubai Hills Estate	dubai-hills-estate	f	t	f	25.1167990000000003	55.2540150000000025	t	1
+13	Al Nahda 2	al-nahda-2	f	t	f	25.2924790000000002	55.3773929999999979	t	1
+14	Dubai Creek Club Residences	dubai-creek-club-residences-2	f	t	f	25.2048489999999994	55.2707830000000016	t	1
+15	Lakes Views Villa	lakes-views-villa	f	f	t	25.2048489999999994	55.2717949999999973	t	14
+16	Dubai Pearl	dubai-pearl	f	t	f	25.0986709999999995	55.160463	t	1
+17	Al Jaddaf	al-jaddaf	f	t	f	25.2203359999999996	55.3260179999999977	t	1
+18	Al Badie	al-badie	f	t	f	25.3575000000000017	55.3908330000000007	t	3
+19	Oud Metha	oud-metha	f	t	f	25.2374000000000009	55.3117000000000019	t	1
+20	Al Gurm West	al-gurm-west	f	t	f	24.4229540000000007	54.4019469999999998	t	2
+21	Dubai Airport Freezone	dubai-airport-freezone	f	t	f	25.2604240000000004	55.374918000000001	t	1
+22	Culture Village	culture-village	f	t	f	25.2266669999999991	55.3386110000000002	t	1
+23	Iris Amber	iris-amber	f	f	t	25.2250680000000003	55.3378530000000026	t	22
+24	Podium Tower	podium-tower	f	f	t	25.2250680000000003	55.3378530000000026	t	22
+25	Yuvi Residence	yuvi-residence	f	f	t	25.2250680000000003	55.3378530000000026	t	22
+26	Al Warsan	al-warsan	f	t	f	25.1633460000000007	55.4416229999999999	t	1
+27	Al Warqaa	al-warqaa	f	t	f	25.1918199999999999	55.4081699999999984	t	1
+28	Palm Jebel Ali	palm-jebel-ali	f	t	f	25.0060000000000002	54.9883000000000024	t	1
+29	Garden Homes	garden-homes	f	f	t	25.0078309999999995	54.9942309999999992	t	28
+30	Muhaisnah	muhaisnah	f	t	f	25.2610400000000013	55.4194749999999985	t	1
+31	Muhaisnah 3	muhaisnah-3	f	f	t	25.2712259999999986	55.4042519999999996	t	30
+32	Pearl Jumeirah	pearl-jumeirah	f	t	f	25.2451049999999988	55.2576850000000022	t	1
+33	Nad Al Hamar	nad-al-hamar	f	t	f	25.1866340000000015	55.3712319999999991	t	1
+34	Al Barari	al-barari	f	t	f	25.0994220000000006	55.3129670000000004	t	1
+35	Nad Al Sheba	nad-al-sheba	f	t	f	25.1435460000000006	55.3475329999999985	t	1
+36	Reem	reem	f	t	f	25.0047280000000001	55.3026729999999986	t	1
+37	Al Qusaidat	al-qusaidat	f	t	f	25.7600589999999983	55.9762389999999996	t	6
+38	Al Rashidiya	al-rashidiya	f	t	f	25.2274600000000007	55.3914400000000029	t	1
+39	Amwaj Resort	amwaj-resort	f	t	f	25.602367000000001	55.5794619999999995	t	5
+40	Al Mizhar	al-mizhar	f	t	f	25.2491580000000013	55.4526990000000026	t	1
+41	Al Falaj	al-falaj	f	t	f	25.3578420000000015	55.4337069999999983	t	3
+42	The Reserve	the-reserve	f	f	t	0	0	t	34
+43	Bromellia	bromellia	f	f	t	25.0994220000000006	55.3129670000000004	t	34
+44	Mira 1	mira-1	f	f	t	0	0	t	36
+45	Al Karama	al-karama	f	t	f	25.2489199999999983	55.3060550000000006	t	1
+46	Al Abbas Building	al-abbas-building	f	f	t	25.2547229999999985	55.3058389999999989	t	45
+47	Dubai Creek Harbour	dubai-creek-harbour	f	t	f	25.1948979999999985	55.3594640000000027	t	1
+48	Al Mirgab	al-mirgab	f	t	f	0	0	t	3
+49	Al Nabaah	al-nabaah	f	t	f	0	0	t	3
+50	Al Suyoh 6	al-suyoh-6	f	t	f	0	0	t	3
+51	Al Suyoh 12	al-suyoh-12	f	t	f	0	0	t	3
+52	Al Suyoh 18	al-suyoh-18	f	t	f	0	0	t	3
+53	Al Suyoh 19	al-suyoh-19	f	t	f	0	0	t	3
+54	Juwaiza	juwaiza	f	t	f	0	0	t	3
+55	Al Garayen	al-garayen	f	t	f	0	0	t	3
+56	Desert Leaf 4	desert-leaf-4	f	f	t	25.0987350000000013	55.320217999999997	t	34
+57	Dubai South City	dubai-south-city	f	t	f	0	0	t	1
+58	Maple at Dubai Hills Estate 2	maple-at-dubai-hills-estate-2	f	f	t	0	0	t	12
+59	Harbour Views 2	harbour-views-2	f	f	t	0	0	t	47
+60	Al Maryah Island	al-maryah-island	f	t	f	24.4994550000000011	54.3886109999999974	t	2
+61	Silk Leaf 1	silk-leaf-1	f	f	t	0	0	t	34
+62	Nova Hotel Villas	nova-hotel-villas	f	f	t	0	0	t	9
+63	Acuna	acuna	f	f	t	0	0	t	9
+64	Abu Dhabi Gate City	abu-dhabi-gate-city	f	t	f	24.3940090000000005	54.5026379999999975	t	2
+65	Al Dhafrah	al-dhafrah	f	t	f	24.4784080000000017	54.3767819999999986	t	2
+66	Al Khalidiya	al-khalidiya	f	t	f	24.4693959999999997	54.3488880000000023	t	2
+67	Al Markaziyah	al-markaziyah	f	t	f	24.4927010000000003	54.363114000000003	t	2
+68	Al Nahda Abu Dhabi	al-nahda-abu-dhabi	f	t	f	24.2563519999999997	54.7302200000000028	t	2
+69	Al Raha Gardens	al-raha-gardens	f	t	f	24.4329630000000009	54.5711069999999978	t	2
+70	Al Samha	al-samha	f	t	f	24.6812989999999992	54.7576820000000026	t	2
+71	Al Wathba	al-wathba	f	t	f	24.2018780000000007	54.7192379999999972	t	2
+72	Corniche Road	corniche-road	f	t	f	24.4704620000000013	54.336511999999999	t	2
+73	Electra Street	electra-street	f	t	f	24.4834180000000003	54.3605230000000006	t	2
+74	Grand Mosque District	grand-mosque-district	f	t	f	24.413252	54.462024999999997	t	2
+75	Madinat Zayed	madinat-zayed	f	t	f	24.4812380000000012	54.3648280000000028	t	2
+76	Saadiyat Island	saadiyat-island	f	t	f	24.5322880000000012	54.4454670000000007	t	2
+77	Zayed Military City	zayed-military-city	f	t	f	24.5005980000000001	54.8894120000000001	t	2
+78	Al Faqa	al-faqa	f	t	f	24.7084730000000015	55.6143989999999988	t	8
+79	Al Markhaniya	al-markhaniya	f	t	f	24.2254980000000018	55.6669309999999982	t	8
+80	Muehat	muehat	f	t	f	25.3675050000000013	55.4894990000000021	t	4
+81	Mina Al Arab	mina-al-arab	f	t	f	25.7232960000000013	55.8421329999999969	t	6
+82	Rak Industrial And Technology Park	rak-industrial-and-technology-park	f	t	f	25.800692999999999	55.9761990000000011	t	6
+83	Yasmin Village	yasmin-village	f	t	f	25.800692999999999	55.9761990000000011	t	6
+84	Halwan	halwan	f	t	f	25.3512759999999986	55.4084029999999998	t	3
+85	Mangrove Village	mangrove-village	f	f	t	24.3918970000000002	54.4923709999999986	t	64
+86	Al Hosn	al-hosn	f	f	t	24.4802929999999996	54.3528639999999967	t	66
+87	Al Waha Tower	al-waha-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	66
+88	Sheikha Salama Building	sheikha-salama-building	f	f	t	24.467846999999999	54.3397980000000018	t	66
+89	Crescent Tower 1	crescent-tower-1	f	f	t	24.4666670000000011	54.3666669999999996	t	66
+90	Montazah Tower	montazah-tower	f	f	t	24.4683479999999989	54.3407470000000004	t	66
+91	Al Lissaily	al-lissaily	f	t	f	24.4320099999999982	54.5442219999999978	t	2
+92	Al Tharwaniyah Community	al-tharwaniyah-community	f	f	t	24.4407120000000013	54.5946759999999998	t	69
+93	Sidra Community	sidra-community	f	f	t	24.434152000000001	54.5731759999999966	t	69
+94	Al Wathba Tower	al-wathba-tower	f	f	t	24.2018780000000007	54.7210299999999989	t	71
+95	Al Diar Tower 1	al-diar-tower-1	f	f	t	24.4666670000000011	54.3666669999999996	t	72
+96	Baynuna Tower 2	baynuna-tower-2	f	f	t	24.4826909999999991	54.350003000000001	t	72
+97	Falcon Tower	falcon-tower	f	f	t	24.4844660000000012	54.3547859999999972	t	72
+98	Dhafir Tower	dhafir-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	73
+99	Desert Village	desert-village	f	f	t	24.3494519999999994	54.5363529999999983	t	74
+100	Al Manzel Hotel Apartment	al-manzel-hotel-apartment	f	f	t	24.4965469999999996	54.378467999999998	t	73
+101	Al Manzel Hotel Apartment	al-manzel-hotel-apartment-3	f	f	t	24.4965469999999996	54.378467999999998	t	73
+102	Saadiyat Beach Golf Views	saadiyat-beach-golf-views	f	f	t	24.5428379999999997	54.4390429999999981	t	76
+103	Jasmine Leaf 9	jasmine-leaf-9	f	f	t	0	0	t	34
+104	Yellow Building	yellow-building	f	f	t	25.2489199999999983	55.3065619999999996	t	45
+105	Al kazim Building	al-kazim-building	f	f	t	25.2539520000000017	55.305213000000002	t	45
+106	Dubai Marina	dubai-marina	f	t	f	25.0790700000000015	55.1397419999999983	t	1
+107	Jumeirah Lake Towers	jumeirah-lake-towers	f	t	f	25.0781479999999988	55.1482770000000002	t	1
+108	International City	international-city	f	t	f	25.1679819999999985	55.3989890000000003	t	1
+109	The Lakes	the-lakes	f	t	f	25.0800249999999991	55.1696489999999997	t	1
+110	Jumeirah Islands	jumeirah-islands	f	t	f	25.0578679999999991	55.1554870000000008	t	1
+111	The Gardens	the-gardens	f	t	f	25.0441320000000012	55.126691000000001	t	1
+112	Jumeirah Village Circle	jumeirah-village-circle	f	t	f	25.0587459999999993	55.2093890000000016	t	1
+113	Al Rigga	al-rigga	f	t	f	25.2605320000000013	55.3231139999999968	t	1
+114	Golf Apartments	golf-apartments	f	t	f	25.800692999999999	55.9761990000000011	t	6
+115	Malibu	malibu	f	t	f	25.800692999999999	55.9761990000000011	t	6
+116	Al Aryam	al-aryam	f	t	f	24.3068160000000013	54.2265599999999992	t	2
+117	Al Nahyan	al-nahyan	f	t	f	24.4666670000000011	54.3833330000000004	t	2
+118	Corniche	corniche	f	t	f	24.4886410000000012	54.350400999999998	t	2
+119	Khalifa city a	khalifa-city-a	f	t	f	24.4226489999999998	54.5783190000000005	t	2
+120	Officers City	officers-city	f	t	f	24.3963660000000004	54.4998089999999991	t	2
+121	Al Nekhailat	al-nekhailat	f	t	f	25.3832549999999983	55.4263959999999969	t	3
+122	Hamriyah Free Zone	hamriyah-free-zone	f	t	f	25.462610999999999	55.4835100000000025	t	3
+123	Rolla Area	rolla-area	f	t	f	25.3569260000000014	55.3891259999999974	t	3
+124	Downtown Fujairah	downtown-fujairah	f	t	f	25.1288100000000014	56.3264849999999981	t	7
+125	Ajman Industrial Area	ajman-industrial-area	f	t	f	25.3054090000000009	55.4305489999999992	t	4
+126	Ajman Meadows	ajman-meadows	f	t	f	25.3994999999999997	55.4795999999999978	t	4
+127	Al Naemiyah	al-naemiyah	f	t	f	25.3836510000000004	55.4521510000000006	t	4
+128	Green City	green-city	f	t	f	25.3821159999999999	55.586153000000003	t	4
+129	New Industrial Area	new-industrial-area	f	t	f	25.3800680000000014	55.4776540000000011	t	4
+130	phase 1	phase-1	f	f	t	25.1945450000000015	55.364130000000003	t	47
+131	Arjan	arjan	f	t	f	25.0604809999999993	55.2396620000000027	t	1
+132	Al Anbar Villas	al-anbar-villas	f	f	t	25.0842999999999989	55.1481599999999972	t	106
+133	Al Duaa	al-duaa	f	f	t	25.0779999999999994	55.1410399999999967	t	106
+134	Al Majara 2	al-majara-2	f	f	t	25.0732600000000012	55.1369899999999973	t	106
+135	Al Mesk Villas	al-mesk-villas	f	f	t	25.0853900000000003	55.1493800000000007	t	106
+136	ary	ary	f	f	t	25.0716500000000018	55.1345699999999965	t	106
+137	Bayside Residence	bayside-residence	f	f	t	25.0813999999999986	55.1450699999999969	t	106
+138	Casa Del Mar	casa-del-mar	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+139	Dream Towers	dream-towers	f	f	t	0	0	t	106
+140	Al Fairooz Tower	al-fairooz-tower	f	f	t	25.0856700000000004	55.1487100000000012	t	106
+141	kg	kg	f	f	t	25.0695900000000016	55.1274200000000008	t	106
+142	La Residencia Del Mar	la-residencia-del-mar	f	f	t	25.0714690000000004	55.131141999999997	t	106
+143	Manchester	manchester	f	f	t	25.0681000000000012	55.1318899999999985	t	106
+144	Marina Diamond 6	marina-diamond-6	f	f	t	25.0807199999999995	55.1457899999999981	t	106
+145	Viceroy Jv	viceroy-jv	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+146	City Premiere Hotel Apartments	city-premiere-hotel-apartments	f	f	t	25.0797619999999988	55.1431650000000033	t	106
+147	Casa Blanca Townhouses	casa-blanca-townhouses	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+148	Dragon Mart 1	dragon-mart-1	f	f	t	25.1732119999999995	55.4133759999999995	t	108
+149	Areej Tower	areej-tower	f	f	t	24.4709140000000005	54.3442250000000016	t	66
+150	Wasl Hub	wasl-hub	f	f	t	25.2408889999999992	55.3005390000000006	t	45
+151	Noora Residence 1	noora-residence-1	f	f	t	25.0598689999999991	55.2052449999999979	t	112
+152	Wasl Duet	wasl-duet	f	f	t	25.2403769999999987	55.3002370000000028	t	45
+153	Al Muhairy Center	al-muhairy-center	f	f	t	0	0	t	66
+154	Al Marina	al-marina	f	t	f	0	0	t	2
+155	Hessa Home Building	hessa-home-building	f	f	t	0	0	t	19
+156	Falaj Al Moalla	falaj-al-moalla	f	t	f	25.3577660000000016	55.8633450000000025	t	5
+157	Le Meridien Mina Seyahi Beach Resort and Marina	le-meridien-mina-seyahi-beach-resort-and-marina-2	f	f	t	0	0	t	106
+158	Saraya	saraya	f	f	t	24.5029739999999983	54.3691049999999976	t	72
+159	Creek Horizon	creek-horizon	f	f	t	25.2009420000000013	55.342568	t	47
+160	Muwailih	muwailih	f	t	f	25.301634	55.4529939999999968	t	3
+161	Al Rawda	al-rawda-2	f	t	f	0	0	t	4
+162	Al Rawda 2	al-rawda-2-2	f	f	t	25.3916399999999989	55.5106999999999999	t	161
+163	SAS 1	sas-1	f	f	t	25.2927859999999995	55.3810709999999986	t	13
+164	The Pulse	the-pulse	f	f	t	24.8884079999999983	55.1504589999999979	t	57
+165	Royal Residence	royal-residence	f	f	t	0	0	t	108
+166	Park Point	park-point	f	f	t	25.1139060000000001	55.255310999999999	t	12
+167	Akoya Cuatro	akoya-cuatro	f	f	t	24.9894010000000009	55.3790270000000007	t	9
+168	Wasl Trio	wasl-trio	f	f	t	25.2633259999999993	55.3282719999999983	t	113
+169	Mar Residence	mar-residence	f	f	t	25.062501000000001	55.201870999999997	t	112
+170	Universal Apartment CBD21	universal-apartment-cbd21	f	f	t	0	0	t	108
+171	Al Emirates Tower	al-emirates-tower	f	f	t	0	0	t	66
+172	Dezire Residences	dezire-residences	f	f	t	0	0	t	112
+173	Nareel Island	nareel-island	f	t	f	24.4531659999999995	54.3230580000000032	t	2
+174	Al Sajaa	al-sajaa	f	t	f	25.3238340000000015	55.6356449999999967	t	3
+175	Serena 1	serena-1	f	f	t	0	0	t	112
+176	Arabian Ranches 2	arabian-ranches-2	f	t	f	25.0333590000000008	55.2726479999999967	t	1
+177	Avencia	avencia	f	f	t	0	0	t	9
+178	Wasl Quartz	wasl-quartz	f	f	t	0	0	t	45
+179	Miracle Residence	miracle-residence	f	f	t	0	0	t	131
+270	Silver Tower	silver-tower	f	f	t	24.4923430000000018	54.3586779999999976	t	72
+180	Milano Giovanni Boutique Suites	milano-giovanni-boutique-suites	f	f	t	25.0608339999999998	55.2171289999999999	t	112
+181	Jasmine Leaf 2	jasmine-leaf-2	f	f	t	0	0	t	34
+182	Al Warsan 4	al-warsan-4	f	f	t	25.159597999999999	55.3968830000000025	t	26
+183	Jasmine Leaf 5	jasmine-leaf-5	f	f	t	25.0994220000000006	55.3129670000000004	t	34
+184	Umm Hurair	umm-hurair	f	t	f	25.2390739999999987	55.3214269999999999	t	1
+185	The Ghaf Tree	the-ghaf-tree-2	f	f	t	25.0520059999999987	55.2087670000000017	t	112
+186	Golf District	golf-district	f	f	t	0	0	t	57
+187	Vida Residences Dubai Marina	vida-residences-dubai-marina	f	f	t	0	0	t	106
+188	Chelsea Boutique Villas	chelsea-boutique-villas	f	f	t	25.024871000000001	55.2458870000000033	t	9
+189	Vardon Cluster	vardon-cluster	f	f	t	25.0284300000000002	55.2586859999999973	t	9
+190	Victoria	victoria	f	f	t	0	0	t	9
+191	Park Heights	park-heights-2	f	f	t	0	0	t	12
+192	Bahya Villas	bahya-villas	f	f	t	0	0	t	9
+193	Artistic Heights	artistic-heights	f	f	t	25.0600710000000007	55.2081170000000014	t	112
+194	Al Foah	al-foah	f	t	f	0	0	t	8
+195	Paloverde	paloverde	f	f	t	24.9918179999999985	55.3811660000000003	t	9
+196	Park Heights 2	park-heights-2-2	f	f	t	0	0	t	12
+197	Creek Rise	creek-rise	f	f	t	0	0	t	47
+198	Primerose	primerose	f	f	t	0	0	t	9
+199	Dubai Design District	dubai-design-district	f	t	f	0	0	t	1
+200	Liwan	liwan	f	t	f	0	0	t	1
+201	Complex 14	complex-14	f	f	t	24.4143800000000013	54.5812930000000023	t	119
+202	Complex 8	complex-8	f	f	t	24.4449930000000002	54.4369280000000018	t	119
+203	Marina Al Saadiyat	marina-al-saadiyat	f	f	t	24.5302919999999993	54.4451579999999993	t	76
+204	Zayed Military City Tower 4	zayed-military-city-tower-4	f	f	t	24.4961279999999988	54.8951289999999972	t	77
+205	Zayed Military City Tower 7	zayed-military-city-tower-7	f	f	t	24.4961279999999988	54.8951289999999972	t	77
+206	Ajman Industrial 2	ajman-industrial-2	f	f	t	25.3765019999999986	55.4688629999999989	t	125
+207	Al Naemiya Tower 1	al-naemiya-tower-1	f	f	t	25.3994999999999997	55.4795999999999978	t	127
+208	Nasa	nasa	f	f	t	25.3994999999999997	55.4795999999999978	t	128
+209	Al Fanar 2	al-fanar-2	f	f	t	25.1288100000000014	56.3264849999999981	t	124
+210	Bermuda	bermuda	f	f	t	25.7206119999999991	55.8370710000000017	t	81
+211	Terrace Apartments	terrace-apartments	f	f	t	25.7924310000000006	55.9801479999999998	t	83
+212	The World Islands	the-world-islands	f	t	f	25.2207830000000008	55.159950000000002	t	1
+213	Perseus - Rostov Island	perseus-rostov-island	f	f	t	25.2048489999999994	55.2707830000000016	t	212
+214	Babil	babil	f	f	t	25.2250680000000003	55.3378530000000026	t	22
+215	Iris Asmar	iris-asmar	f	f	t	25.2250680000000003	55.3378530000000026	t	22
+216	Rhodi Residence	rhodi-residence	f	f	t	25.2250680000000003	55.3378530000000026	t	22
+217	Santeview 1	santeview-1	f	f	t	25.2250680000000003	55.3378530000000026	t	22
+218	Khalidiya Centre	khalidiya-centre	f	f	t	24.4705359999999992	54.3518460000000019	t	66
+219	Al Mamzar	al-mamzar	f	t	f	25.3182030000000005	55.3378530000000026	t	1
+220	Al Warsan 1	al-warsan-1	f	f	t	25.1633460000000007	55.442259	t	26
+221	Maeen 4	maeen-4	f	f	t	25.0835149999999985	55.1704500000000024	t	109
+222	Al Wasl	al-wasl	f	t	f	25.1973020000000005	55.2549220000000005	t	1
+223	Al Warqaa 1	al-warqaa-1	f	f	t	25.1874590000000005	55.4056360000000012	t	27
+224	Vue De Lac	vue-de-lac	f	f	t	25.0666669999999989	55.1402780000000021	t	107
+225	Signature Villas	signature-villas	f	f	t	25.0078309999999995	54.9942309999999992	t	28
+226	Water Homes	water-homes	f	f	t	25.0078309999999995	54.9942309999999992	t	28
+227	Al Sufouh	al-sufouh	f	t	f	25.1087799999999994	55.1637989999999974	t	1
+228	Muhaisnah 1	muhaisnah-1	f	f	t	25.2421809999999986	55.4167070000000024	t	30
+229	Al Khawaneej	al-khawaneej	f	t	f	25.2327720000000006	55.5081010000000035	t	1
+230	Muhaisnah 4	muhaisnah-4	f	f	t	25.2778770000000002	55.4097870000000015	t	30
+231	Contemporary Cluster	contemporary-cluster	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+232	Trident Oceanic	trident-oceanic	f	f	t	0	0	t	106
+233	District 6	district-6	f	f	t	25.0521729999999998	55.1914099999999976	t	112
+234	District 8	district-8	f	f	t	25.0499909999999986	55.1874340000000032	t	112
+235	District 13	district-13	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+236	District 20	district-20	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+237	District 25	district-25	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+238	Ras Al Khor	ras-al-khor	f	t	f	25.1956200000000017	55.3438000000000017	t	1
+239	Mulberry 1	mulberry-1	f	f	t	25.0504379999999998	55.2056639999999987	t	112
+240	Al Barari Villas	al-barari-villas	f	f	t	25.0994220000000006	55.3129670000000004	t	34
+241	Nad Al Sheba 1	nad-al-sheba-1	f	f	t	25.1435460000000006	55.3475329999999985	t	35
+242	Al Seer	al-seer	f	t	f	25.7982830000000014	55.9734539999999967	t	6
+243	Al Twar	al-twar	f	t	f	25.262004000000001	55.3793459999999982	t	1
+244	Mira	mira	f	f	t	25.0047280000000001	55.3026729999999986	t	36
+245	The Hills	the-hills	f	t	f	25.0800990000000006	55.1575259999999972	t	1
+246	Al Rashidiya	al-rashidiya-2	f	t	f	25.2274600000000007	55.3914400000000029	t	1
+247	Garden Hall	garden-hall	f	f	t	25.0582719999999988	55.1553949999999986	t	110
+248	Marinascape Oceanic	marinascape-oceanic	f	f	t	25.0830400000000004	55.14696	t	106
+249	Warsan Village	warsan-village	f	f	t	25.1596620000000009	55.3967120000000008	t	108
+250	Mohammad Bin Rashid City	mohammad-bin-rashid-city	f	t	f	25.1668379999999985	55.2774569999999983	t	1
+251	Sp Residence	sp-residence	f	f	t	25.1648929999999993	55.4084029999999998	t	108
+252	Master View	master-view	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+253	Garden City	garden-city	f	t	f	25.4043020000000013	55.5076159999999987	t	4
+254	Hanover Square	hanover-square	f	f	t	25.0681660000000015	55.2046909999999968	t	112
+255	Technology Park	technology-park	f	t	f	24.9156119999999994	55.0548500000000018	t	1
+256	The Heart Of Europe	the-heart-of-europe	f	f	t	25.2222730000000013	55.1632760000000033	t	212
+257	Olgana Tower	olgana-tower	f	f	t	25.1133929999999985	55.1762200000000007	t	227
+258	No.9	no9	f	f	t	25.0833900000000014	55.1448460000000011	t	106
+259	Al Gharayen	al-gharayen	f	t	f	25.2987779999999987	55.520190999999997	t	3
+260	Mulberry at Park Heights	mulberry-at-park-heights	f	f	t	25.1965049999999984	55.277431	t	12
+261	Al Mizhar 2	al-mizhar-2	f	f	t	25.2435949999999991	55.4610079999999996	t	40
+262	Al Safarat District	al-safarat-district	f	t	f	24.4216939999999987	54.4350349999999992	t	2
+263	Nakheel Townhouses	nakheel-townhouses	f	f	t	25.0594080000000012	55.2102670000000018	t	112
+264	Al Faisht	al-faisht	f	t	f	25.3827560000000005	55.4057910000000007	t	3
+265	Al Goaz	al-goaz	f	t	f	25.3537600000000012	55.4439530000000005	t	3
+266	Westar Les Castelets	westar-les-castelets	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+267	Emirates Garden 1	emirates-garden-1	f	f	t	25.0545800000000014	55.2118010000000012	t	112
+268	Mirabella 4	mirabella-4	f	f	t	25.0657470000000018	55.2116800000000012	t	112
+269	Nakeel Tower	nakeel-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	66
+271	Marina Quays	marina-quays	f	f	t	25.0767619999999987	55.1365520000000018	t	106
+272	Sama Tower	sama-tower	f	f	t	24.483467000000001	54.3606320000000025	t	67
+273	Mira 2	mira-2	f	f	t	0	0	t	36
+274	Mira Oasis 2	mira-oasis-2	f	f	t	25.0230770000000007	55.2888909999999996	t	36
+275	Prime Residence B	prime-residence-b	f	f	t	25.1659240000000004	55.3981939999999966	t	108
+276	Al Safa	al-safa	f	t	f	0	0	t	1
+277	Mira 5	mira-5	f	f	t	25.0269149999999989	55.3211129999999969	t	36
+278	Techno Park	techno-park	f	f	t	24.9156119999999994	55.0566930000000028	t	255
+279	Wyndham Dubai Marina	wyndham-dubai-marina	f	f	t	25.0813500000000005	55.1440750000000008	t	106
+280	Hyati Residence	hyati-residence	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+281	Dragon Mart 2	dragon-mart-2	f	f	t	25.1728869999999993	55.4139320000000026	t	108
+282	Al Manzel Hotel Apartment	al-manzel-hotel-apartment-2	f	f	t	24.4965469999999996	54.378467999999998	t	73
+283	Al Manzel Hotel Apartment	al-manzel-hotel-apartment-4	f	f	t	24.4965469999999996	54.378467999999998	t	73
+284	Parkways	parkways	f	f	t	25.0728989999999996	55.1654849999999968	t	12
+285	Jumeirah Village Circle Villas	jumeirah-village-circle-villas	f	f	t	25.0590890000000002	55.209268999999999	t	112
+286	Al Khazna Centre	al-khazna-centre	f	f	t	25.2441229999999983	55.3060979999999986	t	45
+287	Karama Centre	karama-centre	f	f	t	25.237285	55.3029820000000001	t	45
+288	Al Rahmaniya	al-rahmaniya	f	t	f	25.3466330000000006	55.585721999999997	t	3
+289	AL Hazannah	al-hazannah	f	t	f	25.3713860000000011	55.4206610000000026	t	3
+290	Marina Wharf 3	marina-wharf-3	f	f	t	25.0728000000000009	55.1327420000000004	t	106
+291	Al Saqr tower	al-saqr-tower	f	f	t	24.4708460000000017	54.3397629999999978	t	118
+292	Al Fayha	al-fayha	f	f	t	25.3597430000000017	55.4092780000000005	t	84
+293	Ary marina View Tower	ary-marina-view-tower	f	f	t	0	0	t	106
+294	Al Shuwaihean	al-shuwaihean	f	t	f	0	0	t	3
+295	Um Altaraffa	um-altaraffa	f	t	f	0	0	t	3
+296	Al Suyoh 2	al-suyoh-2	f	t	f	0	0	t	3
+297	Al Suyoh 7	al-suyoh-7	f	t	f	0	0	t	3
+298	Al Suyoh 13	al-suyoh-13	f	t	f	0	0	t	3
+299	Al Suyoh 17	al-suyoh-17	f	t	f	0	0	t	3
+300	Al Suyoh 20	al-suyoh-20	f	t	f	0	0	t	3
+301	Al Mairid	al-mairid	f	t	f	0	0	t	6
+302	Al Jurf	al-jurf	f	t	f	0	0	t	4
+303	Siena 1	siena-1	f	f	t	0	0	t	112
+304	Al Maqam	al-maqam	f	f	t	24.5006909999999998	54.3894420000000025	t	60
+305	Silk Leaf 2	silk-leaf-2	f	f	t	0	0	t	34
+306	Ettore 971 Bugatti Style Apartments	ettore-971-bugatti-style-apartments	f	f	t	0	0	t	9
+307	Hacienda-Aralia	hacienda-aralia	f	t	f	0	0	t	1
+308	Centaury	centaury	f	f	t	0	0	t	9
+309	The Villages	the-villages	f	f	t	0	0	t	57
+310	Pulse Smart Residence	pulse-smart-residence	f	f	t	25.0638310000000004	55.2114059999999967	t	112
+311	52-42	52-42	f	f	t	25.0710769999999989	55.1255609999999976	t	106
+312	Waterfront	waterfront	f	f	t	25.0078309999999995	54.9942309999999992	t	28
+313	Zayed Sports City	zayed-sports-city	f	t	f	24.4154149999999994	54.4561440000000019	t	2
+314	Central Tower	central-tower	f	f	t	25.0783249999999995	55.1383129999999966	t	106
+315	The Views	the-views	f	t	f	25.0908419999999985	55.1703979999999987	t	1
+316	The Links Villas	the-links-villas	f	f	t	25.0909270000000006	55.1695419999999999	t	315
+317	Summer	summer	f	f	t	25.0596159999999983	55.2016989999999979	t	112
+318	Indigo Ville 4	indigo-ville-4	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+319	Master View-Oasis	master-view-oasis	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+320	Garden Hall- European	garden-hall-european	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+321	Entertainment Foyer- Mediterranean	entertainment-foyer-mediterranean	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+322	Millennium Square	millennium-square	f	f	t	25.1946289999999991	55.2665190000000024	t	250
+323	Mediterranean Villas	mediterranean-villas	f	f	t	24.5302919999999993	54.4451579999999993	t	76
+324	Dream Tower 1	dream-tower-1	f	f	t	25.0704250000000002	55.1359449999999995	t	106
+325	Mosela	mosela	f	f	t	25.0889980000000001	55.173175999999998	t	315
+326	Etihad Tower 2	etihad-tower-2	f	f	t	24.4593239999999987	54.3213300000000032	t	72
+327	Mediterranean Type	mediterranean-type	f	f	t	25.0596700000000006	55.2096250000000026	t	112
+328	Deema 2	deema-2	f	f	t	25.0765799999999999	55.171280000000003	t	109
+329	hattan 1	hattan-1	f	f	t	25.0771590000000018	55.1650259999999975	t	109
+330	Maeen 5	maeen-5	f	f	t	25.0426900000000003	55.1442690000000013	t	109
+331	Links East	links-east	f	f	t	25.0902500000000011	55.1701400000000035	t	315
+332	Grosvenor House Residence	grosvenor-house-residence	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+333	The Waves Tower A	the-waves-tower-a	f	f	t	25.0706999999999987	55.1343400000000017	t	106
+334	Le Residence	le-residence	f	f	t	25.0674600000000005	55.2046100000000024	t	112
+335	Al Habtoor Residential	al-habtoor-residential	f	f	t	25.085407	55.1418269999999993	t	106
+336	Marinascape (All)	marinascape-all	f	f	t	25.0829710000000006	55.146569999999997	t	106
+337	Al Fattan (All)	al-fattan-all	f	f	t	25.0795600000000007	55.13626	t	106
+338	Waves (All)	waves-all	f	f	t	25.0710769999999989	55.134248999999997	t	106
+339	Jumeirah Bay (All)	jumeirah-bay-all	f	f	t	25.0801909999999992	55.1528259999999975	t	107
+340	Al Jahili	al-jahili	f	t	f	24.2144830000000013	55.7527600000000021	t	8
+341	Marina Bay Suites	marina-bay-suites-2	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+342	Golf Course Views Villa	golf-course-views-villa	f	f	t	25.2048489999999994	55.2707830000000016	t	14
+343	Al Barashi	al-barashi	f	f	t	25.2999350000000014	55.5910939999999982	t	18
+344	Pyramid Centre	pyramid-centre	f	f	t	25.2408929999999998	55.3088770000000025	t	19
+345	Saadiyat Cultural District	saadiyat-cultural-district	f	f	t	24.5346179999999983	54.4451880000000017	t	76
+346	Al Gurm Resort	al-gurm-resort	f	f	t	24.4206259999999986	54.4054920000000024	t	20
+347	Lagoon B20	lagoon-b20	f	f	t	25.7206119999999991	55.8370710000000017	t	81
+348	Emaar 6 (All)	emaar-6-all	f	f	t	25.0854490000000006	55.1482659999999996	t	106
+349	marina wharf (all)	marina-wharf-all	f	f	t	25.0728000000000009	55.1327420000000004	t	106
+350	dec (all)	dec-all	f	f	t	25.0684450000000005	55.1294559999999976	t	106
+351	Diamond Arch (All)	diamond-arch-all	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+352	al fattan 1	al-fattan-1	f	f	t	25.0794420000000002	55.1365979999999993	t	106
+353	Green Lakes 1	green-lakes-1	f	f	t	25.0783200000000015	55.1478880000000018	t	107
+354	Icon 2	icon-2	f	f	t	25.065448	55.1402130000000028	t	107
+355	Jumeirah Business Center 4	jumeirah-business-center-4	f	f	t	25.075569999999999	55.1453599999999966	t	107
+356	Saba 1	saba-1	f	f	t	25.0719290000000008	55.1416770000000014	t	107
+357	Al Badaa	al-badaa	f	t	f	24.4588910000000013	54.3380599999999987	t	2
+358	Al Falah City	al-falah-city	f	t	f	24.4485929999999989	54.7357119999999995	t	2
+359	Al Maffraq	al-maffraq	f	t	f	24.3310320000000004	54.6040119999999973	t	2
+360	Al Mushrif	al-mushrif	f	t	f	24.4506000000000014	54.3836999999999975	t	2
+361	Al Nahyan Camp	al-nahyan-camp	f	t	f	24.4666670000000011	54.3833330000000004	t	2
+362	Al Raha Golf Gardens	al-raha-golf-gardens	f	t	f	24.4205620000000003	54.5320779999999985	t	2
+363	Al Shahama	al-shahama	f	t	f	24.5403270000000013	54.6835549999999984	t	2
+364	Al Zaab	al-zaab	f	t	f	24.4653509999999983	54.3617470000000012	t	2
+365	Between Two Bridges	between-two-bridges	f	t	f	24.4036790000000003	54.4945549999999983	t	2
+366	Danet Abu Dhabi	danet-abu-dhabi	f	t	f	24.4296189999999989	54.4340559999999982	t	2
+367	Hydra Village	hydra-village	f	t	f	24.5488600000000012	54.7011639999999986	t	2
+368	Marina Village	marina-village	f	t	f	24.476856999999999	54.3130409999999983	t	2
+369	Salam Street	salam-street	f	t	f	24.4559159999999984	54.4029120000000006	t	2
+370	Al Ain Industrial Area	al-ain-industrial-area	f	t	f	24.1910339999999984	55.7640049999999974	t	8
+371	Al Hili	al-hili	f	t	f	24.2847259999999991	55.7745839999999973	t	8
+372	Al Sinaiya	al-sinaiya	f	t	f	24.1773150000000001	55.7638249999999971	t	8
+373	Musheiref	musheiref	f	t	f	25.4025549999999996	55.4682129999999987	t	4
+374	Rak Financial City	rak-financial-city	f	t	f	25.800692999999999	55.9761990000000011	t	6
+375	Ras Al Khaimah Creek	ras-al-khaimah-creek	f	t	f	25.8281419999999997	56.115903000000003	t	6
+376	Al Ramla	al-ramla	f	t	f	25.360239	55.4201669999999993	t	3
+377	Maysaloon	maysaloon	f	t	f	25.3610760000000006	55.4014840000000035	t	3
+378	Wasit	wasit	f	t	f	25.3425000000000011	55.4716669999999965	t	3
+379	Al Istiqlal Street	al-istiqlal-street	f	f	t	24.4666670000000011	54.3666669999999996	t	66
+380	Amwaj Tower	amwaj-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	66
+381	The Crystal Tower	the-crystal-tower	f	f	t	24.4722499999999989	54.3457330000000027	t	66
+382	Crescent Tower 2	crescent-tower-2	f	f	t	24.4666670000000011	54.3666669999999996	t	66
+383	Khalidiya Tower A	khalidiya-tower-a	f	f	t	24.4782890000000002	54.3546580000000006	t	66
+384	Mushrif Heights	mushrif-heights	f	f	t	24.4365750000000013	54.3931869999999975	t	360
+385	Hemaim Community	hemaim-community	f	f	t	24.4381449999999987	54.5883919999999989	t	69
+386	Yasmin Community	yasmin-community	f	f	t	24.434152000000001	54.5731759999999966	t	69
+387	Narjis	narjis	f	f	t	24.4205620000000003	54.5336769999999973	t	362
+388	Fairmont Villas	fairmont-villas	f	f	t	24.4145859999999999	54.4906659999999974	t	365
+389	Al Diar Tower 2	al-diar-tower-2	f	f	t	24.4666670000000011	54.3666669999999996	t	72
+390	Corniche Tower	corniche-tower	f	f	t	24.4988700000000001	54.3699069999999978	t	72
+391	Golden Beach Tower	golden-beach-tower	f	f	t	24.4910859999999992	54.3552129999999991	t	72
+392	Sorouh Tower	sorouh-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	366
+393	Electra Tower	electra-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	73
+394	Palm Jumeirah	palm-jumeirah	f	t	f	25.1132080000000002	55.1389319999999969	t	1
+395	Old Town	old-town	f	t	f	25.1930060000000005	55.2768950000000032	t	1
+396	Sheikh Zayed Road	sheikh-zayed-road	f	t	f	25.2113960000000006	55.2755960000000002	t	1
+397	Jumeirah	jumeirah	f	t	f	25.2012600000000013	55.2401160000000004	t	1
+398	Other	other	f	t	f	25.2048489999999994	55.2707830000000016	t	1
+399	Jumeirah Golf Estates	jumeirah-golf-estates	f	t	f	25.0218999999999987	55.2015239999999991	t	1
+400	Motor City	motor-city	f	t	f	25.0450610000000005	55.2432060000000007	t	1
+401	Impz	impz	f	t	f	25.0348509999999997	55.1820949999999968	t	1
+402	Jebel Ali	jebel-ali	f	t	f	24.9704709999999999	55.0730590000000007	t	1
+403	Dubai Media City	dubai-media-city	f	t	f	25.0976849999999985	55.1566070000000011	t	1
+404	Al Hamra (All)	al-hamra-all	f	t	f	25.800692999999999	55.9761990000000011	t	6
+405	Granada	granada	f	t	f	25.7331439999999994	55.9811970000000017	t	6
+406	Marina Apartments	marina-apartments	f	t	f	25.800692999999999	55.9761990000000011	t	6
+407	Al Raha	al-raha	f	t	f	24.4483630000000005	54.599338000000003	t	2
+408	Delma Street	delma-street	f	t	f	24.4571679999999994	54.3699640000000031	t	2
+409	Khalifa city b	khalifa-city-b	f	t	f	24.3714900000000014	54.634881	t	2
+410	Mbz	mbz	f	t	f	24.3333089999999999	54.5546790000000001	t	2
+411	Al Ettihad Street	al-ettihad-street	f	t	f	25.3058990000000001	55.3737350000000035	t	3
+412	Al Mamzar - Sharjah	al-mamzar-sharjah	f	t	f	25.3097020000000015	55.3544479999999979	t	3
+413	Al Qasbaa	al-qasbaa	f	t	f	25.3223109999999991	55.3762339999999966	t	3
+414	Al Taawun	al-taawun	f	t	f	25.3083209999999994	55.3693829999999991	t	3
+415	Sharjah Airport Freezone (Saif)	sharjah-airport-freezone-saif	f	t	f	25.3284589999999987	55.5125049999999973	t	3
+416	Sheikh Hamad Bin Abdullah St	sheikh-hamad-bin-abdullah-st	f	t	f	25.1288100000000014	56.3264849999999981	t	7
+417	Khor Al Beidah	khor-al-beidah	f	t	f	25.5132340000000006	55.5690829999999991	t	5
+418	Ajman Uptown	ajman-uptown	f	t	f	25.4188930000000006	55.5935679999999977	t	4
+419	Park View City	park-view-city	f	t	f	25.3994999999999997	55.4795999999999978	t	4
+420	Al Mahra	al-mahra	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+421	F-S	f-s	f	f	t	25.2048489999999994	55.2707830000000016	t	402
+422	Orion	orion	f	f	t	25.2048489999999994	55.2707830000000016	t	402
+423	phase 2	phase-2	f	f	t	25.1945450000000015	55.364130000000003	t	47
+424	Al Fairooz Villas	al-fairooz-villas	f	f	t	25.085799999999999	55.1482099999999988	t	106
+425	Al Majara 3	al-majara-3	f	f	t	25.0738200000000013	55.1376199999999983	t	106
+426	Al Sahab 1	al-sahab-1	f	f	t	25.0759900000000009	55.1356400000000022	t	106
+427	DAMAC Residenze	damac-residenze	f	f	t	25.0874799999999993	55.1455399999999969	t	106
+428	Elite Residence	elite-residence	f	f	t	25.0897889999999997	55.147902000000002	t	106
+429	Harbour Residences	harbour-residences	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+430	La Riviera	la-riviera	f	f	t	25.0732099999999996	55.1385300000000029	t	106
+431	marina 101	marina-101	f	f	t	25.0888980000000004	55.1486230000000006	t	106
+432	Marina Diamond 2	marina-diamond-2	f	f	t	25.0694400000000002	55.1348699999999994	t	106
+433	Marina Dreams	marina-dreams	f	f	t	25.0704899999999995	55.1359500000000011	t	106
+434	Marina Square	marina-square	f	f	t	25.0732190000000017	55.1331550000000021	t	106
+435	marina wharf 2	marina-wharf-2	f	f	t	25.0728000000000009	55.1327420000000004	t	106
+436	Pentominium	pentominium	f	f	t	25.0893300000000004	55.1503299999999967	t	106
+437	Atlantic	atlantic	f	f	t	25.0785799999999988	55.1404799999999966	t	106
+438	Time Place	time-place	f	f	t	25.0804900000000011	55.144280000000002	t	106
+439	Trident Waterfront	trident-waterfront	f	f	t	25.0680030000000009	55.1316380000000024	t	106
+440	Golf Villas	golf-villas	f	f	t	25.0918099999999988	55.1681499999999971	t	315
+441	Dana Gardens	dana-gardens	f	f	t	25.0317770000000017	55.1900229999999965	t	401
+442	Al Dana 1	al-dana-1	f	f	t	25.1683599999999998	55.40822	t	108
+443	Emirates Cluster	emirates-cluster	f	f	t	25.167193000000001	55.414631	t	108
+444	Global Point	global-point	f	f	t	25.1648929999999993	55.4084029999999998	t	108
+445	Lake District	lake-district	f	f	t	25.1648929999999993	55.4084029999999998	t	108
+446	Ritz Residence	ritz-residence	f	f	t	25.1648929999999993	55.4084029999999998	t	108
+447	Riviera Lake View	riviera-lake-view	f	f	t	25.1663800000000002	55.41066	t	108
+448	Spain	spain	f	f	t	25.1644199999999998	55.4023800000000008	t	108
+449	jumeirah 1	jumeirah-1	f	f	t	25.2101380000000006	55.2437120000000021	t	397
+450	Flame Tree Ridge	flame-tree-ridge	f	f	t	25.019207999999999	55.2010670000000019	t	399
+451	Orange Lake	orange-lake	f	f	t	25.0274549999999998	55.2041070000000005	t	399
+452	Whispering Pines	whispering-pines	f	f	t	25.019207999999999	55.2010670000000019	t	399
+453	Cluster 36-40	cluster-36-40	f	f	t	25.0715989999999991	55.1413360000000026	t	110
+454	Entertainment Foyer	entertainment-foyer	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+455	Tropical Clusters	tropical-clusters	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+456	Al Seef 1	al-seef-1	f	f	t	25.0796400000000013	55.1508400000000023	t	107
+457	Al Seef 3	al-seef-3	f	f	t	25.0802699999999987	55.1514200000000017	t	107
+458	Bonnington	bonnington	f	f	t	25.0675099999999986	55.1421899999999994	t	107
+459	Dubai Star	dubai-star	f	f	t	25.0654800000000009	55.1395199999999974	t	107
+460	Goldcrest Views 1	goldcrest-views-1	f	f	t	25.0781700000000001	55.1512000000000029	t	107
+461	Hds Business Centre	hds-business-centre	f	f	t	25.0641399999999983	55.1382800000000017	t	107
+462	Lake Shore	lake-shore	f	f	t	25.0784899999999986	55.1532199999999975	t	107
+463	O2	o2	f	f	t	25.0738969999999988	55.1440720000000013	t	107
+464	Swiss	swiss	f	f	t	25.077770000000001	55.1529999999999987	t	107
+465	Jumeirah Bay X2	jumeirah-bay-x2	f	f	t	25.0796500000000009	55.1529999999999987	t	107
+466	Dunes	dunes	f	f	t	25.1091259999999998	55.3781359999999978	t	112
+467	Jumeirah Suites	jumeirah-suites	f	f	t	25.0695140000000016	55.2141400000000004	t	112
+468	Mosaic	mosaic	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+469	Rotating	rotating	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+470	Valencia Park	valencia-park	f	f	t	25.0593170000000001	55.2002900000000025	t	112
+471	Cadi 3	cadi-3	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+472	Cadi 5	cadi-5	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+473	Jouri 3	jouri-3	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+474	Knightsbridge Court	knightsbridge-court	f	f	t	25.0484940000000016	55.207735999999997	t	112
+475	Al Duaa Gardens	al-duaa-gardens	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+476	Diamond Views	diamond-views	f	f	t	25.0622870000000013	55.2178070000000005	t	112
+477	Diamond Views 5	diamond-views-5	f	f	t	25.0528049999999993	55.2025330000000025	t	112
+478	Eclipse	eclipse	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+479	Jehaan Residence 2	jehaan-residence-2	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+480	Maple 1	maple-1	f	f	t	25.0474710000000016	55.2049480000000017	t	112
+481	Plaza Residences	plaza-residences	f	f	t	25.0528230000000001	55.2080559999999991	t	112
+482	Prudential	prudential	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+483	Reliance 2	reliance-2	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+484	Sahara	sahara	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+485	Sunrise Gardens	sunrise-gardens	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+486	Lawns 1	lawns-1	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+487	Tulip Park	tulip-park	f	f	t	25.0588970000000018	55.1982619999999997	t	112
+488	Nikki Beach	nikki-beach	f	f	t	25.2471379999999996	55.256262999999997	t	32
+489	Noora Residence 2	noora-residence-2	f	f	t	25.0597770000000004	55.2053549999999973	t	112
+490	Wasl Amber	wasl-amber	f	f	t	25.2454070000000002	55.3102289999999996	t	45
+491	Panorama Tower 1	panorama-tower-1	f	f	t	0	0	t	315
+492	Crystal Residence	crystal-residence	f	f	t	25.0666520000000013	55.2156480000000016	t	112
+493	Faya at Bloom Gardens	faya-at-bloom-gardens	f	f	t	24.4302279999999996	54.464812000000002	t	313
+494	Dragon Views	dragon-views	f	f	t	0	0	t	108
+495	Alfa Villas	alfa-villas	f	f	t	0	0	t	112
+496	Al Shaheen	al-shaheen	f	f	t	25.2454129999999992	55.313676000000001	t	19
+497	Olgana Residence	olgana-residence	f	f	t	0	0	t	227
+498	Townhouses	townhouses	f	f	t	0	0	t	227
+499	Garden View Villas	garden-view-villas	f	f	t	25.0369750000000018	55.1271100000000018	t	111
+500	Afnan 4	afnan-4	f	f	t	0	0	t	401
+501	Dania 2	dania-2	f	f	t	0	0	t	401
+502	 Germany	germany	f	f	t	25.2277370000000012	55.1629560000000012	t	212
+503	Al Reef 2	al-reef-2	f	f	t	0	0	t	70
+504	Hillside	hillside	f	f	t	25.0204570000000004	55.1972689999999986	t	399
+505	Qatar Airways Building	qatar-airways-building	f	f	t	24.4877310000000001	54.3538440000000023	t	72
+506	Fairmont Marina Residences	fairmont-marina-residences	f	f	t	24.4760470000000012	54.3215479999999999	t	154
+507	Le Meridien Mina Seyahi Beach Resort and Marina	le-meridien-mina-seyahi-beach-resort-and-marina-3	f	f	t	0	0	t	106
+508	Creek Horizon	creek-horizon-2	f	f	t	25.2009420000000013	55.342568	t	47
+509	Indigo Central 6	indigo-central-6	f	f	t	25.1400110000000012	55.2169359999999969	t	396
+510	Muelih Commercial	muelih-commercial	f	t	f	25.3008510000000015	55.4522869999999983	t	3
+511	Al Helio 2	al-helio-2	f	t	f	0	0	t	4
+512	Garden Lane Villas	garden-lane-villas	f	f	t	25.057621000000001	55.2010560000000012	t	112
+513	Al Manara	al-manara	f	t	f	25.1416029999999999	55.2122659999999996	t	1
+514	The Floating Seahorse	the-floating-seahorse	f	f	t	0	0	t	212
+515	Sweden Island	sweden-island	f	f	t	0	0	t	212
+516	Urbana	urbana	f	f	t	24.8525239999999989	55.150821999999998	t	57
+517	Cassia at The Fields	cassia-at-the-fields	f	f	t	25.1195039999999992	55.3445540000000022	t	250
+518	Al Taweelah	al-taweelah	f	t	f	24.7595610000000015	54.6893320000000003	t	2
+519	Studio One	studio-one	f	f	t	25.0687299999999986	55.1287579999999977	t	106
+520	Canal Star Tower	canal-star-tower	f	f	t	25.3234250000000003	55.3802719999999979	t	413
+521	Umm Hurair 1	umm-hurair-1	f	f	t	25.2561859999999996	55.3077109999999976	t	184
+522	Bloom Heights	bloom-heights	f	f	t	25.0564409999999995	55.2041740000000019	t	112
+523	Le Grande Community Mall	le-grande-community-mall	f	f	t	0	0	t	106
+524	Laya Residence	laya-residence	f	f	t	25.0567059999999984	55.2079069999999987	t	112
+525	Tiger 1	tiger-1	f	f	t	25.3148799999999987	55.3756679999999974	t	412
+526	Al Rasheed Tower	al-rasheed-tower	f	f	t	25.3088149999999992	55.3701819999999998	t	414
+527	The Cove	the-cove	f	f	t	25.200800000000001	55.3430200000000028	t	47
+528	Reem Community	reem-community	f	f	t	25.0309239999999988	55.2750350000000026	t	176
+529	Happiness Island	happiness-island	f	t	f	0	0	t	2
+530	Aster	aster	f	f	t	24.9874580000000002	55.3848270000000014	t	9
+531	Creek Gate	creek-gate	f	f	t	25.2007989999999999	55.3430490000000006	t	47
+532	Four Seasons Hotel	four-seasons-hotel	f	f	t	24.5030530000000013	54.387915999999997	t	60
+533	Jasmine Leaf 4	jasmine-leaf-4	f	f	t	25.0994220000000006	55.3129670000000004	t	34
+534	Jasmine Leaf 6	jasmine-leaf-6	f	f	t	25.0994220000000006	55.3129670000000004	t	34
+535	Juniper	juniper	f	f	t	24.9968259999999987	55.3967400000000012	t	9
+536	Lamcy Plaza	lamcy-plaza	f	f	t	25.2341869999999986	55.3081379999999996	t	19
+537	Harbour Gate	harbour-gate	f	f	t	25.2097760000000015	55.3459289999999982	t	47
+538	Al Kawakeb Building B	al-kawakeb-building-b	f	f	t	25.2077959999999983	55.2738790000000009	t	396
+539	Aviation District	aviation-district	f	f	t	0	0	t	57
+540	Al Rabiah	al-rabiah	f	f	t	0	0	t	119
+541	Regent Court	regent-court	f	f	t	25.0533329999999985	55.2063059999999979	t	112
+542	Al Hudaiba Awards Building	al-hudaiba-awards-building	f	f	t	25.2413160000000012	55.2722580000000008	t	397
+543	Creek Heights	creek-heights	f	f	t	0	0	t	47
+544	Biela Villas	biela-villas	f	f	t	0	0	t	9
+545	Hilli Misbah	hilli-misbah	f	f	t	0	0	t	371
+546	Al Masoodi	al-masoodi	f	t	f	0	0	t	8
+547	Golfotel	golfotel	f	f	t	0	0	t	9
+548	Manazel Al Khor	manazel-al-khor-2	f	f	t	0	0	t	22
+549	Hartland Greens	hartland-greens	f	f	t	0	0	t	250
+550	Hartland Greens	hartland-greens-2	f	f	t	0	0	t	250
+551	Eaton Place	eaton-place	f	f	t	0	0	t	112
+552	Hajar 2	hajar-2-2	f	f	t	24.9895959999999988	55.382392000000003	t	9
+553	Hilliana Tower	hilliana-tower	f	f	t	0	0	t	227
+554	The Address Residences Jumeirah Resort and Spa	the-address-residences-jumeirah-resort-and-spa	f	f	t	0	0	t	106
+555	Al Hassani	al-hassani	f	f	t	0	0	t	112
+556	HDS Sunstar II	hds-sunstar-ii	f	f	t	0	0	t	108
+557	Victoria	victoria-2	f	f	t	0	0	t	9
+558	Up Tower	up-tower	f	f	t	25.2169729999999994	55.279949000000002	t	396
+559	Bawadi	bawadi	f	t	f	0	0	t	1
+560	Villanova	villanova	f	t	f	25.0776080000000015	55.3611209999999971	t	1
+561	Mizin	mizin	f	t	f	25.2325130000000009	55.3267080000000036	t	1
+562	Ghaya Grand Hotel	ghaya-grand-hotel	f	f	t	25.0334770000000013	55.2033300000000011	t	401
+563	Nakheel Villas	nakheel-villas	f	f	t	25.059944999999999	55.209698000000003	t	112
+564	Golf Tower 1	golf-tower-1-2	f	f	t	0	0	t	315
+565	Indigo Ville 6	indigo-ville-6	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+566	Entertainment Foyer-European	entertainment-foyer-european	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+567	Emirates Tower	emirates-tower	f	f	t	25.2175760000000011	55.2833240000000004	t	396
+568	Academic City	academic-city	f	t	f	25.1166809999999998	55.4065149999999988	t	1
+569	Flamingo Villas	flamingo-villas	f	f	t	25.7218319999999991	55.834184999999998	t	81
+570	Mushrif Mall Area	mushrif-mall-area	f	f	t	24.4365750000000013	54.3931869999999975	t	360
+571	Reef Residence	reef-residence	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+572	Inner Circle	inner-circle	f	f	t	25.0601580000000013	55.2094200000000015	t	112
+573	Jebel Ali Hills	jebel-ali-hills	f	f	t	25.0092210000000001	55.0579850000000022	t	402
+574	Cove Rotana	cove-rotana-4	f	t	f	25.800692999999999	55.9761990000000011	t	6
+575	Zone 4	zone-4	f	f	t	24.5467750000000002	54.6973690000000019	t	367
+576	Redwood Park	redwood-park	f	f	t	0	0	t	399
+577	Redwood Avenue	redwood-avenue	f	f	t	25.019207999999999	55.2010670000000019	t	399
+578	Etihad Tower 4	etihad-tower-4	f	f	t	24.4593239999999987	54.3213300000000032	t	72
+579	Al Diar Sawa Hotel Apartments	al-diar-sawa-hotel-apartments	f	f	t	24.4622780000000013	54.3931869999999975	t	361
+580	Al Muntazah	al-muntazah	f	t	f	24.4286829999999995	54.4597699999999989	t	2
+581	City Walk	city-walk	f	f	t	25.2077069999999992	55.2623779999999982	t	397
+582	Casa Royale	casa-royale	f	f	t	25.0610929999999996	55.2023599999999988	t	112
+583	Grand Paradis I	grand-paradis-i	f	f	t	25.0568139999999993	55.1992270000000005	t	112
+584	Al Gharb	al-gharb	f	t	f	25.3566299999999991	55.3937099999999987	t	3
+585	Khuzam	khuzam	f	t	f	25.7625409999999988	55.9414269999999973	t	6
+586	Fancy Rose	fancy-rose	f	f	t	25.0725850000000001	55.1466520000000031	t	107
+587	Al Heerah	al-heerah	f	t	f	25.3852900000000012	55.4194749999999985	t	3
+588	Lagoon B7	lagoon-b7	f	f	t	25.7206119999999991	55.8370710000000017	t	81
+589	Abbey Crescent	abbey-crescent	f	f	t	25.0444850000000017	55.2488880000000009	t	400
+590	Al Moosa Tower 2	al-moosa-tower-2	f	f	t	25.2164569999999983	55.277706000000002	t	396
+591	Bonaire Tower	bonaire-tower-2	f	f	t	0	0	t	106
+592	Paloma Tower	paloma-tower-2	f	f	t	0	0	t	106
+593	Marina Diamond 7	marina-diamond-7	f	f	t	25.0807089999999988	55.1456459999999993	t	106
+594	Hydra Pavilion Tower	hydra-pavilion-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	367
+595	Complex 17	complex-17	f	f	t	24.4239710000000017	54.4517859999999985	t	119
+596	Saadiyat Lagoons	saadiyat-lagoons	f	f	t	24.5302919999999993	54.4451579999999993	t	76
+597	Zayed Military City Tower 1	zayed-military-city-tower-1	f	f	t	24.4961279999999988	54.8951289999999972	t	77
+598	Zayed Military City Tower 6	zayed-military-city-tower-6	f	f	t	24.4961279999999988	54.8951289999999972	t	77
+599	Zayed Military City Tower 9	zayed-military-city-tower-9	f	f	t	24.4961279999999988	54.8951289999999972	t	77
+600	Beda Bint Soud	beda-bint-soud	f	f	t	24.2843809999999998	55.774515000000001	t	371
+601	Ajman Boulevard	ajman-boulevard	f	f	t	25.3994999999999997	55.4795999999999978	t	418
+602	Erica	erica	f	f	t	25.4193880000000014	55.5937470000000005	t	418
+603	Al Naemiya Tower 3	al-naemiya-tower-3	f	f	t	25.3994999999999997	55.4795999999999978	t	127
+604	Al mwaihat 1	al-mwaihat-1	f	f	t	0	0	t	80
+605	Ict Tower 1	ict-tower-1	f	f	t	25.3994999999999997	55.4795999999999978	t	419
+606	Commercial Centre	commercial-centre	f	f	t	25.800692999999999	55.9761990000000011	t	374
+607	Al Ramla West	al-ramla-west	f	f	t	25.3570050000000009	55.4153230000000008	t	376
+608	Al Garhoud	al-garhoud	f	t	f	25.2400289999999998	55.3502989999999997	t	1
+609	Germany Island	germany-island	f	f	t	25.2268450000000009	55.1609699999999989	t	212
+610	Cascade Ville	cascade-ville	f	f	t	25.2250680000000003	55.3378530000000026	t	22
+611	Lotus Tower	lotus-tower	f	f	t	25.2250680000000003	55.3378530000000026	t	22
+612	Nur Tower	nur-tower	f	f	t	25.2250680000000003	55.3378530000000026	t	22
+613	The Estate Tower	the-estate-tower	f	f	t	25.2250680000000003	55.3378530000000026	t	22
+614	Ghadeer 1	ghadeer-1	f	f	t	25.0790809999999986	55.1501299999999972	t	109
+615	Palm Views	palm-views	f	f	t	25.114725	55.1377900000000025	t	394
+616	Autumn Apartments	autumn-apartments	f	f	t	25.0587720000000012	55.2027939999999973	t	112
+617	Al Warsan 3	al-warsan-3	f	f	t	0	0	t	26
+618	Al Warqaa 3	al-warqaa-3	f	f	t	25.1885459999999988	55.4194749999999985	t	27
+619	Al Warqaa 5	al-warqaa-5	f	f	t	25.1918199999999999	55.4081699999999984	t	27
+620	Holiday Centre	holiday-centre	f	f	t	25.2231360000000002	55.2800920000000033	t	396
+621	Jumeirah Village (All)	jumeirah-village-all	f	f	t	25.0553899999999992	55.2049540000000007	t	112
+622	Al Sufouh 2	al-sufouh-2	f	f	t	25.1019499999999987	55.1624189999999999	t	227
+623	Al Khawaneej 2	al-khawaneej-2	f	f	t	25.2427470000000014	55.5164150000000021	t	229
+624	Ashai Tower	ashai-tower	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+625	Gloria Hotel	gloria-hotel	f	t	f	25.1029389999999992	55.1723070000000035	t	1
+626	Dubai Industrial City	dubai-industrial-city	f	t	f	24.8536110000000008	55.0647220000000033	t	1
+627	Canal Cove Frond B	canal-cove-frond-b	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+628	Canal Cove Frond D	canal-cove-frond-d	f	f	t	25.119966999999999	55.1315960000000018	t	394
+629	Canal Cove Frond I	canal-cove-frond-i	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+630	Canal Cove Frond P	canal-cove-frond-p	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+631	Garden Homes Frond E	garden-homes-frond-e	f	f	t	25.1304410000000011	55.1351409999999973	t	394
+632	Garden Homes Frond G	garden-homes-frond-g	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+633	Garden Homes Frond L	garden-homes-frond-l	f	f	t	25.1152750000000005	55.1219010000000011	t	394
+634	Signature Villas Frond C	signature-villas-frond-c	f	f	t	25.1191290000000009	55.1327029999999993	t	394
+635	Signature Villas Frond H	signature-villas-frond-h	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+636	Signature Villas Frond O	signature-villas-frond-o	f	f	t	25.1174759999999999	55.1330829999999992	t	394
+637	The Crescent A	the-crescent-a	f	f	t	25.0330539999999999	55.2031500000000008	t	401
+638	The Crescent C	the-crescent-c	f	f	t	25.0351190000000017	55.2020929999999979	t	401
+639	Shamal Terraces	shamal-terraces	f	f	t	25.0505630000000004	55.1997289999999978	t	112
+640	District 3	district-3	f	f	t	25.0411080000000013	55.1838109999999986	t	112
+641	District 10	district-10	f	f	t	25.0601960000000012	55.2093490000000031	t	112
+642	District 15	district-15	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+643	District 22	district-22	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+644	District 27	district-27	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+645	District 29	district-29	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+646	Ras Al Khor Industrial 2	ras-al-khor-industrial-2	f	f	t	25.1956200000000017	55.3438000000000017	t	238
+647	Club Vista Mare	club-vista-mare	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+648	Dream Palm Residence	dream-palm-residence	f	f	t	25.1235269999999993	55.1536400000000029	t	394
+649	Nad Al Sheba 3	nad-al-sheba-3	f	f	t	25.1435460000000006	55.3475329999999985	t	35
+650	Al Twar 2	al-twar-2	f	f	t	25.262004000000001	55.3793459999999982	t	243
+651	Cayan Tower	cayan-tower	f	f	t	25.0870859999999993	55.1452499999999972	t	106
+652	Red Diamond	red-diamond	f	f	t	25.0772440000000003	55.1548590000000019	t	107
+653	Umm Ramool	umm-ramool	f	t	f	25.2315000000000005	55.3696300000000008	t	1
+654	Marina First Tower	marina-first-tower	f	f	t	25.0702660000000002	55.1275699999999986	t	106
+655	Al Safa Tower	al-safa-tower	f	f	t	25.2176790000000004	55.2783370000000005	t	396
+656	Dana Tower	dana-tower	f	f	t	25.0563479999999998	55.2205259999999996	t	112
+657	Tropical Island	tropical-island	f	f	t	25.2167449999999995	55.1353030000000004	t	212
+658	Wildflower	wildflower	f	f	t	25.0196229999999993	55.201312999999999	t	399
+659	Burj Al Salam	burj-al-salam	f	f	t	25.2299539999999993	55.2868509999999986	t	396
+660	Api Trio Towers	api-trio-towers	f	f	t	25.1126380000000005	55.1881119999999967	t	396
+661	A2 Tower	a2-tower	f	f	t	25.0709899999999983	55.1726910000000004	t	245
+662	C2 Tower	c2-tower	f	f	t	25.0789429999999989	55.1579649999999972	t	245
+663	Al Qusais	al-qusais	f	t	f	25.2802469999999992	55.3732970000000009	t	1
+664	Al Qusais 1	al-qusais-1	f	f	t	25.2782109999999989	55.3698929999999976	t	663
+665	Latifa Tower	latifa-tower	f	f	t	25.2214810000000007	55.2814440000000005	t	396
+666	Morjan Tower	morjan-tower	f	f	t	25.5132340000000006	55.5690829999999991	t	39
+667	Gardenia 2	gardenia-2	f	f	t	25.0540349999999989	55.2125219999999999	t	112
+668	Seventh Heaven	seventh-heaven	f	f	t	0	0	t	34
+669	Kentia	kentia	f	f	t	25.4221719999999998	55.5948610000000016	t	418
+670	Al Nesr Tower	al-nesr-tower	f	f	t	25.3575000000000017	55.3908330000000007	t	413
+671	Mira Oasis	mira-oasis	f	f	t	25.0047280000000001	55.3026729999999986	t	36
+672	Al Mizhar 1	al-mizhar-1	f	f	t	25.2462149999999994	55.4416229999999999	t	40
+673	Conrad	conrad	f	f	t	25.2260090000000012	55.2841850000000008	t	396
+674	dahlia	dahlia	f	f	t	25.4204429999999988	55.5943680000000029	t	418
+675	The 8	the-8	f	f	t	25.112921	55.1433609999999987	t	394
+676	Mazaya Centre	mazaya-centre	f	f	t	25.1991219999999991	55.2654589999999999	t	396
+677	World Trade Center Residence	world-trade-center-residence	f	f	t	25.2266060000000003	55.2887800000000027	t	396
+678	Masaar Residence	masaar-residence	f	f	t	25.0555030000000016	55.1983669999999975	t	112
+679	Atlantis The Palm	atlantis-the-palm	f	f	t	25.0995419999999996	55.1336730000000017	t	394
+680	Vida Hotel	vida-hotel	f	f	t	25.1904560000000011	55.2743170000000035	t	245
+681	Oasis Centre	oasis-centre	f	f	t	25.1695710000000012	55.2417820000000006	t	396
+682	Wadi Al Safa	wadi-al-safa	f	f	t	25.0994220000000006	55.3135819999999967	t	34
+683	Mirabella 3	mirabella-3	f	f	t	25.0580059999999989	55.219619999999999	t	112
+684	Mirabella 7	mirabella-7	f	f	t	25.0578280000000007	55.2181959999999989	t	112
+685	Dxb Tower	dxb-tower	f	f	t	25.213279	55.275860999999999	t	396
+686	Base Metal Zone	base-metal-zone	f	f	t	25.2048489999999994	55.2707830000000016	t	626
+687	Sahara Living	sahara-living	f	f	t	24.888541	55.0721860000000021	t	626
+688	Lakeside Tower A	lakeside-tower-a	f	f	t	25.0366660000000003	55.2009609999999995	t	401
+689	Marina Gate	marina-gate	f	f	t	25.0868140000000004	55.1470740000000035	t	106
+690	Marina Quays Villas	marina-quays-villas	f	f	t	25.0769759999999984	55.1367090000000033	t	106
+691	Camellia	camellia	f	f	t	25.0994220000000006	55.3129670000000004	t	34
+692	Centrium Tower 1	centrium-tower-1	f	f	t	25.0399400000000014	55.1933050000000023	t	401
+693	Mira Oasis 1	mira-oasis-1	f	f	t	25.0159200000000013	55.2886349999999993	t	36
+694	Prime Residence A	prime-residence-a	f	f	t	25.1659240000000004	55.3981939999999966	t	108
+695	Al Noor Tower	al-noor-tower	f	f	t	25.3228450000000009	55.3792860000000005	t	413
+696	Manazel Deira Building	manazel-deira-building	f	f	t	25.2769820000000003	55.3724289999999968	t	663
+697	Palm Views East	palm-views-east	f	f	t	25.1151839999999993	55.1353009999999983	t	394
+698	Panorama At The Views	panorama-at-the-views-2	f	f	t	25.0908259999999999	55.1710489999999965	t	315
+699	Arno B	arno-b	f	f	t	25.091505999999999	55.1709230000000019	t	315
+700	Mosela	mosela-2	f	f	t	25.0888409999999986	55.1740920000000017	t	315
+701	Whispering Pines	whispering-pines-3	f	f	t	25.0216180000000001	55.201545000000003	t	399
+702	Marina Quay East	marina-quay-east	f	f	t	25.076039999999999	55.1359700000000004	t	106
+703	Centro Towers	centro-towers	f	f	t	25.1001970000000014	55.1692970000000003	t	106
+704	Arezzo 1	arezzo-1-2	f	f	t	0	0	t	112
+705	Al Rifaah	al-rifaah	f	t	f	0	0	t	3
+706	Al Qulayaah	al-qulayaah	f	t	f	0	0	t	3
+707	Al Suyoh 4	al-suyoh-4	f	t	f	0	0	t	3
+708	Al Suyoh 8	al-suyoh-8-2	f	t	f	0	0	t	3
+709	Al Suyoh 10	al-suyoh-10	f	t	f	0	0	t	3
+710	Al Suyoh 15	al-suyoh-15	f	t	f	0	0	t	3
+711	Al Tai	al-tai	f	t	f	0	0	t	3
+712	Basateen Al Tai	basateen-al-tai	f	f	t	0	0	t	711
+713	Artistic Tower	artistic-tower	f	f	t	0	0	t	112
+714	Spica Residential	spica-residential	f	f	t	25.0658470000000015	55.2027640000000019	t	112
+715	Al Jazirah Al Hamra	al-jazirah-al-hamra	f	t	f	25.6973860000000016	55.7920480000000012	t	6
+716	Desert Leaf 2	desert-leaf-2	f	f	t	0	0	t	34
+717	Florence 1	florence-1	f	f	t	0	0	t	112
+718	Belgravia 2	belgravia-2	f	f	t	0	0	t	112
+719	Siena 1	siena-1-2	f	f	t	0	0	t	112
+720	Oasis Flex Villas	oasis-flex-villas	f	f	t	25.0509899999999988	55.2085930000000005	t	112
+721	Silla Tower	silla-tower	f	f	t	0	0	t	60
+722	Al Nakheel Villas	al-nakheel-villas	f	f	t	25.1063520000000011	55.1751160000000027	t	227
+723	Slik Leaf 4	slik-leaf-4	f	f	t	0	0	t	34
+724	Frond G	frond-g	f	f	t	0	0	t	394
+725	The Rainforest	the-rainforest	f	f	t	24.9963090000000001	55.4060729999999992	t	9
+726	Navitas Hotel and Residences	navitas-hotel-and-residences	f	f	t	0	0	t	9
+727	Al Bustan Compound	al-bustan-compound	f	f	t	24.4357569999999988	54.4530770000000004	t	580
+728	Trixis	trixis	f	f	t	0	0	t	9
+729	Global Green View	global-green-view	f	f	t	0	0	t	108
+730	Noura Tower- Al Habtoor City	noura-tower-al-habtoor-city	f	f	t	25.1832649999999987	55.2541390000000021	t	396
+731	Riah Towers	riah-towers	f	f	t	0	0	t	22
+732	Al Merief	al-merief	f	f	t	0	0	t	119
+733	Abbey Crescent 1	abbey-crescent-1	f	f	t	25.0444950000000013	55.2488450000000029	t	400
+734	Roda Metha Suites	roda-metha-suites	f	f	t	0	0	t	19
+735	Alef Residence Mansion 1	alef-residence-mansion-1	f	f	t	0	0	t	394
+736	Alef Residence Mansion 3	alef-residence-mansion-3	f	f	t	0	0	t	394
+737	Alef Residence Mansion 8	alef-residence-mansion-8	f	f	t	0	0	t	394
+738	Claverton House 2	claverton-house-2	f	f	t	25.04373	55.2449200000000005	t	400
+739	Dickens Circus 3	dickens-circus-3	f	f	t	25.0436900000000016	55.2467899999999972	t	400
+740	East Lands Park	east-lands-park	f	f	t	25.0450179999999989	55.2397319999999965	t	400
+741	Fox Hill 5	fox-hill-5	f	f	t	25.0462400000000009	55.2442100000000025	t	400
+742	Norton Court 1	norton-court-1	f	f	t	25.0467900000000014	55.2486699999999971	t	400
+743	Regent House 2	regent-house-2	f	f	t	25.0459800000000001	55.2484099999999998	t	400
+744	Sherlock House 2	sherlock-house-2	f	f	t	25.0467830000000014	55.2465949999999992	t	400
+745	Widcombe House 3	widcombe-house-3	f	f	t	25.0453499999999991	55.2444300000000013	t	400
+746	Al Attareen	al-attareen	f	f	t	25.2048489999999994	55.2707830000000016	t	395
+747	Kamoon 4	kamoon-4	f	f	t	25.1903399999999991	55.2753620000000012	t	395
+748	Mystica 2	mystica-2	f	f	t	25.2048489999999994	55.2707830000000016	t	395
+749	Reehan 4	reehan-4	f	f	t	25.1902779999999993	55.2775770000000009	t	395
+750	Reehan 6	reehan-6	f	f	t	25.1888809999999985	55.2774679999999989	t	395
+751	Yansoon 3	yansoon-3	f	f	t	25.1926099999999984	55.2801669999999987	t	395
+752	Zaafaran 2	zaafaran-2	f	f	t	25.1899990000000003	55.2763279999999995	t	395
+753	Zanzebeel 2	zanzebeel-2	f	f	t	25.1889259999999986	55.2741850000000028	t	395
+754	Zanzebeel 4	zanzebeel-4	f	f	t	25.1895479999999985	55.2742829999999969	t	395
+755	Al Anbara	al-anbara	f	f	t	25.1125499999999988	55.1414299999999997	t	394
+756	Al Haseer	al-haseer	f	f	t	25.1120640000000002	55.1440270000000012	t	394
+757	Al Nabat	al-nabat	f	f	t	25.1130199999999988	55.1432000000000002	t	394
+758	Ashoka Villas	ashoka-villas	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+759	Emerald Palace	emerald-palace	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+760	Jash Falqa	jash-falqa	f	f	t	25.1085969999999996	55.1485989999999973	t	394
+761	Oceana Adriatic	oceana-adriatic	f	f	t	25.1104699999999994	55.135741000000003	t	394
+762	Oceana Atlantic	oceana-atlantic	f	f	t	25.1121729999999985	55.1374119999999976	t	394
+763	Taj Exotica Resort&Spa	taj-exotica-resortspa	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+764	Al Sondos	al-sondos	f	f	t	25.2048489999999994	55.2707830000000016	t	396
+765	Fairmont Hotel	fairmont-hotel	f	f	t	25.2261990000000011	55.2843939999999989	t	396
+766	Tecom	tecom	f	f	t	25.0969620000000013	55.1775999999999982	t	396
+767	Deema 4	deema-4	f	f	t	25.0782099999999986	55.1771200000000022	t	109
+768	hattan 3	hattan-3	f	f	t	25.0841020000000015	55.1682860000000019	t	109
+769	Maeen 1	maeen-1	f	f	t	25.0790809999999986	55.1501299999999972	t	109
+770	Zulal 2	zulal-2	f	f	t	25.0788000000000011	55.1724999999999994	t	109
+771	Fairways North	fairways-north	f	f	t	25.0896800000000013	55.1710899999999995	t	315
+772	Azure (All)	azure-all	f	f	t	25.0732199999999992	55.1374649999999988	t	106
+773	Silverene B	silverene-b	f	f	t	25.0752799999999993	55.1384100000000004	t	106
+774	Jewels 1	jewels-1	f	f	t	25.0715199999999996	55.1306000000000012	t	106
+775	Tiara Amber	tiara-amber	f	f	t	25.1164039999999993	55.1415020000000027	t	394
+776	Golden Mile 4	golden-mile-4	f	f	t	25.1072400000000009	55.1467900000000029	t	394
+777	Golden Mile 6	golden-mile-6	f	f	t	25.1084099999999992	55.1451700000000002	t	394
+778	Marina Residence 1	marina-residence-1	f	f	t	25.1128700000000009	55.1367699999999985	t	394
+779	Fairmont Residence South	fairmont-residence-south	f	f	t	25.1090899999999984	55.1421199999999985	t	394
+780	Aspin Tower	aspin-tower	f	f	t	25.2095909999999996	55.2733840000000001	t	396
+781	Falcon	falcon	f	f	t	25.1934819999999995	55.2632589999999979	t	396
+782	lago vista A	lago-vista-a	f	f	t	25.0351299999999988	55.2018300000000011	t	401
+783	Al Fattan Villa	al-fattan-villa	f	f	t	25.2016430000000007	55.2452570000000023	t	397
+784	Shatha Tower	shatha-tower	f	f	t	25.0895529999999987	55.1529200000000017	t	403
+785	Mazaya Business Avenue AA1	mazaya-business-avenue-aa1	f	f	t	25.0674169999999989	55.1441760000000016	t	107
+786	Centrium (All)	centrium-all	f	f	t	25.0399279999999997	55.1933149999999983	t	401
+787	Dubai Gate (All)	dubai-gate-all	f	f	t	25.0762229999999988	55.1462950000000021	t	107
+788	Icon (All)	icon-all	f	f	t	25.0648909999999994	55.1383730000000014	t	107
+789	Fairmont Residence (All)	fairmont-residence-all	f	f	t	25.11008	55.1409099999999981	t	394
+790	Al Sahab (All)	al-sahab-all	f	f	t	25.0753869999999992	55.1356010000000012	t	106
+791	Grosvenor House (All)	grosvenor-house-all	f	f	t	25.0854910000000011	55.1436849999999978	t	106
+792	Tiara (All)	tiara-all	f	f	t	25.1160299999999985	55.1410899999999984	t	394
+793	Armada (All)	armada-all	f	f	t	25.0751400000000011	55.1452099999999987	t	107
+794	Zaafaran (All)	zaafaran-all	f	f	t	25.1900340000000007	55.276290000000003	t	395
+795	Claverton House (All)	claverton-house-all	f	f	t	25.0432489999999994	55.2447710000000001	t	400
+796	Jehaan (All)	jehaan-all	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+797	Judi Palace (All)	judi-palace-all	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+798	Armada 1	armada-1	f	f	t	25.0747880000000016	55.1447149999999979	t	107
+799	Green Lakes 3	green-lakes-3	f	f	t	25.0789369999999998	55.1485339999999979	t	107
+800	Jumeirah Business Center 1	jumeirah-business-center-1	f	f	t	25.0709790000000012	55.1435329999999979	t	107
+801	Saba 3	saba-3	f	f	t	25.0764989999999983	55.1453909999999965	t	107
+802	Wind 1	wind-1	f	f	t	25.0679769999999991	55.1382559999999984	t	107
+803	Al Baraha	al-baraha	f	t	f	24.4666670000000011	54.3666669999999996	t	2
+804	Al Hudayriat Island	al-hudayriat-island	f	t	f	24.4251259999999988	54.3412500000000023	t	2
+805	Al Karamah	al-karamah	f	t	f	24.4613349999999983	54.3754149999999967	t	2
+806	Al Manhal	al-manhal	f	t	f	24.4741520000000001	54.3562810000000027	t	2
+807	Al Qurm	al-qurm	f	t	f	24.4372499999999988	54.450257999999998	t	2
+808	Al Rawdah	al-rawdah	f	t	f	24.1045680000000004	55.5025890000000004	t	2
+809	Al Reem Island	al-reem-island	f	t	f	24.4944710000000008	54.4073649999999986	t	2
+810	Al Sowwah	al-sowwah	f	t	f	24.4984380000000002	54.3890859999999989	t	2
+811	City Downtown	city-downtown	f	t	f	24.4666670000000011	54.3666669999999996	t	2
+812	Khalifa Street	khalifa-street	f	t	f	24.4513500000000015	54.374336999999997	t	2
+813	Mohamed Bin Zayed City	mohamed-bin-zayed-city	f	t	f	24.3349089999999997	54.5511529999999993	t	2
+814	Mussafah	mussafah	f	t	f	24.3495339999999985	54.4998999999999967	t	2
+815	Tourist Club Area	tourist-club-area	f	t	f	24.4991169999999983	54.3774099999999976	t	2
+816	Al Khabisi	al-khabisi	f	t	f	24.2330910000000017	55.6971699999999998	t	8
+817	Tawam	tawam	f	t	f	24.1955810000000007	55.6505709999999993	t	8
+818	Al Zahraa	al-zahraa	f	t	f	25.3632950000000008	55.3988999999999976	t	4
+819	Cornich Ras Al Khaima	cornich-ras-al-khaima	f	t	f	25.7930719999999987	55.939897000000002	t	6
+820	Ras Al Khaimah Waterfront	ras-al-khaimah-waterfront	f	t	f	25.800692999999999	55.9761990000000011	t	6
+821	Al Jubail	al-jubail	f	t	f	25.3524829999999994	55.3814210000000031	t	3
+822	Al Majaz	al-majaz	f	t	f	25.3213380000000008	55.3834969999999984	t	3
+823	Al Dhafrah 1	al-dhafrah-1	f	f	t	24.2610390000000002	54.3940079999999995	t	65
+824	Al Hana Tower	al-hana-tower	f	f	t	24.4711409999999994	54.3397849999999991	t	66
+825	Al Ras Al Akhdar	al-ras-al-akhdar	f	f	t	24.4606689999999993	54.3111960000000025	t	66
+826	Khalidiya Palace Towers	khalidiya-palace-towers	f	f	t	24.4558070000000001	54.3189449999999994	t	66
+827	Khalidiya Village	khalidiya-village	f	f	t	24.4782890000000002	54.3546580000000006	t	66
+828	Al Qurm Gardens	al-qurm-gardens	f	f	t	24.4357900000000008	54.4511460000000014	t	807
+829	Al Thurayya	al-thurayya	f	t	f	24.4272719999999985	54.5259160000000023	t	2
+830	Lehweih Community	lehweih-community	f	f	t	24.4408409999999989	54.596269999999997	t	69
+831	Qattouf Community	qattouf-community	f	f	t	24.4357350000000011	54.5800249999999991	t	69
+832	Jouri	jouri	f	f	t	24.4205620000000003	54.5333809999999986	t	362
+833	Hydra Avenue Hotel Apartments	hydra-avenue-hotel-apartments	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+834	Addax port office tower	addax-port-office-tower	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+835	Hydra Avenue Towers	hydra-avenue-towers	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+836	Ocean Pearl	ocean-pearl	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+837	Solaris Towers	solaris-towers	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+838	Al Maha Tower	al-maha-tower	f	f	t	24.4893140000000002	54.4157340000000005	t	809
+839	Ocean Terrace	ocean-terrace	f	f	t	24.4927630000000001	54.3927610000000001	t	809
+840	Residential Marina-The Marinas	residential-marina-the-marinas	f	f	t	24.4806169999999987	54.4080519999999979	t	809
+841	Al Wifaq Tower	al-wifaq-tower	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+842	Atlantis Towers	atlantis-towers	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+843	Empire Tower	empire-tower	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+844	Tameer Towers	tameer-towers	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+845	Y6 Tower	y6-tower	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+846	The Gate Tower 3	the-gate-tower-3	f	f	t	24.4938949999999984	54.410739999999997	t	809
+847	Sowwah Square Tower 2	sowwah-square-tower-2	f	f	t	24.5002369999999985	54.3883719999999968	t	810
+848	Al Markaziya	al-markaziya	f	f	t	24.4927010000000003	54.363114000000003	t	811
+849	Defense Road	defense-road	f	f	t	24.4800719999999998	54.3848429999999965	t	811
+850	Al Souq Tower	al-souq-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	72
+851	Burj Al Jewn	burj-al-jewn	f	f	t	24.4666670000000011	54.3666669999999996	t	366
+852	Marina Mansions	marina-mansions	f	f	t	25.0737400000000008	55.1384499999999989	t	106
+853	Marina Suites	marina-suites	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+854	Marina Tower	marina-tower	f	f	t	25.0839099999999995	55.1450999999999993	t	106
+855	Princess	princess	f	f	t	25.0889300000000013	55.1466899999999995	t	106
+856	Sky View Tower	sky-view-tower	f	f	t	25.0840539999999983	55.1425320000000028	t	106
+857	Sulafa	sulafa	f	f	t	25.0896599999999985	55.1489090000000033	t	106
+858	Cascades	cascades	f	f	t	25.0728700000000018	55.1381900000000016	t	106
+859	Trident Bayside	trident-bayside	f	f	t	25.0813200000000016	55.1450299999999984	t	106
+860	Westside Marina	westside-marina	f	f	t	25.0698599999999985	55.1334799999999987	t	106
+861	Residential City	residential-city	f	f	t	25.280460999999999	55.3143379999999993	t	402
+862	Lakeside 2	lakeside-2	f	f	t	25.0317770000000017	55.1900229999999965	t	401
+863	Al Jawzaa	al-jawzaa	f	f	t	25.1481990000000017	55.4054849999999988	t	108
+864	Forbidden City	forbidden-city	f	f	t	25.1625300000000003	55.4109199999999973	t	108
+865	Indigo Optima	indigo-optima	f	f	t	25.1708339999999993	55.408807000000003	t	108
+866	Italy	italy	f	f	t	25.1677399999999984	55.400660000000002	t	108
+867	Optima	optima	f	f	t	25.1708339999999993	55.408807000000003	t	108
+868	Rufi Gardens	rufi-gardens	f	f	t	25.1652099999999983	55.4066699999999983	t	108
+869	Toronto	toronto	f	f	t	25.1648929999999993	55.4084029999999998	t	108
+870	Universal Apartments	universal-apartments	f	f	t	25.1680400000000013	55.4067599999999985	t	108
+871	jumeirah 3	jumeirah-3	f	f	t	25.1802199999999985	55.22316	t	397
+872	Sienna Lakes	sienna-lakes	f	f	t	25.019207999999999	55.2010670000000019	t	399
+873	Cluster 11-15	cluster-11-15	f	f	t	25.055294	55.1641460000000023	t	110
+874	Cluster 46-50	cluster-46-50	f	f	t	25.0715989999999991	55.1413360000000026	t	110
+875	Garden Home	garden-home	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+876	Jumeirah Mansions	jumeirah-mansions	f	f	t	25.0542170000000013	55.156956000000001	t	110
+877	Al Waleed Paradise	al-waleed-paradise	f	f	t	25.0770799999999987	55.1468300000000013	t	107
+878	Corporate	corporate	f	f	t	25.0692829999999987	55.1417220000000015	t	107
+879	Dubai Arch	dubai-arch	f	f	t	25.0716900000000003	55.1436700000000002	t	107
+880	fortune tower	fortune-tower	f	f	t	25.0687099999999994	55.1389199999999988	t	107
+881	Indigo	indigo	f	f	t	25.0699700000000014	55.1403299999999987	t	107
+882	Lake View	lake-view	f	f	t	25.0674700000000001	55.1383900000000011	t	107
+883	Palladium	palladium	f	f	t	25.0694300000000005	55.1395399999999967	t	107
+884	Tiffany	tiffany	f	f	t	25.0772699999999986	55.1497499999999974	t	107
+885	V3	v3	f	f	t	25.0781939999999999	55.1519389999999987	t	107
+886	Blue Ice	blue-ice	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+887	Gardenia	gardenia	f	f	t	25.0539200000000015	55.2127800000000022	t	112
+888	Green Court	green-court	f	f	t	25.0354829999999993	55.2188799999999986	t	112
+889	Magnolia 1	magnolia-1	f	f	t	25.0486940000000011	55.2052949999999996	t	112
+890	Noora Residence	noora-residence	f	f	t	25.0598719999999986	55.2052520000000015	t	112
+891	seasons community	seasons-community	f	f	t	0	0	t	112
+892	Silver Heights	silver-heights	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+893	Westar La Residencia Del Sol	westar-la-residencia-del-sol	f	f	t	25.0674439999999983	55.2045609999999982	t	112
+894	Eden Residence 2	eden-residence-2	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+895	Jouri 5	jouri-5	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+896	Sariin	sariin	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+897	Arabian	arabian	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+898	Baynonah Business Centre	baynonah-business-centre	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+899	Diamond Views 2	diamond-views-2	f	f	t	25.0632699999999993	55.2152299999999983	t	112
+900	Excellence Residence	excellence-residence	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+901	Jehaan Residence 9	jehaan-residence-9	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+902	Jumeirah Wave Tower	jumeirah-wave-tower	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+903	Mirabella	mirabella	f	f	t	25.0635340000000006	55.2170849999999973	t	112
+904	Quattro Hotel & Business Park	quattro-hotel-business-park	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+905	Reliance 7	reliance-7	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+906	serena 2	serena-2	f	f	t	0	0	t	112
+907	Heights Golden	heights-golden	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+908	Lawns 3	lawns-3	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+909	Business Bay	business-bay	f	t	f	25.1835149999999999	55.2666699999999977	t	1
+910	Bur Dubai	bur-dubai	f	t	f	25.2145569999999992	55.3032910000000015	t	1
+911	Greens	greens	f	t	f	25.0920239999999986	55.1697670000000002	t	1
+912	Meadows	meadows	f	t	f	25.067613999999999	55.1574179999999998	t	1
+913	Victory Heights	victory-heights	f	t	f	25.0409940000000013	55.2093890000000016	t	1
+914	Mirdif	mirdif	f	t	f	25.2191210000000012	55.4093739999999997	t	1
+915	Deira	deira	f	t	f	25.278846999999999	55.3309399999999982	t	1
+916	World Trade Centre	world-trade-centre	f	t	f	25.2280620000000013	55.2884280000000032	t	1
+917	Dubai Investment Park	dubai-investment-park	f	t	f	24.9797149999999988	55.1761910000000029	t	1
+918	Al Nahda	al-nahda	f	t	f	25.2939800000000012	55.3720399999999984	t	1
+919	Al Furjan	al-furjan	f	t	f	25.0226180000000014	55.1493499999999983	t	1
+920	Bab al bahr	bab-al-bahr	f	t	f	0	0	t	6
+921	Julfar Office	julfar-office	f	t	f	25.7911490000000008	55.9599669999999989	t	6
+922	Luxury B Villa	luxury-b-villa	f	t	f	25.800692999999999	55.9761990000000011	t	6
+923	Royal Breeze Villas	royal-breeze-villas	f	t	f	25.800692999999999	55.9761990000000011	t	6
+924	Al Mina	al-mina	f	t	f	24.5264939999999996	54.3740480000000019	t	2
+925	Al Reem	al-reem	f	t	f	24.4942439999999984	54.4068600000000018	t	2
+926	Arabian Village	arabian-village	f	t	f	24.4173620000000007	54.4353010000000026	t	2
+927	Khalidia	khalidia	f	t	f	24.4709000000000003	54.3520359999999982	t	2
+928	Abu Shagara	abu-shagara	f	t	f	25.3363070000000015	55.3959490000000017	t	3
+929	Al Nahda-Sharjah	al-nahda-sharjah	f	t	f	25.3019339999999993	55.3738129999999984	t	3
+930	Corniche Al Buhaira	corniche-al-buhaira	f	t	f	25.3275040000000011	55.3786369999999977	t	3
+931	Umm Khanoor	umm-khanoor	f	t	f	25.3804300000000005	55.4322269999999975	t	3
+932	Al Salam City	al-salam-city	f	t	f	25.7260379999999991	55.8741720000000015	t	5
+933	Ajman Corniche Road	ajman-corniche-road	f	t	f	25.3643010000000011	55.3882869999999983	t	4
+934	Al Humaid City	al-humaid-city	f	t	f	25.3545750000000005	55.4191020000000023	t	4
+935	Corniche Ajman	corniche-ajman	f	t	f	25.4037909999999982	55.4298420000000007	t	4
+936	Beirout Street	beirout-street	f	f	t	25.2706000000000017	55.3959509999999966	t	915
+937	Bin Hendi Tower	bin-hendi-tower	f	f	t	25.2542439999999999	55.2942949999999982	t	910
+938	Sun Shine 4	sun-shine-4	f	f	t	25.2516050000000014	55.3373849999999976	t	910
+939	Binary Tower	binary-tower	f	f	t	25.1870000000000012	55.2668999999999997	t	909
+940	Burlington	burlington	f	f	t	25.1857579999999999	55.2652330000000021	t	909
+941	Canada Business Centre	canada-business-centre	f	f	t	25.1799999999999997	55.2753549999999976	t	909
+942	Citadel	citadel	f	f	t	25.1837899999999983	55.2608299999999986	t	909
+943	Desert Dream	desert-dream	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+944	Executive Bay	executive-bay	f	f	t	25.1783269999999995	55.2666570000000021	t	909
+945	Fortune Bay	fortune-bay	f	f	t	25.1809030000000007	55.2745770000000007	t	909
+946	Iris Crystal	iris-crystal	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+947	Metropolis	metropolis	f	f	t	25.1851200000000013	55.2767899999999983	t	909
+948	Michael Schumacher	michael-schumacher	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+949	Ontario	ontario	f	f	t	25.1853499999999997	55.261969999999998	t	909
+950	Platinum	platinum	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+951	Sanctuary	sanctuary	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+952	Stratos Plaza	stratos-plaza	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+953	Lotus	lotus	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+954	The Pad	the-pad	f	f	t	25.1848109999999998	55.2817549999999969	t	909
+955	Waters Edge	waters-edge	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+956	Rose	rose	f	f	t	25.0052969999999988	55.1632979999999975	t	910
+957	Al Buteen Plaza	al-buteen-plaza	f	f	t	25.2612099999999984	55.3210100000000011	t	915
+958	Al Muraqqabat	al-muraqqabat	f	f	t	25.2659920000000007	55.3249920000000017	t	915
+959	Port Saeed	port-saeed	f	f	t	25.2530560000000008	55.3291669999999982	t	915
+960	Integral	integral	f	f	t	25.2048489999999994	55.2707830000000016	t	402
+961	Signet	signet	f	f	t	25.2048489999999994	55.2707830000000016	t	402
+962	Al Badia Oasis	al-badia-oasis	f	f	t	25.278846999999999	55.3327179999999998	t	915
+963	ewan residence	ewan-residence	f	f	t	24.9951480000000004	55.1796679999999995	t	917
+964	schon business park	schon-business-park	f	f	t	24.9848150000000011	55.1757210000000029	t	917
+965	al khayal	al-khayal	f	f	t	25.1945450000000015	55.364130000000003	t	47
+966	23 Marina	23-marina	f	f	t	25.0897170000000003	55.1506469999999993	t	106
+967	Al habtoor Business Tower	al-habtoor-business-tower	f	f	t	25.0853999999999999	55.1417900000000003	t	106
+968	Al Majara 5	al-majara-5	f	f	t	25.0740300000000005	55.1369899999999973	t	106
+969	Al Mass	al-mass	f	f	t	25.0864599999999989	55.1492799999999974	t	106
+970	Al Seef	al-seef	f	f	t	25.0906829999999985	55.1499019999999973	t	106
+971	Azure 2	azure-2	f	f	t	25.0726200000000006	55.1372300000000024	t	106
+972	Botanica	botanica	f	f	t	25.0851499999999987	55.1425899999999984	t	106
+973	Emirates Crown	emirates-crown	f	f	t	25.0883290000000017	55.1467749999999981	t	106
+974	Infinity	infinity	f	f	t	25.0868900000000004	55.1452499999999972	t	106
+975	Light House	light-house	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+976	Marina Diamond 1	marina-diamond-1	f	f	t	25.0798500000000004	55.1447700000000012	t	106
+977	Marina Diamond 4	marina-diamond-4	f	f	t	25.0802799999999984	55.1453599999999966	t	106
+978	Creekside 18	creekside-18	f	f	t	0	0	t	47
+979	Al Dana Tower	al-dana-tower	f	f	t	0	0	t	366
+980	Al Serkal Building	al-serkal-building	f	f	t	25.2778230000000015	55.3514619999999979	t	915
+981	Jasmine Leaf 1	jasmine-leaf-1	f	f	t	0	0	t	34
+982	Jumeirah Village Circle Villas	jumeirah-village-circle-villas-3	f	f	t	25.0561709999999991	55.1990750000000006	t	112
+983	BurJuman Residence	burjuman-residence	f	f	t	25.2145569999999992	55.3047800000000009	t	910
+984	Style Building	style-building	f	f	t	25.2145569999999992	55.303925999999997	t	910
+985	Red Building	red-building	f	f	t	0	0	t	45
+986	Lulu Centre	lulu-centre	f	f	t	25.2489199999999983	55.3065520000000035	t	45
+987	Maple 2	maple-2	f	f	t	0	0	t	112
+988	Trade Center Hotel Apartments	trade-center-hotel-apartments-2	f	f	t	0	0	t	396
+989	Shams Gate district	shams-gate-district	f	f	t	24.4934800000000017	54.4086420000000004	t	809
+990	Mangolia 1	mangolia-1	f	f	t	0	0	t	112
+991	Volante Tower	volante-tower	f	f	t	25.184151	55.290498999999997	t	909
+992	Al Yasat Compound	al-yasat-compound	f	f	t	0	0	t	360
+993	Meydan avenue	meydan-avenue	f	t	f	0	0	t	1
+994	Al Ghurair Apartments	al-ghurair-apartments	f	f	t	25.2687990000000013	55.3169400000000024	t	915
+995	Cordoba Residence	cordoba-residence	f	f	t	25.1064079999999983	55.1671550000000011	t	403
+996	Al Seef Village Mall	al-seef-village-mall	f	f	t	24.4353869999999986	54.4558219999999977	t	369
+997	Soho Square Residences	soho-square-residences	f	f	t	24.5302919999999993	54.4451579999999993	t	76
+998	Serenia Residences West	serenia-residences-west	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+999	Wasl Onyx	wasl-onyx	f	f	t	25.2487339999999989	55.310851999999997	t	45
+1000	Business Village	business-village	f	f	t	0	0	t	915
+1001	Al mwaihat 2	al-mwaihat-2	f	f	t	0	0	t	80
+1002	HZ Tower	hz-tower	f	f	t	25.149324	55.4021219999999985	t	108
+1003	Golden Wing	golden-wing	f	f	t	0	0	t	112
+1004	Etihad Road	etihad-road	f	t	f	25.4941649999999989	55.5542019999999965	t	5
+1005	Afnan 6	afnan-6	f	f	t	0	0	t	401
+1006	Dania 4	dania-4	f	f	t	0	0	t	401
+1007	Dania 6	dania-6	f	f	t	0	0	t	401
+1008	Switzerland	switzerland	f	f	t	25.2245540000000013	55.1656279999999981	t	212
+1009	Main Europe Island	main-europe-island	f	f	t	25.2234879999999997	55.1595330000000033	t	212
+1010	Durrat Al Marsa Tower	durrat-al-marsa-tower	f	f	t	25.0713380000000008	55.1294800000000009	t	106
+1011	Creekside 18 Tower B	creekside-18-tower-b	f	f	t	25.2070450000000008	55.3454320000000024	t	47
+1012	The Lotus	the-lotus	f	f	t	25.0687910000000009	55.1310489999999973	t	106
+1013	Saleh Bin Lahej Tower	saleh-bin-lahej-tower	f	f	t	25.2330889999999997	55.3155489999999972	t	19
+1014	Grand Midwest Tower	grand-midwest-tower	f	f	t	25.1011999999999986	55.171089000000002	t	403
+1015	Khalifa Residential Complex A	khalifa-residential-complex-a	f	f	t	24.4943300000000015	54.3827819999999988	t	815
+1016	C21	c21	f	f	t	0	0	t	809
+1017	Casa Royale II	casa-royale-ii	f	f	t	25.0680559999999986	55.2065389999999994	t	112
+1018	Wadi Al Safa 2	wadi-al-safa-2	f	f	t	25.2001400000000011	55.2662369999999967	t	34
+1019	Roy Mediterranean	roy-mediterranean	f	f	t	0	0	t	919
+1020	MAG 5 Boulevard	mag-5-boulevard	f	f	t	24.9514969999999998	55.2285940000000011	t	57
+1021	M-11	m-11	f	f	t	24.3645589999999999	54.5078729999999965	t	814
+1022	Dubai Creek Residence Tower 2 North	dubai-creek-residence-tower-2-north	f	f	t	25.2009359999999987	55.3429349999999971	t	47
+1023	The Ghaf Tree	the-ghaf-tree	f	f	t	25.0521090000000015	55.2084540000000032	t	112
+1024	Darwish Tower	darwish-tower	f	f	t	24.4315759999999997	54.434902000000001	t	366
+1025	The Galleries	the-galleries	f	f	t	25.1581060000000001	55.2950159999999968	t	993
+1026	Azizi Plaza	azizi-plaza	f	f	t	0	0	t	919
+1027	Matloob Bldg	matloob-bldg	f	f	t	25.1781259999999989	55.2460609999999974	t	396
+1028	Liberty Building	liberty-building	f	f	t	25.2446829999999984	55.3395269999999968	t	608
+1029	Wasl Aqua	wasl-aqua	f	f	t	25.2406100000000002	55.3019290000000012	t	45
+1030	GBS Building	gbs-building	f	f	t	25.0958420000000011	55.1579279999999983	t	403
+1031	Salam St. Area	salam-st-area	f	f	t	24.4552639999999997	54.4034469999999999	t	369
+1032	ENI Shams Tower	eni-shams-tower	f	f	t	24.4944279999999992	54.4065610000000035	t	809
+1033	Tower 108	tower-108	f	f	t	25.0533409999999996	55.1978269999999966	t	112
+1034	Al Wasl Building R444	al-wasl-building-r444	f	f	t	25.2419930000000008	55.2998150000000024	t	45
+1035	Al Mamzar Tower	al-mamzar-tower	f	f	t	25.3124159999999989	55.3639840000000021	t	219
+1036	Sahara Tower	sahara-tower-2	f	f	t	25.2985460000000018	55.3676979999999972	t	918
+1037	Tiger 3	tiger-3	f	f	t	25.3148799999999987	55.3756679999999974	t	412
+1038	Maleha	maleha	f	t	f	25.1388919999999985	55.8852249999999984	t	3
+1039	Innovation Hub	innovation-hub	f	f	t	0	0	t	227
+1040	Waqf Sheikh Zayed Residential Building	waqf-sheikh-zayed-residential-building	f	f	t	24.4773010000000006	54.3532999999999973	t	66
+1041	Ritz by Danube	ritz-by-danube	f	f	t	0	0	t	919
+1042	Sama Residence	sama-residence	f	f	t	25.2843890000000009	55.3597759999999965	t	918
+1043	Portofino Hotel	portofino-hotel	f	f	t	25.223628999999999	55.1593119999999999	t	212
+1044	Modelux Tower 1	modelux-tower-1	f	f	t	25.1479849999999985	55.3945670000000021	t	108
+1045	Akoya Relax	akoya-relax	f	f	t	24.9912050000000008	55.3761259999999993	t	9
+1046	Erica 2H	erica-2h	f	f	t	25.4175229999999992	55.5934979999999968	t	418
+1047	\t Dubai \tMirdif\tMirdif Hills - Al Multaqa Avenue	dubai-mirdif-mirdif-hills-al-multaqa-avenue	f	f	t	25.2233920000000005	55.4415699999999987	t	914
+1048	Kensington Boutique Villas	kensington-boutique-villas	f	f	t	24.9842720000000007	55.383541000000001	t	9
+1049	MJM Residences	mjm-residences	f	f	t	25.0261759999999995	55.1909860000000023	t	401
+1050	Signature XIV Villas	signature-xiv-villas	f	f	t	25.0487390000000012	55.2033460000000034	t	112
+1051	The H Hotel	the-h-hotel	f	f	t	25.2302360000000014	55.2868050000000011	t	396
+1052	Jasmine Leaf 10	jasmine-leaf-10	f	f	t	25.0994220000000006	55.3129670000000004	t	34
+1053	Akoya MOD	akoya-mod	f	f	t	24.9972110000000001	55.3920949999999976	t	9
+1054	La Riviera Apartments	la-riviera-apartments	f	f	t	25.0602470000000004	55.2030710000000013	t	112
+1055	Al Kawakeb Building D	al-kawakeb-building-d	f	f	t	25.2084730000000015	55.2743159999999989	t	396
+1056	Zone 3	zone-3	f	f	t	0	0	t	813
+1057	Zone 8	zone-8	f	f	t	0	0	t	813
+1058	Zone 9	zone-9	f	f	t	0	0	t	813
+1059	Zone 14	zone-14	f	f	t	0	0	t	813
+1060	Zone 21	zone-21	f	f	t	0	0	t	813
+1061	Zone 26	zone-26	f	f	t	0	0	t	813
+1062	Zone 33	zone-33	f	f	t	0	0	t	813
+1063	Al Aqah	al-aqah	f	t	f	25.4941579999999988	56.3570250000000001	t	7
+1064	Emaar South Golf Course	emaar-south-golf-course	f	f	t	24.8672289999999983	55.1118499999999969	t	57
+1065	Exhibition District	exhibition-district	f	f	t	0	0	t	57
+1066	EMAAR South	emaar-south	f	f	t	0	0	t	57
+1067	Nasma Residences	nasma-residences	f	f	t	0	0	t	711
+1068	Abu Dhabi Trade Towers	abu-dhabi-trade-towers	f	f	t	24.4974440000000016	54.3816909999999964	t	815
+1069	Prestige Tower	prestige-tower	f	f	t	0	0	t	814
+1070	Park Heights	park-heights	f	f	t	25.1148659999999992	55.2483160000000026	t	12
+1071	Weston Court 2	weston-court-2-2	f	f	t	0	0	t	400
+1072	Sol Star	sol-star	f	f	t	0	0	t	917
+1073	Holiday Inn Abu Dhabi Downtown	holiday-inn-abu-dhabi-downtown	f	f	t	24.4890240000000006	54.368152000000002	t	73
+1074	Platinum Residence	platinum-residence	f	f	t	25.0550579999999989	55.2106270000000023	t	112
+1075	District 12K	district-12k	f	f	t	0	0	t	112
+1076	Gateway	gateway	f	f	t	0	0	t	81
+1077	Hilli Khalif	hilli-khalif	f	f	t	0	0	t	371
+1078	Al Manaseer	al-manaseer	f	t	f	0	0	t	8
+1079	Desert Palm	desert-palm	f	f	t	0	0	t	26
+1080	ARNO A	arno-a-2	f	f	t	0	0	t	315
+1081	Avanti Tower	avanti-tower	f	f	t	25.177073	55.2727170000000001	t	909
+1082	Maple 3	maple-3	f	f	t	0	0	t	12
+1083	Al Dana Building	al-dana-building	f	f	t	25.1824489999999983	55.4032660000000021	t	27
+1084	Azizi Berton	azizi-berton	f	f	t	25.0336250000000007	55.1468759999999989	t	919
+1085	Coursetia	coursetia	f	f	t	0	0	t	9
+1086	Claret	claret	f	f	t	0	0	t	9
+1087	Pantheon Boulevard	pantheon-boulevard	f	f	t	25.0506749999999982	55.2138500000000008	t	112
+1088	LOFT Office 1	loft-office-1	f	f	t	25.0962789999999991	55.1569789999999998	t	403
+1089	Dubailand Residence Complex	dubailand-residence-complex	f	t	f	25.0953049999999998	55.3830570000000009	t	1
+1090	Signature By Damac	signature-by-damac	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+1091	Najmat Abu Dhabi	najmat-abu-dhabi	f	f	t	24.4804749999999984	54.4082280000000011	t	809
+1092	Spring	spring	f	f	t	25.2690020000000004	55.2947289999999967	t	112
+1093	Al Jaz 3	al-jaz-3-2	f	f	t	25.0946649999999991	55.1717379999999977	t	911
+1094	Al Dhafrah 4	al-dhafrah-4	f	f	t	0	0	t	911
+1095	Golf Tower 3	golf-tower-3	f	f	t	0	0	t	315
+1096	Marwa Homes	marwa-homes	f	f	t	25.0602750000000007	55.209380000000003	t	112
+1097	Indigo Ville 5	indigo-ville-5	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1098	Al Ettihad Tower 4	al-ettihad-tower-4	f	f	t	24.4877889999999994	54.365000000000002	t	72
+1099	Entertainment Foyer-Islamic	entertainment-foyer-islamic	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+1100	Oud Al Muteena	oud-al-muteena	f	t	f	25.2665490000000013	55.4499300000000019	t	1
+1101	Ubora Tower 1	ubora-tower-1	f	f	t	25.1801759999999994	55.2711809999999986	t	909
+1102	Meena Bazar	meena-bazar	f	f	t	25.2145569999999992	55.3049189999999982	t	910
+1103	Family Villa	family-villa	f	f	t	25.0385209999999994	55.2344349999999977	t	400
+1104	Al Saqr Business Tower	al-saqr-business-tower	f	f	t	25.213868999999999	55.2780959999999979	t	396
+1105	Jumeirah Islands Townhouses	jumeirah-islands-townhouses	f	f	t	0	0	t	110
+1106	Damac Maison Cour Jardin	damac-maison-cour-jardin	f	f	t	25.1875050000000016	55.2674689999999984	t	909
+1107	Panorama at the Views	panorama-at-the-views	f	f	t	0	0	t	315
+1108	Marina Heights 2	marina-heights-2	f	f	t	24.4926190000000013	54.3952120000000008	t	809
+1109	Al Ward	al-ward	f	f	t	24.4413550000000015	54.5988720000000001	t	69
+1110	Acacia Avenues	acacia-avenues-2	f	t	f	25.1115969999999997	55.1781270000000035	t	1
+1111	Concord Tower	concord-tower	f	f	t	25.0978610000000018	55.1566350000000014	t	403
+1112	Royalex Apartments	royalex-apartments	f	f	t	25.1648929999999993	55.4084029999999998	t	108
+1113	Marina Residences B	marina-residences-b	f	f	t	25.0723960000000012	55.1376630000000034	t	106
+1114	Town Square	town-square-2	f	t	f	25.2002600000000001	55.2717519999999993	t	1
+1115	Al Mutarad	al-mutarad	f	t	f	24.2184750000000015	55.7415280000000024	t	8
+1116	Amaya Tower 2	amaya-tower-2	f	f	t	24.4896729999999998	54.394598000000002	t	809
+1117	Phase 3	phase-3	f	f	t	25.1514929999999985	55.3960300000000032	t	108
+1118	Town Square	town-square	f	t	f	25.0105989999999991	55.2812290000000033	t	1
+1119	Executive Tower F	executive-tower-f	f	f	t	25.1920789999999997	55.2663560000000018	t	909
+1120	Executive Tower K	executive-tower-k	f	f	t	25.1920789999999997	55.2663560000000018	t	909
+1121	Capital Tower	capital-tower	f	f	t	25.2559210000000007	55.2958750000000023	t	915
+1122	Serenia Residences	serenia-residences	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+1123	Al Majaz 3	al-majaz-3	f	f	t	25.3329850000000008	55.3738129999999984	t	822
+1124	Lilac Park	lilac-park	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1125	Al Forsan Village	al-forsan-village	f	f	t	24.4043209999999995	54.5488730000000004	t	119
+1126	Marriot Executive Apartments	marriot-executive-apartments	f	f	t	25.2167570000000012	55.3309399999999982	t	17
+1127	Dubai Textile City	dubai-textile-city	f	f	t	25.1676339999999996	55.4242190000000008	t	26
+1128	Lagoon B14	lagoon-b14	f	f	t	25.7206119999999991	55.8370710000000017	t	81
+1129	Al Moosa Tower 1	al-moosa-tower-1	f	f	t	25.2167689999999993	55.2777570000000011	t	396
+1130	Meera Shams Tower 2	meera-shams-tower-2	f	f	t	24.4942439999999984	54.4068600000000018	t	809
+1131	Binal Jesrain	binal-jesrain	f	f	t	24.4039430000000017	54.4946509999999975	t	365
+1132	Blakely Tower	blakely-tower-2	f	f	t	0	0	t	106
+1133	Delphine Tower	delphine-tower	f	f	t	0	0	t	106
+1134	Complex 16	complex-16	f	f	t	24.4709830000000004	54.342373000000002	t	119
+1135	Golf Gardens	golf-gardens	f	f	t	24.4205620000000003	54.5320779999999985	t	119
+1136	M246	m246	f	f	t	24.3611350000000009	54.5174949999999967	t	814
+1137	Al Saadiyat Avenue	al-saadiyat-avenue	f	f	t	24.5218729999999994	54.4026489999999967	t	76
+1138	Arabian Villas	arabian-villas	f	f	t	24.5302919999999993	54.4451579999999993	t	76
+1139	Bloom Gardens	bloom-gardens	f	f	t	24.4316120000000012	54.4620760000000033	t	369
+1140	Zayed Military City Tower 5	zayed-military-city-tower-5	f	f	t	24.4961279999999988	54.8951289999999972	t	77
+1141	Zayed Military City Tower 8	zayed-military-city-tower-8	f	f	t	24.4961279999999988	54.8951289999999972	t	77
+1142	Al Hilli	al-hilli	f	f	t	24.2724709999999995	55.7603250000000017	t	371
+1143	Ajman Corniche Residences	ajman-corniche-residences	f	f	t	25.3990739999999988	55.4485110000000034	t	933
+1144	Global Pearl Residence	global-pearl-residence	f	f	t	25.3994999999999997	55.4795999999999978	t	934
+1145	Tricon Lake Front	tricon-lake-front	f	f	t	25.3994999999999997	55.4795999999999978	t	934
+1146	Al Rashed 2	al-rashed-2	f	f	t	25.4191439999999993	55.5007480000000015	t	934
+1147	Blossom Tower 1	blossom-tower-1	f	f	t	25.3994999999999997	55.4795999999999978	t	934
+1148	Al Naemiya Tower 2	al-naemiya-tower-2	f	f	t	25.3994999999999997	55.4795999999999978	t	127
+1149	Century Tower 2	century-tower-2	f	f	t	25.3994999999999997	55.4795999999999978	t	419
+1150	Al Fanar 1	al-fanar-1	f	f	t	25.1288100000000014	56.3264849999999981	t	124
+1151	Al Jaber Tower	al-jaber-tower	f	f	t	25.1288100000000014	56.3264849999999981	t	416
+1152	The Beachfront	the-beachfront	f	f	t	25.7206119999999991	55.8370710000000017	t	81
+1153	Yasmin Tower	yasmin-tower	f	f	t	25.800692999999999	55.9761990000000011	t	83
+1154	Saeed Al Ghafli Building	saeed-al-ghafli-building	f	f	t	25.3213380000000008	55.385226000000003	t	822
+1155	Magestic Tower	magestic-tower	f	f	t	25.3042070000000017	55.3635080000000031	t	412
+1156	Al Ahlam Tower	al-ahlam-tower	f	f	t	25.305530000000001	55.379562	t	929
+1157	Gulf Pearl Tower	gulf-pearl-tower	f	f	t	25.3019339999999993	55.3744689999999977	t	929
+1158	Al Rawda	al-rawda	f	f	t	25.5743819999999999	55.5638369999999995	t	932
+1159	Jumeirah Heights	jumeirah-heights	f	t	f	25.0646039999999992	55.1466139999999996	t	1
+1160	Coral Island	coral-island	f	f	t	25.0909399999999998	55.1746100000000013	t	212
+1161	Cascade Manor	cascade-manor	f	f	t	25.2250680000000003	55.3378530000000026	t	22
+1162	La Mer Tower	la-mer-tower	f	f	t	25.2250680000000003	55.3378530000000026	t	22
+1163	Rose Tower	rose-tower	f	f	t	25.2250680000000003	55.3378530000000026	t	22
+1164	Santeview 2	santeview-2	f	f	t	25.2250680000000003	55.3378530000000026	t	22
+1165	Souk Al Bahar	souk-al-bahar	f	f	t	25.1950280000000006	55.2769410000000008	t	395
+1166	Liwa Oasis Compound	liwa-oasis-compound	f	f	t	24.4216109999999986	54.576630999999999	t	119
+1167	Azizi Yasamine	azizi-yasamine	f	f	t	25.0251669999999997	55.1458609999999965	t	919
+1168	Officers Club Area	officers-club-area	f	t	f	24.4065520000000014	54.4810779999999966	t	2
+1169	Dubai Festival City	dubai-festival-city	f	t	f	0	0	t	1
+1170	The Square	the-square	f	f	t	25.2903550000000017	55.3534399999999991	t	219
+1171	Jebel Ali Industrial 4	jebel-ali-industrial-4	f	f	t	25.0006160000000008	55.1099049999999977	t	402
+1172	Al Warsan 2	al-warsan-2	f	f	t	25.1633460000000007	55.4416229999999999	t	26
+1173	Jumeirah Village Triangle	jumeirah-village-triangle	f	t	f	25.0472549999999998	55.1899269999999973	t	1
+1174	Al Warqaa 2	al-warqaa-2	f	f	t	25.2044640000000015	55.4111710000000031	t	27
+1175	Al Raffa Building	al-raffa-building	f	f	t	25.2624470000000017	55.2900139999999993	t	910
+1176	Manazel Al Safa	manazel-al-safa	f	f	t	25.1938250000000004	55.2637339999999995	t	909
+1177	Hydra Avenue	hydra-avenue	f	f	t	24.5484159999999996	54.6982069999999965	t	367
+1178	Tamani Art Tower	tamani-art-tower	f	f	t	25.1873550000000002	55.2808160000000015	t	909
+1179	Al Sufouh 1	al-sufouh-1	f	f	t	25.1181909999999995	55.1845009999999974	t	227
+1180	Sonapur	sonapur	f	f	t	25.2610400000000013	55.420886000000003	t	30
+1181	Al Khawaneej 1	al-khawaneej-1	f	f	t	25.2476209999999988	55.4859360000000024	t	229
+1182	Kensington Manor	kensington-manor	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1183	Baniyas Road	baniyas-road	f	f	t	25.2617350000000016	55.3155119999999982	t	915
+1184	Fraser Suites	fraser-suites	f	f	t	25.1074850000000005	55.1785640000000015	t	403
+1185	Sea View Tower	sea-view-tower	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+1186	Canal Cove Frond A	canal-cove-frond-a	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+1187	Canal Cove Frond C	canal-cove-frond-c	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+1188	Canal Cove Frond H	canal-cove-frond-h	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+1189	Canal Cove Frond O	canal-cove-frond-o	f	f	t	25.1176460000000006	55.1332110000000029	t	394
+1190	Garden Homes Frond D	garden-homes-frond-d	f	f	t	25.1282320000000006	55.1383670000000023	t	394
+1191	Garden Homes Frond K	garden-homes-frond-k	f	f	t	25.1201429999999988	55.1259870000000021	t	394
+1192	Garden Homes Frond P	garden-homes-frond-p	f	f	t	25.1147929999999988	55.1337249999999983	t	394
+1193	Signature Villas Frond B	signature-villas-frond-b	f	f	t	25.1236190000000015	55.1473709999999997	t	394
+1194	Signature Villas Frond G	signature-villas-frond-g	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+1195	Signature Villas Frond N	signature-villas-frond-n	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+1196	The Crescent B	the-crescent-b	f	f	t	0	0	t	401
+1197	Cluster B	cluster-b	f	f	t	0	0	t	1159
+1198	Cluster E	cluster-e	f	f	t	0	0	t	1159
+1199	Indigo Icon	indigo-icon	f	f	t	25.0726799999999983	55.1428000000000011	t	107
+1200	District 2	district-2	f	f	t	25.0383430000000011	55.178289999999997	t	1173
+1201	District 7	district-7	f	f	t	25.0543620000000011	55.1907989999999984	t	112
+1202	District 9	district-9	f	f	t	25.0441310000000001	55.1836389999999994	t	112
+1203	District 14	district-14	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1204	District 21	district-21	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1205	District 26	district-26	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1206	District 28	district-28	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1207	Business Resident Centre	business-resident-centre	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+1208	Ras Al Khor Industrial 1	ras-al-khor-industrial-1	f	f	t	25.174194	55.3404779999999974	t	238
+1209	Arabian Townhouse	arabian-townhouse	f	f	t	25.0472880000000018	55.1900229999999965	t	1173
+1210	Mediterranean Townhouse	mediterranean-townhouse	f	f	t	25.0472880000000018	55.1900229999999965	t	1173
+1211	Mulberry 2	mulberry-2	f	f	t	25.0510120000000001	55.2058040000000005	t	112
+1212	Jasmine Leaf	jasmine-leaf	f	f	t	25.0994220000000006	55.3129670000000004	t	34
+1213	Nad Al Sheba 2	nad-al-sheba-2	f	f	t	25.160544999999999	55.3530650000000009	t	35
+1214	Nad Al Sheba 4	nad-al-sheba-4	f	f	t	25.1435460000000006	55.3475329999999985	t	35
+1215	Al Twar 1	al-twar-1	f	f	t	25.2705179999999991	55.3627469999999988	t	243
+1216	Dubai Studio City	dubai-studio-city	f	t	f	25.0413969999999999	55.2528539999999992	t	1
+1217	New Mazda Complex	new-mazda-complex	f	f	t	25.2048489999999994	55.2707830000000016	t	396
+1218	Akoya (DAMAC Hills)	akoya-damac-hills	f	t	f	25.0264650000000017	55.2526900000000012	t	1
+1219	Dubai Style Villas	dubai-style-villas	f	f	t	25.0218060000000015	55.1428000000000011	t	919
+1220	Anantara Residences	anantara-residences	f	f	t	25.12913	55.1529019999999974	t	394
+1221	Kahraman	kahraman	f	f	t	0	0	t	920
+1222	Azure Residence	azure-residence	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+1223	Mayfair Residency	mayfair-residency	f	f	t	25.182262999999999	55.2773200000000031	t	909
+1224	Queens Meadow	queens-meadow	f	f	t	0	0	t	1218
+1225	Point Residencia	point-residencia	f	f	t	25.0475309999999993	55.1899700000000024	t	1173
+1226	Bay View Tower	bay-view-tower	f	f	t	24.4879469999999984	54.4177940000000007	t	809
+1227	Al Khail Heights	al-khail-heights	f	t	f	25.1351499999999994	55.2331100000000035	t	1
+1228	A1 Tower	a1-tower	f	f	t	25.0438699999999983	55.2153909999999968	t	245
+1229	51 Business Bay	51-business-bay	f	f	t	25.189819	55.2843050000000034	t	909
+1230	Al Manar Tower	al-manar-tower	f	f	t	25.2068709999999996	55.2710620000000006	t	396
+1231	New Bridge Hills 1	new-bridge-hills-1	f	f	t	25.0479219999999998	55.2479709999999997	t	400
+1232	Alfa Residence	alfa-residence	f	f	t	25.0475589999999997	55.2089190000000016	t	112
+1233	Maze Tower	maze-tower	f	f	t	25.2156120000000001	55.2797040000000024	t	396
+1234	Al Qusais Industrial Area	al-qusais-industrial-area	f	f	t	25.2880579999999995	55.3945650000000001	t	663
+1235	Downtown Jebel Ali	downtown-jebel-ali	f	t	f	24.9437840000000008	55.0580679999999987	t	1
+1236	Gardenia 1	gardenia-1	f	f	t	25.0536719999999988	55.2130610000000033	t	112
+1237	Bobyan Tower	bobyan-tower	f	f	t	25.0727429999999991	55.1423709999999971	t	107
+1238	Phoenix	phoenix	f	f	t	0	0	t	1218
+1239	Rose 2	rose-2	f	f	t	25.0523260000000008	55.2148299999999992	t	112
+1240	Iris Park	iris-park	f	f	t	25.0603030000000011	55.2007400000000032	t	112
+1241	Trafalgar Central	trafalgar-central	f	f	t	25.1650179999999999	55.4059179999999998	t	108
+1242	Lolena Residence	lolena-residence	f	f	t	25.0608770000000014	55.2097029999999975	t	112
+1243	The Trump Estates	the-trump-estates	f	f	t	0	0	t	1218
+1244	Lebanon World Islands	lebanon-world-islands	f	f	t	25.2261319999999998	55.1694960000000023	t	212
+1245	Orchid A	orchid-a	f	f	t	0	0	t	1218
+1246	Continental Tower	continental-tower	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+1247	Bay Square Building 3	bay-square-building-3	f	f	t	25.1850340000000017	55.2796250000000029	t	909
+1248	Zabeel Road	zabeel-road	f	t	f	25.2512779999999992	55.309469	t	1
+1249	Canary Building	canary-building	f	f	t	25.2913840000000008	55.3716700000000017	t	918
+1250	Vantage	vantage	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1251	Villa Myra	villa-myra	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1252	Bunyan Tower	bunyan-tower	f	f	t	25.082217	55.1474609999999998	t	106
+1253	Ashjar	ashjar	f	f	t	0	0	t	34
+1254	Falcon Tower 1	falcon-tower-1	f	f	t	25.2244649999999986	55.3890310000000028	t	38
+1255	Mirabella 5	mirabella-5	f	f	t	25.0657390000000007	55.2142259999999965	t	112
+1256	Palm Oasis	palm-oasis	f	f	t	24.4274120000000003	54.421444000000001	t	360
+1257	Machinery & Mechanical Equipment Zone	machinery-mechanical-equipment-zone	f	f	t	24.8943350000000017	55.0695610000000002	t	626
+1258	Al Maha Complex	al-maha-complex	f	f	t	24.4365750000000013	54.3931869999999975	t	360
+1259	Lakeside Tower D	lakeside-tower-d	f	f	t	25.0364930000000001	55.2007699999999986	t	401
+1260	Acacia	acacia	f	f	t	25.0994220000000006	55.3129670000000004	t	34
+1261	Monte Carlo	monte-carlo	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1262	Soraya Tower	soraya-tower	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1263	Mira 4	mira-4	f	f	t	0	0	t	36
+1264	Al Bateen Tower	al-bateen-tower	f	f	t	25.0723669999999998	55.1276750000000035	t	106
+1265	Al Safa 1	al-safa-1	f	f	t	25.1781259999999989	55.2460609999999974	t	276
+1266	Al Khail Heights Building 3B	al-khail-heights-building-3b	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+1267	Al Khail Heights Building 5B	al-khail-heights-building-5b	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+1268	Al Khail Heights Building 7B	al-khail-heights-building-7b	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+1269	Al Khail Heights Building 9B	al-khail-heights-building-9b	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+1270	Al Khail Heights Building 10A	al-khail-heights-building-10a	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+1271	Barton House 2	barton-house-2	f	f	t	25.0450000000000017	55.2436160000000029	t	400
+1272	Manazel Al Khor	manazel-al-khor	f	f	t	25.2250680000000003	55.3378530000000026	t	22
+1273	Windsor Crescent	windsor-crescent	f	f	t	25.0443320000000007	55.2429259999999971	t	400
+1274	Luxury Villas	luxury-villas	f	f	t	25.0921480000000017	55.1743090000000009	t	400
+1275	Turia	turia	f	f	t	25.0934969999999993	55.1690169999999966	t	315
+1276	Arno A	arno-a	f	f	t	0	0	t	315
+1277	The Views 1	the-views-1	f	f	t	25.0937020000000004	55.1666510000000017	t	315
+1278	Link Villas	link-villas	f	f	t	25.0909270000000006	55.1695419999999999	t	315
+1279	Whispering Pines	whispering-pines-2	f	f	t	25.0216180000000001	55.201545000000003	t	399
+1280	Topanga	topanga	f	f	t	0	0	t	1218
+1281	Al Zubair	al-zubair	f	t	f	0	0	t	3
+1282	Al Fisht	al-fisht	f	t	f	0	0	t	3
+1283	Al Mansoura	al-mansoura	f	t	f	0	0	t	3
+1284	Al Suyoh 3	al-suyoh-3	f	t	f	0	0	t	3
+1285	Al Suyoh 8	al-suyoh-8	f	t	f	0	0	t	3
+1286	Al Suyoh 9	al-suyoh-9	f	t	f	0	0	t	3
+1287	Al Suyoh 14	al-suyoh-14	f	t	f	0	0	t	3
+1288	Mazaira	mazaira	f	f	t	0	0	t	288
+1289	Al Riqqa	al-riqqa	f	t	f	0	0	t	3
+1290	Al Azra	al-azra	f	f	t	0	0	t	1289
+1291	Al Gulayaa	al-gulayaa	f	t	f	0	0	t	3
+1292	Artistic Villas	artistic-villas	f	f	t	0	0	t	112
+1293	Al Riffa	al-riffa	f	t	f	25.7157559999999989	55.8408459999999991	t	6
+1294	Al Jazeera	al-jazeera	f	f	t	25.6888700000000014	55.7751769999999993	t	715
+1295	Desert Leaf 1	desert-leaf-1	f	f	t	25.0987350000000013	55.320217999999997	t	34
+1296	Ludisia	ludisia	f	f	t	25.4227160000000012	55.5962409999999991	t	418
+1297	Belgravia 1	belgravia-1	f	f	t	0	0	t	112
+1298	Fortress Compound	fortress-compound	f	f	t	24.4470360000000007	54.4085910000000013	t	369
+1299	Leaf Tower	leaf-tower	f	f	t	24.4942530000000005	54.4069459999999978	t	809
+1300	Ducto Greens Residential	ducto-greens-residential	f	f	t	0	0	t	911
+1301	Al Waleed Building	al-waleed-building	f	f	t	25.2920729999999985	55.3652980000000028	t	918
+1302	Silk Leaf 3	silk-leaf-3	f	f	t	0	0	t	34
+1303	District 8O	district-8o	f	f	t	25.0559720000000006	55.2165279999999967	t	1173
+1304	Viridis Residence and Hotel Apartments	viridis-residence-and-hotel-apartments	f	f	t	0	0	t	9
+1305	Jumeirah Hills	jumeirah-hills	f	t	f	0	0	t	1
+1306	Janusia	janusia	f	f	t	0	0	t	9
+1307	Al Muteena	al-muteena	f	f	t	25.2716250000000002	55.3171260000000018	t	915
+1308	Gate Apartments	gate-apartments	f	f	t	0	0	t	914
+1309	Al Habtoor City	al-habtoor-city	f	f	t	25.1832649999999987	55.2541390000000021	t	396
+1310	District 9O	district-9o	f	f	t	0	0	t	1173
+1311	District 4	district-4	f	f	t	0	0	t	1173
+1312	Sedar Building	sedar-building	f	f	t	24.5024510000000006	54.3768430000000009	t	815
+1313	Liwa Village	liwa-village	f	f	t	24.4549500000000002	54.3696020000000004	t	408
+1314	Belhoul Complex	belhoul-complex	f	f	t	25.2270910000000015	55.3894280000000023	t	246
+1315	Sapphire Tower	sapphire-tower	f	f	t	25.2607709999999983	55.3324989999999985	t	915
+1316	Sheikh Muhammad Bin Salem Road	sheikh-muhammad-bin-salem-road	f	t	f	25.7535039999999995	55.9096150000000023	t	6
+1317	Glamz Tower By Danube	glamz-tower-by-danube	f	f	t	0	0	t	919
+1318	Alef Residence Mansion 2	alef-residence-mansion-2	f	f	t	0	0	t	394
+1319	Alef Residence Mansion 7	alef-residence-mansion-7	f	f	t	0	0	t	394
+1320	Marina Sky (All)	marina-sky-all	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+1321	Oceana (All)	oceana-all	f	f	t	25.111460000000001	55.1370500000000021	t	394
+1322	Taj (All)	taj-all	f	f	t	25.0997799999999991	55.1193079999999966	t	394
+1323	Al Seef (All)	al-seef-all	f	f	t	25.0799999999999983	55.1511369999999985	t	107
+1324	Wind (All)	wind-all	f	f	t	25.0692829999999987	55.1417220000000015	t	107
+1325	Yansoon (All)	yansoon-all	f	f	t	25.1919399999999989	55.2797600000000031	t	395
+1326	Bennett House (All)	bennett-house-all	f	f	t	25.0457859999999997	55.245517999999997	t	400
+1327	Regent House (All)	regent-house-all	f	f	t	25.0459539999999983	55.248466999999998	t	400
+1328	Diamond Views (All)	diamond-views-all	f	f	t	25.0639010000000013	55.215761999999998	t	112
+1329	Lakeside (All)	lakeside-all	f	f	t	25.032039000000001	55.1901679999999999	t	401
+1330	al fattan 2	al-fattan-2	f	f	t	25.0794420000000002	55.1365979999999993	t	106
+1331	Al Majara (All)	al-majara-all	f	f	t	25.0747169999999997	55.1371619999999965	t	106
+1332	Al Tayer	al-tayer	f	f	t	25.2009159999999994	55.266885000000002	t	396
+1333	City 2	city-2	f	f	t	25.2195	55.2798000000000016	t	396
+1334	Golf 1	golf-1	f	f	t	25.0923249999999989	55.1680959999999985	t	911
+1335	Green Lakes 2	green-lakes-2	f	f	t	25.078365999999999	55.1486639999999966	t	107
+1336	Jumeirah Business Center 5	jumeirah-business-center-5	f	f	t	25.0766759999999991	55.1497420000000034	t	107
+1337	Lotus Residence A	lotus-residence-a	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+1338	Saba 2	saba-2	f	f	t	25.0770030000000013	55.1462119999999985	t	107
+1339	Sobha Ivory 2	sobha-ivory-2	f	f	t	25.1854820000000004	55.2745400000000018	t	909
+1340	Al Bahia	al-bahia	f	t	f	24.5694090000000003	54.6478889999999993	t	2
+1341	Al Ghadeer	al-ghadeer	f	t	f	24.8429299999999991	55.0270289999999989	t	2
+1342	Al Ittihad Road	al-ittihad-road	f	t	f	24.4715600000000002	54.3698029999999974	t	2
+1343	Al Najda Street	al-najda-street	f	t	f	24.4944309999999987	54.367683999999997	t	2
+1344	Al Shamkha	al-shamkha	f	t	f	24.3952400000000011	54.7075940000000003	t	2
+1345	Bani Yas	bani-yas	f	t	f	24.3206810000000004	54.6558149999999969	t	2
+1346	Building Materials City	building-materials-city	f	t	f	24.4666670000000011	54.3666669999999996	t	2
+1347	Defence Street	defence-street	f	t	f	24.4804080000000006	54.3867189999999994	t	2
+1348	Jawazat Street	jawazat-street	f	t	f	24.4663940000000011	54.3525959999999984	t	2
+1349	Masdar City	masdar-city	f	t	f	24.4296450000000007	54.6159979999999976	t	2
+1350	Muroor Area	muroor-area	f	t	f	24.4476079999999989	54.4002729999999985	t	2
+1351	Sas Al Nakhl	sas-al-nakhl	f	t	f	24.4421740000000014	54.5170680000000019	t	2
+1352	Al Jimi	al-jimi	f	t	f	24.2430050000000001	55.7319669999999974	t	8
+1353	Al Tawiya	al-tawiya	f	t	f	24.2541240000000009	55.6967280000000002	t	8
+1354	Zakher	zakher	f	t	f	24.1247900000000008	55.6574790000000021	t	8
+1355	Al Hamra Village	al-hamra-village	f	t	f	25.6918690000000005	55.7851199999999992	t	6
+1356	Ras Al Khaimah Gateway	ras-al-khaimah-gateway	f	t	f	25.800692999999999	55.9761990000000011	t	6
+1357	Al Butina	al-butina	f	t	f	0	0	t	3
+1358	Al Shahba	al-shahba	f	t	f	25.332961000000001	55.4319330000000008	t	3
+1359	Muelih	muelih	f	t	f	0	0	t	3
+1360	White Bay	white-bay	f	t	f	25.5132340000000006	55.5690829999999991	t	5
+1361	Al Etihad Towers	al-etihad-towers	f	f	t	0	0	t	72
+1362	Al Buhayra Village	al-buhayra-village	f	f	t	24.467452999999999	54.3675210000000035	t	1341
+1363	Al Ahlia Tower	al-ahlia-tower	f	f	t	24.4685360000000003	54.3399690000000035	t	66
+1364	Al Khubairah Tower	al-khubairah-tower	f	f	t	24.4685360000000003	54.3399690000000035	t	66
+1365	First Gulf Bank Building	first-gulf-bank-building	f	f	t	24.4666670000000011	54.3666669999999996	t	66
+1366	Al Ain Tower	al-ain-tower	f	f	t	24.4958440000000017	54.3722119999999975	t	66
+1367	Khalidiya Tower B	khalidiya-tower-b	f	f	t	24.4782890000000002	54.3546580000000006	t	66
+1368	Capital Plaza	capital-plaza	f	f	t	24.4989239999999988	54.3677250000000001	t	67
+1369	Vision Twin Towers	vision-twin-towers	f	f	t	24.4889100000000006	54.3738659999999996	t	1343
+1370	Al Shaleela	al-shaleela	f	t	f	24.4342550000000003	54.5423509999999965	t	2
+1371	Al Zahiya	al-zahiya	f	t	f	24.4989670000000004	54.3767819999999986	t	2
+1372	Khannour Community	khannour-community	f	f	t	24.4369680000000002	54.5840859999999992	t	69
+1373	Orchid	orchid	f	f	t	24.4205620000000003	54.5330849999999998	t	362
+1374	First Gulf Bank Tower	first-gulf-bank-tower	f	f	t	24.4942439999999984	54.4068600000000018	t	809
+1375	Marina Rise Tower	marina-rise-tower	f	f	t	24.4925740000000012	54.3931159999999991	t	809
+1376	Sky Garden Residence	sky-garden-residence	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+1377	Horizon Tower A	horizon-tower-a	f	f	t	24.4941369999999985	54.4037780000000026	t	809
+1378	Marina Spirit	marina-spirit	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+1379	Sky Garden	sky-garden	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+1380	Synergy Towers	synergy-towers	f	f	t	24.4942439999999984	54.4068600000000018	t	809
+1381	Marina Heights	marina-heights	f	f	t	24.4879469999999984	54.4177940000000007	t	809
+1382	Pearl Bay	pearl-bay	f	f	t	24.4806169999999987	54.4080519999999979	t	809
+1383	Time Tower	time-tower	f	f	t	24.4942439999999984	54.4068600000000018	t	809
+1384	Dari Towers	dari-towers	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+1385	Mangrove Place	mangrove-place	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+1386	Reem Diamond	reem-diamond	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+1387	Y5 Tower	y5-tower	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+1388	The Gate Tower 2	the-gate-tower-2	f	f	t	24.4938949999999984	54.410739999999997	t	809
+1389	New Shahama	new-shahama	f	f	t	24.5248689999999989	54.6835549999999984	t	363
+1390	Sowwah Square Tower 1	sowwah-square-tower-1	f	f	t	24.5002369999999985	54.3883719999999968	t	810
+1391	Bmc 16	bmc-16	f	f	t	24.4666670000000011	54.3666669999999996	t	1346
+1392	Al Falah Street	al-falah-street	f	f	t	24.4758999999999993	54.3654039999999981	t	811
+1393	Y Tower	y-tower	f	f	t	24.4655619999999985	54.3866080000000025	t	811
+1394	3 Sails Tower	3-sails-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	72
+1395	Oryx Tower	oryx-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	72
+1396	Global Tower	global-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	73
+1397	Meadows 1	meadows-1	f	f	t	25.0682650000000002	55.1548829999999981	t	912
+1398	Meadows 3	meadows-3	f	f	t	25.0708300000000008	55.157350000000001	t	912
+1399	Meadows 8	meadows-8	f	f	t	25.064114	55.1839099999999974	t	912
+1400	Claverton House 1	claverton-house-1	f	f	t	25.0431899999999992	55.2450100000000006	t	400
+1401	Dickens Circus 2	dickens-circus-2	f	f	t	25.0440199999999997	55.2460200000000015	t	400
+1402	Fox Hill 4	fox-hill-4	f	f	t	25.046009999999999	55.2436399999999992	t	400
+1403	Fox Hill 9	fox-hill-9	f	f	t	25.0480300000000007	55.2473499999999973	t	400
+1404	Marlowe House 2	marlowe-house-2	f	f	t	25.0446300000000015	55.2469999999999999	t	400
+1405	Regent House 1	regent-house-1	f	f	t	25.0455599999999983	55.2484600000000015	t	400
+1406	Sherlock House 1	sherlock-house-1	f	f	t	25.0467210000000016	55.245987999999997	t	400
+1407	Widcombe House 2	widcombe-house-2	f	f	t	25.0444299999999984	55.2451799999999977	t	400
+1408	Widcombe House 4	widcombe-house-4	f	f	t	25.04542	55.2450499999999991	t	400
+1409	Kamoon 3	kamoon-3	f	f	t	25.1898260000000001	55.2748649999999984	t	395
+1410	Mystica 1	mystica-1	f	f	t	25.2048489999999994	55.2707830000000016	t	395
+1411	Reehan 3	reehan-3	f	f	t	25.1893990000000016	55.2773409999999998	t	395
+1412	Yansoon 2	yansoon-2	f	f	t	25.1922770000000007	55.2787160000000029	t	395
+1413	Yansoon 7	yansoon-7	f	f	t	25.1917730000000013	55.2789179999999973	t	395
+1414	Zaafaran 1	zaafaran-1	f	f	t	25.1905430000000017	55.2773660000000007	t	395
+1415	Zanzebeel 1	zanzebeel-1	f	f	t	25.1890840000000011	55.2746440000000021	t	395
+1416	Al Hallawi	al-hallawi	f	f	t	25.1113099999999996	55.1432599999999979	t	394
+1417	Al Fattan Palm Resort	al-fattan-palm-resort	f	f	t	25.0796600000000005	55.1365920000000003	t	106
+1418	Al Hamri	al-hamri	f	f	t	25.1069199999999988	55.1491100000000003	t	394
+1419	Al Msalli	al-msalli	f	f	t	25.1136400000000002	55.1423699999999997	t	394
+1420	Al Tamr	al-tamr	f	f	t	25.1094200000000001	55.1456000000000017	t	394
+1421	Central Rotunda	central-rotunda	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+1422	Grandeur Residence	grandeur-residence	f	f	t	25.0987089999999995	55.1222709999999978	t	394
+1423	Oceana Southern	oceana-southern	f	f	t	25.1101109999999998	55.1375060000000019	t	394
+1424	Signature Villas (All)	signature-villas-all	f	f	t	25.1161020000000015	55.1336820000000003	t	394
+1425	Al Attar	al-attar	f	f	t	25.2141470000000005	55.2781710000000004	t	396
+1426	Emirates	emirates	f	f	t	25.2086189999999988	55.2765890000000013	t	396
+1427	Single Business	single-business	f	f	t	25.1881219999999999	55.2585169999999977	t	396
+1428	Deema 3	deema-3	f	f	t	25.0768899999999988	55.1744600000000034	t	109
+1429	hattan 2	hattan-2	f	f	t	25.0813820000000014	55.1654699999999991	t	109
+1430	Zulal 1	zulal-1	f	f	t	25.0790809999999986	55.1501299999999972	t	109
+1431	Fairways East	fairways-east	f	f	t	25.0890699999999995	55.1712100000000021	t	315
+1432	Tanaro	tanaro	f	f	t	25.0886400000000016	55.1719500000000025	t	911
+1433	Links West	links-west	f	f	t	25.0910200000000003	55.1696400000000011	t	315
+1434	Una	una	f	f	t	25.0935950000000005	55.1679430000000011	t	911
+1435	Marina Crown	marina-crown	f	f	t	25.0903199999999984	55.1478699999999975	t	106
+1436	Grosvenor House Hotel	grosvenor-house-hotel	f	f	t	25.0854630000000007	55.1436769999999967	t	106
+1437	Silverene A	silverene-a	f	f	t	25.0751300000000015	55.1378600000000034	t	106
+1438	Tamani Hotel	tamani-hotel	f	f	t	25.0910499999999992	55.1490399999999994	t	106
+1439	Tiara Tanzanite	tiara-tanzanite	f	f	t	25.1151899999999983	55.1418710000000019	t	394
+1440	Golden Mile 3	golden-mile-3	f	f	t	25.1066600000000015	55.1475399999999993	t	394
+1441	Golden Mile 10	golden-mile-10	f	f	t	25.1118370000000013	55.1402179999999973	t	394
+1442	Marina Residence 5	marina-residence-5	f	f	t	25.1164179999999995	55.1395199999999974	t	394
+1443	Fairmont Residence North	fairmont-residence-north	f	f	t	25.1110000000000007	55.1396700000000024	t	394
+1444	Centrepoint Apartments	centrepoint-apartments	f	f	t	25.2480539999999998	55.2981160000000003	t	910
+1445	Views 1	views-1	f	f	t	25.0936799999999991	55.166719999999998	t	911
+1446	Sama	sama	f	f	t	25.2289239999999992	55.2852960000000024	t	396
+1447	Oliva	oliva	f	f	t	25.0423720000000003	55.2134319999999974	t	913
+1448	Shorooq	shorooq	f	f	t	25.2183059999999983	55.4291640000000001	t	914
+1449	Al Fattan Plaza	al-fattan-plaza	f	f	t	25.2511200000000002	55.3447200000000024	t	915
+1450	hor al anz	hor-al-anz	f	f	t	25.2773350000000008	55.3339009999999973	t	915
+1451	arenco	arenco	f	f	t	0	0	t	403
+1452	Reflections	reflections	f	f	t	25.049468000000001	55.2132140000000007	t	112
+1453	Business Centre	business-centre	f	f	t	25.075569999999999	55.1453599999999966	t	402
+1454	Zulekha	zulekha	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+1455	Al Ras Building	al-ras-building	f	f	t	25.2686479999999989	55.3041109999999989	t	915
+1456	splendour villas	splendour-villas	f	f	t	0	0	t	276
+1457	Gulf National	gulf-national	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+1458	Dusit Hotel	dusit-hotel	f	f	t	25.2060999999999993	55.2728999999999999	t	396
+1459	Karama	karama	f	f	t	25.2470110000000005	55.3057730000000021	t	910
+1460	Marina Sky 3	marina-sky-3	f	f	t	25.0864900000000013	55.1465600000000009	t	106
+1461	Shakespeare Circus 2	shakespeare-circus-2	f	f	t	25.0459099999999992	55.2502899999999997	t	400
+1462	Sobha Ivory (All)	sobha-ivory-all	f	f	t	25.1792699999999989	55.272199999999998	t	909
+1463	Marina View Towers	marina-view-towers	f	f	t	25.0792800000000007	55.142240000000001	t	106
+1464	Park Island (All)	park-island-all	f	f	t	25.0821199999999997	55.1418600000000012	t	106
+1465	Mazaya Business Avenue (All)	mazaya-business-avenue-all	f	f	t	25.0690209999999993	55.1456779999999966	t	107
+1466	Jumeirah Business Center (All)	jumeirah-business-center-all	f	f	t	25.0682200000000002	55.1451300000000018	t	107
+1467	Frond Villas (All)	frond-villas-all	f	f	t	25.1203770000000013	55.1310560000000009	t	394
+1468	Fairways (All)	fairways-all	f	f	t	25.0894499999999994	55.170810000000003	t	315
+1469	Arabian Ranches	arabian-ranches	f	t	f	25.0529459999999986	55.2705720000000014	t	1
+1470	Al Barsha	al-barsha	f	t	f	25.0840059999999987	55.2203190000000035	t	1
+1471	Downtown Dubai	downtown-dubai	f	t	f	25.1922159999999984	55.2703750000000014	t	1
+1472	Umm Suqeim	umm-suqeim	f	t	f	25.158850000000001	55.2092170000000024	t	1
+1473	Green Community	green-community	f	t	f	24.9997959999999999	55.1616670000000013	t	1
+1474	DIFC	difc	f	t	f	25.2145849999999996	55.2812059999999974	t	1
+1475	Sports City	sports-city	f	t	f	25.0469280000000012	55.2190020000000032	t	1
+1476	Barsha Heights(Tecom)	barsha-heightstecom	f	t	f	25.0976180000000006	55.1764399999999995	t	1
+1477	Silicon Oasis	silicon-oasis	f	t	f	25.1193540000000013	55.3779600000000016	t	1
+1478	Dubai Healthcare City (DHCC)	dubai-healthcare-city-dhcc	f	t	f	25.2376879999999986	55.3206679999999977	t	1
+1479	Dubai Internet City	dubai-internet-city	f	t	f	25.0926529999999985	55.1589420000000032	t	1
+1480	Al Marjan Island	al-marjan-island	f	t	f	25.6719000000000008	55.7406999999999968	t	6
+1481	Julfar	julfar	f	t	f	25.7914610000000017	55.9594730000000027	t	6
+1482	Julfar Residential	julfar-residential	f	t	f	25.800692999999999	55.9761990000000011	t	6
+1483	Oceana Apartments	oceana-apartments	f	t	f	25.800692999999999	55.9761990000000011	t	6
+1484	Al Markaz	al-markaz	f	t	f	24.1929809999999996	54.4725239999999999	t	2
+1485	Hamdan Street	hamdan-street	f	t	f	24.4817360000000015	54.3519480000000001	t	2
+1486	Khalifa City C	khalifa-city-c	f	t	f	24.3885320000000014	54.6060420000000022	t	2
+1487	Musaffah Industrial Area	musaffah-industrial-area	f	t	f	24.362760999999999	54.5108529999999973	t	2
+1488	Al Ghafeyah Area	al-ghafeyah-area	f	t	f	25.3758559999999989	55.4374699999999976	t	3
+1489	Al Mareija	al-mareija	f	t	f	25.3566420000000008	55.3848800000000026	t	3
+1490	Al Nujoom Islands	al-nujoom-islands	f	t	f	25.3575000000000017	55.3908330000000007	t	3
+1491	Al Qasimia	al-qasimia	f	t	f	0	0	t	3
+1492	Al Wahda	al-wahda	f	t	f	25.3196580000000004	55.3857580000000027	t	3
+1493	Sharjah Industrial Area	sharjah-industrial-area	f	t	f	25.3061420000000012	55.4335080000000033	t	3
+1494	Corniche Al Fujairah	corniche-al-fujairah	f	t	f	25.6192530000000005	56.2739819999999966	t	7
+1495	Umm Al Quwain Marina	umm-al-quwain-marina	f	t	f	25.5259010000000011	55.5962809999999976	t	5
+1496	Ain Ajman	ain-ajman	f	t	f	25.3994999999999997	55.4795999999999978	t	4
+1497	Al Ameera Village	al-ameera-village	f	t	f	25.3994999999999997	55.4795999999999978	t	4
+1498	Al Rumaila	al-rumaila	f	t	f	25.4002629999999989	55.4319330000000008	t	4
+1499	Awali City	awali-city	f	t	f	25.3994999999999997	55.4795999999999978	t	4
+1500	Marmooka City	marmooka-city	f	t	f	25.3994999999999997	55.4795999999999978	t	4
+1501	Al Barsha 3	al-barsha-3	f	f	t	25.0930709999999983	55.1982190000000017	t	1470
+1502	Baghdad Street	baghdad-street	f	f	t	25.2772070000000006	55.3853269999999966	t	915
+1503	Al Reem 1	al-reem-1	f	f	t	25.0605499999999992	55.2956900000000005	t	1469
+1504	Alvorada 4	alvorada-4	f	f	t	25.0442	55.2652599999999978	t	1469
+1505	Mirador 2	mirador-2	f	f	t	25.056165	55.2844639999999998	t	1469
+1506	Mirador La Coleccion 2	mirador-la-coleccion-2	f	f	t	25.0442500000000017	55.2555300000000003	t	1469
+1507	Polo Homes	polo-homes	f	f	t	25.0355519999999991	55.2494609999999966	t	1469
+1508	Terranova	terranova	f	f	t	25.0513300000000001	55.2804900000000004	t	1469
+1509	Al Souk Al Kabeer	al-souk-al-kabeer	f	f	t	25.2629139999999985	55.2932010000000034	t	910
+1510	Rose Building	rose-building	f	f	t	25.2145569999999992	55.3041940000000025	t	910
+1511	Burj Park 5	burj-park-5	f	f	t	25.1942999999999984	55.2711200000000034	t	1471
+1512	Bayswater	bayswater	f	f	t	25.1841499999999989	55.264249999999997	t	909
+1513	burj al nujoom	burj-al-nujoom	f	f	t	25.1908110000000001	55.2816329999999994	t	1471
+1514	churchill residency	churchill-residency	f	f	t	25.1811399999999992	55.262279999999997	t	909
+1515	Court	court	f	f	t	25.1846800000000002	55.2588200000000001	t	909
+1516	Dec Business	dec-business	f	f	t	25.1785500000000013	55.272350000000003	t	909
+1517	Exchange	exchange	f	f	t	25.1866570000000003	55.2616719999999972	t	909
+1518	Fortune Avenue	fortune-avenue	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+1519	Iris Bay	iris-bay	f	f	t	25.186160000000001	55.2601000000000013	t	909
+1520	Mayfair Tower	mayfair-tower	f	f	t	25.1816600000000008	55.277709999999999	t	909
+1521	One Business Bay	one-business-bay	f	f	t	25.1879899999999992	55.2618500000000026	t	909
+1522	Oxford	oxford	f	f	t	25.1773339999999983	55.273145999999997	t	909
+1523	Park Lane	park-lane	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+1524	Sami Business	sami-business	f	f	t	25.185058999999999	55.2602010000000021	t	909
+1525	Sobha Sapphire	sobha-sapphire	f	f	t	25.1779949999999992	55.2748840000000001	t	909
+1526	Forum	forum	f	f	t	25.1866699999999994	55.2661000000000016	t	909
+1527	Vision	vision	f	f	t	25.1883200000000009	55.2638800000000003	t	909
+1528	xl	xl	f	f	t	25.1806400000000004	55.2676000000000016	t	909
+1529	Palazzo Versace	palazzo-versace	f	f	t	25.2272959999999991	55.3423909999999992	t	910
+1530	Al Maktoum Road	al-maktoum-road	f	f	t	25.2599330000000002	55.3227680000000035	t	915
+1531	Naif	naif	f	f	t	25.2727520000000005	55.3129670000000004	t	915
+1532	Gate 1	gate-1	f	f	t	25.2129000000000012	55.2822200000000024	t	1474
+1533	29 Boulevard (All)	29-boulevard-all	f	f	t	25.1913499999999999	55.2728540000000024	t	1471
+1534	Emaar Square	emaar-square	f	f	t	25.201039999999999	55.2732699999999966	t	1471
+1535	South Ridge 2	south-ridge-2	f	f	t	25.1865300000000012	55.2774500000000018	t	1471
+1536	South Ridge 4	south-ridge-4	f	f	t	25.1870660000000015	55.2786260000000027	t	1471
+1537	Mansion	mansion	f	f	t	25.1935199999999995	55.2710000000000008	t	1471
+1538	Image Residence	image-residence	f	f	t	25.2048489999999994	55.2707830000000016	t	402
+1539	Rufi Royal Residence	rufi-royal-residence	f	f	t	25.2048489999999994	55.2707830000000016	t	402
+1540	Suburbia	suburbia	f	f	t	24.943601000000001	55.0585510000000014	t	402
+1541	Dubai Biotech	dubai-biotech	f	f	t	25.0952930000000016	55.1955450000000027	t	1470
+1542	European Business Center	european-business-center	f	f	t	25.0044150000000016	55.1546570000000003	t	917
+1543	ritaj	ritaj	f	f	t	24.987717	55.2017579999999981	t	917
+1544	Remraam	remraam	f	t	f	25.0014000000000003	55.2507799999999989	t	1
+1545	Siraj Tower	siraj-tower	f	f	t	0	0	t	131
+1546	Murjan	murjan	f	f	t	25.081664	55.140037999999997	t	106
+1547	Al Fardan	al-fardan	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+1548	Al Majara 4	al-majara-4	f	f	t	25.0745499999999986	55.1373200000000026	t	106
+1549	Al Marjan Villas	al-marjan-villas	f	f	t	25.0855800000000002	55.1499299999999977	t	106
+1550	Al Sahab 2	al-sahab-2	f	f	t	25.0756699999999988	55.1350399999999965	t	106
+1551	Azure 1	azure-1	f	f	t	25.0731099999999998	55.1376800000000031	t	106
+1552	Belvedere	belvedere	f	f	t	25.0681900000000013	55.1307800000000015	t	106
+1553	dec 2	dec-2	f	f	t	25.0684350000000009	55.1299070000000029	t	106
+1554	Eden Blue	eden-blue	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+1555	Emerald Residence	emerald-residence	f	f	t	25.0715199999999996	55.1361100000000022	t	106
+1556	Horizon	horizon	f	f	t	25.0718299999999985	55.1372199999999992	t	106
+1557	Le Reve	le-reve	f	f	t	25.0892359999999996	55.1474779999999996	t	106
+1558	Marina Arcade	marina-arcade	f	f	t	25.0732190000000017	55.1331550000000021	t	106
+1559	Marina Diamond 3	marina-diamond-3	f	f	t	25.0817200000000007	55.14696	t	106
+1560	Marina Star	marina-star	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+1561	Marina Terrace	marina-terrace	f	f	t	25.0844899999999988	55.1447999999999965	t	106
+1562	oceanic	oceanic	f	f	t	25.0832799999999985	55.1467999999999989	t	106
+1563	Pier 8	pier-8	f	f	t	25.0801400000000001	55.1398300000000035	t	106
+1564	Bayside	bayside	f	f	t	25.0813300000000012	55.145150000000001	t	106
+1565	Zen	zen	f	f	t	25.0675500000000007	55.1311499999999981	t	106
+1566	Torch	torch	f	f	t	25.0880900000000011	55.1474100000000007	t	106
+1567	West	west	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+1568	Axis Residence 1	axis-residence-1	f	f	t	25.1256470000000007	55.404049999999998	t	1477
+1569	Axis Residence 6	axis-residence-6	f	f	t	25.1215270000000004	55.396684999999998	t	1477
+1570	Axis Residence 9	axis-residence-9	f	f	t	25.1143070000000002	55.3744439999999969	t	1477
+1571	Jade Residence	jade-residence	f	f	t	25.1100729999999999	55.3815510000000017	t	1477
+1572	Park Avenue	park-avenue	f	f	t	25.1118360000000003	55.3836259999999996	t	1477
+1573	Sapphire	sapphire	f	f	t	25.1142429999999983	55.3898300000000035	t	1477
+1574	Silicon Star	silicon-star	f	f	t	25.1079329999999992	55.3794329999999988	t	1477
+1575	University View	university-view	f	f	t	25.1257249999999992	55.4050299999999964	t	1477
+1576	Bangash Residence	bangash-residence	f	f	t	25.2048489999999994	55.2707830000000016	t	1475
+1577	Chess	chess	f	f	t	25.0359049999999996	55.2207950000000025	t	1475
+1578	Elite Sports Residence 1	elite-sports-residence-1	f	f	t	25.0431740000000005	55.216431	t	1475
+1579	elite sports residence 7	elite-sports-residence-7	f	f	t	25.0393000000000008	55.2047069999999991	t	1475
+1580	Gallery Villas	gallery-villas	f	f	t	25.0413940000000004	55.2065709999999967	t	1475
+1581	Global Golf Residence 2	global-golf-residence-2	f	f	t	25.0396089999999987	55.2173990000000003	t	1475
+1582	Links View	links-view	f	f	t	25.0469280000000012	55.2190020000000032	t	1475
+1583	Olympic Park 3	olympic-park-3	f	f	t	25.0433669999999999	55.2152740000000009	t	1475
+1584	Park View	park-view	f	f	t	25.0925839999999987	55.1528449999999992	t	1475
+1585	Rufi Rose Gardens	rufi-rose-gardens	f	f	t	25.2048489999999994	55.2707830000000016	t	1475
+1586	Tennis	tennis	f	f	t	25.0418790000000016	55.2053960000000004	t	1475
+1587	Medalist	medalist	f	f	t	25.0390529999999991	55.218238999999997	t	1475
+1588	Amber Residence	amber-residence	f	f	t	25.1156429999999986	55.1414639999999991	t	402
+1589	terrace apartments A	terrace-apartments-a	f	f	t	0	0	t	1473
+1590	Al Alka 1	al-alka-1	f	f	t	25.0909399999999998	55.1746100000000013	t	911
+1591	Al Arta 2	al-arta-2	f	f	t	25.0905500000000004	55.1741799999999998	t	911
+1592	Al Ghaf	al-ghaf	f	f	t	25.0958299999999994	55.1701499999999996	t	911
+1593	Al Ghozlan	al-ghozlan	f	f	t	25.0919699999999999	55.1740899999999996	t	911
+1594	Al Ghozlan 2	al-ghozlan-2	f	f	t	25.09253	55.1741200000000021	t	911
+1595	Al Jaz 2	al-jaz-2	f	f	t	25.0953300000000006	55.171280000000003	t	911
+1596	Al Samar	al-samar	f	f	t	25.0930199999999992	55.1730200000000011	t	911
+1597	Al Sidir	al-sidir	f	f	t	25.0948899999999995	55.1690299999999993	t	911
+1598	Al Thayal 2	al-thayal-2	f	f	t	25.0915999999999997	55.1730599999999995	t	911
+1599	Links Golf Apartment	links-golf-apartment	f	f	t	25.0904500000000006	55.1695300000000017	t	315
+1600	lago vista	lago-vista	f	f	t	25.0346800000000016	55.2019700000000029	t	401
+1601	Al Dana 2	al-dana-2	f	f	t	25.1648929999999993	55.4084029999999998	t	108
+1602	England	england	f	f	t	25.1727300000000014	55.4046999999999983	t	108
+1603	Greece	greece	f	f	t	25.1560099999999984	55.4085400000000021	t	108
+1604	Indigo Spectrum	indigo-spectrum	f	f	t	25.1673660000000012	55.4040350000000004	t	108
+1605	Morocco	morocco	f	f	t	25.161480000000001	55.4180899999999994	t	108
+1606	Riviera Residence	riviera-residence	f	f	t	25.1673800000000014	55.4059900000000027	t	108
+1607	Supreme Residency	supreme-residency	f	f	t	25.1660299999999992	55.4063900000000018	t	108
+1608	jumeirah 2	jumeirah-2	f	f	t	25.2016400000000012	55.2452600000000018	t	397
+1609	Juniper Way	juniper-way	f	f	t	24.9973950000000009	55.1639499999999998	t	399
+1610	Sanctuary Falls	sanctuary-falls	f	f	t	25.019207999999999	55.2010670000000019	t	399
+1611	Cluster 1-5	cluster-1-5	f	f	t	25.055294	55.1641460000000023	t	110
+1612	Cluster 41-45	cluster-41-45	f	f	t	25.0715989999999991	55.1413360000000026	t	110
+1613	European Cluster	european-cluster	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+1614	Islamic Clusters	islamic-clusters	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+1615	Arch	arch	f	f	t	25.0717399999999984	55.1437299999999979	t	107
+1616	Al Shera	al-shera	f	f	t	25.0714599999999983	55.1417599999999979	t	107
+1617	Concorde	concorde	f	f	t	25.0700099999999999	55.1441999999999979	t	107
+1618	Fortune Executive	fortune-executive	f	f	t	25.0790499999999987	55.1492900000000006	t	107
+1619	Goldcrest Views 2	goldcrest-views-2	f	f	t	25.0668599999999984	55.141530000000003	t	107
+1620	Hds	hds	f	f	t	25.0721099999999986	55.1424599999999998	t	107
+1621	Lake Terrace	lake-terrace	f	f	t	25.0701000000000001	55.14114	t	107
+1622	One Lake Plaza	one-lake-plaza	f	f	t	25.0790499999999987	55.1501999999999981	t	107
+1623	Tamweel	tamweel	f	f	t	25.0797689999999989	55.1532920000000004	t	107
+1624	V1	v1	f	f	t	25.0676699999999997	55.1388359999999977	t	107
+1625	Angelica Residence	angelica-residence	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1626	Fortunato	fortunato	f	f	t	25.0659810000000007	55.2131180000000015	t	112
+1627	Golden Heights	golden-heights	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1628	Le Grand Chateau	le-grand-chateau	f	f	t	25.0642800000000001	55.2073299999999989	t	112
+1629	Mulberry Mansion	mulberry-mansion	f	f	t	25.0505850000000017	55.212845999999999	t	112
+1630	Rufi Downtown	rufi-downtown	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1631	West End	west-end	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1632	Cadi 4	cadi-4	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1633	Centre Court	centre-court	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1634	Jouri 4	jouri-4	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1635	La Riviera Estate	la-riviera-estate	f	f	t	25.0630890000000015	55.2026210000000006	t	112
+1636	Apex Suites	apex-suites	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1637	Astoria Residence	astoria-residence	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1638	Diamond Views 1	diamond-views-1	f	f	t	25.0527300000000004	55.2024600000000021	t	112
+1639	Emirates Gardens	emirates-gardens	f	f	t	25.0537109999999998	55.2129059999999967	t	112
+1640	Jehaan Residence 3	jehaan-residence-3	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1641	Metropolis Lofts	metropolis-lofts	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1642	Prime Business Centre	prime-business-centre	f	f	t	25.0491799999999998	55.214700999999998	t	112
+1643	Quattro	quattro	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1644	Reliance 6	reliance-6	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1645	Sandoval Gardens	sandoval-gardens	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1646	Sunset Gardens	sunset-gardens	f	f	t	25.062736000000001	55.2098840000000024	t	112
+1647	Lawns 2	lawns-2	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1648	Tuscan Residences	tuscan-residences	f	f	t	25.0630400000000009	55.2084299999999999	t	112
+1649	Al Murooj Rotana Hotel	al-murooj-rotana-hotel	f	f	t	25.2031390000000002	55.2771889999999999	t	396
+1650	Garden West Apartments	garden-west-apartments	f	f	t	0	0	t	1473
+1651	Sparkle Towers	sparkle-towers	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+1652	Midtown	midtown	f	f	t	25.0317770000000017	55.1900229999999965	t	401
+1653	Jasmine Leaf 3	jasmine-leaf-3	f	f	t	0	0	t	34
+1654	Jumeirah Village Circle Villas	jumeirah-village-circle-villas-2	f	f	t	25.0597110000000001	55.2092120000000008	t	112
+1655	Abu Baker Al Siddique Road	abu-baker-al-siddique-road	f	f	t	25.2741520000000008	55.3293979999999976	t	915
+1656	Manazel	manazel	f	f	t	25.2513749999999995	55.2890769999999989	t	910
+1657	The Mansions	the-mansions	f	f	t	0	0	t	110
+1658	Al Attar Centre	al-attar-centre	f	f	t	25.2452059999999996	55.3024079999999998	t	45
+1659	Azizi Daisy	azizi-daisy	f	f	t	25.0251669999999997	55.1458609999999965	t	919
+1660	Lavender 2	lavender-2	f	f	t	0	0	t	112
+1661	Al Rahmaniya 1	al-rahmaniya-1	f	f	t	0	0	t	288
+1662	Trade Center Hotel Apartments	trade-center-hotel-apartments	f	f	t	25.2244220000000006	55.2833400000000026	t	396
+1663	Barsha South Villas	barsha-south-villas	f	f	t	0	0	t	1470
+1664	Golden Sands Tower	golden-sands-tower	f	f	t	25.3080989999999986	55.377209999999998	t	929
+1665	Marina Bay by DAMAC	marina-bay-by-damac-2	f	f	t	24.4846989999999991	54.4039319999999975	t	809
+1666	Binghatti Views	binghatti-views	f	f	t	25.1226669999999999	55.374329000000003	t	1477
+1667	Danat Abu Dhabi	danat-abu-dhabi	f	f	t	24.4298660000000005	54.4360209999999967	t	366
+1668	Bay View Tower	bay-view-tower-2	f	f	t	24.491302000000001	54.3923100000000019	t	809
+1669	District 9G	district-9g	f	f	t	25.044315000000001	55.1843319999999977	t	1173
+1670	Belhabb Tower	belhabb-tower	f	f	t	0	0	t	909
+1671	Capitol Tower	capitol-tower	f	f	t	25.1004730000000009	55.1787700000000001	t	1476
+1672	Golden Woods Villas	golden-woods-villas	f	f	t	0	0	t	112
+1673	The Address Residences Dubai Opera Tower 1	the-address-residences-dubai-opera-tower-1	f	f	t	25.1957449999999987	55.2718920000000011	t	1471
+1674	Al Majara 6	al-majara-6	f	f	t	25.074190999999999	55.1379030000000014	t	106
+1675	The Imperial Residence B	the-imperial-residence-b	f	f	t	25.0479069999999986	55.195371999999999	t	1173
+1676	Sheraton Grand Hotel	sheraton-grand-hotel	f	f	t	25.2294620000000016	55.2866240000000033	t	396
+1677	Magnolia 2	magnolia-2	f	f	t	0	0	t	112
+1678	Intercontinental Hotel	intercontinental-hotel	f	f	t	25.0785499999999999	55.1377600000000001	t	106
+1679	Uniestate Sports Tower	uniestate-sports-tower	f	f	t	25.0418489999999991	55.2219430000000031	t	1475
+1680	Merano Tower	merano-tower	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+1681	Al Reem 5	al-reem-5	f	f	t	25.0615960000000015	55.2965060000000008	t	1469
+1682	Saheel 8	saheel-8	f	f	t	25.0518959999999993	55.2705430000000035	t	1469
+1683	Marina Royale Compound	marina-royale-compound	f	f	t	24.4800159999999991	54.3128859999999989	t	368
+1684	Serenia Residences East	serenia-residences-east	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+1685	West Phase 3	west-phase-3	f	f	t	24.9867899999999992	55.1491380000000007	t	1473
+1686	Bin Ham Tower	bin-ham-tower	f	f	t	25.3029399999999995	55.3645720000000026	t	414
+1687	Avenue Residence 2	avenue-residence-2	f	f	t	0	0	t	919
+1688	Wasl Ivory	wasl-ivory	f	f	t	25.2464830000000013	55.3099279999999993	t	45
+1689	Traveller Hotel Apartments	traveller-hotel-apartments	f	f	t	25.1101449999999993	55.2032549999999986	t	1470
+1690	Langham	langham	f	f	t	25.1910880000000006	55.2900050000000007	t	1471
+1691	Al Khazna	al-khazna	f	t	f	24.1684820000000009	55.1041409999999985	t	2
+1692	District 8T	district-8t	f	f	t	0	0	t	1173
+1693	Creekside 18 Tower A	creekside-18-tower-a	f	f	t	25.2062300000000015	55.344659	t	47
+1694	Northwest Garden Apartments	northwest-garden-apartments	f	f	t	0	0	t	1473
+1695	Marquise Square	marquise-square	f	f	t	25.1865379999999988	55.2744110000000006	t	909
+1696	Garden East Apartments Bldg B	garden-east-apartments-bldg-b	f	f	t	0	0	t	1473
+1697	Garden East Apartments Bldg G	garden-east-apartments-bldg-g	f	f	t	0	0	t	1473
+1698	C18 Tower	c18-tower	f	f	t	0	0	t	809
+1699	Marina Sunset Bay	marina-sunset-bay	f	f	t	24.4763120000000001	54.3217500000000015	t	154
+1700	Khalifa Residential Complex B	khalifa-residential-complex-b	f	f	t	24.4959670000000003	54.3813999999999993	t	815
+1701	City Oasis 3	city-oasis-3	f	f	t	25.1232609999999994	55.3768760000000029	t	1477
+1702	Grand Midwest Reve Hotel Apartments	grand-midwest-reve-hotel-apartments	f	f	t	25.0977539999999983	55.1789249999999996	t	1476
+1703	The Address Residence Fountain Views Sky Collection 1 	the-address-residence-fountain-views-sky-collectio	f	f	t	0	0	t	1471
+1704	Gold Vista	gold-vista-2	f	f	t	0	0	t	1218
+1705	Gold Vista	gold-vista-4	f	f	t	0	0	t	1218
+1706	Gold Vista	gold-vista-9	f	f	t	0	0	t	1218
+1707	Gold Vista	gold-vista-15	f	f	t	0	0	t	1218
+1708	Gold Vista	gold-vista-20	f	f	t	0	0	t	1218
+1709	Palace Tower 2	palace-tower-2-2	f	f	t	0	0	t	1477
+1710	Indigo Central 2	indigo-central-2	f	f	t	25.1542850000000016	55.2258550000000028	t	396
+1711	Indigo Central 5	indigo-central-5	f	f	t	25.1532899999999984	55.225239000000002	t	396
+1712	District 5F	district-5f	f	f	t	25.0481529999999992	55.1926180000000031	t	1173
+1713	Al Zahia	al-zahia	f	f	t	25.3144479999999987	55.457377000000001	t	510
+1714	Tiger Woods	tiger-woods	f	t	f	24.9804819999999985	55.3897449999999978	t	1
+1715	Dubai Creek Residence Tower 1 North	dubai-creek-residence-tower-1-north	f	f	t	25.2009359999999987	55.3429349999999971	t	47
+1716	District 1A	district-1a	f	f	t	25.0333059999999996	55.1718540000000033	t	1173
+1717	District 1I	district-1i-2	f	f	t	25.0341370000000012	55.174433999999998	t	1173
+1718	District 4H	district-4h	f	f	t	25.0456310000000002	55.1944250000000025	t	1173
+1719	Akoya Imagine	akoya-imagine	f	f	t	24.9894449999999999	55.379049000000002	t	9
+1720	Villa Compound	villa-compound	f	f	t	24.3368719999999996	54.5463760000000022	t	813
+1721	Emaar South Urbana	emaar-south-urbana	f	f	t	0	0	t	57
+1722	Azizi Farista	azizi-farista	f	f	t	0	0	t	919
+1723	Sky Tower	sky-tower	f	f	t	25.2131310000000006	55.2776100000000028	t	396
+1724	Mardoof Bldg	mardoof-bldg	f	f	t	25.176437	55.2445650000000015	t	396
+1725	Khalifa port	khalifa-port	f	f	t	24.771407	54.6927650000000014	t	518
+1726	Industrial Area 11	industrial-area-11	f	f	t	25.2972649999999994	55.4278949999999995	t	1493
+1727	Al Burooj Residence 1	al-burooj-residence-1	f	f	t	0	0	t	1173
+1728	Umm Hurair 2	umm-hurair-2	f	f	t	25.2431829999999984	55.3187300000000022	t	184
+1729	Majestic Tower	majestic-tower	f	f	t	25.1846040000000002	55.281132999999997	t	909
+1730	Jawaher Building	jawaher-building	f	f	t	25.2954639999999991	55.3783310000000029	t	13
+1731	Office Park Building	office-park-building	f	f	t	25.1050289999999983	55.1684669999999997	t	403
+1732	Dubai Investment Park 2	dubai-investment-park-2	f	f	t	24.9752560000000017	55.1984250000000003	t	917
+1733	Al Jawahra	al-jawahra	f	f	t	25.2563470000000017	55.2999140000000011	t	910
+1734	Hilliana Residence	hilliana-residence	f	f	t	0	0	t	227
+1735	Al Falahi Tower	al-falahi-tower	f	f	t	24.4319109999999995	54.4344120000000018	t	366
+1736	Westar Reflections	westar-reflections	f	f	t	0	0	t	112
+1737	Afnan 5	afnan-5	f	f	t	0	0	t	401
+1738	Dania 3	dania-3	f	f	t	0	0	t	401
+1739	Dania 5	dania-5	f	f	t	0	0	t	401
+1740	St Petersburg	st-petersburg	f	f	t	25.2403319999999987	55.1633890000000022	t	212
+1741	District 7D	district-7d	f	f	t	0	0	t	1173
+1742	Suburbia Tower 1	suburbia-tower-1	f	f	t	0	0	t	1235
+1743	City walk phase 2	city-walk-phase-2	f	f	t	25.2077199999999984	55.2624029999999991	t	397
+1744	Indigo Building	indigo-building	f	f	t	25.1397890000000004	55.2167320000000004	t	396
+1745	Al Yarmook Tower	al-yarmook-tower	f	f	t	25.3027850000000001	55.384756000000003	t	918
+1746	Sahara Tower	sahara-tower	f	f	t	25.2985909999999983	55.3663620000000023	t	918
+1747	Al Mansoor Tower	al-mansoor-tower-2	f	f	t	25.3027799999999985	55.3742590000000021	t	918
+1748	Tiger 2	tiger-2	f	f	t	25.3148799999999987	55.3756679999999974	t	412
+1749	Al Manara Tower	al-manara-tower	f	f	t	25.0600099999999983	55.2097040000000021	t	112
+1750	The Address Residence Fountain Views 3	the-address-residence-fountain-views-3	f	f	t	25.1947359999999989	55.2823700000000002	t	1471
+1751	Mudon	mudon	f	t	f	25.020503999999999	55.2619729999999976	t	1
+1752	Pearl Time Residence	pearl-time-residence	f	f	t	24.4921010000000017	54.360835999999999	t	812
+1753	Yasmina Residence	yasmina-residence	f	f	t	24.499172999999999	54.4092789999999979	t	809
+1754	Silk Leaf 7	silk-leaf-7	f	f	t	0	0	t	34
+1755	Roxana Residence	roxana-residence	f	f	t	25.0574650000000005	55.2171790000000016	t	112
+1756	Akoya Manarola	akoya-manarola	f	f	t	24.9868360000000003	55.3745449999999977	t	9
+1757	Erica 2V	erica-2v	f	f	t	25.4157679999999999	55.5907849999999968	t	418
+1758	Mirdif Hills - Nasayem Avenue	mirdif-hills-nasayem-avenue	f	f	t	25.2274069999999995	55.4418199999999999	t	914
+1759	Downtown Views II	downtown-views-ii	f	f	t	25.1923129999999986	55.2763679999999979	t	1471
+1760	Montrose 2	montrose-2	f	f	t	25.0693710000000003	55.244726	t	1470
+1761	Park One	park-one	f	f	t	25.0342009999999995	55.1732620000000011	t	1173
+1762	Marasi Business Bay	marasi-business-bay	f	f	t	25.1825060000000001	55.2711049999999986	t	909
+1763	R114 Trade Center building	r114-trade-center-building	f	f	t	25.2064060000000012	55.2703199999999981	t	396
+1764	Jasmine Leaf 7	jasmine-leaf-7	f	f	t	25.0994220000000006	55.3129670000000004	t	34
+1765	KOA Canvas	koa-canvas	f	f	t	25.0931889999999989	55.3033110000000008	t	250
+1766	Jade at the Fields	jade-at-the-fields	f	f	t	25.1195039999999992	55.3445540000000022	t	250
+1767	Al Kawakeb Building A	al-kawakeb-building-a	f	f	t	25.2073999999999998	55.2736209999999986	t	396
+1768	Al Kawakeb Building C	al-kawakeb-building-c	f	f	t	25.2081069999999983	55.2741410000000002	t	396
+1769	Zone 2	zone-2	f	f	t	0	0	t	813
+1770	Zone 7	zone-7	f	f	t	0	0	t	813
+1771	Zone 13	zone-13	f	f	t	0	0	t	813
+1772	Zone 18	zone-18	f	f	t	0	0	t	813
+1773	Zone 20	zone-20	f	f	t	0	0	t	813
+1774	Zone 25	zone-25	f	f	t	0	0	t	813
+1775	Zone 32	zone-32	f	f	t	0	0	t	813
+1776	DT 1 Tower	dt-1-tower	f	f	t	25.1915429999999994	55.2694260000000028	t	1471
+1777	Duja Tower	duja-tower	f	f	t	25.2288549999999994	55.286284000000002	t	396
+1778	The Royal Amwaj	the-royal-amwaj	f	f	t	25.1091920000000002	55.1448279999999968	t	394
+1779	Logistics District	logistics-district	f	f	t	0	0	t	57
+1780	Evershine Tower	evershine-tower	f	f	t	25.0561919999999994	55.1985790000000023	t	112
+1781	Building B	building-b	f	f	t	0	0	t	1473
+1782	Building G	building-g	f	f	t	0	0	t	1473
+1783	Building J	building-j	f	f	t	0	0	t	1473
+1784	Art Tower 8	art-tower-8	f	f	t	0	0	t	1476
+1785	Evershine 1	evershine-1	f	f	t	25.0554640000000006	55.1990240000000014	t	112
+1786	The Ghaf Tree 2	the-ghaf-tree-2-2	f	f	t	25.0519560000000006	55.2084850000000031	t	112
+1787	Sands Abir	sands-abir	f	f	t	25.1027430000000003	55.1639630000000025	t	1479
+1788	Weston Court 1	weston-court-1	f	f	t	0	0	t	400
+1789	Al Nasser Building	al-nasser-building	f	f	t	25.1253449999999994	55.4040710000000018	t	1477
+1790	API World Tower	api-world-tower	f	f	t	25.2252860000000005	55.2836720000000028	t	396
+1791	District 8I	district-8i	f	f	t	0	0	t	1173
+1792	Aura Azizi	aura-azizi	f	f	t	24.9782019999999996	55.0918059999999983	t	402
+1793	Hilli Knaifa	hilli-knaifa	f	f	t	0	0	t	371
+1794	Al Muwaiji	al-muwaiji	f	t	f	0	0	t	8
+1795	Oxford Villas	oxford-villas	f	f	t	25.0560000000000009	55.2000000000000028	t	112
+1796	Royal Manor	royal-manor	f	f	t	0	0	t	993
+1797	Oxford Residence	oxford-residence	f	f	t	0	0	t	112
+1798	Horizon Tower B	horizon-tower-b	f	f	t	24.4941369999999985	54.4037780000000026	t	809
+1799	Vida Residence - Dubai Mall	vida-residence-dubai-mall	f	f	t	25.1965579999999996	55.284162000000002	t	1471
+1800	Manazel Tower 2	manazel-tower-2	f	f	t	25.3135109999999983	55.3760090000000034	t	414
+1801	District 7B	district-7b	f	f	t	0	0	t	1173
+1802	Al Faya	al-faya	f	t	f	24.3551280000000006	54.9079539999999966	t	2
+1803	Acacia Avenues	acacia-avenues	f	f	t	25.1118319999999997	55.1779519999999977	t	227
+1804	Azizi Pearl	azizi-pearl	f	f	t	25.0333469999999991	55.1472839999999991	t	919
+1805	Sao Paolo	sao-paolo	f	f	t	0	0	t	212
+1806	Hajar 2	hajar-2	f	f	t	0	0	t	9
+1807	Al Barsha South 5	al-barsha-south-5	f	f	t	0	0	t	1470
+1808	Tulip 2	tulip-2	f	f	t	0	0	t	1477
+1809	Sara Tower	sara-tower	f	f	t	25.3296330000000012	55.3758260000000035	t	822
+1810	Dubai Lifestyle City	dubai-lifestyle-city	f	t	f	0	0	t	1
+1811	The Sustainable City	the-sustainable-city	f	t	f	25.0269319999999986	55.2731300000000019	t	1
+1812	Serena	serena	f	t	f	25.0367889999999989	55.2814309999999978	t	1
+1813	Tarragona	tarragona	f	f	t	25.019207999999999	55.2010670000000019	t	399
+1814	Emerald Tower	emerald-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	812
+1815	Pier 7	pier-7	f	f	t	25.0801890000000007	55.1398500000000027	t	106
+1816	Tower 51	tower-51	f	f	t	25.1946289999999991	55.2665190000000024	t	909
+1817	Townhouses Area West	townhouses-area-west	f	f	t	25.0007799999999989	55.155261000000003	t	1473
+1818	Turia Tower A	turia-tower-a	f	f	t	25.0934980000000003	55.1690159999999992	t	315
+1819	Capital Bay Tower 1	capital-bay-tower-1	f	f	t	25.1766299999999994	55.2720229999999972	t	909
+1820	Al Husn Marina	al-husn-marina	f	f	t	25.0698219999999985	55.1284869999999998	t	106
+1821	Indigo Ville 2	indigo-ville-2	f	f	t	25.0500310000000006	55.207884	t	112
+1822	International Business Tower	international-business-tower	f	f	t	25.1781669999999984	55.2673449999999988	t	909
+1823	Al Ettihad Tower 2	al-ettihad-tower-2	f	f	t	24.4468029999999992	54.3565820000000031	t	72
+1824	Jumeirah Living	jumeirah-living-2	f	f	t	25.2048489999999994	55.2707830000000016	t	916
+1825	The Sterling East	the-sterling-east	f	f	t	25.1888259999999988	55.2820869999999971	t	1471
+1826	Master View- European	master-view-european	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+1827	Garden Hall -Tropical	garden-hall-tropical	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+1828	Entertainment Foyer-Contemporary	entertainment-foyer-contemporary	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+1829	Royal Breeze 3	royal-breeze-3	f	f	t	25.7014069999999997	55.7839820000000017	t	1355
+1830	Al Rayyana	al-rayyana	f	f	t	24.4113690000000005	54.5361869999999982	t	119
+1831	J5	j5	f	f	t	25.116931000000001	55.1674069999999972	t	227
+1832	Boulevard Plaza 2	boulevard-plaza-2	f	f	t	25.1999509999999987	55.2734049999999968	t	1471
+1833	Al Mujarrah	al-mujarrah	f	t	f	25.3658159999999988	55.3915810000000022	t	3
+1834	Oasis Star	oasis-star	f	f	t	25.1130460000000006	55.3854419999999976	t	1477
+1835	Bungalow Area-motor city	bungalow-area-motor-city	f	f	t	25.0385209999999994	55.2344349999999977	t	400
+1836	Terraced Apartments	terraced-apartments	f	f	t	25.0385209999999994	55.2344349999999977	t	400
+1837	Al Mohannad Tower	al-mohannad-tower	f	f	t	25.3371509999999986	55.3756589999999989	t	822
+1838	Palace Hotel	palace-hotel	f	f	t	25.691946999999999	55.7828530000000029	t	1355
+1839	Royal Breeze 5	royal-breeze-5	f	f	t	25.7029570000000014	55.785544999999999	t	1355
+1840	Karama Shopping Center	karama-shopping-center	f	f	t	25.2489199999999983	55.3074360000000027	t	45
+1841	Mag 5 (b2 Tower)	mag-5-b2-tower	f	f	t	24.4893140000000002	54.4157340000000005	t	809
+1842	Palm Tower	palm-tower	f	f	t	25.0982689999999984	55.155738999999997	t	394
+1843	Boulevard Heights Tower 2	boulevard-heights-tower-2	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+1844	Al Nakheel	al-nakheel	f	t	f	25.7903230000000008	55.9755320000000012	t	6
+1845	The Galleria Residence	the-galleria-residence	f	f	t	25.278846999999999	55.331665000000001	t	915
+1846	Rigga Road	rigga-road	f	f	t	25.2643330000000006	55.322142999999997	t	915
+1847	Damac Maison Dubai Mall Street	damac-maison-dubai-mall-street	f	f	t	25.1955729999999996	55.2755129999999966	t	1471
+1848	Saadiyat Beach Residences	saadiyat-beach-residences	f	f	t	24.5511969999999984	54.4523599999999988	t	76
+1849	Al Bahia 2	al-bahia-2	f	f	t	25.1120429999999999	55.1797120000000021	t	227
+1850	Techno Park	techno-park-2	f	f	t	24.9156119999999994	55.0548500000000018	t	255
+1851	Golf Towers	golf-towers	f	f	t	25.0923249999999989	55.1680959999999985	t	315
+1852	Mina Road	mina-road-2	f	f	t	24.5164639999999991	54.3837979999999988	t	815
+1853	Al Sabeel	al-sabeel	f	f	t	24.4666670000000011	54.3763879999999986	t	1341
+1854	Ramee Guestline Hotel Apartments	ramee-guestline-hotel-apartments	f	f	t	0	0	t	1476
+1855	Palace Tower 2	palace-tower-2	f	f	t	25.1162840000000003	55.3906380000000027	t	1477
+1856	Ghanada Tower	ghanada-tower	f	f	t	24.4566499999999998	54.3184579999999997	t	66
+1857	Etihad Tower 5	etihad-tower-5	f	f	t	24.4593239999999987	54.3213300000000032	t	72
+1858	One JLT	one-jlt	f	f	t	25.0709799999999987	55.1387039999999971	t	107
+1859	Trafalgar Tower	trafalgar-tower	f	f	t	25.1648929999999993	55.4084029999999998	t	108
+1860	Mamsha Al Saadiyat	mamsha-al-saadiyat	f	f	t	24.5302919999999993	54.4451579999999993	t	76
+1861	Majestine Allure	majestine-allure	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+1862	Marina Hotel Apartments	marina-hotel-apartments	f	f	t	25.0817359999999994	55.1455630000000028	t	106
+1863	Hayat 1	hayat-1-2	f	f	t	25.2048489999999994	55.2707830000000016	t	1118
+1864	Al Diar Palm Hotel Apartments	al-diar-palm-hotel-apartments	f	f	t	24.4772849999999984	54.3711330000000004	t	1350
+1865	The White Palace	the-white-palace	f	f	t	25.1249670000000016	55.402782000000002	t	1477
+1866	Desert Leaf 5	desert-leaf-5	f	f	t	0	0	t	34
+1867	Onyx Business Hotel Tower 3	onyx-business-hotel-tower-3	f	f	t	25.0969620000000013	55.1775999999999982	t	1476
+1868	Executive Towers	executive-towers	f	f	t	25.1904210000000006	55.2653760000000034	t	909
+1869	Executive Tower C	executive-tower-c	f	f	t	25.1917410000000004	55.2670329999999979	t	909
+1870	Executive Tower H	executive-tower-h	f	f	t	25.1920789999999997	55.2663560000000018	t	909
+1871	Afamia Tower	afamia-tower	f	f	t	25.3575000000000017	55.3908330000000007	t	1491
+1872	Dubai Creek Club Residences	dubai-creek-club-residences	f	t	f	25.2048489999999994	55.2707830000000016	t	1
+1873	Creek Views Villa	creek-views-villa	f	f	t	25.2048489999999994	55.2707830000000016	t	14
+1874	Garden View Tower	garden-view-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	812
+1875	Shining Tower	shining-tower	f	f	t	24.4730580000000018	54.3495139999999992	t	66
+1876	Al Nahel Tower	al-nahel-tower	f	f	t	24.4871739999999996	54.3732809999999986	t	1343
+1877	Hydra Avenue C5	hydra-avenue-c5	f	f	t	24.499725999999999	54.4044560000000033	t	809
+1878	Al Musalla	al-musalla	f	f	t	25.3564170000000004	55.3971220000000031	t	584
+1879	Saadiyat Beach Villas	saadiyat-beach-villas	f	f	t	24.5514130000000002	54.4494090000000028	t	76
+1880	Emaar Square Bldg 4	emaar-square-bldg-4-2	f	f	t	25.2006779999999999	55.274009999999997	t	1471
+1881	Park Tower 1	park-tower-1	f	f	t	25.2091799999999999	55.2785679999999999	t	1474
+1882	HOME TO HOME Hotel Apartments	home-to-home-hotel-apartments	f	f	t	25.1008199999999988	55.1775260000000003	t	1476
+1883	District 11	district-11	f	f	t	25.1250479999999996	55.3497180000000029	t	250
+1884	Fancy Rose Apartment Building	fancy-rose-apartment-building	f	f	t	25.0721209999999992	55.1465389999999971	t	107
+1885	Al Danah	al-danah	f	t	f	24.4843989999999998	54.3700070000000011	t	2
+1886	Jebel Ali Freezone North	jebel-ali-freezone-north	f	f	t	24.9704709999999999	55.0730590000000007	t	402
+1887	Manara Tower	manara-tower	f	f	t	24.2991740000000007	54.6972769999999997	t	66
+1888	Lagoon B5	lagoon-b5	f	f	t	25.7206119999999991	55.8370710000000017	t	81
+1889	Lagoon B3	lagoon-b3	f	f	t	25.7206119999999991	55.8370710000000017	t	81
+1890	Lagoon B8	lagoon-b8	f	f	t	25.7206119999999991	55.8370710000000017	t	81
+1891	Fairfield Tower	fairfield-tower	f	f	t	0	0	t	106
+1892	Attessa Tower	attessa-tower-2	f	f	t	0	0	t	106
+1893	Al Fahidi Street	al-fahidi-street	f	f	t	25.2624980000000008	55.2959320000000005	t	910
+1894	Vision Downtown	vision-downtown	f	f	t	24.4889100000000006	54.3738659999999996	t	1485
+1895	Hydra Premier Tower	hydra-premier-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	367
+1896	Liwa Tower	liwa-tower	f	f	t	24.4199580000000012	54.4416859999999971	t	1348
+1897	Complex 18	complex-18	f	f	t	24.4434830000000005	54.6096199999999996	t	119
+1898	Marina Villas	marina-villas	f	f	t	24.4781909999999989	54.3118789999999976	t	368
+1899	Hadbat Al Zafranah	hadbat-al-zafranah	f	f	t	24.4390089999999987	54.4028220000000005	t	1350
+1900	Twin Tower	twin-tower	f	f	t	24.4889100000000006	54.3738659999999996	t	1350
+1901	Al Falah Tower	al-falah-tower	f	f	t	24.4782989999999998	54.3720959999999991	t	1350
+1902	M251	m251	f	f	t	24.313917	54.5606909999999985	t	814
+1903	Saadiyat Promenade	saadiyat-promenade	f	f	t	24.5220340000000014	54.4024760000000001	t	76
+1904	Mina Road	mina-road	f	f	t	24.5008949999999999	54.3717699999999979	t	815
+1905	Al Ryami Tower	al-ryami-tower	f	f	t	24.4989670000000004	54.3767819999999986	t	815
+1906	Zayed Military City Tower 2	zayed-military-city-tower-2	f	f	t	24.4961279999999988	54.8951289999999972	t	77
+1907	Shaab Al Askar	shaab-al-askar	f	f	t	24.1246480000000005	55.6578599999999994	t	1354
+1908	Escape Villas	escape-villas	f	f	t	25.4168239999999983	55.593707000000002	t	418
+1909	Al Hadeel Tower	al-hadeel-tower	f	f	t	25.3994999999999997	55.4795999999999978	t	934
+1910	Infinity Tower	infinity-tower	f	f	t	25.3994999999999997	55.4795999999999978	t	934
+1911	Al Rashid 6	al-rashid-6	f	f	t	25.4191439999999993	55.5007480000000015	t	934
+1912	Highfield Towers	highfield-towers	f	f	t	25.3994999999999997	55.4795999999999978	t	934
+1913	Rawan Building	rawan-building	f	f	t	25.3994999999999997	55.4795999999999978	t	127
+1914	Burj Regent	burj-regent	f	f	t	25.3994999999999997	55.4795999999999978	t	1500
+1915	Monarch Tower	monarch-tower	f	f	t	25.3994999999999997	55.4795999999999978	t	1500
+1916	Shami Garden Tower Ii	shami-garden-tower-ii	f	f	t	25.3994999999999997	55.4795999999999978	t	1500
+1917	Ict Tower 2	ict-tower-2	f	f	t	25.3994999999999997	55.4795999999999978	t	419
+1918	Al Hamra Lagoon	al-hamra-lagoon	f	f	t	25.691946999999999	55.7828530000000029	t	1355
+1919	Yakout	yakout	f	f	t	25.800692999999999	55.9839619999999982	t	1480
+1920	Pacific Bora Bora	pacific-bora-bora	f	f	t	25.800692999999999	55.9846799999999973	t	1480
+1921	Khalfan Al Fandi Building	khalfan-al-fandi-building	f	f	t	25.3363070000000015	55.3975590000000011	t	928
+1922	Al Yasmin Tower	al-yasmin-tower	f	f	t	25.3163820000000008	55.3834099999999978	t	822
+1923	Copmas Tower	copmas-tower	f	f	t	25.3340029999999992	55.375430999999999	t	822
+1924	Palm Tower 1	palm-tower-1	f	f	t	25.323169	55.3790779999999998	t	822
+1925	Al Nahda Complex	al-nahda-complex	f	f	t	25.3037460000000003	55.3889360000000011	t	929
+1926	Orchid Tower	orchid-tower	f	f	t	25.2993640000000006	55.3761470000000031	t	929
+1927	Blue Bay	blue-bay	f	f	t	25.3575000000000017	55.3908330000000007	t	1490
+1928	Al Ramla East	al-ramla-east	f	f	t	25.360239	55.4201669999999993	t	376
+1929	Rolla Square	rolla-square	f	f	t	25.3567950000000017	55.3891589999999994	t	123
+1930	Industrial Area 2	industrial-area-2	f	f	t	25.3102389999999993	55.4001000000000019	t	1493
+1931	Industrial Area 5	industrial-area-5	f	f	t	25.3235439999999983	55.4111710000000031	t	1493
+1932	Magellan	magellan	f	f	t	25.5267289999999996	55.5954300000000003	t	1495
+1933	Frond B	frond-b	f	f	t	25.1221020000000017	55.1402020000000022	t	1159
+1934	Frond D	frond-d	f	f	t	25.1270349999999993	55.1366960000000006	t	1159
+1935	Airport Road Area	airport-road-area	f	f	t	25.2485099999999996	55.351033000000001	t	608
+1936	Panorama Tower	panorama-tower	f	f	t	25.0876419999999989	55.172817000000002	t	315
+1937	Jasmine Gardens	jasmine-gardens	f	f	t	25.0442840000000011	55.1311260000000019	t	212
+1938	D1 Tower	d1-tower	f	f	t	25.2269280000000009	55.343549000000003	t	22
+1939	Nastaran	nastaran	f	f	t	25.2243619999999993	55.3403589999999994	t	22
+1940	Ghadeer 2	ghadeer-2	f	f	t	25.0812099999999987	55.1733800000000016	t	109
+1941	Bay Central East	bay-central-east	f	f	t	25.0784599999999998	55.1380800000000022	t	106
+1942	Palma Residences	palma-residences	f	f	t	25.1135559999999991	55.1480099999999993	t	394
+1943	29 Boulevard Tower 2	29-boulevard-tower-2	f	f	t	25.1913209999999985	55.2724100000000007	t	1471
+1944	Khalidiya Palace Tower	khalidiya-palace-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	66
+1945	North Village	north-village	f	f	t	25.0258840000000014	55.1458239999999975	t	919
+1946	Almasa 1	almasa-1	f	f	t	25.0251669999999997	55.1458609999999965	t	919
+1947	Village Centre	village-centre	f	f	t	25.1042750000000012	55.1628180000000015	t	919
+1948	Standpoint A	standpoint-a	f	f	t	25.1967150000000011	55.2712580000000031	t	1471
+1949	Rihan Heights	rihan-heights	f	f	t	24.4138699999999993	54.4619029999999995	t	74
+1950	Grandeur Mughal Residence	grandeur-mughal-residence	f	f	t	25.0985300000000002	55.1218420000000009	t	394
+1951	Green Park	green-park	f	f	t	25.0428619999999995	55.1887510000000034	t	1173
+1952	Al Warqaa 4	al-warqaa-4	f	f	t	25.1918199999999999	55.4081699999999984	t	27
+1953	Barsha Valley	barsha-valley	f	f	t	25.1097660000000005	55.2036119999999997	t	1470
+1954	capital golden	capital-golden	f	f	t	25.1782620000000001	55.2738009999999989	t	909
+1955	Dubai Pearl Hotel Towers	dubai-pearl-hotel-towers	f	f	t	0	0	t	16
+1956	Dubai Waterfront	dubai-waterfront	f	t	f	24.9418159999999993	54.9036049999999989	t	1
+1957	Lake Apartments	lake-apartments	f	f	t	24.978981000000001	55.1767749999999992	t	917
+1958	Euro Tower	euro-tower	f	f	t	0	0	t	1476
+1959	Al Jadaf	al-jadaf	f	f	t	25.2251399999999997	55.3334230000000034	t	910
+1960	Al Furjan (All)	al-furjan-all	f	f	t	25.0226180000000014	55.1493499999999983	t	919
+1961	West Avenue	west-avenue	f	f	t	25.0742839999999987	55.1391199999999984	t	106
+1962	The Address Fountain View	the-address-fountain-view	f	f	t	25.1942239999999984	55.2786410000000004	t	1471
+1963	Muhaisnah 2	muhaisnah-2	f	f	t	25.2566619999999986	55.409550000000003	t	30
+1964	Lime Tree Valley	lime-tree-valley	f	f	t	25.019207999999999	55.2010670000000019	t	399
+1965	Al Jafiliya	al-jafiliya	f	t	f	25.2391800000000011	55.2850099999999998	t	1
+1966	Emirates Golf Club	emirates-golf-club	f	t	f	25.0897860000000001	55.160615	t	1
+1967	Auris Metro Central	auris-metro-central	f	f	t	0	0	t	1476
+1968	Sahara Meadows	sahara-meadows	f	f	t	24.8909540000000007	55.0701150000000013	t	626
+1969	Canal Cove Frond E	canal-cove-frond-e	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+1970	Canal Cove Frond J	canal-cove-frond-j	f	f	t	25.1223719999999986	55.1269759999999991	t	394
+1971	Garden Homes Frond A	garden-homes-frond-a	f	f	t	25.1184119999999993	55.1364060000000009	t	394
+1972	Garden Homes Frond F	garden-homes-frond-f	f	f	t	25.1288170000000015	55.1307959999999966	t	394
+1973	Garden Homes Frond H	garden-homes-frond-h	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+1974	Garden Homes Frond M	garden-homes-frond-m	f	f	t	25.1192889999999984	55.131058000000003	t	394
+1975	Signature Villas Frond D	signature-villas-frond-d	f	f	t	25.1247809999999987	55.1338969999999975	t	394
+1976	Signature Villas Frond I	signature-villas-frond-i	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+1977	Signature Villas Frond K	signature-villas-frond-k	f	f	t	25.1195869999999992	55.1227519999999984	t	394
+1978	Signature Villas Frond P	signature-villas-frond-p	f	f	t	25.1170849999999994	55.1342029999999994	t	394
+1979	Las Casas	las-casas	f	f	t	25.0546579999999999	55.2197930000000028	t	112
+1980	Blue Tower	blue-tower	f	f	t	25.2209469999999989	55.2810410000000019	t	396
+1981	Jumeirah Zabeel Saray	jumeirah-zabeel-saray	f	f	t	25.0985109999999985	55.1235720000000029	t	394
+1982	Sunset Mall	sunset-mall	f	f	t	25.1837540000000004	55.2261019999999974	t	397
+1983	World Trade Centre Residence B	world-trade-centre-residence-b	f	f	t	0	0	t	916
+1984	Meydan City	meydan-city	f	t	f	25.1589899999999993	55.2940279999999973	t	1
+1985	Damac Business Tower	damac-business-tower	f	f	t	25.1805540000000008	55.2689659999999989	t	909
+1986	Dubai Maritime City	dubai-maritime-city	f	t	f	25.2666450000000005	55.2659080000000031	t	1
+1987	District 16	district-16	f	f	t	25.0698439999999998	55.2149760000000001	t	112
+1988	District 18	district-18	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1989	District 23	district-23	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1990	District 30	district-30	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+1991	Al Shoala Building	al-shoala-building	f	f	t	25.2565829999999991	55.3312560000000033	t	915
+1992	Ras Al Khor Industrial 3	ras-al-khor-industrial-3	f	f	t	25.1956200000000017	55.3438000000000017	t	238
+1993	Oberoi Tower	oberoi-tower	f	f	t	25.1842579999999998	55.2672299999999979	t	909
+1994	Viceroy Hotel	viceroy-hotel	f	f	t	25.0840320000000006	55.1427249999999987	t	394
+1995	Metro Central Hotel Apartments	metro-central-hotel-apartments	f	f	t	0	0	t	1476
+1996	Mbk Tower	mbk-tower	f	f	t	25.1923549999999992	55.2622530000000012	t	909
+1997	Al Nasr Street	al-nasr-street	f	t	f	24.4831800000000008	54.3538950000000014	t	2
+1998	Lotus Park	lotus-park	f	f	t	25.0611180000000004	55.1997720000000029	t	112
+1999	Al Twar 3	al-twar-3	f	f	t	25.2518220000000007	55.3945650000000001	t	243
+2000	The Cosmopolitan	the-cosmopolitan	f	f	t	25.1871709999999993	55.2909020000000027	t	909
+2001	The Business Center	the-business-center	f	f	t	25.2556989999999999	55.3037709999999976	t	910
+2002	Jaddaf Plot	jaddaf-plot	f	f	t	25.2250680000000003	55.3378530000000026	t	22
+2003	Brookfield 1	brookfield-1	f	f	t	0	0	t	1218
+2004	Burj Damac 5	burj-damac-5	f	f	t	25.178719000000001	55.2712620000000001	t	909
+2005	Mulberry Park	mulberry-park	f	f	t	25.0599349999999994	55.1991250000000022	t	112
+2006	The Vogue	the-vogue	f	f	t	25.1925990000000013	55.2887410000000017	t	909
+2007	Al Kifaf Commercial Building	al-kifaf-commercial-building	f	f	t	25.2497299999999996	55.3015710000000027	t	910
+2008	Jewellery And Gemplex	jewellery-and-gemplex	f	f	t	25.0692829999999987	55.1417220000000015	t	107
+2009	Dusit Residence	dusit-residence	f	f	t	25.0825430000000011	55.1444320000000019	t	106
+2010	Golf Veduta Hotel Apartment	golf-veduta-hotel-apartment	f	f	t	0	0	t	1218
+2011	Golf Horizon	golf-horizon	f	f	t	0	0	t	1218
+2012	Golf Vista	golf-vista	f	f	t	0	0	t	1218
+2013	Prive	prive	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+2014	Al Fahad Tower 1	al-fahad-tower-1	f	f	t	0	0	t	1476
+2015	Ak Residence	ak-residence	f	f	t	25.1133929999999985	55.1762200000000007	t	227
+2016	J2 Tower	j2-tower	f	f	t	25.0676340000000017	55.1412910000000025	t	107
+2017	Red Residence	red-residence	f	f	t	25.0403379999999984	55.2233480000000014	t	1475
+2018	Prime Villa	prime-villa	f	f	t	25.0311999999999983	55.2218680000000006	t	1475
+2019	New Bridge Hills	new-bridge-hills	f	f	t	25.0475379999999994	55.2496399999999994	t	400
+2020	New Bridge Hills 4	new-bridge-hills-4	f	f	t	25.0475700000000003	55.2488469999999978	t	400
+2021	Jasmine Towers	jasmine-towers	f	f	t	25.4052170000000004	55.5136430000000018	t	253
+2022	The Summit	the-summit	f	f	t	25.090012999999999	55.149327999999997	t	1471
+2023	Al Qusais 3	al-qusais-3	f	f	t	25.2619870000000013	55.3987169999999978	t	663
+2024	Marina Square Building 15	marina-square-building-15	f	f	t	24.4896360000000008	54.3945509999999999	t	809
+2025	Madinat Al Arab	madinat-al-arab	f	f	t	24.9601469999999992	55.0426810000000017	t	1956
+2026	Vida Residence	vida-residence	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+2027	Bermuda Views	bermuda-views	f	f	t	0	0	t	1475
+2028	Vida B1	vida-b1	f	f	t	25.0790110000000013	55.1573220000000006	t	245
+2029	Vida B2	vida-b2	f	f	t	25.0790110000000013	55.1573220000000006	t	245
+2030	Laguna Centrale	laguna-centrale	f	f	t	24.978981000000001	55.1770420000000001	t	917
+2031	The Mont Royal Hotel	the-mont-royal-hotel	f	f	t	25.2146790000000003	55.1463490000000007	t	212
+2032	Rose 1	rose-1	f	f	t	0	0	t	112
+2033	Sheikh Khalifa Bin Zayed	sheikh-khalifa-bin-zayed	f	t	f	0	0	t	4
+2034	Alma 1	alma-1	f	f	t	25.0546369999999996	55.272705000000002	t	1469
+2035	Damac Maison	damac-maison	f	f	t	25.1953090000000017	55.2833910000000017	t	1471
+2036	Sofitel Dubai The Palm	sofitel-dubai-the-palm	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+2037	Al Hafeet Tower	al-hafeet-tower	f	f	t	25.3264309999999995	55.3748379999999969	t	414
+2038	Al Rostamani Tower A	al-rostamani-tower-a	f	f	t	25.2146739999999987	55.2765360000000001	t	396
+2039	The Palm Tower	the-palm-tower	f	f	t	0	0	t	394
+2040	Laguna Movenpick	laguna-movenpick	f	f	t	25.0662820000000011	55.1378789999999981	t	107
+2041	Jasmine B	jasmine-b	f	f	t	0	0	t	1218
+2042	Dubai Style Townhouse	dubai-style-townhouse	f	f	t	0	0	t	919
+2043	Paramount Tower	paramount-tower	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+2044	Sukoon Tower	sukoon-tower	f	f	t	25.0791000000000004	55.1437049999999971	t	106
+2045	Capital Gate	capital-gate	f	f	t	24.4186930000000011	54.4347169999999991	t	262
+2046	Bay Square Building 2	bay-square-building-2	f	f	t	25.1844900000000003	55.2794639999999973	t	909
+2047	Bay Square Building 6	bay-square-building-6	f	f	t	25.1856749999999998	55.280580999999998	t	909
+2048	Bay Square Building 10	bay-square-building-10	f	f	t	25.190097999999999	55.284238000000002	t	909
+2049	Hadia Tower	hadia-tower	f	f	t	25.1144089999999984	55.2037320000000022	t	1470
+2050	Al Sharq	al-sharq	f	t	f	25.3690399999999983	55.397001000000003	t	3
+2051	The Crescent	the-crescent	f	f	t	25.1253749999999982	55.1139629999999983	t	394
+2052	Westar Les Maisonettes	westar-les-maisonettes	f	f	t	25.0673910000000006	55.2056529999999981	t	112
+2053	Samara	samara	f	f	t	25.0522400000000012	55.2705210000000022	t	1469
+2054	Time Oak Hotel	time-oak-hotel	f	f	t	25.0966869999999993	55.1734870000000015	t	1476
+2055	Falcon Island	falcon-island	f	f	t	25.6917569999999991	55.7844690000000014	t	1355
+2056	Emirates Garden 2	emirates-garden-2	f	f	t	25.0486719999999998	55.2052169999999975	t	112
+2057	Mirabella 1	mirabella-1	f	f	t	25.0634219999999992	55.2112920000000003	t	112
+2058	Al Khail Heights Building 1A	al-khail-heights-building-1a	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+2059	Al Hadeel	al-hadeel	f	t	f	24.4666670000000011	54.3666669999999996	t	2
+2060	Chemical Zone	chemical-zone	f	f	t	25.2048489999999994	55.2707830000000016	t	626
+2061	Donna Tower 2	donna-tower-2	f	f	t	25.1171730000000011	55.3696219999999997	t	1477
+2062	Lakeside Tower C	lakeside-tower-c	f	f	t	25.0365169999999999	55.2009180000000015	t	401
+2063	Centrium Tower 3	centrium-tower-3	f	f	t	25.0399299999999982	55.1932309999999973	t	401
+2064	Park Avenue Residence	park-avenue-residence	f	f	t	25.2048489999999994	55.2707830000000016	t	1477
+2065	Hydra Twin Towers	hydra-twin-towers	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2066	Business Central Tower 1	business-central-tower-1	f	f	t	25.1001970000000014	55.1692970000000003	t	403
+2067	Suites In The Skai	suites-in-the-skai	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2068	Mira 3	mira-3	f	f	t	0	0	t	36
+2069	Mira Oasis 3	mira-oasis-3	f	f	t	25.0177510000000005	55.2881420000000006	t	36
+2070	Pacific Wave Residence	pacific-wave-residence	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2071	Al Khail Heights Building 5A	al-khail-heights-building-5a	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+2072	Al Khail Heights Building 7A	al-khail-heights-building-7a	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+2073	Al Khail Heights Building 9A	al-khail-heights-building-9a	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+2074	Al Khail Heights Building 11B	al-khail-heights-building-11b	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+2075	Aseel Villas	aseel-villas	f	f	t	0	0	t	1469
+2076	Al Bustan	al-bustan	f	t	f	25.4124620000000014	55.4485469999999978	t	4
+2077	Dubai Jewel Tower	dubai-jewel-tower	f	f	t	25.1023110000000003	55.1716279999999983	t	403
+2078	Park Villas	park-villas	f	f	t	25.0602820000000008	55.2093660000000028	t	112
+2079	Golf Tower 1	golf-tower-1	f	f	t	25.091387000000001	55.1686740000000029	t	315
+2080	Panorama At The Views Tower 1	panorama-at-the-views-tower-1	f	f	t	25.0908259999999999	55.171008999999998	t	315
+2081	Links East Tower	links-east-tower	f	f	t	25.0901169999999993	55.1699660000000023	t	315
+2082	Mosela Waterside Residences	mosela-waterside-residences	f	f	t	25.088989999999999	55.1732900000000015	t	315
+2083	Victory Heights(All)	victory-heightsall	f	f	t	25.2048489999999994	55.2761840000000007	t	913
+2084	Marina Quay North	marina-quay-north	f	f	t	25.0770499999999998	55.1370300000000029	t	106
+2085	Al Shahid Tower	al-shahid-tower	f	f	t	25.3251279999999994	55.3736850000000018	t	413
+2086	Diba Al Fujairah	diba-al-fujairah	f	t	f	0	0	t	7
+2087	Al Ghuair	al-ghuair	f	t	f	0	0	t	3
+2088	Al Naseriya	al-naseriya	f	t	f	0	0	t	3
+2089	Al Suyoh 1	al-suyoh-1	f	t	f	0	0	t	3
+2090	Al Suyoh 5	al-suyoh-5	f	t	f	0	0	t	3
+2091	Al Suyoh 11	al-suyoh-11	f	t	f	0	0	t	3
+2092	Al Suyoh 16	al-suyoh-16	f	t	f	0	0	t	3
+2093	Wahat Al Tai	wahat-al-tai	f	f	t	0	0	t	711
+2094	Al Qarain	al-qarain	f	t	f	0	0	t	3
+2095	Al Qarain 5	al-qarain-5	f	f	t	0	0	t	2094
+2096	Al Ghafia	al-ghafia	f	f	t	0	0	t	1289
+2097	Al Ramtha	al-ramtha	f	t	f	0	0	t	3
+2098	Hind Tower	hind-tower	f	f	t	25.3150620000000011	55.3780089999999987	t	414
+2099	Al Danah	al-danah-2	f	t	f	24.493030000000001	54.3627329999999986	t	2
+2100	Girona Villas Frond D	girona-villas-frond-d	f	f	t	0	0	t	394
+2101	Corniche Ras Al Khaimah	corniche-ras-al-khaimah	f	t	f	25.7859400000000001	55.9347070000000031	t	6
+2102	Desert Leaf 3	desert-leaf-3	f	f	t	25.0987350000000013	55.320217999999997	t	34
+2103	Block G	block-g	f	f	t	24.9875800000000012	55.2037989999999965	t	917
+2104	May Residence	may-residence	f	f	t	0	0	t	112
+2105	Smark Building	smark-building	f	f	t	0	0	t	396
+2106	Maple at Dubai Hills Estate 1	maple-at-dubai-hills-estate-1	f	f	t	0	0	t	12
+2107	Premier Inn Dubai Investments Park Hotel	premier-inn-dubai-investments-park-hotel	f	f	t	25.0083459999999995	55.1557570000000013	t	917
+2108	Seih Al Burairat	seih-al-burairat	f	t	f	25.7690960000000011	56.0112019999999973	t	6
+2109	Harbour Views 1	harbour-views-1	f	f	t	0	0	t	47
+2110	Habib Bank AG Zurich	habib-bank-ag-zurich	f	f	t	25.1290669999999992	55.2088910000000013	t	396
+2111	Avari Hotel Apartment	avari-hotel-apartment	f	f	t	25.2605910000000016	55.3263749999999987	t	1289
+2112	Arezzo 1	arezzo-1	f	f	t	0	0	t	112
+2113	JW Mariott Marquis	jw-mariott-marquis	f	f	t	25.1856000000000009	55.2566010000000034	t	909
+2114	Greens 22	greens-22	f	f	t	25.0927840000000018	55.1673660000000012	t	911
+2115	Sidra Villas	sidra-villas	f	f	t	0	0	t	12
+2116	The Hills B	the-hills-b	f	f	t	0	0	t	245
+2117	Phoenix Tower	phoenix-tower	f	f	t	0	0	t	1475
+2118	Silk Leaf 5	silk-leaf-5	f	f	t	0	0	t	34
+2119	Frond N	frond-n	f	f	t	0	0	t	394
+2120	The Woods	the-woods	f	f	t	0	0	t	9
+2121	uptown up	uptown-up	f	f	t	0	0	t	418
+2122	Al Seef Residences	al-seef-residences	f	f	t	24.4343189999999986	54.4530829999999995	t	807
+2123	Flora	flora	f	f	t	0	0	t	1218
+2124	Zinnia	zinnia	f	f	t	0	0	t	9
+2125	West Garden Apartment	west-garden-apartment	f	f	t	0	0	t	1473
+2126	Candace Aster	candace-aster	f	f	t	25.0251799999999989	55.1585740000000015	t	919
+2127	District 6A	district-6a	f	f	t	0	0	t	1173
+2128	Silver Sands 2	silver-sands-2	f	f	t	0	0	t	910
+2129	Alcove	alcove	f	f	t	25.0604499999999994	55.2122170000000025	t	112
+2130	API Trio Tower B	api-trio-tower-b	f	f	t	0	0	t	396
+2131	Maryah Plaza	maryah-plaza	f	f	t	0	0	t	60
+2132	Serenity Heights	serenity-heights	f	f	t	0	0	t	1477
+2133	Abbey crescent 2	abbey-crescent-2	f	f	t	25.0442590000000003	55.2481039999999979	t	400
+2134	Al Shaiba	al-shaiba	f	f	t	25.0245780000000018	55.1902389999999983	t	401
+2135	Terrace Apartments C	terrace-apartments-c	f	f	t	0	0	t	1473
+2136	Sunshine Residences	sunshine-residences	f	f	t	0	0	t	1477
+2137	Alef Residence Mansion 4	alef-residence-mansion-4	f	f	t	0	0	t	394
+2138	Al Majid Building	al-majid-building	f	f	t	25.2633949999999992	55.3266459999999967	t	910
+2139	Meadows 5	meadows-5	f	f	t	25.0612560000000002	55.1650459999999967	t	912
+2140	Al Badiya	al-badiya	f	f	t	25.2172310000000017	55.3614829999999998	t	914
+2141	Control	control	f	f	t	25.0493400000000008	55.2312569999999994	t	400
+2142	Dickens House	dickens-house	f	f	t	25.0450179999999989	55.2397319999999965	t	400
+2143	Fox Hill 1	fox-hill-1	f	f	t	25.0456000000000003	55.2416600000000031	t	400
+2144	Fox Hill 6	fox-hill-6	f	f	t	25.0465100000000014	55.2447400000000002	t	400
+2145	Norton Court 2	norton-court-2	f	f	t	25.0470499999999987	55.2492299999999972	t	400
+2146	Sherlock Circus 1	sherlock-circus-1	f	f	t	25.0453800000000015	55.2475299999999976	t	400
+2147	Sherlock Circus 3	sherlock-circus-3	f	f	t	25.0459899999999998	55.2474500000000006	t	400
+2148	Sherlock House 3	sherlock-house-3	f	f	t	25.0459479999999992	55.2475760000000022	t	400
+2149	Al Tajer Residence	al-tajer-residence	f	f	t	25.1935499999999983	55.2766420000000025	t	395
+2150	miska 1	miska-1	f	f	t	25.1899119999999996	55.2776250000000005	t	395
+2151	Mystica 3	mystica-3	f	f	t	25.2048489999999994	55.2707830000000016	t	395
+2152	Reehan 5	reehan-5	f	f	t	25.1891560000000005	55.2775170000000031	t	395
+2153	Reehan 7	reehan-7	f	f	t	25.1892919999999982	55.2772420000000011	t	395
+2154	Yansoon 4	yansoon-4	f	f	t	25.1919709999999988	55.2797830000000019	t	395
+2155	Zaafaran 3	zaafaran-3	f	f	t	25.1905889999999992	55.2761539999999982	t	395
+2156	Zanzebeel 3	zanzebeel-3	f	f	t	25.1896099999999983	55.2737300000000005	t	395
+2157	Desert Home Residence	desert-home-residence	f	f	t	25.2145569999999992	55.3050179999999969	t	910
+2158	Al Basri	al-basri	f	f	t	25.1070400000000014	55.1509500000000017	t	394
+2159	Al Hatimi	al-hatimi	f	f	t	25.109411999999999	55.1477300000000028	t	394
+2160	Al Sarrood	al-sarrood	f	f	t	25.111930000000001	55.1423500000000004	t	394
+2161	Al Sefri	al-sefri	f	f	t	25.113385000000001	55.1243079999999992	t	394
+2162	Balqis Residence	balqis-residence	f	f	t	25.1136030000000012	55.137915999999997	t	394
+2163	Kempinski Hotel Emerald Palace	kempinski-hotel-emerald-palace	f	f	t	25.1127830000000003	55.109493999999998	t	394
+2164	Oceana Aegean	oceana-aegean	f	f	t	25.1101740000000007	55.1371409999999997	t	394
+2165	oceana baltic	oceana-baltic	f	f	t	25.1107739999999993	55.1374830000000031	t	394
+2166	Taj Grandeur Residences	taj-grandeur-residences	f	f	t	25.0988359999999986	55.1218450000000004	t	394
+2167	Capricorn	capricorn	f	f	t	25.2169190000000008	55.2801029999999969	t	396
+2168	Mall Of Emirates	mall-of-emirates	f	f	t	25.1181039999999989	55.2006080000000026	t	396
+2169	Monarch	monarch	f	f	t	25.2306360000000005	55.2870029999999986	t	396
+2170	Toyota Building	toyota-building	f	f	t	25.2047460000000001	55.2696320000000014	t	396
+2171	Concord Tower	concord-tower-2	f	f	t	0	0	t	403
+2172	Madison Residency	madison-residency	f	f	t	25.100200000000001	55.1750800000000012	t	1476
+2173	The One Tower	the-one-tower	f	f	t	25.1015499999999996	55.1741000000000028	t	1476
+2174	Forat	forat	f	f	t	25.0778999999999996	55.1683599999999998	t	109
+2175	Maeen 2	maeen-2	f	f	t	25.0474910000000008	55.1377469999999974	t	109
+2176	Zulal 3	zulal-3	f	f	t	25.0786799999999985	55.1740300000000019	t	109
+2177	Fairways West	fairways-west	f	f	t	25.0897700000000015	55.1703699999999984	t	315
+2178	Travo B	travo-b	f	f	t	25.0901899999999998	55.1724000000000032	t	911
+2179	umm suqeim 2	umm-suqeim-2	f	f	t	25.1514999999999986	55.207410000000003	t	1472
+2180	world trade centre residence	world-trade-centre-residence	f	f	t	25.2270199999999996	55.2890799999999984	t	916
+2181	Marina Sky 1	marina-sky-1	f	f	t	25.0840560000000004	55.1425290000000032	t	106
+2182	Jewels 2	jewels-2	f	f	t	25.0713800000000013	55.1300200000000018	t	106
+2183	Tiara Sapphire	tiara-sapphire	f	f	t	25.1164939999999994	55.1415930000000003	t	394
+2184	Golden Mile 5	golden-mile-5	f	f	t	25.1077900000000014	55.1461100000000002	t	394
+2185	Golden Mile 7	golden-mile-7	f	f	t	25.1102960000000017	55.1422930000000022	t	394
+2186	Marina Residence 2	marina-residence-2	f	f	t	25.1138000000000012	55.1364500000000035	t	394
+2187	Burj Park 4	burj-park-4	f	f	t	25.1952500000000015	55.2717000000000027	t	1471
+2188	The Residences 5	the-residences-5	f	f	t	25.1923299999999983	55.2739800000000017	t	1471
+2189	The Residences 7	the-residences-7	f	f	t	25.1921299999999988	55.2749000000000024	t	1471
+2190	burj views B	burj-views-b	f	f	t	25.1902170000000005	55.281371	t	1471
+2191	Rolex	rolex	f	f	t	25.2098019999999998	55.2758299999999991	t	396
+2192	Calida	calida	f	f	t	25.0420380000000016	55.2080279999999988	t	913
+2193	Api	api	f	f	t	25.0967699999999994	55.1746899999999982	t	1476
+2194	Saraya Building	saraya-building	f	f	t	0	0	t	1476
+2195	Green View 2	green-view-2	f	f	t	25.0965600000000002	55.1794999999999973	t	1476
+2196	Al Warsan Building	al-warsan-building	f	f	t	25.1013599999999997	55.1790900000000022	t	1476
+2197	lago vista B	lago-vista-b	f	f	t	25.0347399999999993	55.2021999999999977	t	401
+2198	Palace Tower 1	palace-tower-1	f	f	t	25.116219000000001	55.3902399999999986	t	1477
+2199	Building 25	building-25	f	f	t	25.2337489999999995	55.3253759999999986	t	1478
+2200	@3	3	f	f	t	25.0934120000000007	55.1716169999999977	t	1479
+2201	@8	8	f	f	t	25.0945800000000006	55.162230000000001	t	1479
+2202	Views 2	views-2	f	f	t	25.0931899999999999	55.1672200000000004	t	911
+2203	Al Thuraya Tower 2	al-thuraya-tower-2	f	f	t	25.0906200000000013	55.1529200000000017	t	1476
+2204	Crown plaza	crown-plaza	f	f	t	0	0	t	396
+2205	Jumeirah Emirates	jumeirah-emirates	f	f	t	25.2016430000000007	55.2452570000000023	t	396
+2206	Pavilions	pavilions	f	f	t	25.1533690000000014	55.2078089999999975	t	1472
+2207	Ascott Park Place	ascott-park-place	f	f	t	25.2239490000000011	55.2827359999999999	t	396
+2208	mazaya business avenue BB1	mazaya-business-avenue-bb1	f	f	t	25.0683240000000005	55.1450999999999993	t	107
+2209	The Gate (All)	the-gate-all	f	f	t	25.2135019999999983	55.2820880000000017	t	1474
+2210	South Ridge (All)	south-ridge-all	f	f	t	25.1865230000000011	55.2775019999999984	t	1471
+2211	Marina Promenade (All)	marina-promenade-all	f	f	t	25.0749110000000002	55.1331729999999993	t	106
+2212	Silverene (All)	silverene-all	f	f	t	25.0753020000000006	55.1381370000000004	t	106
+2213	Crescent (All)	crescent-all	f	f	t	25.0362469999999995	55.2012130000000028	t	401
+2214	Goldcrest Views (All)	goldcrest-views-all	f	f	t	25.0779320000000006	55.150894000000001	t	107
+2215	Lawns (All)	lawns-all	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2216	Golden Mile (All)	golden-mile-all	f	f	t	25.1107410000000009	55.141686	t	394
+2217	The Links (All)	the-links-all	f	f	t	25.0905699999999996	55.1698400000000007	t	315
+2218	saba (all)	saba-all	f	f	t	25.0762579999999993	55.1453559999999996	t	107
+2219	V (All)	v-all	f	f	t	25.0781980000000004	55.152234	t	107
+2220	Zanzebeel (All)	zanzebeel-all	f	f	t	25.1894540000000013	55.2743899999999968	t	395
+2221	Burj Place (All)	burj-place-all	f	f	t	25.2014099999999992	55.2707100000000011	t	1471
+2222	Deema (All)	deema-all	f	f	t	25.0768099999999983	55.172780000000003	t	109
+2223	Maeen (All)	maeen-all	f	f	t	25.0817300000000003	55.1696499999999972	t	109
+2224	German Sports (All)	german-sports-all	f	f	t	25.2048489999999994	55.2707830000000016	t	1475
+2225	Dickens Circus (All)	dickens-circus-all	f	f	t	25.0432009999999998	55.2463189999999997	t	400
+2226	Sherlock House (All)	sherlock-house-all	f	f	t	25.0468940000000018	55.2465180000000018	t	400
+2227	Jouri (All)	jouri-all	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2228	Reliance (All)	reliance-all	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2229	Shakespeare Circus (All)	shakespeare-circus-all	f	f	t	25.0460059999999984	55.2491770000000031	t	400
+2230	Al Abra Building	al-abra-building	f	f	t	25.2145569999999992	55.3038760000000025	t	910
+2231	Al Meraikhi	al-meraikhi	f	f	t	25.2086080000000017	55.2724279999999979	t	915
+2232	Armada 2	armada-2	f	f	t	25.0747900000000001	55.1454370000000011	t	107
+2233	channel	channel	f	f	t	0	0	t	106
+2234	dec 1	dec-1	f	f	t	25.0684350000000009	55.1299070000000029	t	106
+2235	Faraidooni	faraidooni	f	f	t	25.1131630000000001	55.1898309999999981	t	1470
+2236	Golf 3	golf-3	f	f	t	25.0917530000000006	55.16845	t	911
+2237	Green Tower	green-tower	f	f	t	25.278846999999999	55.3321710000000024	t	915
+2238	Hydra	hydra	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+2239	Jumeirah Business Center 2	jumeirah-business-center-2	f	f	t	25.0776040000000009	55.151251000000002	t	107
+2240	Marina View Tower A	marina-view-tower-a	f	f	t	0	0	t	106
+2241	Oasis 1	oasis-1	f	f	t	25.0402020000000007	55.2199579999999983	t	1475
+2242	standpoint	standpoint	f	f	t	25.1969320000000003	55.2709600000000023	t	1471
+2243	Wind 2	wind-2	f	f	t	25.0674010000000003	55.1376500000000007	t	107
+2244	Al Bateen	al-bateen	f	t	f	24.4468029999999992	54.3549140000000008	t	2
+2245	Al Khaleej Al Arabi Street	al-khaleej-al-arabi-street	f	t	f	24.4173769999999983	54.4353059999999971	t	2
+2246	Al Maqtaa	al-maqtaa	f	t	f	24.4048170000000013	54.502443999999997	t	2
+2247	Al Raha Beach	al-raha-beach	f	t	f	24.5223860000000009	54.6291730000000015	t	2
+2248	Al Reef	al-reef	f	t	f	24.4794690000000017	54.6588279999999997	t	2
+2249	Al Ruwais	al-ruwais	f	t	f	24.1166669999999996	52.7333330000000018	t	2
+2250	Corniche Area	corniche-area	f	t	f	24.4688160000000003	54.3329499999999967	t	2
+2251	Eastern Road	eastern-road	f	t	f	24.4502750000000013	54.3979810000000015	t	2
+2252	Ghantoot	ghantoot	f	t	f	24.8558990000000009	54.8511209999999991	t	2
+2253	Lulu Island	lulu-island	f	t	f	24.4997700000000016	54.3418130000000019	t	2
+2254	Nurai Island	nurai-island	f	t	f	24.6142099999999999	54.4772919999999985	t	2
+2255	Yas Island	yas-island	f	t	f	24.4930960000000013	54.6147530000000003	t	2
+2256	Al Buraymi	al-buraymi	f	t	f	24.2559240000000003	55.8031720000000035	t	8
+2257	Manama	manama	f	t	f	25.3301900000000018	55.997132999999998	t	4
+2258	Dana Island	dana-island	f	t	f	24.5989199999999997	54.5156119999999973	t	6
+2259	Saraya Islands	saraya-islands	f	t	f	25.8619610000000009	56.0006150000000034	t	6
+2260	Al Khan	al-khan	f	t	f	25.3289200000000001	55.3682799999999986	t	3
+2261	Al Nouf	al-nouf	f	t	f	25.2563290000000009	55.3254170000000016	t	3
+2262	Seashore	seashore	f	f	t	24.3912440000000004	54.4974339999999984	t	64
+2263	Al Khubaira Village	al-khubaira-village	f	f	t	24.2518230000000017	54.6426209999999983	t	1341
+2264	Liwa Village Villas	liwa-village-villas	f	f	t	24.4549470000000007	54.369607000000002	t	1341
+2265	Al Sawari Tower	al-sawari-tower	f	f	t	24.4753289999999986	54.3450500000000005	t	66
+2266	Park Tower	park-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	66
+2267	Khalidiya Tower	khalidiya-tower	f	f	t	24.4782890000000002	54.3546580000000006	t	66
+2268	Al Musalla Area	al-musalla-area	f	f	t	24.4365750000000013	54.3931869999999975	t	360
+2269	Al Qurm Resort	al-qurm-resort	f	f	t	24.4372900000000008	54.4501169999999988	t	807
+2270	Al Dana	al-dana	f	t	f	24.4438029999999991	54.5779720000000026	t	2
+2271	Al Razeen	al-razeen	f	t	f	24.4325100000000006	54.5334479999999999	t	2
+2272	Al Mariah Community	al-mariah-community	f	f	t	24.4331700000000005	54.5688519999999997	t	69
+2273	Muzera Community	muzera-community	f	f	t	24.4338920000000002	54.5736210000000028	t	69
+2274	Samra Community	samra-community	f	f	t	24.434152000000001	54.5731759999999966	t	69
+2275	Khuzama	khuzama	f	f	t	24.4205620000000003	54.5329169999999976	t	362
+2276	Amber Tower	amber-tower	f	f	t	24.4796200000000006	54.6588610000000017	t	2248
+2277	Addax Park Tower	addax-park-tower	f	f	t	24.4989549999999987	54.4039199999999994	t	809
+2278	Creek Tower	creek-tower	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+2279	Hydra Heights	hydra-heights	f	f	t	24.4942439999999984	54.4068600000000018	t	809
+2280	Burooj Crystal	burooj-crystal	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+2281	Hydra Corporate Towers	hydra-corporate-towers	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+2282	Hydra Hollywood Tower	hydra-hollywood-tower	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+2283	Omega Towers	omega-towers	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+2284	Burooj Views	burooj-views	f	f	t	24.4893140000000002	54.4157340000000005	t	809
+2285	Panoramic Heights	panoramic-heights	f	f	t	24.4893140000000002	54.4157340000000005	t	809
+2286	Resort Marina-The Marinas	resort-marina-the-marinas	f	f	t	24.4942439999999984	54.4068600000000018	t	809
+2287	Aurora Towers	aurora-towers	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+2288	Hydra Square Tower	hydra-square-tower	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+2289	X1 Tower	x1-tower	f	f	t	24.4958330000000011	54.4074999999999989	t	809
+2290	Z7 Tower	z7-tower	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+2291	Sun Tower	sun-tower	f	f	t	24.4961930000000017	54.4068320000000014	t	809
+2292	Sowwah Square Tower 3	sowwah-square-tower-3	f	f	t	24.5002369999999985	54.3883719999999968	t	810
+2293	Commercial District	commercial-district	f	f	t	24.3307560000000009	54.535502000000001	t	1346
+2294	Al Rahma Tower	al-rahma-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	811
+2295	Baynuna Tower 1	baynuna-tower-1	f	f	t	24.4826909999999991	54.350003000000001	t	72
+2296	Burj Al Yaqout	burj-al-yaqout	f	f	t	24.4306960000000011	54.4366219999999998	t	366
+2297	East Corniche Road	east-corniche-road	f	f	t	24.4991780000000006	54.3706710000000015	t	2251
+2298	Arzana Tower	arzana-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	73
+2299	Marina Park	marina-park	f	f	t	25.0688999999999993	55.1335499999999996	t	106
+2300	Marina Pinnacle	marina-pinnacle	f	f	t	25.0888430000000007	55.1483470000000011	t	106
+2301	Marina Residences A	marina-residences-a	f	f	t	25.0724300000000007	55.1375799999999998	t	106
+2302	Marina Walk	marina-walk	f	f	t	25.0849399999999996	55.1481100000000026	t	106
+2303	ocean heights	ocean-heights	f	f	t	25.0905360000000002	55.1490269999999967	t	106
+2304	South	south	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+2305	Supreme	supreme	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+2306	Point	point	f	f	t	25.0732299999999988	55.1328699999999969	t	106
+2307	trident grand residence	trident-grand-residence	f	f	t	25.0832249999999988	55.1409149999999997	t	106
+2308	Yacht Bay	yacht-bay	f	f	t	25.0712480000000006	55.136847000000003	t	106
+2309	Media One	media-one	f	f	t	25.09009	55.1523099999999999	t	403
+2310	Axis Residence 3	axis-residence-3	f	f	t	25.1283880000000011	55.4025749999999988	t	1477
+2311	Coral Residence	coral-residence	f	f	t	25.1090949999999999	55.3793900000000008	t	1477
+2312	Le Solarium	le-solarium	f	f	t	25.1222269999999988	55.3975670000000022	t	1477
+2313	Ruby Residence	ruby-residence	f	f	t	25.1148969999999991	55.3902849999999987	t	1477
+2314	Silicon Gates	silicon-gates	f	f	t	25.1168060000000004	55.3914350000000013	t	1477
+2315	Silicon Heights	silicon-heights	f	f	t	25.1197130000000008	55.3974630000000019	t	1477
+2316	Spring Oasis	spring-oasis	f	f	t	25.1171989999999994	55.3892939999999996	t	1477
+2317	canal residence	canal-residence	f	f	t	0	0	t	1475
+2318	Cricket	cricket	f	f	t	25.0438000000000009	55.2178589999999971	t	1475
+2319	Destiny	destiny	f	f	t	25.0418050000000001	55.2163619999999966	t	1475
+2320	Elite Sports Residence 3	elite-sports-residence-3	f	f	t	25.044910999999999	55.2153610000000015	t	1475
+2321	German Sports 1	german-sports-1	f	f	t	25.2048489999999994	55.2707830000000016	t	1475
+2322	Hamza	hamza	f	f	t	25.0444299999999984	55.2149169999999998	t	1475
+2323	Hub Canal 2	hub-canal-2	f	f	t	0	0	t	1475
+2324	Oliva Village	oliva-village	f	f	t	25.0423720000000003	55.2134319999999974	t	1475
+2325	Shami Sports	shami-sports	f	f	t	25.2048489999999994	55.2707830000000016	t	1475
+2326	Cube	cube	f	f	t	25.2048489999999994	55.2707830000000016	t	1475
+2327	Universal	universal	f	f	t	25.2210539999999988	55.3658149999999978	t	1475
+2328	Zenith A1	zenith-a1	f	f	t	25.0440180000000012	55.2152409999999989	t	1475
+2329	Transemirates Building	transemirates-building	f	f	t	25.278846999999999	55.3321120000000022	t	915
+2330	green community west	green-community-west	f	f	t	24.9967499999999987	55.1631500000000017	t	1473
+2331	Al Alka 3	al-alka-3	f	f	t	25.0904200000000017	55.175220000000003	t	911
+2332	Al Arta 4	al-arta-4	f	f	t	25.0894399999999997	55.1741400000000013	t	911
+2333	Al Dhafra 2	al-dhafra-2	f	f	t	25.0926100000000005	55.1719000000000008	t	911
+2334	Al Ghaf 2	al-ghaf-2	f	f	t	25.096309999999999	55.1702200000000005	t	911
+2335	Al Ghozlan 4	al-ghozlan-4	f	f	t	25.091429999999999	55.1741299999999981	t	911
+2336	Al Jaz 4	al-jaz-4	f	f	t	25.0942700000000016	55.171280000000003	t	911
+2337	Al Samar 2	al-samar-2	f	f	t	25.0935500000000005	55.1730400000000003	t	911
+2338	Al Sidir 2	al-sidir-2	f	f	t	25.0954799999999985	55.1690899999999971	t	911
+2339	Al Sidir 4	al-sidir-4	f	f	t	25.0943600000000018	55.1690200000000033	t	911
+2340	Al Thayal 4	al-thayal-4	f	f	t	25.0910399999999996	55.1737299999999991	t	911
+2341	Oakwood Residency	oakwood-residency	f	f	t	25.0404030000000013	55.1924139999999994	t	401
+2342	cbd	cbd	f	f	t	25.1675000000000004	55.4071399999999983	t	108
+2343	Desert Square	desert-square	f	f	t	25.1648929999999993	55.4084029999999998	t	108
+2344	France	france	f	f	t	25.1610000000000014	55.4014600000000002	t	108
+2345	Karrawan 1	karrawan-1	f	f	t	25.1648929999999993	55.4084029999999998	t	108
+2346	Persia	persia	f	f	t	25.1590799999999994	55.4078099999999978	t	108
+2347	Russia	russia	f	f	t	25.1700100000000013	55.4039199999999994	t	108
+2348	Trafalgar Executive	trafalgar-executive	f	f	t	25.1647999999999996	55.4057499999999976	t	108
+2349	Vancouver	vancouver	f	f	t	25.1648929999999993	55.4084029999999998	t	108
+2350	Mms	mms	f	f	t	25.2016430000000007	55.2452570000000023	t	397
+2351	Sundials	sundials	f	f	t	25.0188039999999994	55.1910579999999982	t	399
+2352	Cluster 16-20	cluster-16-20	f	f	t	25.0715989999999991	55.1413360000000026	t	110
+2353	Cluster 26-30	cluster-26-30	f	f	t	25.0552969999999995	55.164197999999999	t	110
+2354	Cluster 6-10	cluster-6-10	f	f	t	25.055294	55.1641460000000023	t	110
+2355	Mediterranean Clusters	mediterranean-clusters	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+2356	Ag	ag	f	f	t	25.0686299999999989	55.1426900000000018	t	107
+2357	Almas	almas	f	f	t	25.0689600000000006	55.1411999999999978	t	107
+2358	Dome	dome	f	f	t	25.0625399999999985	55.1377000000000024	t	107
+2359	Dubai Gate 1	dubai-gate-1	f	f	t	25.0763099999999994	55.1462100000000035	t	107
+2360	Global Lake View	global-lake-view	f	f	t	25.0714000000000006	55.1409299999999973	t	107
+2361	Laguna	laguna	f	f	t	25.0657299999999985	55.1382300000000001	t	107
+2362	Lakeside Residence	lakeside-residence	f	f	t	25.066510000000001	55.1381900000000016	t	107
+2363	Madina	madina	f	f	t	25.074580000000001	55.1438500000000005	t	107
+2364	Cappadocia	cappadocia	f	f	t	25.051126	55.211748	t	112
+2365	German Supreme	german-supreme	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2366	Imperial Residence	imperial-residence	f	f	t	25.0479069999999986	55.195371999999999	t	1173
+2367	Maimoon Twin	maimoon-twin	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2368	serena residence	serena-residence	f	f	t	0	0	t	112
+2369	Cadi 1	cadi-1	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2370	Jouri 1	jouri-1	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2371	Jouri 6	jouri-6	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2372	Judi Palace A	judi-palace-a	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2373	Parkvale Residences	parkvale-residences	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2374	Diamond Arch 1	diamond-arch-1	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2375	Diamond Views 3	diamond-views-3	f	f	t	25.0622900000000008	55.217807999999998	t	112
+2376	Garden Heights	garden-heights	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2377	Jehaan Residences	jehaan-residences	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2378	Les Maisonettes	les-maisonettes	f	f	t	25.0672069999999998	55.2056400000000025	t	112
+2379	R&R	rr	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2380	Reliance 8	reliance-8	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2381	Rose Garden	rose-garden	f	f	t	25.0520700000000005	55.2150999999999996	t	112
+2382	Serenity Lakes	serenity-lakes	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2383	Lawns 5	lawns-5	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2384	El Matador	el-matador	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2385	Discovery Gardens	discovery-gardens	f	t	f	25.0463479999999983	55.1357459999999975	t	1
+2386	Jumeirah Beach Residence	jumeirah-beach-residence	f	t	f	25.0770710000000001	55.1307680000000033	t	1
+2387	Springs	springs	f	t	f	25.0579730000000005	55.1678039999999967	t	1
+2388	Emirates Hills	emirates-hills	f	t	f	25.0702570000000016	55.1671169999999975	t	1
+2389	Dubailand	dubailand	f	t	f	25.0912770000000016	55.3852440000000001	t	1
+2390	Satwa	satwa	f	t	f	25.2206739999999989	55.275821999999998	t	1
+2391	Jumeirah Park	jumeirah-park	f	t	f	25.0509629999999994	55.1501579999999976	t	1
+2392	Al Quoz	al-quoz	f	t	f	25.1339760000000005	55.2370960000000011	t	1
+2393	Cove	cove	f	t	f	25.7376429999999985	55.8887819999999991	t	6
+2394	Luxury C Villa	luxury-c-villa	f	t	f	25.800692999999999	55.9761990000000011	t	6
+2395	Airport Road	airport-road	f	t	f	24.4016160000000006	54.5950830000000025	t	2
+2396	Al Muneera	al-muneera	f	f	t	24.4521119999999996	54.6037859999999995	t	2247
+2397	Al Rehhan	al-rehhan	f	t	f	24.4323659999999983	54.4336890000000011	t	2
+2398	Khalifa City (All)	khalifa-city-all	f	t	f	24.4226489999999998	54.5783190000000005	t	2
+2399	New Khalifa City	new-khalifa-city	f	t	f	24.4117670000000011	54.5711799999999982	t	2
+2400	Al Khaldeia Area	al-khaldeia-area	f	t	f	25.3386330000000015	55.3673950000000019	t	3
+2401	Al Khezamia	al-khezamia	f	t	f	25.3412770000000016	55.4388549999999967	t	3
+2402	Al Naimiya Area	al-naimiya-area	f	t	f	25.3575000000000017	55.3908330000000007	t	3
+2403	Al Riffa Area	al-riffa-area	f	t	f	25.3350930000000005	55.4535470000000004	t	3
+2404	Emirates Modern Industrial	emirates-modern-industrial	f	t	f	25.5487919999999988	55.6828020000000024	t	5
+2405	Ajman Downtown	ajman-downtown	f	t	f	25.3921290000000006	55.4679969999999969	t	4
+2406	Ajman Marina	ajman-marina	f	t	f	25.4089209999999994	55.4656609999999972	t	4
+2407	Al Ittihad Village	al-ittihad-village	f	t	f	25.3994999999999997	55.4795999999999978	t	4
+2408	Emirates City	emirates-city	f	t	f	25.3979239999999997	55.5787890000000004	t	4
+2409	I Rise Office	i-rise-office	f	f	t	25.0973599999999983	55.1811900000000009	t	1476
+2410	al shamsi buillding	al-shamsi-buillding	f	f	t	25.2924700000000016	55.3654650000000004	t	918
+2411	Al Khail Gate	al-khail-gate	f	f	t	25.1439249999999994	55.2504909999999967	t	2392
+2412	Al Quds Street	al-quds-street	f	f	t	25.2672169999999987	55.3650880000000001	t	915
+2413	Emirates Stars	emirates-stars	f	f	t	25.3466529999999999	55.3930519999999973	t	915
+2414	Al Reem 3	al-reem-3	f	f	t	25.0590800000000016	55.2901600000000002	t	1469
+2415	Alvorada 1	alvorada-1	f	f	t	25.0437459999999987	55.2580389999999966	t	1469
+2416	Golf Homes	golf-homes	f	f	t	25.0490560000000002	55.2594649999999987	t	1469
+2417	Palmera 2	palmera-2	f	f	t	25.0411080000000013	55.2609390000000005	t	1469
+2418	Saheel 2	saheel-2	f	f	t	25.0551630000000003	55.2603179999999981	t	1469
+2419	Jauaan Salem Building	jauaan-salem-building	f	f	t	25.2145569999999992	55.3040749999999974	t	910
+2420	Boris Becker Business	boris-becker-business	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+2421	Business	business	f	f	t	25.1900189999999995	55.2846079999999986	t	909
+2422	Capital Bay	capital-bay	f	f	t	25.1769469999999984	55.2714590000000001	t	909
+2423	Clayton Residency	clayton-residency	f	f	t	25.1826900000000009	55.2828000000000017	t	909
+2424	Dream Bay	dream-bay	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+2425	Executive Hotel & Office	executive-hotel-office	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+2426	Fairview Residency	fairview-residency	f	f	t	25.181909000000001	55.2796120000000002	t	909
+2427	Gemini	gemini	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+2428	Jumeirah Wave Business	jumeirah-wave-business	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+2429	Michael Schumacher Business Avenue	michael-schumacher-business-avenue	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+2430	Moon	moon	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+2431	Opal	opal	f	f	t	25.1864600000000003	55.2745000000000033	t	909
+2432	Polaris	polaris	f	f	t	25.1862899999999996	55.262590000000003	t	909
+2433	Santeville	santeville	f	f	t	25.1865580000000016	55.2866619999999998	t	909
+2434	Silver Star	silver-star	f	f	t	25.1852079999999994	55.2755920000000032	t	909
+2435	Tamani Art	tamani-art	f	f	t	25.1873550000000002	55.2808160000000015	t	909
+2436	Peninsula	peninsula	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+2437	West Wharf	west-wharf	f	f	t	25.1810299999999998	55.2650399999999991	t	909
+2438	wadi walk	wadi-walk	f	f	t	0	0	t	2389
+2439	D1	d1	f	f	t	25.2271940000000008	55.3406999999999982	t	910
+2440	Santeview	santeview	f	f	t	25.2145569999999992	55.3036579999999987	t	910
+2441	Al Ras	al-ras	f	f	t	25.2675470000000004	55.2942740000000015	t	915
+2442	Twin	twin	f	f	t	25.2972239999999999	55.3804900000000018	t	915
+2443	Daman	daman	f	f	t	25.2109169999999985	55.2822079999999971	t	1474
+2444	Al Saaha	al-saaha	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+2445	Boulevard Central (All)	boulevard-central-all	f	f	t	25.191517000000001	55.273499000000001	t	1471
+2446	Lofts Central	lofts-central	f	f	t	25.1972999999999985	55.2697300000000027	t	1471
+2447	South Ridge 6	south-ridge-6	f	f	t	25.1875929999999997	55.2792900000000031	t	1471
+2448	Lofts West	lofts-west	f	f	t	25.1966099999999997	55.2695799999999977	t	1471
+2449	Celestial Heights	celestial-heights	f	f	t	25.2048489999999994	55.2707830000000016	t	402
+2450	Kpm 2	kpm-2	f	f	t	25.2048489999999994	55.2707830000000016	t	402
+2451	World Wide	world-wide	f	f	t	25.2048489999999994	55.2707830000000016	t	402
+2452	Al Badia Residences	al-badia-residences	f	f	t	25.2196299999999987	55.3671799999999976	t	915
+2453	falcon house	falcon-house	f	f	t	0	0	t	917
+2454	Palisades	palisades	f	f	t	24.978981000000001	55.1776270000000011	t	917
+2455	al laylak	al-laylak	f	f	t	25.1945450000000015	55.364130000000003	t	47
+2456	Hacienda-Mazaya	hacienda-mazaya	f	f	t	25.0871150000000007	55.3606580000000008	t	2389
+2457	berlin business	berlin-business	f	f	t	0	0	t	2389
+2458	diamond business center	diamond-business-center	f	f	t	0	0	t	2389
+2459	Golf City	golf-city	f	f	t	25.0111109999999996	55.2335509999999985	t	2389
+2460	teema	teema	f	f	t	0	0	t	2389
+2461	Al Anbar	al-anbar	f	f	t	25.0842099999999988	55.1486700000000027	t	106
+2462	Al Areifi	al-areifi	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+2463	Al Majara 1	al-majara-1	f	f	t	25.0742599999999989	55.1379700000000028	t	106
+2464	Al Mesk	al-mesk	f	f	t	25.084620000000001	55.1493800000000007	t	106
+2465	Al Yass	al-yass	f	f	t	25.0836100000000002	55.1487899999999982	t	106
+2466	bay central	bay-central	f	f	t	25.0786100000000012	55.1377799999999993	t	106
+2467	Casa De Sol	casa-de-sol	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+2468	Dorra Bay	dorra-bay	f	f	t	25.0716099999999997	55.1286100000000019	t	106
+2469	iris blue	iris-blue	f	f	t	25.0851870000000012	55.1447420000000008	t	106
+2470	Kpm	kpm	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+2471	mag 218	mag-218	f	f	t	25.089023000000001	55.1486209999999986	t	106
+2472	Marina Diamond 5	marina-diamond-5	f	f	t	25.0812099999999987	55.1463699999999974	t	106
+2473	Creekside Residence	creekside-residence	f	f	t	25.278846999999999	55.3325590000000034	t	915
+2474	Claren Tower Podium	claren-tower-podium	f	f	t	25.1912120000000002	55.2721159999999969	t	1471
+2475	Mirdif Tulip	mirdif-tulip	f	f	t	25.2155790000000017	55.4356420000000014	t	914
+2476	Al Badi Complex	al-badi-complex	f	f	t	25.2267609999999998	55.4327309999999969	t	914
+2477	NAIA Breeze	naia-breeze	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+2478	Murano Residences	murano-residences	f	f	t	25.0231759999999994	55.1502279999999985	t	919
+2479	Jasmine Leaf 8	jasmine-leaf-8	f	f	t	0	0	t	34
+2480	District 8U	district-8u	f	f	t	25.0499909999999986	55.1874350000000007	t	1173
+2481	The Domain	the-domain	f	f	t	25.1246000000000009	55.3810000000000002	t	1477
+2482	Liwa Building	liwa-building	f	f	t	25.2529499999999985	55.2990580000000023	t	910
+2483	Green Building	green-building	f	f	t	0	0	t	45
+2484	Carrera Building	carrera-building	f	f	t	25.2489199999999983	55.307147999999998	t	45
+2485	Lavender 1	lavender-1	f	f	t	0	0	t	112
+2486	32 villas TECOM	32-villas-tecom	f	f	t	25.1083390000000009	55.167777000000001	t	403
+2487	DISTRICT 5C	district-5c	f	f	t	25.0503679999999989	55.1921800000000005	t	1173
+2488	The One Hotel	the-one-hotel	f	f	t	25.0710219999999993	55.136454999999998	t	106
+2489	Eastern Mangroves Complex	eastern-mangroves-complex	f	f	t	24.4464149999999982	54.4385189999999994	t	2251
+2490	Industrial Zone	industrial-zone	f	f	t	0	0	t	626
+2491	Mangolia 2	mangolia-2	f	f	t	25.0613509999999984	55.2125750000000011	t	112
+2492	Prestige	prestige	f	f	t	24.4699139999999993	54.3429799999999972	t	927
+2493	Nova Tower	nova-tower	f	f	t	25.1151969999999984	55.3821289999999991	t	1477
+2494	Arabian Gates	arabian-gates	f	f	t	25.1253419999999998	55.3808590000000009	t	1477
+2495	Emirates Compound	emirates-compound	f	f	t	0	0	t	1350
+2496	Al Dhabi Residence Complex	al-dhabi-residence-complex	f	f	t	24.4393540000000016	54.4515239999999991	t	2251
+2497	The Polo Residence	the-polo-residence	f	f	t	0	0	t	993
+2498	Shamal Residences	shamal-residences	f	f	t	0	0	t	112
+2499	Al Ghurair Center	al-ghurair-center	f	f	t	25.2669110000000003	55.3180109999999985	t	915
+2500	J8	j8	f	f	t	25.1086269999999985	55.1778919999999999	t	227
+2501	Falaj Hazza	falaj-hazza	f	t	f	24.1927020000000006	55.726072000000002	t	8
+2502	Shakespeare	shakespeare	f	f	t	0	0	t	2389
+2503	Richmond	richmond	f	f	t	0	0	t	1218
+2504	Mbh Building	mbh-building	f	f	t	24.2991740000000007	54.6972769999999997	t	1350
+2505	Al Awir	al-awir	f	t	f	25.177071999999999	55.5457639999999984	t	1
+2506	Viridian at the Fields	viridian-at-the-fields	f	f	t	0	0	t	250
+2507	Stella Maris	stella-maris	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+2508	Al Dar Tower	al-dar-tower	f	f	t	25.0834930000000007	55.1418620000000033	t	106
+2509	Saheel 5	saheel-5	f	f	t	25.0561019999999992	55.2888790000000014	t	1469
+2510	Al Zahraa	al-zahraa-2	f	f	t	25.3632950000000008	55.3988999999999976	t	818
+2511	Dragon Mart	dragon-mart	f	f	t	25.1728869999999993	55.4139320000000026	t	108
+2512	Gulf Towers	gulf-towers	f	f	t	25.2353020000000008	55.3186990000000023	t	19
+2513	Al Mabrukah Tower	al-mabrukah-tower	f	f	t	24.4586180000000013	54.3809600000000017	t	2395
+2514	Wasl Ruby	wasl-ruby	f	f	t	25.2491559999999993	55.311236000000001	t	45
+2515	IL Primo	il-primo	f	f	t	0	0	t	1471
+2516	Al mwaihat 3	al-mwaihat-3	f	f	t	0	0	t	80
+2517	Al Thamam 41	al-thamam-41	f	f	t	0	0	t	2389
+2518	Quad Homes	quad-homes	f	f	t	25.1770579999999988	55.3101860000000016	t	250
+2519	Bellevue Tower 2	bellevue-tower-2	f	f	t	25.1872129999999999	55.2758800000000008	t	1471
+2520	Al Marzooqi Tower C	al-marzooqi-tower-c	f	f	t	0	0	t	1491
+2521	Al Muqta 2	al-muqta-2	f	f	t	0	0	t	1004
+2522	Baniyas Tower	baniyas-tower	f	f	t	24.4864050000000013	54.3761250000000018	t	118
+2523	Wanya Villas	wanya-villas	f	f	t	0	0	t	227
+2524	Afnan 2	afnan-2	f	f	t	0	0	t	401
+2525	Afnan 7	afnan-7	f	f	t	0	0	t	401
+2526	Divine Homes	divine-homes	f	f	t	0	0	t	112
+2527	 Monaco	monaco	f	f	t	25.2306460000000001	55.1611230000000035	t	212
+2528	Central Courtyard 2	central-courtyard-2	f	f	t	0	0	t	2389
+2529	Julphar Residentail Tower	julphar-residentail-tower	f	f	t	0	0	t	1844
+2530	District 7F	district-7f	f	f	t	0	0	t	1173
+2531	District 8S	district-8s	f	f	t	0	0	t	1173
+2532	Pier 24	pier-24	f	f	t	0	0	t	106
+2533	Al Shorafa Complex	al-shorafa-complex	f	f	t	25.391964999999999	55.4389600000000016	t	2033
+2534	Garden East Apartments Bldg D	garden-east-apartments-bldg-d	f	f	t	0	0	t	1473
+2535	Garden East Apartments Bldg I	garden-east-apartments-bldg-i	f	f	t	0	0	t	1473
+2536	Al Salam Tower	al-salam-tower	f	f	t	24.4958080000000002	54.3747389999999982	t	815
+2537	Faisal Building	faisal-building	f	f	t	25.2405550000000005	55.3094439999999992	t	19
+2538	Gardenia Residency	gardenia-residency	f	f	t	0	0	t	112
+2539	Jasmine Tower Building	jasmine-tower-building	f	f	t	24.4705839999999988	54.3695080000000033	t	2395
+2540	Dubai Airport Freezone(DAFZA)	dubai-airport-freezonedafza	f	t	f	25.2603690000000007	55.3727919999999969	t	1
+2541	Fareed Tower	fareed-tower	f	f	t	25.1922560000000004	55.2884910000000005	t	909
+2542	Damac Maison De Ville Breeze	damac-maison-de-ville-breeze	f	f	t	25.1765779999999992	55.2718300000000013	t	909
+2543	Al Ramth 28	al-ramth-28	f	f	t	0	0	t	2389
+2544	Al Ramth 22	al-ramth-22	f	f	t	0	0	t	2389
+2545	Al Ramth 41	al-ramth-41	f	f	t	0	0	t	2389
+2546	Al Ramth 49	al-ramth-49	f	f	t	0	0	t	2389
+2547	Al Ramth 15	al-ramth-15	f	f	t	0	0	t	2389
+2548	Al Ramth 35	al-ramth-35	f	f	t	0	0	t	2389
+2549	Le Meridien Mina Seyahi Beach Resort and Marina	le-meridien-mina-seyahi-beach-resort-and-marina	f	f	t	0	0	t	106
+2550	The Address Residence Fountain Views Sky Collection 2	the-address-residence-fountain-views-sky-collect-3	f	f	t	25.194744	55.282550999999998	t	1471
+2551	Gold Vista	gold-vista-6	f	f	t	0	0	t	1218
+2552	Gold Vista	gold-vista-11	f	f	t	0	0	t	1218
+2553	Gold Vista	gold-vista-17	f	f	t	0	0	t	1218
+2554	Gold Vista	gold-vista-22	f	f	t	0	0	t	1218
+2555	Gold Vista	gold-vista-24	f	f	t	0	0	t	1218
+2556	Bab Al Qasr	bab-al-qasr	f	f	t	0	0	t	2250
+2557	Al Reyami Building	al-reyami-building	f	f	t	25.2454560000000008	55.3119149999999991	t	45
+2558	Al Noor Safa	al-noor-safa	f	f	t	25.2243369999999985	55.3287759999999977	t	17
+2559	Casa Dora - Serena	casa-dora-serena	f	f	t	25.0325629999999997	55.2837260000000015	t	2389
+2560	 District 1C	district-1c	f	f	t	25.035264999999999	55.1737210000000005	t	1173
+2561	District 4C	district-4c	f	f	t	25.0446039999999996	55.1901960000000003	t	1173
+2562	Shakhbout City	shakhbout-city	f	t	f	24.3628590000000003	54.6327130000000025	t	2
+2563	Zahra Apartments 1A	zahra-apartments-1a	f	f	t	25.0148960000000002	55.2834140000000005	t	1118
+2564	Zahra Apartments 2A	zahra-apartments-2a	f	f	t	25.0148960000000002	55.2834140000000005	t	1118
+2565	Darwish Tower	darwish-tower-2	f	f	t	24.4315759999999997	54.434902000000001	t	366
+2566	Burj Al Nahda	burj-al-nahda	f	f	t	25.291440999999999	55.3625960000000035	t	918
+2567	Al Khail Heights TownHouses	al-khail-heights-townhouses	f	f	t	0	0	t	1227
+2568	Azizi Shaista	azizi-shaista	f	f	t	0	0	t	919
+2569	Crystal Jumeirah Hotel	crystal-jumeirah-hotel	f	f	t	25.0787629999999986	55.1557189999999977	t	107
+2570	Al Ramth 12	al-ramth-12	f	f	t	0	0	t	2389
+2571	Al Ramth 24	al-ramth-24	f	f	t	0	0	t	2389
+2572	Al Ramth 34	al-ramth-34	f	f	t	0	0	t	2389
+2573	Al Ramth 42	al-ramth-42	f	f	t	0	0	t	2389
+2574	Al Thamam 1	al-thamam-1	f	f	t	0	0	t	2389
+2575	Al Thamam 6	al-thamam-6	f	f	t	0	0	t	2389
+2576	Al Thamam 20	al-thamam-20	f	f	t	0	0	t	2389
+2577	Al Thamam 27	al-thamam-27	f	f	t	0	0	t	2389
+2578	Al Thamam 29	al-thamam-29	f	f	t	0	0	t	2389
+2579	Al Thamam 36	al-thamam-36	f	f	t	0	0	t	2389
+2580	Al Thamam 44	al-thamam-44	f	f	t	0	0	t	2389
+2581	Al Thamam 51	al-thamam-51	f	f	t	0	0	t	2389
+2582	Al Thamam 54	al-thamam-54	f	f	t	0	0	t	2389
+2583	Al Thamam 60	al-thamam-60	f	f	t	0	0	t	2389
+2584	Etihad Travel Mall	etihad-travel-mall	f	f	t	25.1552970000000009	55.2275050000000007	t	396
+2585	Wasl Vita	wasl-vita	f	f	t	25.2110279999999989	55.256256999999998	t	397
+2586	Bahwan tower	bahwan-tower	f	f	t	25.1902529999999985	55.2717799999999997	t	1471
+2587	Akoya Selfie	akoya-selfie	f	f	t	24.9897150000000003	55.3829029999999989	t	9
+2588	Al Nakheel Tower	al-nakheel-tower	f	f	t	25.7741930000000004	55.9610810000000001	t	1844
+2589	Al Jawhara	al-jawhara	f	f	t	25.2358609999999999	55.3183369999999996	t	19
+2590	Abbco Tower	abbco-tower	f	f	t	25.3028949999999995	55.3776629999999983	t	929
+2591	Al Wasl Building R445	al-wasl-building-r445	f	f	t	25.1120419999999989	55.1908109999999965	t	1470
+2592	Al Wasl Building R467	al-wasl-building-r467	f	f	t	25.2475810000000003	55.3070769999999996	t	45
+2593	Sultan Building	sultan-building	f	f	t	25.0965680000000013	55.1734790000000004	t	1476
+2594	Al khan 5	al-khan-5	f	f	t	25.3131619999999984	55.3738349999999997	t	2260
+2595	Al Khan 5	al-khan-5-2	f	f	t	25.3120569999999994	55.3754550000000023	t	2260
+2596	Al Wazir Tower	al-wazir-tower	f	f	t	25.316438999999999	55.3844860000000025	t	918
+2597	Al Sondos Tower	al-sondos-tower	f	f	t	25.3194209999999984	55.3636229999999969	t	219
+2598	Wusha	wusha	f	t	f	25.2283529999999985	55.9144640000000024	t	3
+2599	Akoya Fresh	akoya-fresh	f	f	t	25.0275309999999998	55.252364	t	1218
+2600	Hayat Townhouses 2	hayat-townhouses-2	f	f	t	25.0006750000000011	55.3007920000000013	t	1118
+2601	Al Jahili Tower	al-jahili-tower	f	f	t	24.4917589999999983	54.3583870000000005	t	812
+2602	Living Legends	living-legends	f	t	f	25.0876599999999996	55.3005149999999972	t	1
+2603	Claren Tower 1	claren-tower-1	f	f	t	0	0	t	1471
+2604	Oak Time Residence	oak-time-residence	f	f	t	25.0963969999999996	55.1727490000000032	t	1476
+2605	Hera Tower	hera-tower	f	f	t	0	0	t	1475
+2606	Gemini Splendor	gemini-splendor	f	f	t	25.1779520000000012	55.3115159999999975	t	250
+2607	Al Dhaid	al-dhaid	f	t	f	25.3152529999999985	55.9577250000000035	t	3
+2608	Erica 1	erica-1	f	f	t	25.4179050000000011	55.5941720000000004	t	418
+2609	District 9F	district-9f	f	f	t	0	0	t	1173
+2610	XXII Carat	xxii-carat	f	f	t	25.0989649999999997	55.130946999999999	t	394
+2611	Burj View	burj-view	f	f	t	25.0661440000000013	55.2361670000000018	t	131
+2612	Mediterranean - Canal Residence	mediterranean-canal-residence	f	f	t	0	0	t	1475
+2613	Villanova-La Quinta	villanova-la-quinta	f	f	t	25.0767710000000008	55.3615679999999983	t	2389
+2614	Al Nayli Building	al-nayli-building	f	f	t	25.1128500000000017	55.3868259999999992	t	1477
+2615	Al Huda Tower 1	al-huda-tower-1	f	f	t	25.3277970000000003	55.3734809999999982	t	2260
+2616	Tasaheel Building	tasaheel-building	f	f	t	25.290735999999999	55.3982129999999984	t	663
+2617	Silk Leaf 4	silk-leaf-4	f	f	t	0	0	t	34
+2618	Akoya Genus	akoya-genus	f	f	t	24.9969390000000011	55.3923630000000031	t	9
+2619	Mega villas	mega-villas	f	f	t	24.9968779999999988	55.3923109999999994	t	9
+2620	Plazzo Residence	plazzo-residence	f	f	t	25.0376559999999984	55.1788110000000032	t	1173
+2621	Al Kawakeb Building E	al-kawakeb-building-e	f	f	t	25.2087870000000009	55.2745740000000012	t	396
+2622	Jumeirah Living Marina Gate	jumeirah-living-marina-gate	f	f	t	25.0864730000000016	55.1471370000000007	t	106
+2623	Zone 10	zone-10	f	f	t	0	0	t	813
+2624	Zone 15	zone-15	f	f	t	0	0	t	813
+2625	Zone 22	zone-22	f	f	t	0	0	t	813
+2626	Zone 27	zone-27	f	f	t	0	0	t	813
+2627	Zone 29	zone-29	f	f	t	0	0	t	813
+2628	Zone 34	zone-34	f	f	t	0	0	t	813
+2629	Golf Views	golf-views	f	f	t	0	0	t	57
+2630	Warda Apartments 2A	warda-apartments-2a	f	f	t	25.0147499999999994	55.2831460000000021	t	1118
+2631	Residential District	residential-district	f	f	t	0	0	t	57
+2632	The Ridge	the-ridge	f	t	f	0	0	t	1
+2633	Beverly Hills	beverly-hills	f	f	t	25.0275670000000012	55.2523290000000031	t	9
+2634	Tower 7	tower-7	f	f	t	0	0	t	2248
+2635	Tower 27	tower-27	f	f	t	0	0	t	2248
+2636	Tower 29	tower-29	f	f	t	0	0	t	2248
+2637	Tower 34	tower-34	f	f	t	0	0	t	2248
+2638	Tower 41	tower-41	f	f	t	0	0	t	2248
+2639	Tower 46	tower-46	f	f	t	0	0	t	2248
+2640	Building D	building-d	f	f	t	0	0	t	1473
+2641	Building I	building-i	f	f	t	0	0	t	1473
+2642	Shamal Waves	shamal-waves	f	f	t	25.0506519999999995	55.1986679999999978	t	112
+2643	Mudon Views	mudon-views	f	f	t	25.0274569999999983	55.2671899999999994	t	2389
+2644	Jawaher	jawaher	f	f	t	24.5336859999999994	54.4229600000000033	t	76
+2645	Al Wasl Tower	al-wasl-tower	f	f	t	0	0	t	396
+2646	Bloom Towers	bloom-towers	f	f	t	25.0562989999999992	55.1985650000000021	t	112
+2647	The Bridges	the-bridges	f	f	t	24.5090229999999991	54.406170000000003	t	809
+2648	Lamar Tower A	lamar-tower-a	f	f	t	0	0	t	2247
+2649	Gloria Downtown Apartment	gloria-downtown-apartment	f	f	t	24.4935779999999994	54.3664449999999988	t	1343
+2650	Mag 230	mag-230	f	f	t	0	0	t	2389
+2651	Mag 318	mag-318	f	f	t	0	0	t	1471
+2652	Jimi Ameriya	jimi-ameriya	f	f	t	0	0	t	1352
+2653	Al Muraba	al-muraba	f	t	f	0	0	t	8
+2654	Al Qattara	al-qattara	f	t	f	0	0	t	8
+2655	Al Sarooj	al-sarooj	f	t	f	0	0	t	8
+2656	Ramlat al Zakher	ramlat-al-zakher	f	f	t	0	0	t	1354
+2657	Bin Juma 5 building	bin-juma-5-building	f	f	t	25.2946850000000012	55.3666279999999986	t	918
+2658	Park Heights 1	park-heights-1	f	f	t	0	0	t	12
+2741	Amber Residency	amber-residency	f	f	t	25.1639219999999995	55.2138369999999981	t	1472
+2659	Hartland Garden Apartments	hartland-garden-apartments	f	f	t	0	0	t	250
+2660	The Hartland Villas	the-hartland-villas	f	f	t	0	0	t	250
+2661	The Floating Seahorse	the-floating-seahorse-2	f	f	t	25.2295979999999993	55.1629250000000013	t	212
+2662	Building 5 South West	building-5-south-west	f	f	t	0	0	t	1473
+2663	Sky Business Centre	sky-business-centre	f	f	t	0	0	t	1169
+2664	Hartland Aflux	hartland-aflux	f	f	t	25.1782970000000006	55.3041740000000033	t	250
+2665	Aknan	aknan	f	f	t	24.9964660000000016	55.3920299999999983	t	9
+2666	Dubai World Central	dubai-world-central	f	t	f	24.8995609999999985	55.119101999999998	t	1
+2667	Dubai Science Park	dubai-science-park	f	t	f	25.0760509999999996	55.2397319999999965	t	1
+2668	Pacifica	pacifica	f	f	t	0	0	t	9
+2669	Green Valley Tower	green-valley-tower	f	f	t	25.0513529999999989	55.2186260000000004	t	112
+2670	uptown mirdif	uptown-mirdif-2	f	f	t	25.2222599999999986	55.424909999999997	t	914
+2671	Aurum	aurum	f	f	t	24.9871769999999991	55.3875889999999984	t	9
+2672	Dar Wasl	dar-wasl	f	f	t	25.192654000000001	55.2471350000000001	t	222
+2673	Polo Residences	polo-residences	f	f	t	0	0	t	1984
+2674	AZIZI Farhad 	azizi-farhad	f	f	t	0	0	t	1478
+2675	AZIZI Riviera	azizi-riviera	f	f	t	25.1562370000000008	55.3010019999999969	t	1984
+2676	LOFT Office 2	loft-office-2	f	f	t	25.0967599999999997	55.1576420000000027	t	403
+2677	Falcon City of Wonders	falcon-city-of-wonders	f	t	f	0	0	t	1
+2678	Cote D'Azur Hotel	cote-dazur-hotel	f	f	t	0	0	t	212
+2679	Bay'S Edge	bays-edge	f	f	t	25.1877390000000005	55.2706609999999969	t	1471
+2680	District 3B	district-3b	f	f	t	25.0411080000000013	55.1838109999999986	t	1173
+2681	District 4B	district-4b	f	f	t	25.0434340000000013	55.1895049999999969	t	1173
+2682	Zafran	zafran	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+2683	Burj Daman	burj-daman	f	f	t	25.2109500000000004	55.2820460000000011	t	1474
+2684	Luxury Villas Area West	luxury-villas-area-west	f	f	t	25.0921480000000017	55.1743090000000009	t	1473
+2685	Bungalows Area West	bungalows-area-west	f	f	t	25.0000229999999988	55.1679379999999995	t	1473
+2686	Turia Tower B	turia-tower-b	f	f	t	25.0934969999999993	55.1690169999999966	t	315
+2687	Winter	winter	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2688	skycourt towers C	skycourt-towers-c	f	f	t	25.0907410000000013	55.3860069999999993	t	2389
+2689	AL Dhafrah 2	al-dhafrah-2	f	f	t	0	0	t	911
+2690	Liwa Heights Tower	liwa-heights-tower	f	f	t	0	0	t	1476
+2691	Indigo Ville 3	indigo-ville-3	f	f	t	25.0627959999999987	55.2163219999999981	t	112
+2692	Sunrise Villas	sunrise-villas	f	f	t	25.2048489999999994	55.2707830000000016	t	2389
+2693	Bldg 2020	bldg-2020	f	f	t	25.0627180000000003	55.1307609999999997	t	396
+2694	Master View- Contemporary	master-view-contemporary	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+2695	Garden Hall- Islamic	garden-hall-islamic	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+2696	Garden Hall- Contemporary	garden-hall-contemporary	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+2697	Jannah Place Dubai Marina	jannah-place-dubai-marina	f	f	t	25.0696429999999992	55.1327369999999988	t	106
+2698	Boulevard Plaza 1	boulevard-plaza-1	f	f	t	25.1942480000000018	55.2789459999999977	t	1471
+2699	Contemporary Villas	contemporary-villas	f	f	t	24.5302919999999993	54.4451579999999993	t	76
+2700	Golden Sand Building	golden-sand-building	f	f	t	25.2145569999999992	55.3043430000000029	t	910
+2701	Ava Residences	ava-residences	f	f	t	24.978981000000001	55.1781220000000019	t	917
+2702	Dream Tower 2	dream-tower-2	f	f	t	25.0708079999999995	55.1354789999999966	t	106
+2703	Al Marjan Island Resort & Spa	al-marjan-island-resort-spa	f	f	t	25.6765229999999995	55.7408149999999978	t	1480
+2704	Lagoon Walk	lagoon-walk	f	f	t	25.7218319999999991	55.834184999999998	t	81
+2705	Royal Residence 2	royal-residence-2	f	f	t	25.0416710000000009	55.2194459999999978	t	1475
+2706	Al Mass Villas	al-mass-villas	f	f	t	25.0863890000000005	55.1492239999999967	t	106
+2707	Al Muntazah Complex	al-muntazah-complex	f	f	t	25.0299890000000005	55.1147769999999966	t	402
+2708	Lagoon	lagoon	f	f	t	25.7206119999999991	55.8370710000000017	t	81
+2709	Building A1	building-a1	f	f	t	24.5241040000000012	54.6283150000000006	t	2247
+2710	Building B2	building-b2	f	f	t	24.523492000000001	54.4360590000000002	t	2247
+2711	Building E3	building-e3	f	f	t	24.313917	54.5606909999999985	t	2247
+2712	Al Meshal	al-meshal	f	f	t	25.0969620000000013	55.1775999999999982	t	1476
+2713	Icad - Industrial City Of Abu Dhabi	icad-industrial-city-of-abu-dhabi	f	f	t	24.3201210000000003	54.5149749999999997	t	814
+2714	Sobha Hartland	sobha-hartland	f	f	t	25.1769810000000014	55.3107120000000023	t	250
+2715	Etihad Tower 1	etihad-tower-1	f	f	t	24.4593239999999987	54.3213300000000032	t	72
+2716	Rosemont Hotel & Residence	rosemont-hotel-residence	f	f	t	25.0961980000000011	55.1720230000000029	t	1476
+2717	Firdous Street	firdous-street	f	f	t	24.4980809999999991	54.3786500000000004	t	815
+2718	Capital Bay Tower A	capital-bay-tower-a	f	f	t	25.1766569999999987	55.2715019999999981	t	909
+2719	Currency House Offices	currency-house-offices	f	f	t	25.2088399999999986	55.2770319999999984	t	1474
+2720	Hili Rayhaan By Rotana	hili-rayhaan-by-rotana	f	f	t	24.2843809999999998	55.774515000000001	t	371
+2721	Pullman Jumeirah Lakes Towers Hotel And Residence	pullman-jumeirah-lakes-towers-hotel-and-residence	f	f	t	25.0798629999999996	55.1499669999999966	t	107
+2722	DIFC Trade Centre	difc-trade-centre	f	f	t	25.2088399999999986	55.2770319999999984	t	396
+2723	Al Murar	al-murar	f	f	t	25.2764479999999985	55.3074370000000002	t	915
+2724	Al Zeina - Residential Tower B	al-zeina-residential-tower-b	f	f	t	24.4571070000000006	54.6131499999999974	t	2247
+2725	Al Zeina - Residential Tower D	al-zeina-residential-tower-d	f	f	t	24.4571070000000006	54.6131499999999974	t	2247
+2726	Badrah Building 1	badrah-building-1	f	f	t	24.9498829999999998	55.048993000000003	t	1956
+2727	Glitz 1	glitz-1	f	f	t	25.0423229999999997	55.2514729999999972	t	1216
+2728	Executive Tower B	executive-tower-b	f	f	t	25.1925489999999996	55.2663179999999983	t	909
+2729	Executive Tower D(Aspect)	executive-tower-daspect	f	f	t	0	0	t	909
+2730	Executive Tower I	executive-tower-i	f	f	t	25.1920789999999997	55.2663560000000018	t	909
+2731	Zen By Indigo - Harmony	zen-by-indigo-harmony	f	f	t	0	0	t	2389
+2732	Grand Paradis Ii	grand-paradis-ii	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2733	Eastern Mangroves Promenade	eastern-mangroves-promenade	f	f	t	24.4464149999999982	54.4385189999999994	t	2251
+2734	Hydra Avenue C6	hydra-avenue-c6	f	f	t	24.4921679999999995	54.4077959999999976	t	809
+2735	Beach Rotana	beach-rotana	f	f	t	24.4989670000000004	54.3767819999999986	t	815
+2736	East Mangroves Complex	east-mangroves-complex-2	f	f	t	24.437543999999999	54.4538160000000033	t	2251
+2737	Al Majaz 1	al-majaz-1	f	f	t	25.3375109999999992	55.388339000000002	t	822
+2738	Central Park Residential Tower	central-park-residential-tower	f	f	t	0	0	t	1474
+2739	Park Tower 2	park-tower-2	f	f	t	25.2100059999999999	55.2790729999999968	t	1474
+2740	Capital Bay Hotel Apartments	capital-bay-hotel-apartments	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+2742	The Address Dubai Marina	the-address-dubai-marina	f	f	t	25.077413	55.140191999999999	t	106
+2743	Decora Villas	decora-villas	f	f	t	25.1115910000000007	55.1779489999999981	t	1110
+2744	Jebel Ali Freezone South	jebel-ali-freezone-south	f	f	t	24.9704709999999999	55.0730590000000007	t	402
+2745	Nowailey Building	nowailey-building	f	f	t	24.2991740000000007	54.6972769999999997	t	369
+2746	Westburry Tower 2	westburry-tower-2	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+2747	Lagoon B12	lagoon-b12	f	f	t	25.7206119999999991	55.8370710000000017	t	81
+2748	Meera Shams Tower 1	meera-shams-tower-1	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+2749	Sanibel Tower	sanibel-tower	f	f	t	0	0	t	106
+2750	Aurora Tower	aurora-tower-2	f	f	t	0	0	t	106
+2751	Liwa Centre Tower 1	liwa-centre-tower-1	f	f	t	24.4666670000000011	54.3666669999999996	t	1485
+2752	Al Mazroui Tower	al-mazroui-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	1348
+2753	Complex 3	complex-3	f	f	t	24.4120890000000017	54.4807010000000034	t	119
+2754	Lafzaeyya Tower	lafzaeyya-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	812
+2755	Royal Marina Villas	royal-marina-villas	f	f	t	24.4781909999999989	54.3118789999999976	t	368
+2756	Jawaher Madinat Mbz	jawaher-madinat-mbz	f	f	t	24.3333089999999999	54.5546790000000001	t	813
+2757	Al Nedal Tower	al-nedal-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	1350
+2758	Barclays Tower A	barclays-tower-a	f	f	t	24.4666670000000011	54.3666669999999996	t	1350
+2759	Mussafah Industrial Area	mussafah-industrial-area	f	f	t	24.362760999999999	54.5108529999999973	t	814
+2760	Saadiyat Resort	saadiyat-resort	f	f	t	24.5302919999999993	54.4451579999999993	t	76
+2761	Al Aryam Tower	al-aryam-tower	f	f	t	24.5075339999999997	54.3765390000000011	t	815
+2762	Banana Building	banana-building	f	f	t	24.4989670000000004	54.3767819999999986	t	815
+2763	Zayed Military City Tower 3	zayed-military-city-tower-3	f	f	t	24.4961279999999988	54.8951289999999972	t	77
+2764	Green Land Compound	green-land-compound	f	f	t	24.2118639999999985	55.6629339999999999	t	79
+2765	Ain Ajman Tower	ain-ajman-tower	f	f	t	25.3994999999999997	55.4795999999999978	t	1496
+2766	Tower A3	tower-a3	f	f	t	25.3929660000000013	55.4678340000000034	t	2405
+2767	Tower C2	tower-c2	f	f	t	25.3909349999999989	55.5720370000000017	t	2405
+2768	Al Jurf 2	al-jurf-2	f	f	t	25.4022630000000014	55.4938369999999992	t	302
+2769	Al Khor Towers	al-khor-towers	f	f	t	25.3939230000000009	55.4578920000000011	t	2405
+2770	Falcon Tower 4	falcon-tower-4	f	f	t	25.3992879999999985	55.4488920000000007	t	2405
+2771	Ajman Industrial 1	ajman-industrial-1	f	f	t	25.3856280000000005	55.488706999999998	t	125
+2772	Al Hilal Tower	al-hilal-tower	f	f	t	25.3994999999999997	55.4795999999999978	t	934
+2773	Royal Lake View	royal-lake-view	f	f	t	25.3994999999999997	55.4795999999999978	t	934
+2774	Al Rashid 7	al-rashid-7	f	f	t	25.4191439999999993	55.5007480000000015	t	934
+2775	Savannah Heights Tower 1	savannah-heights-tower-1	f	f	t	25.3994999999999997	55.4795999999999978	t	934
+2776	Al Shalal Tower	al-shalal-tower	f	f	t	25.3979239999999997	55.5791669999999982	t	2408
+2777	Chapal The Legacy	chapal-the-legacy	f	f	t	25.3979239999999997	55.5791770000000014	t	2408
+2778	Crimson Court	crimson-court	f	f	t	25.3979239999999997	55.5798330000000007	t	2408
+2779	Fayrooz Tower	fayrooz-tower	f	f	t	25.3979239999999997	55.5800619999999981	t	2408
+2780	Lilies Tower	lilies-tower	f	f	t	25.3909349999999989	55.5720370000000017	t	2408
+2781	Rockland Residence	rockland-residence	f	f	t	25.3979239999999997	55.5795349999999999	t	2408
+2782	Emirates Lake Tower 1	emirates-lake-tower-1	f	f	t	25.3979239999999997	55.5804899999999975	t	2408
+2783	Goldcrest Dreams 3	goldcrest-dreams-3	f	f	t	25.3933350000000004	55.574466000000001	t	2408
+2784	Green Lake Tower 1	green-lake-tower-1	f	f	t	25.3979239999999997	55.5798330000000007	t	2408
+2785	Lake View Tower 4	lake-view-tower-4	f	f	t	25.3979239999999997	55.5795850000000016	t	2408
+2786	Meeza	meeza	f	f	t	25.3994999999999997	55.4795999999999978	t	128
+2787	Dio Twin Tower	dio-twin-tower	f	f	t	25.3994999999999997	55.4795999999999978	t	1500
+2788	Emerald Vista	emerald-vista	f	f	t	25.3994999999999997	55.4795999999999978	t	1500
+2789	Samaa Tower	samaa-tower	f	f	t	25.3994999999999997	55.4795999999999978	t	1500
+2790	Park View Tower	park-view-tower	f	f	t	25.3994999999999997	55.4795999999999978	t	419
+2791	Al Hamra Residences	al-hamra-residences	f	f	t	25.7019620000000018	55.7848510000000033	t	1355
+2792	Royal Breeze	royal-breeze	f	f	t	25.7019620000000018	55.7848510000000033	t	1355
+2793	Blue Mirage	blue-mirage	f	f	t	25.800692999999999	55.9761990000000011	t	1480
+2794	Global Sea View	global-sea-view	f	f	t	25.800692999999999	55.9761990000000011	t	1480
+2795	Pacific Polynesia	pacific-polynesia	f	f	t	25.800692999999999	55.9842909999999989	t	1480
+2796	Julfar Commercial Tower	julfar-commercial-tower	f	f	t	25.800692999999999	55.9761990000000011	t	375
+2797	Saraya Village	saraya-village	f	f	t	25.8619610000000009	56.0006150000000034	t	2259
+2798	Al Burj Tower	al-burj-tower	f	f	t	25.3289200000000001	55.3692240000000027	t	2260
+2799	Al Shahd Tower	al-shahd-tower	f	f	t	25.3251279999999994	55.3736850000000018	t	2260
+2800	Eissal Al Youssifi Towers	eissal-al-youssifi-towers	f	f	t	25.3213380000000008	55.3851760000000013	t	822
+2801	Palm Tower 2	palm-tower-2	f	f	t	25.323169	55.3790770000000023	t	822
+2802	Al Zain Tower	al-zain-tower	f	f	t	25.3019339999999993	55.3747469999999993	t	929
+2803	Moon Tower 1	moon-tower-1	f	f	t	25.3049169999999997	55.3806000000000012	t	929
+2804	Sharjah Gate	sharjah-gate	f	f	t	25.3006700000000002	55.3796710000000019	t	929
+2805	Industrial Area 3	industrial-area-3	f	f	t	25.308014	55.4111710000000031	t	1493
+2806	Industrial Area 6	industrial-area-6	f	f	t	25.3213180000000015	55.4222439999999992	t	1493
+2807	Mistral	mistral	f	f	t	25.5267289999999996	55.5954300000000003	t	1495
+2808	Frond C	frond-c	f	f	t	25.1247599999999984	55.1388170000000031	t	1159
+2809	loft cluster	loft-cluster	f	f	t	0	0	t	1159
+2810	Al Zeina	al-zeina	f	f	t	24.4566039999999987	54.6132789999999986	t	2247
+2811	Orra	orra	f	f	t	25.0706220000000002	55.1333270000000013	t	106
+2812	Oqyana	oqyana	f	f	t	25.2048489999999994	55.2707830000000016	t	212
+2813	Jash Hamad	jash-hamad	f	f	t	25.1075920000000004	55.1481890000000021	t	394
+2814	Bay Central West	bay-central-west	f	f	t	25.0789599999999986	55.1381620000000012	t	106
+2815	Boulevard Central Tower 1	boulevard-central-tower-1	f	f	t	25.1913729999999987	55.2736639999999966	t	1471
+2816	Reem Tower	reem-tower	f	f	t	24.4953380000000003	54.365279000000001	t	2250
+2817	Al Hejaz	al-hejaz	f	f	t	25.0251669999999997	55.1458609999999965	t	919
+2818	Almasa 2	almasa-2	f	f	t	25.0251669999999997	55.1458609999999965	t	919
+2819	West Village	west-village	f	f	t	25.0251669999999997	55.1458609999999965	t	919
+2820	Standpoint B	standpoint-b	f	f	t	25.1969840000000005	55.2711359999999985	t	1471
+2821	Jebel Ali Industrial 2	jebel-ali-industrial-2	f	f	t	25.0070289999999993	55.1124500000000026	t	402
+2822	Saadiyat Beach	saadiyat-beach	f	f	t	24.5489099999999993	54.4362720000000024	t	76
+2823	Grandeur Maurya Residence	grandeur-maurya-residence	f	f	t	25.0988809999999987	55.1211429999999964	t	394
+2824	Al Wasl Road	al-wasl-road	f	f	t	25.1869440000000004	55.2396839999999969	t	222
+2825	Barsha Horizon	barsha-horizon	f	f	t	25.1092009999999988	55.2042160000000024	t	1470
+2826	Gold Land Building	gold-land-building	f	f	t	25.2737109999999987	55.2999220000000022	t	915
+2827	Badrah	badrah	f	f	t	24.9507839999999987	55.0495639999999966	t	1956
+2828	Jumeirah Living	jumeirah-living	f	f	t	25.2048489999999994	55.2707830000000016	t	916
+2829	Alma 2	alma-2	f	f	t	25.0547159999999991	55.2725420000000014	t	1469
+2830	My Tower	my-tower	f	f	t	25.0805420000000012	55.1403430000000014	t	106
+2831	Olive Point	olive-point	f	f	t	25.019207999999999	55.2010670000000019	t	399
+2832	Emirates Golf Club Residences	emirates-golf-club-residences	f	f	t	0	0	t	1966
+2833	Grand Belle Vue Hotel Apartment	grand-belle-vue-hotel-apartment-2	f	f	t	0	0	t	1476
+2834	Nation Tower A	nation-tower-a	f	f	t	24.4642610000000005	54.3274219999999985	t	72
+2835	Canal Cove Frond F	canal-cove-frond-f	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+2836	Canal Cove Frond K	canal-cove-frond-k	f	f	t	25.1211659999999988	55.1284830000000028	t	394
+2837	Canal Cove Frond M	canal-cove-frond-m	f	f	t	25.1192749999999982	55.1310720000000032	t	394
+2838	Garden Homes Frond B	garden-homes-frond-b	f	f	t	25.1219560000000008	55.1410800000000023	t	394
+2839	Garden Homes Frond I	garden-homes-frond-i	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+2840	Garden Homes Frond N	garden-homes-frond-n	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+2841	Signature Villas Frond E	signature-villas-frond-e	f	f	t	25.1242820000000009	55.1315480000000022	t	394
+2842	Signature Villas Frond J	signature-villas-frond-j	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+2843	Signature Villas Frond L	signature-villas-frond-l	f	f	t	25.1193810000000006	55.1270370000000014	t	394
+2844	Park Place Tower	park-place-tower	f	f	t	25.2246759999999988	55.2828209999999984	t	396
+2845	Lootah Development	lootah-development	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2846	Emirates Grand Hotel	emirates-grand-hotel	f	f	t	25.2097459999999991	55.2754570000000029	t	396
+2847	Burj Views Podium	burj-views-podium	f	f	t	25.1898449999999983	55.281331999999999	t	1471
+2848	Tfg Marina Hotel	tfg-marina-hotel	f	f	t	25.0993880000000011	55.1770330000000016	t	106
+2849	World Trade Centre Residence C	world-trade-centre-residence-c	f	f	t	0	0	t	916
+2850	Cluster C	cluster-c	f	f	t	0	0	t	1159
+2851	Millennium Estates	millennium-estates	f	f	t	25.1458119999999994	55.287702000000003	t	1984
+2852	District 5	district-5	f	f	t	25.0503679999999989	55.1921800000000005	t	112
+2853	District 12	district-12	f	f	t	25.0549999999999997	55.2155559999999994	t	112
+2854	District 17	district-17	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2855	District 19	district-19	f	f	t	25.0604699999999987	55.2093419999999995	t	112
+2856	District 24	district-24	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2857	Al Murjan Tower	al-murjan-tower	f	f	t	24.4312550000000002	54.4375479999999996	t	366
+2858	Al Thanyah 3	al-thanyah-3	f	f	t	25.094773	55.1717640000000031	t	911
+2859	European	european	f	f	t	25.0376130000000003	55.2215580000000017	t	1475
+2860	Heritage Building	heritage-building	f	f	t	25.1149570000000004	55.203992999999997	t	1470
+2861	Escan Tower	escan-tower	f	f	t	25.0677799999999991	55.1326260000000019	t	106
+2862	Api Business Suites	api-business-suites	f	f	t	25.1073340000000016	55.1818790000000021	t	1470
+2863	Pearl Island	pearl-island	f	f	t	25.2365180000000002	55.1785539999999983	t	212
+2864	Business Central	business-central	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+2865	Au Tower	au-tower	f	f	t	25.2085420000000013	55.3028929999999974	t	910
+2866	Ibn Sina Building	ibn-sina-building	f	f	t	25.2048489999999994	55.2707830000000016	t	1478
+2867	Avenue Residence	avenue-residence	f	f	t	25.0251669999999997	55.1458609999999965	t	919
+2868	Brookfield 2	brookfield-2	f	f	t	0	0	t	1218
+2869	Silicon Avenue	silicon-avenue	f	f	t	25.1153070000000014	55.387863000000003	t	1477
+2870	Eta Star House	eta-star-house	f	f	t	25.278846999999999	55.3311780000000013	t	915
+2871	La Residence	la-residence	f	f	t	25.1092520000000015	55.1937649999999991	t	909
+2872	Upper Crest	upper-crest	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+2873	Sp Oasis	sp-oasis	f	f	t	25.1145420000000001	55.3886419999999973	t	1477
+2874	Tameem House	tameem-house	f	f	t	25.0994439999999983	55.1773519999999991	t	1476
+2875	Jumeirah Waterfront	jumeirah-waterfront	f	f	t	25.2697910000000014	55.2632150000000024	t	1986
+2876	Whitefield	whitefield	f	f	t	0	0	t	1218
+2877	Golf Terrace	golf-terrace	f	f	t	25.0433890000000012	55.2088839999999976	t	1218
+2878	Brookfield 3	brookfield-3	f	f	t	0	0	t	1218
+2879	Marinascape Avant  	marinascape-avant	f	f	t	25.0830400000000004	55.14696	t	106
+2880	Regional Small	regional-small	f	f	t	25.0435979999999994	55.1547849999999968	t	2391
+2881	Plaza Boutique	plaza-boutique	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+2882	Rufi Golf Greens	rufi-golf-greens	f	f	t	25.0330109999999983	55.2235009999999988	t	1475
+2883	Legacy Nova	legacy-nova	f	f	t	25.0464739999999999	55.1569020000000023	t	2391
+2884	Oasis Beach Tower	oasis-beach-tower	f	f	t	25.079663	55.1363899999999987	t	106
+2885	Building 49	building-49	f	f	t	25.2337489999999995	55.3253759999999986	t	1478
+2886	Zumurud Bldg	zumurud-bldg	f	f	t	25.0958210000000008	55.1956490000000031	t	1470
+2887	Rosa	rosa	f	f	t	25.0536460000000005	55.2708289999999991	t	1469
+2888	Al Shebani Residence	al-shebani-residence	f	f	t	25.082179	55.1440569999999965	t	106
+2889	Grand Views	grand-views	f	f	t	25.1589899999999993	55.2940279999999973	t	1984
+2890	The Arena	the-arena	f	f	t	25.0376739999999991	55.2201510000000013	t	1475
+2891	New Bridge Hills 2	new-bridge-hills-2	f	f	t	25.0476729999999996	55.2487959999999987	t	400
+2892	Shaiba Tower 1	shaiba-tower-1	f	f	t	25.0973000000000006	55.1709000000000032	t	1476
+2893	Mandarin Tower	mandarin-tower	f	f	t	25.4052170000000004	55.5136430000000018	t	253
+2894	C1 Tower	c1-tower	f	f	t	25.0789329999999993	55.1576760000000021	t	245
+2895	Marina Square Building 14	marina-square-building-14	f	f	t	24.4896360000000008	54.3945509999999999	t	809
+2896	Majan Madison Residences	majan-madison-residences	f	f	t	25.0937309999999982	55.3176320000000032	t	2389
+2897	Centurion Star Tower	centurion-star-tower	f	f	t	25.278846999999999	55.3320420000000013	t	915
+2898	Anantara South Residence	anantara-south-residence	f	f	t	25.12913	55.1529019999999974	t	394
+2899	Al Rabia	al-rabia	f	f	t	0	0	t	2389
+2900	Boulevard Point	boulevard-point	f	f	t	25.1933100000000003	55.2809189999999973	t	1471
+2901	Rasha Villas	rasha-villas	f	f	t	25.0521230000000017	55.2674049999999966	t	1469
+2902	Trinity	trinity	f	f	t	0	0	t	1218
+2903	Fountain Views 2	fountain-views-2	f	f	t	25.1940530000000003	55.2820180000000008	t	1471
+2904	St Regis	st-regis	f	f	t	24.5385249999999999	54.4247340000000008	t	76
+2905	Yasmin	yasmin	f	f	t	25.0523680000000013	55.2673599999999965	t	1469
+2906	VIP Villa	vip-villa	f	f	t	25.4190390000000015	55.5915910000000011	t	418
+2907	Al Fattan Marine Plaza	al-fattan-marine-plaza	f	f	t	25.0796889999999983	55.1364370000000008	t	106
+2908	Etihad Towers	etihad-towers	f	f	t	24.458869	54.321832999999998	t	2250
+2909	Al Rostamani Tower B	al-rostamani-tower-b	f	f	t	25.2150539999999985	55.2767479999999978	t	396
+2910	Almond Tower	almond-tower	f	f	t	25.4052170000000004	55.5136430000000018	t	253
+2911	Park Corner	park-corner	f	f	t	25.0505579999999988	55.2085470000000029	t	112
+2912	Ibn Battuta Gate	ibn-battuta-gate	f	f	t	25.0417559999999995	55.115910999999997	t	2385
+2913	Al Shafar Building	al-shafar-building	f	f	t	25.1937649999999991	55.290064000000001	t	909
+2914	Rochester	rochester	f	f	t	0	0	t	1218
+2915	Orchid B	orchid-b	f	f	t	0	0	t	1218
+2916	Akoya Park	akoya-park	f	f	t	25.0281260000000003	55.2520910000000001	t	2389
+2917	Boulevard Crescent 1	boulevard-crescent-1	f	f	t	25.1914869999999986	55.2708889999999968	t	1471
+2918	Executive Villa	executive-villa	f	f	t	25.1265970000000003	55.3953729999999993	t	1477
+2919	Bay Square Building 7	bay-square-building-7	f	f	t	25.1851480000000016	55.2799630000000022	t	909
+2920	Bay Square Building 11	bay-square-building-11	f	f	t	25.1852260000000001	55.2814850000000035	t	909
+2921	Al Manzel	al-manzel	f	f	t	25.237718000000001	55.3046500000000023	t	1248
+2922	Villa Pera	villa-pera	f	f	t	25.0570209999999989	55.1988890000000012	t	112
+2923	West Heights	west-heights	f	f	t	25.1909199999999984	55.2635569999999987	t	909
+2924	Asas Tower	asas-tower	f	f	t	25.3178429999999999	55.3748700000000014	t	414
+2925	Golf Promenade	golf-promenade	f	f	t	0	0	t	1218
+2926	Mirabella 2	mirabella-2	f	f	t	25.0641950000000016	55.2114649999999969	t	112
+2927	Mirabella 6	mirabella-6	f	f	t	25.0650580000000005	55.2137949999999975	t	112
+2928	Al Sayegh Building	al-sayegh-building	f	f	t	25.1113150000000012	55.1954599999999971	t	1470
+2929	Al Khail Heights Building 1B	al-khail-heights-building-1b	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+2930	Food And Beverage Zone	food-and-beverage-zone	f	f	t	25.2048489999999994	55.2707830000000016	t	626
+2931	Mineral Products Zone	mineral-products-zone	f	f	t	25.2048489999999994	55.2707830000000016	t	626
+2932	Allure Company	allure-company	f	f	t	25.1779839999999986	55.2737010000000026	t	909
+2933	Centrium Tower 4	centrium-tower-4	f	f	t	25.0399339999999988	55.1933160000000029	t	401
+2934	Platinum One	platinum-one	f	f	t	25.0668480000000002	55.2455479999999994	t	2389
+2935	Business Central Tower 2	business-central-tower-2	f	f	t	25.1001970000000014	55.1692970000000003	t	403
+2936	Zaya Hameni	zaya-hameni	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+2937	Al Safa 2	al-safa-2	f	f	t	25.1591249999999995	55.2241440000000026	t	276
+2938	Al Khail Heights Building 4A	al-khail-heights-building-4a	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+2939	Al Khail Heights Building 6A	al-khail-heights-building-6a	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+2940	Al Khail Heights Building 8A	al-khail-heights-building-8a	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+2941	Al Khail Heights Building 10B	al-khail-heights-building-10b	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+2942	Barton House 1	barton-house-1	f	f	t	25.0449330000000003	55.2427530000000004	t	400
+2943	Al Barsha Business Centre	al-barsha-business-centre	f	f	t	25.1135170000000016	55.1941079999999999	t	1470
+2944	Palm Views West	palm-views-west	f	f	t	25.1144590000000001	55.1371129999999994	t	394
+2945	Eta Star	eta-star	f	f	t	25.2088399999999986	55.2770319999999984	t	1474
+2946	Golf Towers 2	golf-towers-2	f	f	t	0	0	t	315
+2947	Panorama At The Views Tower 2	panorama-at-the-views-tower-2	f	f	t	25.0908259999999999	55.1711480000000023	t	315
+2948	Panorama At The Views Tower 4	panorama-at-the-views-tower-4	f	f	t	25.0908259999999999	55.1719310000000007	t	315
+2949	The Links West Tower	the-links-west-tower	f	f	t	25.0901350000000001	55.1699399999999969	t	315
+2950	Travo	travo	f	f	t	25.0905370000000012	55.1719930000000005	t	315
+2951	Al Zeina Townhouses	al-zeina-townhouses	f	f	t	24.5223189999999995	54.6259469999999965	t	2247
+2952	Armani Residences	armani-residences	f	f	t	25.197457	55.2741759999999971	t	1471
+2953	Marina Quay West	marina-quay-west	f	f	t	25.0763299999999987	55.1364400000000003	t	106
+2954	Queen Tower	queen-tower	f	f	t	25.3235819999999983	55.3796990000000022	t	413
+2955	Mina Al Fajer	mina-al-fajer	f	f	t	0	0	t	2086
+2956	Al Qarain 1	al-qarain-1	f	f	t	0	0	t	2094
+2957	Al Jazzat	al-jazzat	f	f	t	0	0	t	1289
+2958	Damac Heights	damac-heights	f	f	t	25.087135	55.1455839999999995	t	106
+2959	Hanging Gardens Towers	hanging-gardens-towers	f	f	t	24.4856930000000013	54.3596410000000034	t	2099
+2960	Hilali Villas Frond C	hilali-villas-frond-c	f	f	t	0	0	t	394
+2961	Zaragoza Villas	zaragoza-villas	f	f	t	0	0	t	2389
+2962	New Corniche	new-corniche	f	f	t	0	0	t	2101
+2963	Executive Tower Villas	executive-tower-villas	f	f	t	25.190843000000001	55.2652980000000014	t	909
+2964	The Arc Tower	the-arc-tower	f	f	t	24.4950669999999988	54.4087790000000027	t	809
+2965	Tower 14	tower-14	f	f	t	0	0	t	2248
+2966	Tower 19	tower-19	f	f	t	0	0	t	2248
+2967	Galaxy Building	galaxy-building	f	f	t	25.3370530000000009	55.3973459999999989	t	1493
+2968	Erantis	erantis	f	f	t	25.0520889999999987	55.2161019999999994	t	112
+2969	City Apartments	city-apartments	f	f	t	25.0651499999999992	55.2107269999999986	t	112
+2970	The Light Commercial Tower	the-light-commercial-tower	f	f	t	0	0	t	2389
+2971	Morina Residence	morina-residence	f	f	t	24.4963279999999983	54.4076080000000033	t	809
+2972	Arezzo 2	arezzo-2	f	f	t	0	0	t	112
+2973	Siena 2	siena-2	f	f	t	0	0	t	112
+2974	Mayan 1	mayan-1	f	f	t	0	0	t	2255
+2975	Mussafah Shabiya	mussafah-shabiya	f	f	t	24.3353199999999994	54.5343909999999994	t	814
+2976	Al Quoz 3	al-quoz-3	f	f	t	25.1587539999999983	55.2395459999999972	t	2392
+2977	Al Waleed Oasis	al-waleed-oasis	f	f	t	0	0	t	1477
+2978	The Pointe	the-pointe	f	f	t	25.1269169999999988	55.1231459999999984	t	394
+2979	Khalidiya Street	khalidiya-street	f	f	t	0	0	t	66
+2980	Wadi Tower	wadi-tower	f	f	t	0	0	t	2389
+2981	Tizzano	tizzano	f	f	t	0	0	t	2389
+2982	Hacienda-Agava	hacienda-agava	f	f	t	0	0	t	2389
+2983	Hacienda-Clavel	hacienda-clavel	f	f	t	0	0	t	2389
+2984	Ponderosa-Agava	ponderosa-agava	f	f	t	0	0	t	2389
+2985	Ponderosa-Cista	ponderosa-cista	f	f	t	0	0	t	2389
+2986	Ponderosa-Valencia	ponderosa-valencia	f	f	t	0	0	t	2389
+2987	The Aldea-Canna	the-aldea-canna	f	f	t	0	0	t	2389
+2988	The Aldea-Mazaya	the-aldea-mazaya	f	f	t	0	0	t	2389
+2989	The Centro-Basella	the-centro-basella	f	f	t	0	0	t	2389
+2990	The Centro-Canna	the-centro-canna	f	f	t	0	0	t	2389
+2991	The Centro-Mallorca	the-centro-mallorca	f	f	t	0	0	t	2389
+2992	area	area	f	f	t	0	0	t	568
+2993	Aryene Greens	aryene-greens	f	f	t	0	0	t	2389
+2994	The Address Residences Dubai Opera Tower 2	the-address-residences-dubai-opera-tower-2	f	f	t	0	0	t	1471
+2995	The View	the-view	f	f	t	24.4323879999999996	54.433484	t	366
+2996	Hacienda-Custom Built	hacienda-custom-built	f	f	t	0	0	t	2389
+2997	Mercure Hotel	mercure-hotel	f	f	t	0	0	t	1173
+2998	AD One Tower	ad-one-tower	f	f	t	0	0	t	2244
+2999	Roda Amwaj Suites	roda-amwaj-suites	f	f	t	0	0	t	2386
+3000	District 1	district-1-2	f	f	t	0	0	t	1173
+3001	Lamborghini Building	lamborghini-building	f	f	t	25.1270580000000017	55.2062919999999977	t	396
+3002	API Trio Tower A	api-trio-tower-a	f	f	t	0	0	t	396
+3003	API Trio Tower C	api-trio-tower-c	f	f	t	0	0	t	396
+3004	Silicon Heights 1	silicon-heights-1	f	f	t	0	0	t	1477
+3005	Al Marzooqi Tower A	al-marzooqi-tower-a	f	f	t	0	0	t	1491
+3006	Candace Acacia	candace-acacia	f	f	t	25.0260999999999996	55.1568419999999975	t	919
+3007	Alef Residences	alef-residences	f	f	t	25.1083800000000004	55.1109689999999972	t	394
+3008	Terrace Apartments B	terrace-apartments-b	f	f	t	0	0	t	1473
+3009	Terrace Apartments D	terrace-apartments-d	f	f	t	0	0	t	1473
+3010	Building 41	building-41	f	f	t	0	0	t	1478
+3011	Alef Residence Mansion 5	alef-residence-mansion-5	f	f	t	0	0	t	394
+3012	Al Barsha South 3	al-barsha-south-3	f	f	t	25.0591299999999997	55.227724000000002	t	1470
+3013	Shobha Ivory (All)	shobha-ivory-all	f	f	t	25.1789750000000012	55.2726279999999974	t	909
+3014	Marina Diamond (All)	marina-diamond-all	f	f	t	25.0814149999999998	55.1468380000000025	t	106
+3015	Greens Low Rise (All)	greens-low-rise-all	f	f	t	25.0920720000000017	55.1713889999999978	t	911
+3016	Mystica (All)	mystica-all	f	f	t	25.2048489999999994	55.2707830000000016	t	395
+3017	Hattan (All)	hattan-all	f	f	t	25.0465949999999999	55.267159999999997	t	1469
+3018	Zulal (All)	zulal-all	f	f	t	25.078990000000001	55.1724800000000002	t	109
+3019	Global Golf (All)	global-golf-all	f	f	t	25.0395800000000008	55.2173480000000012	t	1475
+3020	Fox Hill (All)	fox-hill-all	f	f	t	25.0462300000000013	55.2437899999999971	t	400
+3021	Widcombe House (All)	widcombe-house-all	f	f	t	25.0451240000000013	55.2450120000000027	t	400
+3022	Green View (All)	green-view-all	f	f	t	25.0976099999999995	55.1805499999999967	t	1476
+3023	Cadi (All)	cadi-all	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3024	Silver Stallion (All)	silver-stallion-all	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3025	Al Ansari	al-ansari	f	f	t	25.0988919999999993	55.2046640000000011	t	1470
+3026	Armada 3	armada-3	f	f	t	25.0754589999999986	55.1453429999999969	t	107
+3027	Champions 1	champions-1	f	f	t	25.0390039999999985	55.2043699999999973	t	1475
+3028	Chelsea	chelsea	f	f	t	25.2117269999999998	55.274714000000003	t	396
+3029	Dune Building	dune-building	f	f	t	25.2193700000000014	55.2728869999999972	t	2390
+3030	Gate 2	gate-2	f	f	t	25.1042489999999994	55.3837910000000022	t	1474
+3031	Gate 4	gate-4	f	f	t	25.2139370000000014	55.2800650000000005	t	1474
+3032	golf view	golf-view	f	f	t	25.0373659999999987	55.2058189999999982	t	1475
+3033	Icon 1	icon-1	f	f	t	25.0648130000000009	55.1388230000000021	t	107
+3034	Jumeirah Business Center 3	jumeirah-business-center-3	f	f	t	25.0781920000000014	55.1537519999999972	t	107
+3035	Lake City	lake-city	f	f	t	25.0707540000000009	55.1410259999999965	t	107
+3036	Marina View Tower B	marina-view-tower-b	f	f	t	0	0	t	106
+3037	Oasis 2	oasis-2	f	f	t	25.0436760000000014	55.2126710000000003	t	1475
+3038	sanali iconic	sanali-iconic	f	f	t	0	0	t	2389
+3039	Starhill Towers & Gallery 1	starhill-towers-gallery-1	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+3040	Zabeel	zabeel	f	f	t	25.2058269999999993	55.2791840000000008	t	396
+3041	Al Dhabi Building	al-dhabi-building	f	f	t	24.4926220000000008	54.3666180000000026	t	2395
+3042	Falaj Village	falaj-village	f	f	t	24.4518179999999994	54.7289359999999974	t	1341
+3043	North Hudayriat	north-hudayriat	f	f	t	24.4251259999999988	54.3412500000000023	t	804
+3044	Mushrif Gardens	mushrif-gardens	f	f	t	24.4365750000000013	54.3931869999999975	t	360
+3045	Al Qurm Street	al-qurm-street	f	f	t	24.4348059999999982	54.451909999999998	t	807
+3046	Al Muneera Townhouses-Island	al-muneera-townhouses-island	f	f	t	24.4508119999999991	54.6045250000000024	t	2247
+3047	Mira Residence 1	mira-residence-1	f	f	t	24.4666670000000011	54.3666669999999996	t	2247
+3048	Lailak	lailak	f	f	t	24.4205620000000003	54.5333910000000017	t	362
+3049	Arabian Style	arabian-style	f	f	t	24.4565969999999986	54.6741659999999996	t	2248
+3050	Al Odaid Beach Residences	al-odaid-beach-residences	f	f	t	24.4942439999999984	54.4068600000000018	t	809
+3051	Dynasty Tower	dynasty-tower	f	f	t	24.4942439999999984	54.4068600000000018	t	809
+3052	Hydra Platinum Tower	hydra-platinum-tower	f	f	t	24.4995200000000004	54.4050330000000031	t	809
+3053	Burooj Terraces	burooj-terraces	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+3054	Hydra Executive Towers	hydra-executive-towers	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+3055	Julfar Residence	julfar-residence	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+3056	Sedrawan Tower	sedrawan-tower	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+3057	Tamouh Tower	tamouh-tower	f	f	t	24.4882209999999993	54.3952779999999976	t	809
+3058	RAK Tower	rak-tower	f	f	t	24.4893140000000002	54.4157340000000005	t	809
+3059	Al Sharq Towers	al-sharq-towers	f	f	t	24.4806169999999987	54.4080519999999979	t	809
+3060	Solitaire Tower	solitaire-tower	f	f	t	24.4806169999999987	54.4080519999999979	t	809
+3061	Beach Towers	beach-towers	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+3062	Lilac Tower	lilac-tower	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+3063	X2 Tower	x2-tower	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+3064	The ARC	the-arc	f	f	t	24.4938949999999984	54.410739999999997	t	809
+3065	Sowwah Square Tower 4	sowwah-square-tower-4	f	f	t	24.5002369999999985	54.3883719999999968	t	810
+3066	Prestige Towers	prestige-towers	f	f	t	0	0	t	813
+3067	Guardian Towers	guardian-towers	f	f	t	24.4316679999999984	54.4354960000000005	t	366
+3068	Fairway Heights	fairway-heights	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3069	Al Masood Building	al-masood-building	f	f	t	25.2145569999999992	55.3046409999999966	t	910
+3070	Meadows 6	meadows-6	f	f	t	25.0719290000000008	55.1515890000000013	t	912
+3071	Courtyard Apartments	courtyard-apartments	f	f	t	25.2241350000000004	55.4257160000000013	t	914
+3072	Bennett House 1	bennett-house-1	f	f	t	25.0458700000000007	55.2458179999999999	t	400
+3073	Detroit House	detroit-house	f	f	t	25.0460579999999986	55.231541	t	400
+3074	Fox Hill 2	fox-hill-2	f	f	t	25.0457500000000017	55.2423300000000026	t	400
+3075	Fox Hill 7	fox-hill-7	f	f	t	25.0467499999999994	55.2453399999999988	t	400
+3076	Norton Court 3	norton-court-3	f	f	t	25.0466900000000017	55.2480100000000007	t	400
+3077	Sherlock Circus 2	sherlock-circus-2	f	f	t	25.0456399999999988	55.2468999999999966	t	400
+3078	Sherlock Court	sherlock-court	f	f	t	25.0467329999999997	55.2463600000000028	t	400
+3079	Uptown Motorcity	uptown-motorcity	f	f	t	25.0454000000000008	55.2469200000000029	t	400
+3080	Kamoon 1	kamoon-1	f	f	t	25.1897729999999989	55.2755569999999992	t	395
+3081	miska 2	miska-2	f	f	t	25.1899119999999996	55.2776250000000005	t	395
+3082	miska 4	miska-4	f	f	t	25.1899119999999996	55.2776250000000005	t	395
+3083	Reehan 1	reehan-1	f	f	t	25.1901089999999996	55.2773030000000034	t	395
+3084	Reehan 8	reehan-8	f	f	t	25.1895389999999999	55.2767869999999988	t	395
+3085	Yansoon 5	yansoon-5	f	f	t	25.1916669999999989	55.2793810000000008	t	395
+3086	Yansoon 8	yansoon-8	f	f	t	25.1913690000000017	55.2785149999999987	t	395
+3087	Zaafaran 4	zaafaran-4	f	f	t	25.1906210000000002	55.2766329999999968	t	395
+3088	Wafi Residence	wafi-residence	f	f	t	25.2304999999999993	55.321080000000002	t	910
+3089	Al Dabas	al-dabas	f	f	t	25.1074419999999989	55.1502890000000008	t	394
+3090	Al Khudrawi	al-khudrawi	f	f	t	25.1102899999999991	55.1468100000000021	t	394
+3091	Al Sedaifa District	al-sedaifa-district	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+3092	Al Shahla	al-shahla	f	f	t	25.10886	55.1464700000000008	t	394
+3093	Canal Cove	canal-cove	f	f	t	25.111025999999999	55.136885999999997	t	394
+3094	Kempinski Palm Residence	kempinski-palm-residence	f	f	t	25.1131910000000005	55.1100599999999972	t	394
+3095	Oceana Pacific	oceana-pacific	f	f	t	25.110633	55.135866	t	394
+3096	Damas	damas	f	f	t	25.2960980000000006	55.3777040000000014	t	396
+3097	Millennium Plaza	millennium-plaza	f	f	t	25.2178989999999992	55.2785780000000031	t	396
+3098	Nassima	nassima	f	f	t	25.2235580000000006	55.2831279999999978	t	396
+3099	World Trade Center-Commercial	world-trade-center-commercial	f	f	t	25.2048489999999994	55.2707830000000016	t	396
+3100	Crown Residence	crown-residence	f	f	t	25.0979799999999997	55.1715799999999987	t	1476
+3101	Smart Heights	smart-heights	f	f	t	25.0965699999999998	55.1767800000000008	t	1476
+3102	Deema 1	deema-1	f	f	t	25.0790809999999986	55.1501299999999972	t	109
+3103	Ghadeer (All)	ghadeer-all	f	f	t	25.0812099999999987	55.1733800000000016	t	109
+3104	Maeen 3	maeen-3	f	f	t	25.0934120000000007	55.1716169999999977	t	109
+3105	springs 1	springs-1	f	f	t	25.0609019999999987	55.1602740000000011	t	2387
+3106	springs 11	springs-11	f	f	t	25.0558049999999994	55.1772020000000012	t	2387
+3107	Springs 3	springs-3	f	f	t	25.0610320000000009	55.1819229999999976	t	2387
+3108	Arno	arno-2	f	f	t	25.091660000000001	55.1709400000000016	t	315
+3109	Links Canal Apartments	links-canal-apartments	f	f	t	25.0908259999999999	55.170810000000003	t	315
+3110	umm suqeim 3	umm-suqeim-3	f	f	t	25.1366499999999995	55.1955400000000012	t	1472
+3111	Marina Sky 2	marina-sky-2	f	f	t	25.0840560000000004	55.1425290000000032	t	106
+3112	The Waves Tower B	the-waves-tower-b	f	f	t	25.0713599999999985	55.1338000000000008	t	106
+3113	Tiara Aquamarine	tiara-aquamarine	f	f	t	25.1155529999999985	55.1410100000000014	t	394
+3114	Tiara Ruby	tiara-ruby	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+3115	Golden Mile 1	golden-mile-1	f	f	t	25.1054099999999991	55.1489899999999977	t	394
+3116	Golden Mile 8	golden-mile-8	f	f	t	25.110752999999999	55.1416680000000028	t	394
+3117	Marina Residence 3	marina-residence-3	f	f	t	25.1146299999999982	55.1364200000000011	t	394
+3118	Rimal 2	rimal-2	f	f	t	25.0773699999999984	55.1342599999999976	t	2386
+3119	Sadaf 1	sadaf-1	f	f	t	25.0808299999999988	55.1391500000000008	t	2386
+3120	Sadaf 10	sadaf-10	f	f	t	25.0803079999999987	55.137908000000003	t	2386
+3121	Sadaf 7	sadaf-7	f	f	t	25.0810099999999991	55.13767	t	2386
+3122	Gold And Diamond Park	gold-and-diamond-park	f	f	t	25.0952930000000016	55.1955450000000027	t	1470
+3123	The Residences 1	the-residences-1	f	f	t	25.1936509999999991	55.2723089999999999	t	1471
+3124	The Residences 6	the-residences-6	f	f	t	25.192540000000001	55.2745499999999979	t	1471
+3125	The Residences 8	the-residences-8	f	f	t	25.1915900000000015	55.2744500000000016	t	1471
+3126	Burj Views C	burj-views-c	f	f	t	25.1910200000000017	55.2816199999999967	t	1471
+3127	Al Attar Business	al-attar-business	f	f	t	25.2138649999999984	55.2784710000000032	t	396
+3128	Carmen	carmen	f	f	t	25.0345350000000018	55.2141650000000013	t	913
+3129	Estella	estella	f	f	t	25.0348480000000002	55.2168849999999978	t	913
+3130	Hacienda-cordoba	hacienda-cordoba	f	f	t	25.0871150000000007	55.3606580000000008	t	2389
+3131	Park Tower B	park-tower-b	f	f	t	25.2105299999999986	55.2793800000000033	t	1474
+3132	Satwa Road	satwa-road	f	f	t	25.2226910000000011	55.2704009999999997	t	2390
+3133	carrefour building	carrefour-building	f	f	t	25.0964799999999997	55.176160000000003	t	1476
+3134	al khatoom	al-khatoom	f	f	t	0	0	t	1476
+3135	al yassat	al-yassat	f	f	t	25.1010999999999989	55.173569999999998	t	1476
+3136	National Bonds Plaza	national-bonds-plaza	f	f	t	0	0	t	1476
+3137	Lavander	lavander	f	f	t	25.0530599999999986	55.21387	t	112
+3138	Lakeside 1	lakeside-1	f	f	t	25.0317770000000017	55.1900229999999965	t	401
+3139	Abyaar Business Center	abyaar-business-center	f	f	t	24.978981000000001	55.1768939999999972	t	917
+3140	@4	4	f	f	t	25.0910790000000006	55.1718740000000025	t	1479
+3141	@9	9	f	f	t	25.0955499999999994	55.1617999999999995	t	1479
+3142	@11	11	f	f	t	25.0937769999999993	55.1549589999999981	t	1479
+3143	Ariyana	ariyana	f	f	t	25.0827400000000011	55.1482799999999997	t	106
+3144	Ghaya Residence	ghaya-residence	f	f	t	25.2120989999999985	55.2772920000000028	t	396
+3145	Jumeirah Bay X3	jumeirah-bay-x3	f	f	t	25.0800170000000016	55.1533599999999993	t	107
+3146	Al Quoz Business Centre	al-quoz-business-centre	f	f	t	25.1684410000000014	55.2407809999999984	t	2392
+3147	Al Das	al-das	f	f	t	25.1141199999999998	55.1415399999999991	t	394
+3148	Emirates Financial North	emirates-financial-north	f	f	t	25.2090400000000017	55.2766599999999997	t	1474
+3149	Bastikya	bastikya	f	f	t	25.2624749999999985	55.3037840000000003	t	910
+3150	Mesoamerican (Bldgs 203-229)	mesoamerican-bldgs-203-229	f	f	t	25.0314569999999996	55.1573860000000025	t	2385
+3151	Mazaya Business Avenue BB2	mazaya-business-avenue-bb2	f	f	t	25.0688899999999997	55.1456900000000019	t	107
+3152	Palmera (All)	palmera-all	f	f	t	25.0408059999999999	55.2601409999999973	t	1469
+3153	Burj Views (All)	burj-views-all	f	f	t	25.1901970000000013	55.281368999999998	t	1471
+3154	Lofts (All)	lofts-all	f	f	t	25.1970950000000009	55.269713000000003	t	1471
+3155	Jewels (All)	jewels-all	f	f	t	25.0713259999999991	55.1302469999999971	t	106
+3156	Rimal (All)	rimal-all	f	f	t	25.076509999999999	55.1343499999999977	t	2386
+3157	Bahar (All)	bahar-all	f	f	t	25.0778999999999996	55.1355599999999981	t	2386
+3158	Green Lakes (All)	green-lakes-all	f	f	t	25.0786149999999992	55.1482790000000023	t	107
+3159	Norton Court (All)	norton-court-all	f	f	t	25.0469329999999992	55.2485240000000033	t	400
+3160	Kingdom Of Sheba (All)	kingdom-of-sheba-all	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+3161	Saheel (All)	saheel-all	f	f	t	25.052854	55.2569889999999972	t	1469
+3162	Marina Pearl	marina-pearl	f	f	t	25.0696399999999997	55.1342799999999968	t	106
+3163	Marina Plaza	marina-plaza	f	f	t	25.0755499999999998	55.1401699999999977	t	106
+3164	Marina Sail	marina-sail	f	f	t	25.0717500000000015	55.1353500000000025	t	106
+3165	marina wharf 1	marina-wharf-1	f	f	t	25.0728000000000009	55.1327420000000004	t	106
+3166	Opal Marina	opal-marina	f	f	t	25.0681699999999985	55.1327599999999975	t	106
+3167	Panoramic	panoramic	f	f	t	25.0700800000000008	55.1278999999999968	t	106
+3168	The Royal Oceanic	the-royal-oceanic	f	f	t	25.0841600000000007	55.1418099999999995	t	106
+3169	Summit	summit	f	f	t	25.0881800000000013	55.1519300000000001	t	106
+3170	trident marinascape	trident-marinascape	f	f	t	25.0832000000000015	55.146729999999998	t	106
+3171	Zumurud	zumurud	f	f	t	25.0702199999999991	55.1339499999999987	t	106
+3172	Apricot	apricot	f	f	t	25.111968000000001	55.3842750000000024	t	1477
+3173	Axis Residence 4	axis-residence-4	f	f	t	25.1271899999999988	55.4026110000000003	t	1477
+3174	Cordoba Palace	cordoba-palace	f	f	t	25.1080509999999997	55.3780489999999972	t	1477
+3175	lynx business	lynx-business	f	f	t	0	0	t	1477
+3176	Oasis High Park	oasis-high-park	f	f	t	25.1143949999999982	55.3871719999999996	t	1477
+3177	Sit	sit	f	f	t	25.1178260000000009	55.3905049999999974	t	1477
+3178	Silicon Heights 2	silicon-heights-2	f	f	t	25.1221940000000004	55.3754289999999969	t	1477
+3179	Vortex	vortex	f	f	t	25.1189880000000016	55.3735319999999973	t	1477
+3180	Century	century	f	f	t	25.2283270000000002	55.2603700000000018	t	1475
+3181	Eagle Heights	eagle-heights	f	f	t	25.0366259999999983	55.2207659999999976	t	1475
+3182	Elite Sports Residence 4	elite-sports-residence-4	f	f	t	25.0396220000000014	55.2219600000000028	t	1475
+3183	giovanni boutique suites	giovanni-boutique-suites	f	f	t	0	0	t	1475
+3184	Hub Canal 1	hub-canal-1	f	f	t	0	0	t	1475
+3185	Ice Hockey	ice-hockey	f	f	t	25.0423340000000003	55.2055819999999997	t	1475
+3186	Olympic Park 1	olympic-park-1	f	f	t	25.0440910000000017	55.2141269999999977	t	1475
+3187	Rufi Century	rufi-century	f	f	t	25.0327629999999992	55.2236159999999998	t	1475
+3188	Soccer	soccer	f	f	t	25.0549409999999995	55.1703139999999976	t	1475
+3189	Sports One	sports-one	f	f	t	25.043175999999999	55.216427000000003	t	1475
+3190	The Diamond	the-diamond	f	f	t	0	0	t	1475
+3191	Zenith A2	zenith-a2	f	f	t	25.0352390000000007	55.2215190000000007	t	1475
+3192	Montgomerie Maisonettes	montgomerie-maisonettes	f	f	t	25.0662999999999982	55.178052000000001	t	2388
+3193	sector r	sector-r	f	f	t	0	0	t	2388
+3194	Hacienda-mallorca	hacienda-mallorca	f	f	t	25.0871150000000007	55.3606580000000008	t	2389
+3195	garden apartments East	garden-apartments-east	f	f	t	25.0005829999999989	55.1560369999999978	t	1473
+3196	Al Arta	al-arta	f	f	t	25.0898499999999984	55.1740100000000027	t	911
+3197	Al Dhafra	al-dhafra	f	f	t	25.0921100000000017	55.1719200000000001	t	911
+3198	Al Dhafra 3	al-dhafra-3	f	f	t	25.0920500000000004	55.1726099999999988	t	911
+3199	Al Ghaf 3	al-ghaf-3	f	f	t	25.0958199999999998	55.1707999999999998	t	911
+3200	Al Jaz	al-jaz	f	f	t	25.0947899999999997	55.1712199999999982	t	911
+3201	Al Nakheel 1	al-nakheel-1	f	f	t	25.0939300000000003	55.169550000000001	t	911
+3202	Al Nakheel 3	al-nakheel-3	f	f	t	25.0937599999999996	55.1708300000000023	t	911
+3203	Al Samar 3	al-samar-3	f	f	t	25.0929399999999987	55.1736900000000006	t	911
+3204	Al Thayal	al-thayal	f	f	t	25.0910299999999999	55.1730299999999971	t	911
+3205	Canal Villas	canal-villas	f	f	t	0	0	t	315
+3206	Ramada Residence	ramada-residence	f	f	t	25.0317770000000017	55.1900229999999965	t	401
+3207	China	china	f	f	t	25.1705100000000002	55.4147000000000034	t	108
+3208	Dream Square	dream-square	f	f	t	25.1648929999999993	55.4084029999999998	t	108
+3209	Global Garden View	global-garden-view	f	f	t	25.1638699999999993	55.4069900000000004	t	108
+3210	Lady Ratan Manor	lady-ratan-manor	f	f	t	25.1675199999999997	55.4076000000000022	t	108
+3211	Prime Residency	prime-residency	f	f	t	25.1659240000000004	55.3981939999999966	t	108
+3212	Riviera Dreams	riviera-dreams	f	f	t	25.1677700000000009	55.4063000000000017	t	108
+3213	Sallal	sallal	f	f	t	25.1648929999999993	55.4084029999999998	t	108
+3214	Deyaar Park	deyaar-park	f	f	t	25.2048489999999994	55.2707830000000016	t	402
+3215	Safa	safa	f	f	t	25.1876910000000009	55.2377490000000009	t	397
+3216	Bahar 6	bahar-6	f	f	t	25.078479999999999	55.1363699999999994	t	2386
+3217	Bahar 1	bahar-1	f	f	t	25.0771799999999985	55.135629999999999	t	2386
+3218	Amwaj 3	amwaj-3	f	f	t	25.0738100000000017	55.1317599999999999	t	2386
+3219	Valencia Grove	valencia-grove	f	f	t	25.019207999999999	55.2010670000000019	t	399
+3220	cluster 21-25	cluster-21-25	f	f	t	0	0	t	110
+3221	Cluster 31-35	cluster-31-35	f	f	t	25.0548530000000014	55.1550360000000026	t	110
+3222	costa del sol	costa-del-sol	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+3223	Oasis Clusters	oasis-clusters	f	f	t	25.0579999999999998	55.1536800000000014	t	110
+3224	Al Saqran	al-saqran	f	f	t	25.077770000000001	55.1474400000000031	t	107
+3225	Al Seef 2	al-seef-2	f	f	t	25.0796700000000001	55.1516599999999997	t	107
+3226	Au	au	f	f	t	25.0693400000000004	55.1433999999999997	t	107
+3227	Dubai Gate 2	dubai-gate-2	f	f	t	25.0658600000000007	55.1375499999999974	t	107
+3228	Goldcrest Executive	goldcrest-executive	f	f	t	25.0688099999999991	55.1398200000000003	t	107
+3229	Lake Point	lake-point	f	f	t	25.0635170000000009	55.1378399999999971	t	107
+3230	Liwa Heights	liwa-heights	f	f	t	25.0772510000000004	55.1503939999999986	t	107
+3231	Mag 214	mag-214	f	f	t	25.0771300000000004	55.1477000000000004	t	107
+3232	Reef	reef	f	f	t	25.0740100000000012	55.143340000000002	t	107
+3233	Jumeirah Bay X1	jumeirah-bay-x1	f	f	t	25.0802499999999995	55.1524100000000033	t	107
+3234	Regional	regional	f	f	t	25.0481039999999986	55.1544719999999984	t	2391
+3235	7 West Residences	7-west-residences	f	f	t	25.0569050000000004	55.218831999999999	t	112
+3236	Desert Rose	desert-rose	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3237	Indigo Ville	indigo-ville	f	f	t	25.0627959999999987	55.2163219999999981	t	112
+3238	Melissa Residence	melissa-residence	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3239	Mirage Residence	mirage-residence	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3240	Plaza	plaza	f	f	t	25.0528230000000001	55.2080559999999991	t	112
+3241	Cadi 2	cadi-2	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3242	Jouri 2	jouri-2	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3243	Jouri Residence	jouri-residence	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3244	Judi Palace B	judi-palace-b	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3245	Abjar	abjar	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3246	Diamond Arch Ii	diamond-arch-ii	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3247	Diamond Views 4	diamond-views-4	f	f	t	25.0641849999999984	55.216427000000003	t	112
+3248	Dorna	dorna	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3249	Global Royal	global-royal	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3250	Mak Star	mak-star	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3251	Pisa Residence	pisa-residence	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3252	Reliance 12	reliance-12	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3253	Rigel	rigel	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3254	Rufi Lake View	rufi-lake-view	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3255	Sobha Daffodil	sobha-daffodil	f	f	t	25.0471520000000005	55.206631999999999	t	112
+3256	Manhattan	manhattan	f	f	t	25.0687099999999994	55.2075000000000031	t	112
+3257	Celestica	celestica	f	f	t	25.0601979999999998	55.2093509999999981	t	112
+3258	Jenna 1	jenna-1	f	f	t	0	0	t	1118
+3259	Delano Dubai	delano-dubai	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+3260	Park Inn Residence	park-inn-residence	f	f	t	25.0472880000000018	55.1900229999999965	t	1173
+3261	District 9E	district-9e	f	f	t	25.0441320000000012	55.1836389999999994	t	1173
+3262	Liwa Building	liwa-building-2	f	f	t	25.2529499999999985	55.2990580000000023	t	910
+3263	MF Villa	mf-villa	f	f	t	25.0870330000000017	55.3607039999999984	t	408
+3264	Four Points Hotel by Sheraton	four-points-hotel-by-sheraton	f	f	t	25.2141960000000012	55.2755640000000028	t	396
+3265	Florence 2	florence-2	f	f	t	0	0	t	112
+3266	Standard Chartered Tower	standard-chartered-tower	f	f	t	25.202179000000001	55.272705000000002	t	1471
+3267	Art Tower 3	art-tower-3	f	f	t	0	0	t	1476
+3268	Al Faiz Building	al-faiz-building	f	f	t	24.4740169999999999	54.3675759999999997	t	2395
+3269	Al Thuraya Tower	al-thuraya-tower	f	f	t	0	0	t	414
+3270	Al Maqtaa 1	al-maqtaa-1	f	f	t	24.4393509999999985	54.4106979999999965	t	1350
+3271	Andalus Al Seef Resort & Spa	andalus-al-seef-resort-spa	f	f	t	24.446003000000001	54.4386700000000019	t	369
+3272	Sandhurst House	sandhurst-house	f	f	t	0	0	t	112
+3273	Mussafah Residentail and Commercial Area	mussafah-residentail-and-commercial-area	f	f	t	24.3704549999999998	54.4833580000000026	t	814
+3274	CBD Building	cbd-building	f	f	t	25.1302279999999989	55.2132470000000026	t	2392
+3275	Belgravia	belgravia	f	f	t	0	0	t	112
+3276	Terrance Apartments	terrance-apartments	f	f	t	0	0	t	914
+3277	al barsha 1	al-barsha-1	f	f	t	25.1119860000000017	55.2037350000000018	t	1470
+3278	Al Quoz Industrial District	al-quoz-industrial-district	f	f	t	25.1347890000000014	55.236969000000002	t	2392
+3279	Rainbow Residence	rainbow-residence	f	f	t	25.278846999999999	55.3312079999999966	t	915
+3280	Alma	alma	f	f	t	25.053609999999999	55.2683999999999997	t	1469
+3281	Alvorada 2	alvorada-2	f	f	t	25.0422529999999988	55.2619010000000017	t	1469
+3282	Hattan	hattan	f	f	t	25.04636	55.2666699999999977	t	1469
+3283	Palmera 3	palmera-3	f	f	t	25.0412229999999987	55.2589019999999991	t	1469
+3284	Saheel 3	saheel-3	f	f	t	25.0561480000000003	55.2666790000000034	t	1469
+3285	Savannah 1	savannah-1	f	f	t	25.055178999999999	55.2761190000000013	t	1469
+3286	Al Refaa	al-refaa	f	f	t	25.2620460000000016	55.2866110000000006	t	910
+3287	Bay Residence	bay-residence	f	f	t	25.1847339999999988	55.2612080000000034	t	909
+3288	Bristol Tower 2	bristol-tower-2	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+3289	Centre Boulevard	centre-boulevard	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+3290	Clover	clover	f	f	t	25.1887700000000017	55.270389999999999	t	909
+3291	Elite	elite	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+3292	Executive Suites	executive-suites	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+3293	Fgb	fgb	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+3294	Green Emirates	green-emirates	f	f	t	25.0093850000000018	55.267792	t	909
+3295	Hamilton	hamilton	f	f	t	25.1862870000000001	55.2860730000000018	t	909
+3296	Lake Central	lake-central	f	f	t	25.1861730000000001	55.2724979999999988	t	909
+3297	Niki Lauda	niki-lauda	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+3298	Opus	opus	f	f	t	25.1885200000000005	55.2669399999999982	t	909
+3299	Prime	prime	f	f	t	25.1882699999999993	55.2716399999999979	t	909
+3300	Scala	scala	f	f	t	25.185410000000001	55.2857800000000026	t	909
+3301	Silver	silver	f	f	t	25.1852079999999994	55.2755920000000032	t	909
+3302	Bay Gate	bay-gate	f	f	t	25.1889399999999988	55.2629700000000028	t	909
+3303	Prism	prism	f	f	t	25.1874000000000002	55.2613699999999994	t	909
+3304	Westburry Tower 1	westburry-tower-1	f	f	t	25.185492	55.2745400000000018	t	909
+3305	wings of arabia	wings-of-arabia	f	f	t	0	0	t	2389
+3306	Estate	estate	f	f	t	25.2145569999999992	55.3040850000000006	t	910
+3307	Al Reqqa Street	al-reqqa-street	f	f	t	25.2643330000000006	55.322142999999997	t	915
+3308	Carrera	carrera	f	f	t	25.2088399999999986	55.2770319999999984	t	1474
+3309	Liberty House	liberty-house	f	f	t	25.2094099999999983	55.2768700000000024	t	1474
+3310	Index	index	f	f	t	25.2076799999999999	55.2778800000000032	t	1474
+3311	Boulevard Plaza	boulevard-plaza	f	f	t	25.2001099999999987	55.2738700000000023	t	1471
+3312	North Ridge	north-ridge	f	f	t	25.1890040000000006	55.2728680000000026	t	1471
+3313	Address Downtown Hotel	address-downtown-hotel	f	f	t	25.1943930000000016	55.2789420000000007	t	1471
+3314	Capital Square	capital-square	f	f	t	25.2903550000000017	55.3534399999999991	t	402
+3315	Deyaar Business Park	deyaar-business-park	f	f	t	25.2048489999999994	55.2707830000000016	t	402
+3316	Kpm 3	kpm-3	f	f	t	25.2048489999999994	55.2707830000000016	t	402
+3317	Al Badia Village	al-badia-village	f	f	t	25.221191000000001	55.361542	t	915
+3318	Dubai Lagoon	dubai-lagoon	f	f	t	24.9910029999999992	55.183641999999999	t	917
+3319	Gateways Apartments	gateways-apartments	f	f	t	24.978981000000001	55.1769230000000022	t	917
+3320	cassia park	cassia-park	f	f	t	0	0	t	2389
+3321	Legends	legends	f	f	t	25.0871719999999989	55.3005569999999977	t	2389
+3322	palmarosa	palmarosa	f	f	t	0	0	t	2389
+3323	C3 Tower	c3-tower	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+3324	Rapunzel	rapunzel	f	f	t	0	0	t	2389
+3325	Jannah Burj Al Sarab	jannah-burj-al-sarab	f	f	t	24.5264939999999996	54.3754800000000031	t	815
+3326	Saheel 6	saheel-6	f	f	t	25.0551199999999987	55.288218999999998	t	1469
+3327	Royal Golf Villas	royal-golf-villas	f	f	t	25.019207999999999	55.2010670000000019	t	399
+3328	Al Noor Building	al-noor-building	f	f	t	25.2969089999999994	55.3789859999999976	t	918
+3329	Number One Tower	number-one-tower	f	f	t	25.2104239999999997	55.2735910000000032	t	396
+3330	Al Thamam 45	al-thamam-45	f	f	t	0	0	t	2389
+3331	District 8R	district-8r	f	f	t	0	0	t	1173
+3332	Al Emirates tower	al-emirates-tower-2	f	f	t	0	0	t	2250
+3333	Art Tower XV	art-tower-xv	f	f	t	25.1818120000000008	55.2786389999999983	t	909
+3334	Blue Wave Tower	blue-wave-tower	f	f	t	25.254016	55.2971999999999966	t	910
+3335	Garden East Apartments Bldg E	garden-east-apartments-bldg-e	f	f	t	0	0	t	1473
+3336	Garden East Apartments Bldg J	garden-east-apartments-bldg-j	f	f	t	0	0	t	1473
+3337	Ellington Palm Villas	ellington-palm-villas	f	f	t	25.1145479999999992	55.1281409999999994	t	394
+3338	Montrell Serviced Apartments	montrell-serviced-apartments	f	f	t	0	0	t	919
+3339	HHM Business Center	hhm-business-center	f	f	t	25.2577369999999988	55.3364460000000022	t	915
+3340	Al Ramth 27	al-ramth-27	f	f	t	0	0	t	2389
+3341	Al Ramth 02	al-ramth-02	f	f	t	0	0	t	2389
+3342	Al Ramth 03	al-ramth-03	f	f	t	0	0	t	2389
+3343	Al Ramth 20	al-ramth-20	f	f	t	0	0	t	2389
+3344	Al Ramth 06	al-ramth-06	f	f	t	0	0	t	2389
+3345	Al Ramth 37	al-ramth-37	f	f	t	0	0	t	2389
+3346	The Address Residence Fountain Views Sky Collection 3	the-address-residence-fountain-views-sky-collect-4	f	f	t	25.1948000000000008	55.2823810000000009	t	1471
+3347	Gold Vista	gold-vista-7	f	f	t	0	0	t	1218
+3348	Gold Vista	gold-vista-12	f	f	t	0	0	t	1218
+3349	Gold Vista	gold-vista-14	f	f	t	0	0	t	1218
+3350	Gold Vista	gold-vista-18	f	f	t	0	0	t	1218
+3351	Bukhamseen Residential Tower	bukhamseen-residential-tower	f	f	t	25.3250209999999996	55.3806530000000024	t	822
+3352	MINA	mina	f	f	t	25.1266870000000004	55.1528890000000018	t	394
+3353	District 1D	district-1d	f	f	t	25.0343419999999988	55.1743269999999981	t	1173
+3354	District 4D	district-4d	f	f	t	25.0445519999999995	55.1912570000000002	t	1173
+3355	District 4F	district-4f	f	f	t	25.0450139999999983	55.1929650000000009	t	1173
+3356	Zahra Apartments 2B	zahra-apartments-2b	f	f	t	25.0148960000000002	55.2834140000000005	t	1118
+3357	Sajaya Plaza	sajaya-plaza	f	f	t	25.0930630000000008	55.1858209999999971	t	1470
+3358	AZIZI Samia Serviced Apartments	azizi-samia-serviced-apartments	f	f	t	0	0	t	919
+3359	Kempinski Residences	kempinski-residences	f	f	t	25.1866319999999995	55.2907730000000015	t	909
+3360	Al Ramth 13	al-ramth-13	f	f	t	0	0	t	2389
+3361	Al Ramth 25	al-ramth-25	f	f	t	0	0	t	2389
+3362	Al Ramth 34	al-ramth-34-2	f	f	t	0	0	t	2389
+3363	Al Ramth 43	al-ramth-43	f	f	t	0	0	t	2389
+3364	Al Thamam 2	al-thamam-2	f	f	t	0	0	t	2389
+3365	Al Thamam 10	al-thamam-10	f	f	t	0	0	t	2389
+3366	Al Thamam 14	al-thamam-14	f	f	t	0	0	t	2389
+3367	Al Thamam 21	al-thamam-21	f	f	t	0	0	t	2389
+3368	Al Thamam 30	al-thamam-30	f	f	t	0	0	t	2389
+3369	Al Thamam 37	al-thamam-37	f	f	t	0	0	t	2389
+3370	Al Thamam 46	al-thamam-46	f	f	t	0	0	t	2389
+3371	Al Thamam 52	al-thamam-52	f	f	t	0	0	t	2389
+3372	Al Thamam 55	al-thamam-55	f	f	t	0	0	t	2389
+3373	Al Thamam 62	al-thamam-62	f	f	t	0	0	t	2389
+3374	Rixos The Palm	rixos-the-palm	f	f	t	25.1209440000000015	55.1535470000000032	t	394
+3375	Hayat Boulevard	hayat-boulevard	f	f	t	25.014835999999999	55.2833960000000033	t	1118
+3376	Golf Tower	golf-tower	f	f	t	25.0406019999999998	55.2050430000000034	t	1475
+3377	Al Yarmook Tower	al-yarmook-tower-2	f	f	t	25.3027729999999984	55.3847250000000031	t	918
+3378	Al Khan 6	al-khan-6	f	f	t	25.3120539999999998	55.3754670000000004	t	2260
+3379	Al Handabi Building	al-handabi-building	f	f	t	25.2753559999999986	55.3334159999999997	t	915
+3380	Wasl Square	wasl-square	f	f	t	25.1848540000000014	55.2388120000000029	t	276
+3381	Fulva Villas	fulva-villas	f	f	t	0	0	t	227
+3382	Nalaya Najmat	nalaya-najmat	f	f	t	24.4803759999999997	54.4074730000000031	t	809
+3383	Afnan 1	afnan-1	f	f	t	0	0	t	401
+3384	Afnan 3	afnan-3	f	f	t	0	0	t	401
+3385	Dania 1	dania-1	f	f	t	0	0	t	401
+3386	Central Courtyard 3	central-courtyard-3	f	f	t	0	0	t	2389
+3387	Julphar Commercial Tower	julphar-commercial-tower	f	f	t	0	0	t	1844
+3388	District 7G	district-7g	f	f	t	0	0	t	1173
+3389	Al Canal Star	al-canal-star	f	f	t	25.323398000000001	55.3789909999999992	t	413
+3390	The Address Residence Fountain Views 1	the-address-residence-fountain-views-1	f	f	t	25.1947359999999989	55.2823700000000002	t	1471
+3391	Waterfall	waterfall	f	f	t	24.8419850000000011	55.0259229999999988	t	1341
+3392	Al Habtoor Polo Resort & Club	al-habtoor-polo-resort-club	f	f	t	25.0766799999999996	55.3717570000000023	t	2389
+3393	Imperial Avenue	imperial-avenue	f	f	t	25.1883450000000018	55.2741260000000025	t	1471
+3394	AL Othman Tower	al-othman-tower	f	f	t	25.3371540000000017	55.3944469999999995	t	928
+3395	Dhalia	dhalia	f	f	t	0	0	t	1110
+3396	Elegance House	elegance-house	f	f	t	25.1002310000000008	55.1764310000000009	t	1476
+3397	Roda Al Murooj	roda-al-murooj	f	f	t	25.2027919999999988	55.2777760000000029	t	1471
+3398	Maseela Complex	maseela-complex	f	f	t	0	0	t	813
+3399	Zone 5	zone-5	f	f	t	0	0	t	813
+3400	Zone 11	zone-11	f	f	t	0	0	t	813
+3401	Zone 16	zone-16	f	f	t	0	0	t	813
+3402	Zone 23	zone-23	f	f	t	0	0	t	813
+3403	Zone 28	zone-28	f	f	t	0	0	t	813
+3404	Zone 30	zone-30	f	f	t	0	0	t	813
+3405	Zone 35	zone-35	f	f	t	0	0	t	813
+3406	Rahala Residences	rahala-residences	f	f	t	25.0402820000000013	55.1142099999999999	t	396
+3407	Warda Apartments 1B	warda-apartments-1b	f	f	t	25.0146529999999991	55.2834239999999966	t	1118
+3408	Bluewaters	bluewaters	f	f	t	25.0802790000000009	55.1198180000000022	t	2386
+3409	District 9J	district-9j	f	f	t	25.0442980000000013	55.186754999999998	t	1173
+3410	Tower 8	tower-8	f	f	t	0	0	t	2248
+3411	Tower 28	tower-28	f	f	t	0	0	t	2248
+3412	Tower 30	tower-30	f	f	t	0	0	t	2248
+3413	Tower 35	tower-35	f	f	t	0	0	t	2248
+3414	Tower 42	tower-42	f	f	t	0	0	t	2248
+3415	Building E	building-e	f	f	t	0	0	t	1473
+3416	Art 8 Tower	art-8-tower	f	f	t	0	0	t	1476
+3417	Somewhere Hotel	somewhere-hotel	f	f	t	0	0	t	1476
+3418	Sufouh Villas	sufouh-villas	f	f	t	25.1297029999999992	55.1900520000000014	t	227
+3419	Lamar Tower B	lamar-tower-b	f	f	t	0	0	t	2247
+3420	Lahej and Sultan Building	lahej-and-sultan-building	f	f	t	25.1100560000000002	55.2050729999999987	t	1470
+3421	Binghatti Terraces	binghatti-terraces	f	f	t	0	0	t	1477
+3422	District 8D	district-8d	f	f	t	0	0	t	1173
+3423	Hilli Ramela	hilli-ramela	f	f	t	0	0	t	371
+3424	Al Niyadat	al-niyadat	f	f	t	0	0	t	2653
+3425	New Sarooj	new-sarooj	f	f	t	0	0	t	2655
+3426	Bayz by Danube	bayz-by-danube	f	f	t	0	0	t	909
+3427	Quad Homes	quad-homes-2	f	f	t	0	0	t	250
+3428	Pacific Fiji	pacific-fiji	f	f	t	0	0	t	1480
+3429	Pacific	pacific	f	f	t	0	0	t	1480
+3430	Jumeirah 3 Villas	jumeirah-3-villas	f	f	t	0	0	t	397
+3431	Dubiotech	dubiotech	f	f	t	25.0760509999999996	55.2397319999999965	t	2667
+3432	BQ2	bq2	f	f	t	25.0459999999999994	55.1649999999999991	t	1173
+3433	Bahia Residence	bahia-residence	f	f	t	0	0	t	1110
+3434	Bulgari Resort & Residences	bulgari-resort-residences	f	f	t	0	0	t	397
+3435	Casa Viva	casa-viva	f	f	t	0	0	t	2389
+3436	Al Waha Community	al-waha-community	f	f	t	25.2083680000000001	55.3753719999999987	t	1169
+3437	LOFT Office 3	loft-office-3	f	f	t	25.0963439999999984	55.1577569999999966	t	403
+3438	Al Nayli Tower	al-nayli-tower	f	f	t	25.3298200000000016	55.3960599999999985	t	928
+3439	JAFZA	jafza	f	f	t	24.984928	55.0892709999999965	t	402
+3440	The Centro - Courtyard CC11	the-centro-courtyard-cc11	f	f	t	25.0905780000000007	55.373736000000001	t	2389
+3441	DAMAC Villas by Paramount Hotels and Resorts	damac-villas-by-paramount-hotels-and-resorts	f	f	t	25.0305329999999984	55.2637080000000012	t	1218
+3442	Liwa Centre Tower 2	liwa-centre-tower-2	f	f	t	24.4666670000000011	54.3666669999999996	t	1485
+3443	The Blue Tower	the-blue-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	812
+3444	Mohamed Bin Zayed Centre	mohamed-bin-zayed-centre	f	f	t	24.3151690000000009	54.5597070000000031	t	813
+3445	Chain Tower	chain-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	1350
+3446	Guardian Tower	guardian-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	1350
+3447	Adcp Building	adcp-building	f	f	t	24.4906180000000013	54.3715100000000007	t	369
+3448	Falahi Tower	falahi-tower	f	f	t	24.4989670000000004	54.3767819999999986	t	815
+3449	Gold Crest Smart Tower	gold-crest-smart-tower	f	f	t	25.3994999999999997	55.4795999999999978	t	1496
+3450	Tower B1	tower-b1	f	f	t	25.392792	55.4687950000000001	t	2405
+3451	Al Jurf 1	al-jurf-1	f	f	t	25.4022630000000014	55.4938369999999992	t	302
+3452	Al Jurf 3	al-jurf-3	f	f	t	25.4022630000000014	55.4938369999999992	t	302
+3453	Falcon Tower 5	falcon-tower-5	f	f	t	25.3992879999999985	55.4488920000000007	t	2405
+3454	Marina Promonade	marina-promonade	f	f	t	25.3994999999999997	55.4795999999999978	t	2406
+3455	Begonia	begonia	f	f	t	25.4168669999999999	55.5912859999999966	t	418
+3456	Calthorpe Tower	calthorpe-tower	f	f	t	25.3994999999999997	55.4795999999999978	t	934
+3457	Springfield	springfield	f	f	t	25.3994999999999997	55.4795999999999978	t	934
+3458	Al Rashid 8	al-rashid-8	f	f	t	25.4191439999999993	55.5007480000000015	t	934
+3459	Savannah Heights Tower 2	savannah-heights-tower-2	f	f	t	25.3994999999999997	55.4795999999999978	t	934
+3460	Altitude Tower	altitude-tower	f	f	t	25.3979239999999997	55.5790679999999995	t	2408
+3461	Chapal The Presidency	chapal-the-presidency	f	f	t	25.3979239999999997	55.5803999999999974	t	2408
+3462	Crown Residencia	crown-residencia	f	f	t	25.3979239999999997	55.5796440000000018	t	2408
+3463	Fifth Avenue Ajman	fifth-avenue-ajman	f	f	t	25.3979239999999997	55.5807280000000006	t	2408
+3464	Money Tower	money-tower	f	f	t	25.3979239999999997	55.5797140000000027	t	2408
+3465	Royal Oasis	royal-oasis	f	f	t	25.3979239999999997	55.5799329999999969	t	2408
+3466	Savannah Tower	savannah-tower	f	f	t	25.3979239999999997	55.5799030000000016	t	2408
+3467	Emirates Lake Tower 2	emirates-lake-tower-2	f	f	t	25.3979239999999997	55.5798830000000024	t	2408
+3468	Green Lake Tower 2	green-lake-tower-2	f	f	t	25.3979239999999997	55.5796240000000026	t	2408
+3469	Paradise Lake Tower	paradise-lake-tower	f	f	t	25.3979239999999997	55.5798130000000015	t	2408
+3470	Downtown Avenue	downtown-avenue	f	f	t	25.3994999999999997	55.4795999999999978	t	1500
+3471	Global City Tower	global-city-tower	f	f	t	25.3994999999999997	55.4795999999999978	t	1500
+3472	Sat Lake Residency	sat-lake-residency	f	f	t	25.3994999999999997	55.4795999999999978	t	1500
+3473	Century Tower 1	century-tower-1	f	f	t	25.3994999999999997	55.4795999999999978	t	419
+3474	Al Hamra Views	al-hamra-views	f	f	t	25.691946999999999	55.7828530000000029	t	1355
+3475	Flamingo	flamingo	f	f	t	25.800692999999999	55.9761990000000011	t	1480
+3476	Pacific Samoa	pacific-samoa	f	f	t	25.800692999999999	55.9841109999999986	t	1480
+3477	Julfar Residence Tower	julfar-residence-tower	f	f	t	0	0	t	1481
+3478	Style Tower	style-tower	f	f	t	25.3183889999999998	55.3759310000000013	t	2260
+3479	Al Dorra Tower	al-dorra-tower	f	f	t	25.3236789999999985	55.3827720000000028	t	822
+3480	Emirates Sails Tower	emirates-sails-tower	f	f	t	25.3268090000000008	55.3786270000000016	t	822
+3481	Palm Tower 3	palm-tower-3	f	f	t	25.323169	55.3790770000000023	t	822
+3482	Aliya Tower	aliya-tower	f	f	t	25.3019339999999993	55.375591	t	929
+3483	Moon Tower 2	moon-tower-2	f	f	t	25.3020679999999984	55.3702249999999978	t	929
+3484	Jawahar Tower	jawahar-tower	f	f	t	25.3575000000000017	55.3908330000000007	t	930
+3485	Industrial Area 1	industrial-area-1	f	f	t	25.3191160000000011	55.3945650000000001	t	1493
+3486	Industrial Area 7	industrial-area-7	f	f	t	25.3100619999999985	55.3848800000000026	t	1493
+3487	Al Naseem	al-naseem	f	f	t	25.5132340000000006	55.5690829999999991	t	932
+3488	Burj Nujoom	burj-nujoom	f	f	t	25.1912160000000007	55.2820579999999993	t	395
+3489	Sector S	sector-s	f	f	t	25.0687169999999995	55.1734590000000011	t	2388
+3490	Al Bandar	al-bandar	f	f	t	24.4507909999999988	54.6001249999999985	t	2247
+3491	Boulevard Central Tower 2	boulevard-central-tower-2	f	f	t	25.1916040000000017	55.2733190000000008	t	1471
+3492	Quortaj	quortaj	f	f	t	25.0244679999999988	55.1546919999999972	t	919
+3493	South Village	south-village	f	f	t	25.0251669999999997	55.1458609999999965	t	919
+3494	Jebel Ali Industrial 1	jebel-ali-industrial-1	f	f	t	25.0019220000000004	55.1265479999999997	t	402
+3495	Jebel Ali Industrial 3	jebel-ali-industrial-3	f	f	t	24.9956940000000003	55.1207059999999984	t	402
+3496	Private Portfolio	private-portfolio	f	f	t	25.0687169999999995	55.1734590000000011	t	2388
+3497	Art Building	art-building	f	f	t	25.2145569999999992	55.3042239999999978	t	910
+3498	Deira Commercial Building	deira-commercial-building	f	f	t	25.278846999999999	55.3324789999999993	t	915
+3499	Karama gold building	karama-gold-building	f	f	t	25.2368939999999995	55.3032469999999989	t	910
+3500	Boulevard Central Podium	boulevard-central-podium	f	f	t	25.1915949999999995	55.273220000000002	t	1471
+3501	Casa	casa	f	f	t	25.0345869999999984	55.2677329999999998	t	1469
+3502	Dunes Hotel	dunes-hotel	f	f	t	25.114415000000001	55.1995000000000005	t	1470
+3503	Comfort Inn	comfort-inn	f	f	t	0	0	t	1476
+3504	Canal Cove Frond G	canal-cove-frond-g	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+3505	Canal Cove Frond L	canal-cove-frond-l	f	f	t	25.1201839999999983	55.1298620000000028	t	394
+3506	Canal Cove Frond N	canal-cove-frond-n	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+3507	Garden Homes Frond C	garden-homes-frond-c	f	f	t	25.1231019999999994	55.1365529999999993	t	394
+3508	Garden Homes Frond J	garden-homes-frond-j	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+3509	Garden Homes Frond O	garden-homes-frond-o	f	f	t	25.1079359999999987	55.1302889999999977	t	394
+3510	Signature Villas Frond A	signature-villas-frond-a	f	f	t	25.1201599999999985	55.1433949999999982	t	394
+3511	Signature Villas Frond F	signature-villas-frond-f	f	f	t	25.124689	55.1290389999999988	t	394
+3512	Signature Villas Frond M	signature-villas-frond-m	f	f	t	25.1190840000000009	55.1307389999999984	t	394
+3513	Marasy	marasy	f	f	t	24.4468029999999992	54.3561770000000024	t	2244
+3514	The Ramada Hotel	the-ramada-hotel	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+3515	Legacy Hotel Apartments	legacy-hotel-apartments	f	f	t	0	0	t	1476
+3516	Standpoint Residences	standpoint-residences	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+3517	Cluster A	cluster-a	f	f	t	0	0	t	1159
+3518	Cluster D	cluster-d	f	f	t	0	0	t	1159
+3519	Dubai Spanish Villas	dubai-spanish-villas	f	f	t	24.8580159999999992	55.0649540000000002	t	626
+3520	District 1	district-1	f	f	t	25.0346539999999997	55.1741489999999999	t	1173
+3521	Sobha City	sobha-city	f	f	t	25.1854820000000004	55.2745400000000018	t	1984
+3522	Burj Vista	burj-vista	f	f	t	25.198443000000001	55.2707580000000007	t	1471
+3523	Intercontinental College Accommodation	intercontinental-college-accommodation	f	f	t	25.2048489999999994	55.2707830000000016	t	1477
+3524	Damac Executive heights	damac-executive-heights	f	f	t	0	0	t	1476
+3525	Dni Building	dni-building	f	f	t	25.1624109999999988	55.2343150000000023	t	396
+3526	Omniyat Tower	omniyat-tower	f	f	t	25.1882359999999998	55.2815539999999999	t	909
+3527	Sheikha Noor Tower	sheikha-noor-tower	f	f	t	0	0	t	1476
+3528	Rbc Tower	rbc-tower	f	f	t	25.1881130000000013	55.2889860000000013	t	909
+3529	Burj Vista 1	burj-vista-1	f	f	t	25.198443000000001	55.2707580000000007	t	1471
+3530	Al Nawras Hotel	al-nawras-hotel	f	f	t	25.2924700000000016	55.3654650000000004	t	918
+3531	The Signature	the-signature	f	f	t	25.184785999999999	55.2676469999999966	t	1471
+3532	Al Bahar Residences	al-bahar-residences	f	f	t	25.1940290000000005	55.276881000000003	t	395
+3533	Al Rahba	al-rahba	f	f	t	24.4522009999999987	54.6058760000000021	t	2247
+3534	Paramount Hotel	paramount-hotel	f	f	t	25.2697910000000014	55.2632150000000024	t	1986
+3535	Palma	palma	f	f	t	25.0397220000000011	55.261142999999997	t	1469
+3536	Al Khail Heights Building	al-khail-heights-building	f	f	t	25.1351499999999994	55.2331100000000035	t	1227
+3537	Al Hassani Tower	al-hassani-tower	f	f	t	25.1031489999999984	55.1763479999999973	t	1476
+3538	New Bridge Hills 3	new-bridge-hills-3	f	f	t	25.0475330000000014	55.249487000000002	t	400
+3539	Shaiba Tower 2	shaiba-tower-2	f	f	t	25.0973000000000006	55.1709000000000032	t	1476
+3540	Al Qusais 2	al-qusais-2	f	f	t	25.2693919999999999	55.3876470000000012	t	663
+3541	Marina Square Building 18	marina-square-building-18	f	f	t	24.4896360000000008	54.3945509999999999	t	809
+3542	Anantara North Residence	anantara-north-residence	f	f	t	25.12913	55.1529019999999974	t	394
+3543	Damac Towers	damac-towers	f	f	t	25.1805249999999994	55.2679150000000021	t	909
+3544	Al Maidoor Building	al-maidoor-building	f	f	t	25.2048489999999994	55.2707830000000016	t	396
+3545	Jasmine A	jasmine-a	f	f	t	0	0	t	1218
+3546	Elite Sports Residence 8	elite-sports-residence-8	f	f	t	25.0397280000000002	55.2046890000000019	t	1475
+3547	Al Bidaa	al-bidaa	f	f	t	25.209817000000001	55.2704570000000004	t	2390
+3548	Festival Tower	festival-tower	f	f	t	25.2240870000000008	55.3505800000000008	t	1169
+3549	La Fontana Di Trevi	la-fontana-di-trevi	f	f	t	25.0633440000000007	55.2360200000000034	t	1470
+3550	Qasr Sabah	qasr-sabah	f	f	t	25.031842000000001	55.1904340000000033	t	401
+3551	Townhouse Villa	townhouse-villa	f	f	t	25.1265970000000003	55.3953729999999993	t	1477
+3552	Bay Square Building 1	bay-square-building-1	f	f	t	25.1846940000000004	55.2788520000000005	t	909
+3553	Bay Square Building 5	bay-square-building-5	f	f	t	25.190097999999999	55.284238000000002	t	909
+3554	Bay Square Building 9	bay-square-building-9	f	f	t	25.190097999999999	55.284238000000002	t	909
+3555	Bay Square Building 13	bay-square-building-13	f	f	t	25.1862969999999997	55.2811230000000009	t	909
+3556	Burj Damac 4	burj-damac-4	f	f	t	25.178719000000001	55.2712620000000001	t	909
+3557	Dusit Thani	dusit-thani	f	f	t	24.4549640000000004	54.3944580000000002	t	1350
+3558	Al Aryam Tower	al-aryam-tower-2	f	f	t	24.5073270000000001	54.3765280000000004	t	815
+3559	Heritage Large	heritage-large	f	f	t	25.0461039999999997	55.1503790000000009	t	2391
+3560	Boutique Hotel Apartments	boutique-hotel-apartments	f	f	t	25.0952930000000016	55.1955450000000027	t	1470
+3561	Al Khail Heights Building 2B	al-khail-heights-building-2b	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+3562	Donna Tower 1	donna-tower-1	f	f	t	25.1171620000000004	55.3696410000000014	t	1477
+3563	Lakeside Tower B	lakeside-tower-b	f	f	t	25.0365430000000018	55.2010140000000007	t	401
+3564	Centrium Tower 2	centrium-tower-2	f	f	t	25.0400269999999985	55.1933160000000029	t	401
+3565	Beirut Towers	beirut-towers	f	f	t	25.0317770000000017	55.1900229999999965	t	401
+3566	Tecom Tower 2	tecom-tower-2	f	f	t	0	0	t	1476
+3567	Al Waha Residence Tower	al-waha-residence-tower	f	f	t	0	0	t	414
+3568	Al Khail Heights Building 3A	al-khail-heights-building-3a	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+3569	Al Khail Heights Building 6B	al-khail-heights-building-6b	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+3570	Al Khail Heights Building 8B	al-khail-heights-building-8b	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+3571	Exhibition Centre	exhibition-centre	f	f	t	24.4192019999999985	54.4384310000000013	t	2244
+3572	Murooj Rotana Building	murooj-rotana-building	f	f	t	25.2031169999999989	55.2766650000000013	t	1474
+3573	Al Badia Hill Side Village	al-badia-hill-side-village	f	f	t	25.2213840000000005	55.3608070000000012	t	1169
+3574	Bungalows	bungalows	f	f	t	25.0000229999999988	55.1679379999999995	t	1473
+3575	Golf Towers	golf-towers-3	f	f	t	25.0915390000000009	55.1691270000000031	t	315
+3576	Panorama At The Views Tower 3	panorama-at-the-views-tower-3	f	f	t	25.0908259999999999	55.1709200000000024	t	315
+3577	Arno	arno	f	f	t	25.0909450000000014	55.1709790000000027	t	315
+3578	The Views 2	the-views-2	f	f	t	25.0931479999999993	55.1672099999999972	t	315
+3579	Burj Khalifa	burj-khalifa-2	f	f	t	25.1973500000000001	55.2742300000000029	t	1471
+3580	Centurion Residences	centurion-residences	f	f	t	24.978981000000001	55.1765860000000004	t	917
+3581	The Imperial Residence A	the-imperial-residence-a	f	f	t	25.0479069999999986	55.195371999999999	t	1173
+3582	Sinbad	sinbad	f	f	t	0	0	t	2389
+3583	Queen Sheba	queen-sheba	f	f	t	0	0	t	2389
+3584	Al Yash	al-yash	f	f	t	25.3418109999999999	55.4651619999999994	t	378
+3585	Rawdhat	rawdhat	f	f	t	24.4011840000000007	54.5891760000000019	t	2395
+3586	The Icon Tower	the-icon-tower	f	f	t	25.1239239999999988	55.3836879999999994	t	1477
+3587	Al Reem 4	al-reem-4	f	f	t	25.0576299999999996	55.2913989999999984	t	1469
+3588	Saheel 7	saheel-7	f	f	t	25.0567339999999987	55.2889089999999968	t	1469
+3589	Chelsea Plaza Hotel	chelsea-plaza-hotel	f	f	t	25.2378399999999985	55.2839420000000032	t	1965
+3590	Serenia Residences North	serenia-residences-north	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+3591	Jenna 11	jenna-11	f	f	t	0	0	t	1118
+3592	The Blue oasis	the-blue-oasis	f	f	t	25.1118060000000014	55.3759179999999986	t	1477
+3593	City of Lights	city-of-lights	f	f	t	24.4978879999999997	54.4006919999999994	t	809
+3594	Emaar Tower A	emaar-tower-a	f	f	t	0	0	t	915
+3595	Mankhool Road	mankhool-road	f	f	t	25.2544600000000017	55.2933560000000028	t	910
+3596	Azizi Tulip	azizi-tulip	f	f	t	25.0251669999999997	55.1458609999999965	t	919
+3597	City of Arabia	city-of-arabia	f	f	t	25.0842279999999995	55.328125	t	2389
+3598	Marina Bay by DAMAC	marina-bay-by-damac	f	f	t	0	0	t	809
+3599	West Yas	west-yas	f	f	t	24.4855020000000003	54.6038530000000009	t	2255
+3600	Urban Oasis Compound	urban-oasis-compound	f	f	t	24.4125949999999996	54.4946490000000026	t	365
+3601	Black tower	black-tower	f	f	t	0	0	t	2250
+3602	Villa Lantana 1	villa-lantana-1	f	f	t	25.0787949999999995	55.2406950000000023	t	1470
+3603	Carson Residential Apartments	carson-residential-apartments	f	f	t	0	0	t	1218
+3604	Al Qarain 2	al-qarain-2	f	f	t	0	0	t	2094
+3605	Al Hazana	al-hazana	f	f	t	0	0	t	1289
+3606	Starz by Danube	starz-by-danube	f	f	t	0	0	t	919
+3607	Frond D Barhi Villas	frond-d-barhi-villas	f	f	t	0	0	t	394
+3608	Old Corniche	old-corniche	f	f	t	0	0	t	2101
+3609	Al Naghal Frond N	al-naghal-frond-n	f	f	t	25.1124130000000001	55.1274950000000032	t	394
+3610	Tower 1	tower-1	f	f	t	0	0	t	2248
+3611	Tower 15	tower-15	f	f	t	0	0	t	2248
+3612	Tower 20	tower-20	f	f	t	0	0	t	2248
+3613	Tower 22	tower-22	f	f	t	0	0	t	2248
+3614	Lago Vista C	lago-vista-c	f	f	t	0	0	t	401
+3615	Mada Residences By Artar	mada-residences-by-artar	f	f	t	0	0	t	1471
+3616	Mayan	mayan	f	f	t	24.4960459999999998	54.6195000000000022	t	2255
+3617	Tamouh	tamouh	f	f	t	24.4889170000000007	54.4151900000000026	t	809
+3618	Mayan 2	mayan-2	f	f	t	0	0	t	2255
+3619	Samaya Hotel	samaya-hotel	f	f	t	25.2603590000000011	55.318792000000002	t	915
+3620	Al Barsha South 1	al-barsha-south-1	f	f	t	25.0655000000000001	55.2452499999999986	t	1470
+3621	Royal Bay	royal-bay	f	f	t	25.128107	55.1531120000000001	t	394
+3622	The Address Residences Boulevard Dubai Sky	the-address-residences-boulevard-dubai-sky	f	f	t	25.1996080000000013	55.277555999999997	t	1471
+3623	Clover Bay Tower	clover-bay-tower	f	f	t	25.1888989999999993	55.2697349999999972	t	909
+3624	Aykon City	aykon-city	f	f	t	25.1813110000000009	0	t	396
+3625	Toscana	toscana	f	f	t	0	0	t	2389
+3626	Ponderosa-Achata	ponderosa-achata	f	f	t	0	0	t	2389
+3627	Ponderosa-Aralia	ponderosa-aralia	f	f	t	0	0	t	2389
+3628	Ponderosa-Clavel	ponderosa-clavel	f	f	t	0	0	t	2389
+3629	The Aldea-Achata	the-aldea-achata	f	f	t	0	0	t	2389
+3630	The Aldea-Cista	the-aldea-cista	f	f	t	0	0	t	2389
+3631	The Aldea-Cordoba	the-aldea-cordoba	f	f	t	0	0	t	2389
+3632	The Aldea-Valencia	the-aldea-valencia	f	f	t	0	0	t	2389
+3633	The Centro-Cista	the-centro-cista	f	f	t	0	0	t	2389
+3634	The Centro-Marbella	the-centro-marbella	f	f	t	0	0	t	2389
+3635	The Drive	the-drive	f	f	t	0	0	t	1218
+3636	Safi II	safi-ii	f	f	t	0	0	t	1118
+3637	The Centro-Custom Built	the-centro-custom-built	f	f	t	0	0	t	2389
+3638	Al Khazna Tower	al-khazna-tower	f	f	t	24.4881810000000009	54.3729820000000004	t	1343
+3639	Al Thamam 18	al-thamam-18	f	f	t	0	0	t	2389
+3640	District 2	district-2-2	f	f	t	0	0	t	1173
+3641	District 3	district-3-2	f	f	t	0	0	t	1173
+3642	Al Marzooqi Tower B	al-marzooqi-tower-b	f	f	t	0	0	t	1491
+3643	La Avenida 1	la-avenida-1	f	f	t	25.0526429999999998	55.2730770000000007	t	1469
+3644	Industrial Area 18	industrial-area-18	f	f	t	25.2621450000000003	55.4957939999999965	t	1493
+3645	Terrace Apartments E	terrace-apartments-e	f	f	t	0	0	t	1473
+3646	Al Thamam 16	al-thamam-16	f	f	t	0	0	t	2389
+3647	Alef Residence Mansion 6	alef-residence-mansion-6	f	f	t	0	0	t	394
+3648	Bloomingdale Townhouses	bloomingdale-townhouses	f	f	t	25.0381479999999996	55.2060770000000005	t	913
+3649	Bayti Townhomes	bayti-townhomes	f	f	t	25.691946999999999	55.7828530000000029	t	1355
+3650	B2 Tower	b2-tower	f	f	t	24.4958330000000011	54.4074999999999989	t	809
+3651	Park Towers	park-towers-2	f	f	t	25.2095260000000003	55.2785129999999967	t	1474
+3652	Family Villas West	family-villas-west	f	f	t	25.0023139999999984	55.159165999999999	t	1473
+3653	skycourt towers D	skycourt-towers-d	f	f	t	25.0914399999999986	55.3849700000000027	t	2389
+3654	Liwan Tower	liwan-tower	f	f	t	25.1224980000000002	55.3782629999999969	t	1477
+3655	Al Dhafrah 3	al-dhafrah-3	f	f	t	0	0	t	911
+3656	The Wave	the-wave	f	f	t	24.4853370000000012	54.4043130000000019	t	809
+3657	Magnolia Residence	magnolia-residence	f	f	t	25.0472880000000018	55.1900229999999965	t	1173
+3658	Emirates Stars Hotel Apartments	emirates-stars-hotel-apartments	f	f	t	25.291957	55.365513	t	918
+3659	Burj Mohammed Bin Rashid At Wtc	burj-mohammed-bin-rashid-at-wtc	f	f	t	24.4705900000000014	54.3365709999999993	t	2250
+3660	World Trade Center	world-trade-center	f	f	t	24.4880560000000003	54.3563890000000001	t	2250
+3661	Al Quoz 4	al-quoz-4	f	f	t	25.1514050000000005	55.2507820000000009	t	2392
+3662	Family Villas East	family-villas-east	f	f	t	25.0000560000000007	55.1678700000000006	t	1473
+3663	Apex Atrium	apex-atrium	f	f	t	25.0460740000000008	55.2355019999999968	t	400
+3664	Al Hamra Village Townhouses	al-hamra-village-townhouses	f	f	t	25.691946999999999	55.7828530000000029	t	1355
+3665	Rawda Building	rawda-building	f	f	t	0	0	t	2395
+3666	Muroor Villas	muroor-villas	f	f	t	24.4397120000000001	54.411605999999999	t	1350
+3667	Jumeirah Heights Tower B	jumeirah-heights-tower-b	f	f	t	25.0655900000000003	55.1472410000000011	t	1159
+3668	Salam Hq	salam-hq	f	f	t	24.4666670000000011	54.3666669999999996	t	369
+3669	Al Hamra Marina	al-hamra-marina	f	f	t	25.691946999999999	55.7828530000000029	t	1355
+3670	Salah Al Din Street	salah-al-din-street	f	f	t	25.278846999999999	55.3320420000000013	t	915
+3671	The Villa C1	the-villa-c1	f	f	t	25.095127999999999	55.3683660000000017	t	2389
+3672	Marina Heights 1	marina-heights-1	f	f	t	24.4917529999999992	54.3951100000000025	t	809
+3673	South West Apartments	south-west-apartments	f	f	t	25.003423999999999	55.1671779999999998	t	1473
+3674	Marina Bay-City Of Lights	marina-bay-city-of-lights	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+3675	Meadows 7	meadows-7	f	f	t	25.0629559999999998	55.1772869999999998	t	912
+3676	Uptown Mirdif	uptown-mirdif	f	f	t	25.2222599999999986	55.424909999999997	t	914
+3677	Bennett House 2	bennett-house-2	f	f	t	25.045223	55.2458179999999999	t	400
+3678	Dickens Circus 1	dickens-circus-1	f	f	t	25.0432500000000005	55.2459699999999998	t	400
+3679	Fox Hill 3	fox-hill-3	f	f	t	25.04589	55.2429899999999989	t	400
+3680	Fox Hill 8	fox-hill-8	f	f	t	25.0476199999999984	55.2468300000000028	t	400
+3681	Marlowe House 1	marlowe-house-1	f	f	t	25.0447799999999994	55.2465299999999999	t	400
+3682	Norton Court 4	norton-court-4	f	f	t	25.0468900000000012	55.2474199999999982	t	400
+3683	Sherlock House	sherlock-house	f	f	t	25.0466300000000004	55.2465499999999992	t	400
+3684	Widcombe House 1	widcombe-house-1	f	f	t	25.0443500000000014	55.2445099999999982	t	400
+3685	Kamoon 2	kamoon-2	f	f	t	25.1893600000000006	55.2757229999999993	t	395
+3686	miska 3	miska-3	f	f	t	25.1899119999999996	55.2776250000000005	t	395
+3687	miska 5	miska-5	f	f	t	25.1899119999999996	55.2776250000000005	t	395
+3688	Reehan 2	reehan-2	f	f	t	25.2048489999999994	55.2707830000000016	t	395
+3689	Yansoon 1	yansoon-1	f	f	t	25.1917369999999998	55.2782270000000011	t	395
+3690	Yansoon 6	yansoon-6	f	f	t	25.1913489999999989	55.2791830000000033	t	395
+3691	Yansoon 9	yansoon-9	f	f	t	25.1925029999999985	55.2793490000000034	t	395
+3692	Zaafaran 5	zaafaran-5	f	f	t	25.1909029999999987	55.2771740000000023	t	395
+3693	Abu Keibal	abu-keibal	f	f	t	25.1082000000000001	55.1473900000000015	t	394
+3694	Al Farood	al-farood	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+3695	Al Habool	al-habool	f	f	t	25.1132300000000015	55.1405699999999968	t	394
+3696	Al Khushkar	al-khushkar	f	f	t	25.1061380000000014	55.1501980000000032	t	394
+3697	Al Sultana	al-sultana	f	f	t	25.1080989999999993	55.1493040000000008	t	394
+3698	Oceana Caribbean	oceana-caribbean	f	f	t	25.1112199999999994	55.1364760000000018	t	394
+3699	Garden Homes (All)	garden-homes-all	f	f	t	25.1186579999999999	55.1326600000000013	t	394
+3700	Nabat	nabat	f	f	t	25.1125949999999989	55.1433609999999987	t	394
+3701	Palm Terrace	palm-terrace	f	f	t	25.110240000000001	55.1466899999999995	t	394
+3702	Tiara Hotel	tiara-hotel	f	f	t	25.1153300000000002	55.1404899999999998	t	394
+3703	Al Attar Commercial	al-attar-commercial	f	f	t	25.2048489999999994	55.2707830000000016	t	396
+3704	Emaar Business Park	emaar-business-park	f	f	t	25.0951510000000013	55.1669899999999984	t	396
+3705	Oasis	oasis	f	f	t	25.211469000000001	55.2761390000000006	t	396
+3706	Onyx Tower 1	onyx-tower-1	f	f	t	25.0963950000000011	55.1684040000000024	t	1476
+3707	Executive Heights	executive-heights	f	f	t	25.0952599999999997	55.1729500000000002	t	1476
+3708	Tecom Tower 1	tecom-tower-1	f	f	t	0	0	t	1476
+3709	Springs 10	springs-10	f	f	t	25.0581400000000016	55.1810600000000022	t	2387
+3710	springs 12	springs-12	f	f	t	25.0544580000000003	55.1845659999999967	t	2387
+3711	springs 4	springs-4	f	f	t	25.060372000000001	55.1817309999999992	t	2387
+3712	Mosella Residences	mosella-residences	f	f	t	25.088989999999999	55.1732900000000015	t	911
+3713	O 14	o-14	f	f	t	25.1808699999999988	55.2697100000000034	t	909
+3714	Tiara Diamond	tiara-diamond	f	f	t	25.1124709999999993	55.1389629999999968	t	394
+3715	Tiara Emerald	tiara-emerald	f	f	t	25.1167659999999984	55.1426000000000016	t	394
+3716	Golden Mile 2	golden-mile-2	f	f	t	25.1113980000000012	55.1412910000000025	t	394
+3717	Golden Mile 9	golden-mile-9	f	f	t	25.1113849999999985	55.1408150000000035	t	394
+3718	Marina Residence 4	marina-residence-4	f	f	t	25.1159600000000012	55.1375999999999991	t	394
+3719	Marina Residence 6	marina-residence-6	f	f	t	25.1160700000000006	55.1395499999999998	t	394
+3720	Rimal 3	rimal-3	f	f	t	25.0768599999999999	55.134210000000003	t	2386
+3721	Sadaf 2	sadaf-2	f	f	t	25.0805299999999995	55.1385500000000022	t	2386
+3722	Sadaf 8	sadaf-8	f	f	t	25.0814400000000006	55.1382100000000008	t	2386
+3723	BurJuman Business Tower	burjuman-business-tower	f	f	t	0	0	t	910
+3724	Al Saaha Offices	al-saaha-offices	f	f	t	25.1928690000000017	55.2762630000000001	t	395
+3725	the residences 2	the-residences-2	f	f	t	25.1930599999999991	55.2725999999999971	t	1471
+3726	The Residences 9	the-residences-9	f	f	t	25.1913100000000014	55.2751200000000011	t	1471
+3727	Burj Place 1	burj-place-1	f	f	t	25.2007539999999999	55.2690669999999997	t	1471
+3728	Compound Villa	compound-villa	f	f	t	25.1123489999999983	55.2009299999999996	t	1472
+3729	Esmeralda	esmeralda	f	f	t	25.0291379999999997	55.2176680000000033	t	913
+3730	Morella	morella	f	f	t	25.0394010000000016	55.2067150000000026	t	913
+3731	Grenada	grenada	f	f	t	25.2048489999999994	55.2707830000000016	t	2389
+3732	Ghoroob	ghoroob	f	f	t	25.2119700000000009	55.4158499999999989	t	914
+3733	Airport Road Building	airport-road-building	f	f	t	25.278846999999999	55.3326879999999974	t	915
+3734	Yassat Gloria Hotel Apartments	yassat-gloria-hotel-apartments	f	f	t	25.1030000000000015	55.1726099999999988	t	1476
+3735	Al-Meer Building	al-meer-building	f	f	t	25.0985900000000015	55.1793800000000019	t	1476
+3736	Rania Residence	rania-residence	f	f	t	0	0	t	1476
+3737	crescent 1	crescent-1	f	f	t	25.0362490000000015	55.2012149999999977	t	401
+3738	Grand Stores Warehouses	grand-stores-warehouses	f	f	t	24.978981000000001	55.177112000000001	t	917
+3739	@5	5	f	f	t	25.0900570000000016	55.1729740000000035	t	1479
+3740	@10	10	f	f	t	25.0967899999999986	55.1638200000000012	t	1479
+3741	@12	12	f	f	t	25.0977400000000017	55.1639800000000022	t	1479
+3742	Ritz Carlton Residences	ritz-carlton-residences	f	f	t	25.2123929999999987	55.2794529999999966	t	1474
+3743	Commercial Villa	commercial-villa	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+3744	Ct	ct	f	f	t	25.0397660000000002	55.1215070000000011	t	396
+3745	Detroit Office	detroit-office	f	f	t	25.2048489999999994	55.2707830000000016	t	2389
+3746	Sultan Business Center	sultan-business-center	f	f	t	25.2145569999999992	55.3039360000000002	t	910
+3747	Emirates Financial South	emirates-financial-south	f	f	t	25.2085100000000004	55.2764200000000017	t	1474
+3748	Al Mankhool	al-mankhool	f	f	t	25.2464799999999983	55.2923899999999975	t	910
+3749	Khalid Bin Waleed Street	khalid-bin-waleed-street	f	f	t	25.2559229999999992	55.3018509999999992	t	910
+3750	Cactus (Bldgs 230-263)	cactus-bldgs-230-263	f	f	t	25.0279710000000009	55.1586909999999975	t	2385
+3751	Shakespeare Circus 1	shakespeare-circus-1	f	f	t	25.0462699999999998	55.2494200000000006	t	400
+3752	Shakespeare Circus 3	shakespeare-circus-3	f	f	t	25.0454399999999993	55.2494900000000015	t	400
+3753	Burj Park (All)	burj-park-all	f	f	t	25.1951399999999985	55.2719359999999966	t	1471
+3754	The Residences (All)	the-residences-all	f	f	t	25.1924740000000007	55.2739350000000016	t	1471
+3755	Amwaj (All)	amwaj-all	f	f	t	25.0741699999999987	55.1315999999999988	t	2386
+3756	Kamoon (All)	kamoon-all	f	f	t	25.1895190000000007	55.2754860000000008	t	395
+3757	Marina Residence (All)	marina-residence-all	f	f	t	25.1156800000000011	55.1365399999999966	t	394
+3758	Shoreline Apartments (All)	shoreline-apartments-all	f	f	t	25.1100160000000017	55.1455249999999992	t	394
+3759	Capital Bay Tower B	capital-bay-tower-b	f	f	t	25.1766299999999994	55.2720229999999972	t	909
+3760	Murshid Bazar	murshid-bazar	f	f	t	25.278846999999999	55.3321520000000007	t	915
+3761	Qutuf	qutuf	f	f	t	23.1047989999999999	53.7285520000000005	t	407
+3762	Downtown Views	downtown-views	f	f	t	25.1901970000000013	55.281371	t	1471
+3763	Grandstand 1	grandstand-1	f	f	t	25.0450179999999989	55.2397319999999965	t	400
+3764	Al Zeina - Residential Tower E	al-zeina-residential-tower-e	f	f	t	24.4571070000000006	54.6131499999999974	t	2247
+3765	Auris Fakhruddin Hotel Apartments	auris-fakhruddin-hotel-apartments	f	f	t	25.0399749999999983	55.2169480000000021	t	1475
+3766	Badrah Building 2	badrah-building-2	f	f	t	24.9508989999999997	55.0478799999999993	t	1956
+3767	Gold Souq	gold-souq	f	f	t	25.2703500000000005	55.2985249999999979	t	915
+3768	Glitz 2	glitz-2	f	f	t	25.0423229999999997	55.2514729999999972	t	1216
+3769	Executive Tower E	executive-tower-e	f	f	t	25.1920789999999997	55.2663560000000018	t	909
+3770	Executive Tower J	executive-tower-j	f	f	t	25.1901130000000002	55.2644510000000011	t	909
+3771	Executive Tower L	executive-tower-l	f	f	t	25.1920789999999997	55.2663560000000018	t	909
+3772	Fish Round About	fish-round-about	f	f	t	25.2700689999999994	55.3164519999999982	t	915
+3773	East Mangroves Complex	east-mangroves-complex	f	f	t	24.4465569999999985	54.4372070000000008	t	2251
+3774	Eastern Mangroves Suites by Jannah	eastern-mangroves-suites-by-jannah	f	f	t	24.4464149999999982	54.4385189999999994	t	2251
+3775	Binghatti Apartments	binghatti-apartments	f	f	t	25.1279809999999983	55.3874479999999991	t	1477
+3776	Andalusia South	andalusia-south	f	f	t	0	0	t	2389
+3777	Al Majaz 2	al-majaz-2	f	f	t	25.3237400000000008	55.3876470000000012	t	822
+3778	Central Park Office Tower	central-park-office-tower	f	f	t	0	0	t	1474
+3779	Emirates Financial North Tower	emirates-financial-north-tower	f	f	t	25.208673000000001	55.2765800000000027	t	1474
+3780	Grand Belle Vue Hotel Apartment	grand-belle-vue-hotel-apartment	f	f	t	25.0942870000000013	55.1760239999999982	t	1476
+3781	Rp Heights	rp-heights	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+3782	The Centro	the-centro	f	f	t	25.091702999999999	55.3693239999999989	t	2389
+3783	Sadaf 3	sadaf-3	f	f	t	25.0797719999999984	55.1374410000000026	t	2386
+3784	Mirador (All)	mirador-all	f	f	t	25.0554470000000009	55.2871000000000024	t	1469
+3785	Kempinski (All)	kempinski-all	f	f	t	25.1129399999999983	55.1096399999999988	t	394
+3786	Miska (All)	miska-all	f	f	t	25.1884259999999998	55.2765429999999967	t	395
+3787	Reehan (All)	reehan-all	f	f	t	25.1894190000000009	55.2770379999999975	t	395
+3788	Park (All)	park-all	f	f	t	25.2107099999999988	55.2793800000000033	t	1474
+3789	Oasis (All)	oasis-all	f	f	t	25.0440830000000005	55.2200190000000006	t	1475
+3790	Marlowe House (All)	marlowe-house-all	f	f	t	25.044594	55.2470769999999973	t	400
+3791	Al Noor Towers	al-noor-towers	f	f	t	25.0983100000000015	55.1720600000000019	t	1476
+3792	Lago Vista (All)	lago-vista-all	f	f	t	25.0349970000000006	55.2017150000000001	t	401
+3793	Savannah (All)	savannah-all	f	f	t	25.0566150000000007	55.2759730000000005	t	1469
+3794	Al Thuraya Towers	al-thuraya-towers	f	f	t	25.0909200000000006	55.1530399999999972	t	1476
+3795	Al Hawai	al-hawai	f	f	t	25.2120320000000007	55.2750950000000003	t	396
+3796	Al Muhasinah	al-muhasinah	f	f	t	25.2610400000000013	55.4194749999999985	t	914
+3797	Champions 2	champions-2	f	f	t	25.0438249999999982	55.2159139999999979	t	1475
+3798	City 1	city-1	f	f	t	25.2194900000000004	55.2789959999999994	t	396
+3799	Executive	executive	f	f	t	25.1908169999999991	55.2657939999999996	t	909
+3800	Gate 3	gate-3	f	f	t	25.2135159999999985	55.2820869999999971	t	1474
+3801	German Sports 2	german-sports-2	f	f	t	25.2048489999999994	55.2707830000000016	t	1475
+3802	Maysan 1	maysan-1	f	f	t	25.2048489999999994	55.2707830000000016	t	2389
+3803	Sky	sky	f	f	t	25.2117110000000011	55.2829470000000001	t	909
+3804	Sobha Ivory 1	sobha-ivory-1	f	f	t	25.1793979999999991	55.2718729999999994	t	909
+3805	Al Fardan Building	al-fardan-building	f	f	t	24.4666670000000011	54.3666669999999996	t	2395
+3806	Al Baraha Village	al-baraha-village	f	f	t	24.4550139999999985	54.371656999999999	t	1341
+3807	South Hudayriat	south-hudayriat	f	f	t	24.4251259999999988	54.3412500000000023	t	804
+3808	Al Barza	al-barza	f	f	t	24.4507930000000009	54.6014490000000023	t	2247
+3809	Al Muneera Townhouses-Mainland	al-muneera-townhouses-mainland	f	f	t	24.4502500000000005	54.6055569999999975	t	2247
+3810	Khor Al Raha	khor-al-raha	f	f	t	24.4396580000000014	54.565367000000002	t	2247
+3811	Mira Residence 2	mira-residence-2	f	f	t	24.4666670000000011	54.3666669999999996	t	2247
+3812	Contemporary Style	contemporary-style	f	f	t	24.4568009999999987	54.6756949999999975	t	2248
+3813	Falcon Crest Tower	falcon-crest-tower	f	f	t	24.4942439999999984	54.4068600000000018	t	809
+3814	Juman Tower	juman-tower	f	f	t	24.4942439999999984	54.4068600000000018	t	809
+3815	Onyx Tower	onyx-tower	f	f	t	24.4963370000000005	54.4076000000000022	t	809
+3816	Harbour Heights	harbour-heights	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+3817	Marina Bay-Najmat	marina-bay-najmat	f	f	t	24.4806169999999987	54.4080519999999979	t	809
+3818	Sigma Tower 1	sigma-tower-1	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+3819	Marina Blue Tower	marina-blue-tower	f	f	t	24.4922940000000011	54.3947739999999982	t	809
+3820	Tala Tower	tala-tower	f	f	t	24.4879469999999984	54.4177940000000007	t	809
+3821	Bay Centre Marina-The Marinas	bay-centre-marina-the-marinas	f	f	t	24.4806169999999987	54.4080519999999979	t	809
+3822	The Wings	the-wings	f	f	t	24.4942439999999984	54.4068600000000018	t	809
+3823	Lime Tower	lime-tower	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+3824	Oceanscape	oceanscape	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+3825	X3 Tower	x3-tower	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+3826	The Gate Tower 1	the-gate-tower-1	f	f	t	24.4938949999999984	54.410739999999997	t	809
+3827	Hamdan Tower	hamdan-tower	f	f	t	24.4952189999999987	54.370317	t	1485
+3828	Al Maha	al-maha	f	f	t	24.4512949999999982	54.6044410000000013	t	2247
+3829	Al Barsha 2	al-barsha-2	f	f	t	25.0989700000000013	55.2120499999999979	t	1470
+3830	Al Sayyah Building	al-sayyah-building	f	f	t	25.1347890000000014	55.236969000000002	t	2392
+3831	Amman Street	amman-street	f	f	t	25.2838190000000012	55.4087710000000015	t	915
+3832	Alvorada 3	alvorada-3	f	f	t	25.0439760000000007	55.2646579999999972	t	1469
+3833	Mirador 1	mirador-1	f	f	t	25.0577700000000014	55.2835499999999982	t	1469
+3834	Palmera 4	palmera-4	f	f	t	25.0427929999999996	55.2565870000000032	t	1469
+3835	Saheel 4	saheel-4	f	f	t	25.0532620000000001	55.2586719999999971	t	1469
+3836	Savannah 2	savannah-2	f	f	t	25.055178999999999	55.2761190000000013	t	1469
+3837	al sharafi building	al-sharafi-building	f	f	t	0	0	t	910
+3838	Burj Park 3	burj-park-3	f	f	t	25.1959699999999991	55.2719200000000015	t	1471
+3839	B2B	b2b	f	f	t	25.1909179999999999	55.2847750000000033	t	909
+3840	Bay Square	bay-square	f	f	t	25.1856699999999982	55.2805499999999981	t	909
+3841	Burj Al Alam	burj-al-alam	f	f	t	25.1817199999999985	55.2731399999999979	t	909
+3842	Churchill Executive	churchill-executive	f	f	t	25.1809869999999982	55.2630869999999987	t	909
+3843	Corporate Bay	corporate-bay	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+3844	Crystal	crystal	f	f	t	25.1935760000000002	55.289318999999999	t	909
+3845	Empire Heights	empire-heights	f	f	t	25.1920499999999983	55.2847999999999971	t	909
+3846	Fifty One	fifty-one	f	f	t	25.189819	55.2843050000000034	t	909
+3847	Grosvenor	grosvenor	f	f	t	25.1877800000000001	55.2691900000000018	t	909
+3848	Haz	haz	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+3849	Matex	matex	f	f	t	25.1904380000000003	55.2831600000000023	t	909
+3850	Octavian	octavian	f	f	t	25.1887790000000003	55.2818960000000033	t	909
+3851	Oval	oval	f	f	t	25.0088210000000011	55.2818729999999974	t	909
+3852	Park Central	park-central	f	f	t	25.1790680000000009	55.2710900000000009	t	909
+3853	Regal	regal	f	f	t	25.1869399999999999	55.260869999999997	t	909
+3854	Skyscraper	skyscraper	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+3855	Corner	corner	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+3856	Victory Bay	victory-bay	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+3857	Windsor Manor	windsor-manor	f	f	t	25.1921099999999996	55.2913899999999998	t	909
+3858	g office	g-office	f	f	t	0	0	t	2389
+3859	Podium	podium	f	f	t	25.2145569999999992	55.3051570000000012	t	910
+3860	Noor	noor	f	f	t	25.2619289999999985	55.3303670000000025	t	910
+3861	Yas	yas	f	f	t	25.2145569999999992	55.3043130000000005	t	910
+3862	Emaar	emaar	f	f	t	25.2577689999999997	55.3246710000000022	t	915
+3863	Park Tower A	park-tower-a	f	f	t	25.2108199999999982	55.2796000000000021	t	1474
+3864	Limestone	limestone	f	f	t	25.2129399999999997	55.2792499999999976	t	1474
+3865	18 Burj Dubai Boulevard	18-burj-dubai-boulevard	f	f	t	25.1897200000000012	55.2701599999999971	t	1471
+3866	Lofts East	lofts-east	f	f	t	25.1977200000000003	55.2700699999999969	t	1471
+3867	South Ridge 1	south-ridge-1	f	f	t	25.1869000000000014	55.2768700000000024	t	1471
+3868	South Ridge 3	south-ridge-3	f	f	t	25.1873189999999987	55.276918000000002	t	1471
+3869	The address dubai mall	the-address-dubai-mall	f	f	t	25.1997399999999985	55.2775800000000004	t	1471
+3870	Marsa Plaza	marsa-plaza	f	f	t	25.2321999999999989	55.3470129999999969	t	915
+3871	Dunes Village	dunes-village	f	f	t	24.9856100000000012	55.2023099999999971	t	917
+3872	Regent Business Park	regent-business-park	f	f	t	24.978981000000001	55.1773099999999985	t	917
+3873	arabian crown	arabian-crown	f	f	t	0	0	t	2389
+3874	asmaran	asmaran	f	f	t	0	0	t	2389
+3875	cinderella	cinderella	f	f	t	0	0	t	2389
+3876	queue point	queue-point	f	f	t	25.1141450000000006	55.3675599999999974	t	2389
+3877	Sebco Residences	sebco-residences	f	f	t	25.2048489999999994	55.2707830000000016	t	2389
+3878	Windsor Residence	windsor-residence	f	f	t	25.0949729999999995	55.3830910000000003	t	2389
+3879	Atrium Gold	atrium-gold	f	f	t	25.1176150000000007	55.3825029999999998	t	1477
+3880	Axis Residence 5	axis-residence-5	f	f	t	25.1238419999999998	55.4008830000000003	t	1477
+3881	It Plaza	it-plaza	f	f	t	25.1213349999999984	55.3985440000000011	t	1477
+3882	Narcissus Building	narcissus-building	f	f	t	25.1234539999999988	55.3993650000000031	t	1477
+3883	Cedre Villa	cedre-villa	f	f	t	25.1260359999999991	55.3952790000000022	t	1477
+3884	Saima Heights	saima-heights	f	f	t	25.1235679999999988	55.3785930000000022	t	1477
+3885	Silicon Residences	silicon-residences	f	f	t	25.1351499999999994	55.3887550000000033	t	1477
+3886	Elite Sports Residence 5	elite-sports-residence-5	f	f	t	25.0406680000000001	55.2217389999999995	t	1475
+3887	Chapal Destiny	chapal-destiny	f	f	t	25.0416160000000012	55.2166629999999969	t	1475
+3888	Eden Garden	eden-garden	f	f	t	25.0368819999999985	55.220678999999997	t	1475
+3889	elite sports residence 6	elite-sports-residence-6	f	f	t	25.0412910000000011	55.2175960000000003	t	1475
+3890	Frankfurt	frankfurt	f	f	t	25.0386699999999998	55.2046520000000029	t	1475
+3891	Global Golf Residence	global-golf-residence	f	f	t	25.0396120000000018	55.2174010000000024	t	1475
+3892	Kensington Royal	kensington-royal	f	f	t	25.0441800000000008	55.2199049999999971	t	1475
+3893	Olympic Park 2	olympic-park-2	f	f	t	25.0437660000000015	55.2142419999999987	t	1475
+3894	Rufi Park View	rufi-park-view	f	f	t	25.2048489999999994	55.2707830000000016	t	1475
+3895	Spanish	spanish	f	f	t	25.0364770000000014	55.2256349999999969	t	1475
+3896	Stadium Point	stadium-point	f	f	t	25.0444020000000016	55.2188110000000023	t	1475
+3897	Matrix	matrix	f	f	t	25.0416670000000003	55.2194440000000029	t	1475
+3898	Zenith A3	zenith-a3	f	f	t	25.0438699999999983	55.2153909999999968	t	1475
+3899	Park Lands	park-lands	f	f	t	25.0687169999999995	55.1734590000000011	t	2388
+3900	Sector H	sector-h	f	f	t	25.0746740000000017	55.1702569999999994	t	2388
+3901	Sector W	sector-w	f	f	t	25.0745010000000015	55.1819279999999992	t	2388
+3902	Al Arta 1	al-arta-1	f	f	t	25.0900099999999995	55.1735299999999995	t	911
+3903	Al Dhafra 1	al-dhafra-1	f	f	t	25.0921500000000002	55.1713900000000024	t	911
+3904	Al Dhafra 4	al-dhafra-4	f	f	t	25.0915800000000004	55.171990000000001	t	911
+3905	Al Ghaf 4	al-ghaf-4	f	f	t	25.0953000000000017	55.1701899999999981	t	911
+3906	Al Jaz 1	al-jaz-1	f	f	t	25.0947899999999997	55.1706100000000035	t	911
+3907	Al Nakheel 2	al-nakheel-2	f	f	t	25.094380000000001	55.1701600000000028	t	911
+3908	Al Nakheel 4	al-nakheel-4	f	f	t	25.0933400000000013	55.1701699999999988	t	911
+3909	Al Samar 4	al-samar-4	f	f	t	25.0924900000000015	55.1730599999999995	t	911
+3910	Al Thayal 1	al-thayal-1	f	f	t	25.0910699999999984	55.1724600000000009	t	911
+3911	Murjan 6	murjan-6	f	f	t	25.0819599999999987	55.1404199999999989	t	2386
+3912	Murjan 4	murjan-4	f	f	t	25.0829899999999988	55.1399499999999989	t	2386
+3913	Bahar 5	bahar-5	f	f	t	25.0789299999999997	55.135939999999998	t	2386
+3914	Amwaj 2	amwaj-2	f	f	t	25.0744199999999999	55.1318899999999985	t	2386
+3915	Al Mahra 1	al-mahra-1	f	f	t	25.0478640000000006	55.2763300000000015	t	1469
+3916	Al Mahra 2	al-mahra-2	f	f	t	25.0567789999999988	55.2915849999999978	t	1469
+3917	Grand Midwest	grand-midwest	f	f	t	25.1117209999999993	55.187145000000001	t	1470
+3918	Avenue Residence 1	avenue-residence-1	f	f	t	0	0	t	919
+3919	CG Mall	cg-mall	f	f	t	0	0	t	1491
+3920	Al Thamam 24	al-thamam-24	f	f	t	0	0	t	2389
+3921	Danube Building	danube-building	f	f	t	0	0	t	1477
+3922	District 7C	district-7c	f	f	t	0	0	t	1173
+3923	Al Nakheel Hotel Apartment	al-nakheel-hotel-apartment	f	f	t	0	0	t	1350
+3924	Suburbia Tower 2	suburbia-tower-2-2	f	f	t	0	0	t	1235
+3925	District 8L	district-8l	f	f	t	0	0	t	1173
+3926	Garden East Apartments Bldg A	garden-east-apartments-bldg-a	f	f	t	0	0	t	1473
+3927	Garden East Apartments Bldg F	garden-east-apartments-bldg-f	f	f	t	0	0	t	1473
+3928	C12 Tower	c12-tower	f	f	t	24.485201	54.4063900000000018	t	809
+3929	Bayan Business Centre	bayan-business-centre	f	f	t	24.9978300000000004	55.1726829999999993	t	917
+3930	Noor Apartment 1	noor-apartment-1	f	f	t	0	0	t	1173
+3931	Syann Park 1	syann-park-1	f	f	t	0	0	t	2389
+3932	Hacienda-Courtyard 6	hacienda-courtyard-6	f	f	t	25.0905850000000008	55.3599590000000035	t	2389
+3933	Act One Act Two towers	act-one-act-two-towers	f	f	t	0	0	t	1471
+3934	Al Thamam 12	al-thamam-12	f	f	t	25.0076929999999997	55.2501710000000017	t	2389
+3935	Al Ramth 32	al-ramth-32	f	f	t	0	0	t	2389
+3936	Al Ramth 45	al-ramth-45	f	f	t	0	0	t	2389
+3937	Al Ramth 11	al-ramth-11	f	f	t	0	0	t	2389
+3938	Al Ramth 10	al-ramth-10	f	f	t	0	0	t	2389
+3939	Al Ramth 33	al-ramth-33	f	f	t	0	0	t	2389
+3940	Gold Vista	gold-vista	f	f	t	0	0	t	1218
+3941	Gold Vista	gold-vista-8	f	f	t	0	0	t	1218
+3942	Gold Vista	gold-vista-13	f	f	t	0	0	t	1218
+3943	Gold Vista	gold-vista-23	f	f	t	0	0	t	1218
+3944	Gold Vista	gold-vista-19	f	f	t	0	0	t	1218
+3945	Palace Tower 1	palace-tower-1-2	f	f	t	0	0	t	1477
+3946	Palacio Tower	palacio-tower	f	f	t	25.1121969999999983	55.3851409999999973	t	1477
+3947	District 1I	district-1i	f	f	t	25.0341370000000012	55.174433999999998	t	1173
+3948	District 4E	district-4e	f	f	t	25.0448349999999991	55.1922789999999992	t	1173
+3949	District 4G	district-4g	f	f	t	25.0446379999999991	55.1940179999999998	t	1173
+3950	Azizi Star	azizi-star	f	f	t	0	0	t	919
+3951	Al Ramth 1	al-ramth-1	f	f	t	25.0033209999999997	55.2517739999999975	t	2389
+3952	Al Ramth 5	al-ramth-5	f	f	t	0	0	t	2389
+3953	Al Ramth 14	al-ramth-14	f	f	t	0	0	t	2389
+3954	Al Ramth 36	al-ramth-36	f	f	t	0	0	t	2389
+3955	Al Ramth 46	al-ramth-46	f	f	t	0	0	t	2389
+3956	Al Thamam 3	al-thamam-3	f	f	t	0	0	t	2389
+3957	Al Thamam 11	al-thamam-11	f	f	t	0	0	t	2389
+3958	Al Thamam 15	al-thamam-15	f	f	t	0	0	t	2389
+3959	Al Thamam 22	al-thamam-22	f	f	t	0	0	t	2389
+3960	Al Thamam 31	al-thamam-31	f	f	t	0	0	t	2389
+3961	Al Thamam 38	al-thamam-38	f	f	t	0	0	t	2389
+3962	Al Thamam 40	al-thamam-40	f	f	t	0	0	t	2389
+3963	Al Thamam 48	al-thamam-48	f	f	t	0	0	t	2389
+3964	Al Thamam 56	al-thamam-56	f	f	t	0	0	t	2389
+3965	Al Thamam 64	al-thamam-64	f	f	t	0	0	t	2389
+3966	Intercity Hotel Apartment	intercity-hotel-apartment	f	f	t	25.0982599999999998	55.1726150000000004	t	1476
+3967	Al Jawhara Residences	al-jawhara-residences	f	f	t	25.0361329999999995	55.1768500000000017	t	1173
+3968	Al Mansoor Tower	al-mansoor-tower	f	f	t	25.3027680000000004	55.3742689999999982	t	918
+3969	Al Qadesia Tower	al-qadesia-tower	f	f	t	25.2994379999999985	55.3797750000000022	t	918
+3970	The Address Residence Fountain Views 2	the-address-residence-fountain-views-2	f	f	t	25.1947359999999989	55.2823700000000002	t	1471
+3971	Aliyah Serviced Apartments	aliyah-serviced-apartments	f	f	t	0	0	t	1478
+3972	Residence 22	residence-22	f	f	t	25.1923199999999987	55.2883199999999988	t	909
+3973	Deena Tower	deena-tower	f	f	t	24.4937779999999989	54.3632360000000006	t	812
+3974	Victoria Residency	victoria-residency	f	f	t	25.0281340000000014	55.1537500000000023	t	919
+3975	Wave Tower	wave-tower	f	f	t	24.4831429999999983	54.3504140000000007	t	2250
+3976	Mirdif Hills - Janayen Avenue	mirdif-hills-janayen-avenue	f	f	t	25.2232480000000017	55.4416379999999975	t	914
+3977	Azizi Aliyah	azizi-aliyah	f	f	t	25.0334220000000016	55.147354	t	919
+3978	Montrose 1	montrose-1	f	f	t	25.0689680000000017	55.245196	t	1470
+3979	Al Bandary Twin Tower B	al-bandary-twin-tower-b	f	f	t	0	0	t	2260
+3980	Wave Shamal	wave-shamal	f	f	t	25.079421	55.2309309999999982	t	1470
+3981	Zone 1	zone-1	f	f	t	0	0	t	813
+3982	Zone 6	zone-6	f	f	t	0	0	t	813
+3983	Zone 12	zone-12	f	f	t	0	0	t	813
+3984	Zone 17	zone-17	f	f	t	0	0	t	813
+3985	Zone 19	zone-19	f	f	t	0	0	t	813
+3986	Zone 24	zone-24	f	f	t	0	0	t	813
+3987	Zone 31	zone-31	f	f	t	0	0	t	813
+3988	Zone 36	zone-36	f	f	t	0	0	t	813
+3989	MR Tower	mr-tower	f	f	t	25.3972869999999986	55.5775030000000001	t	2408
+3990	Warda Apartments 2B	warda-apartments-2b	f	f	t	25.0147109999999984	55.2836070000000035	t	1118
+3991	The Centro Courtyard 8	the-centro-courtyard-8	f	f	t	25.0879900000000013	55.371454	t	2389
+3992	Tower 4	tower-4	f	f	t	0	0	t	2248
+3993	Tower 9	tower-9	f	f	t	0	0	t	2248
+3994	Tower 31	tower-31	f	f	t	0	0	t	2248
+3995	Tower 36	tower-36	f	f	t	0	0	t	2248
+3996	Tower 43	tower-43	f	f	t	0	0	t	2248
+3997	Building A	building-a	f	f	t	0	0	t	1473
+3998	Building F	building-f	f	f	t	0	0	t	1473
+3999	Art XII	art-xii	f	f	t	25.1010029999999986	55.1771030000000025	t	1476
+4000	Al Barsha 1 Villas	al-barsha-1-villas	f	f	t	0	0	t	1470
+4001	Lamar Tower C	lamar-tower-c	f	f	t	0	0	t	2247
+4002	District 2B	district-2b	f	f	t	0	0	t	1173
+4003	District 8G	district-8g	f	f	t	0	0	t	1173
+4004	New Emi State Tower	new-emi-state-tower	f	f	t	24.4223140000000001	54.6059669999999997	t	2395
+4005	Al Kwaitat	al-kwaitat	f	f	t	0	0	t	2653
+4006	Main Street	main-street	f	f	t	0	0	t	2653
+4007	Old Sarooj	old-sarooj	f	f	t	0	0	t	2655
+4008	Court Tower	court-tower	f	f	t	0	0	t	909
+4009	Pacific Tahiti	pacific-tahiti	f	f	t	0	0	t	1480
+4010	Tanmiyat Global	tanmiyat-global	f	f	t	25.087057999999999	55.3005259999999979	t	2389
+4011	DHP Residency	dhp-residency	f	f	t	25.1156919999999992	55.3892140000000026	t	1477
+4012	Aston Towers	aston-towers	f	f	t	25.0727210000000014	55.2485909999999976	t	2667
+4013	Tulip 1	tulip-1	f	f	t	25.1149430000000002	55.3874569999999977	t	1477
+4014	Silver Wave Tower	silver-wave-tower	f	f	t	0	0	t	2250
+4015	Emaar Towers	emaar-towers	f	f	t	25.2577360000000013	55.3247100000000032	t	915
+4016	Riggat Al Buteen	riggat-al-buteen	f	f	t	25.2580610000000014	55.3233350000000002	t	915
+4017	North West Apartment	north-west-apartment	f	f	t	24.9816959999999995	55.187897999999997	t	917
+4018	Al Thamam	al-thamam	f	f	t	0	0	t	2389
+4019	skycourt towers A	skycourt-towers-a	f	f	t	25.0923429999999996	55.3851829999999978	t	2389
+4020	Boulevard Heights Tower 1	boulevard-heights-tower-1	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+4021	Al Raffa	al-raffa	f	f	t	25.2617130000000003	55.2898660000000035	t	910
+4022	The Sterling West	the-sterling-west	f	f	t	25.1888259999999988	55.2820869999999971	t	1471
+4023	Royal Breeze 1	royal-breeze-1	f	f	t	25.6998570000000015	55.7824179999999998	t	1355
+4024	Eni Coral Tower	eni-coral-tower	f	f	t	25.1892919999999982	55.2841290000000001	t	909
+4025	Deira Islands	deira-islands	f	f	t	25.2631990000000002	55.3293230000000023	t	915
+4026	Ubora Tower 2	ubora-tower-2	f	f	t	25.1805780000000006	55.2710280000000012	t	909
+4027	Sama Building	sama-building	f	f	t	25.110551000000001	55.2029220000000009	t	1470
+4028	Royal Breeze 4	royal-breeze-4	f	f	t	25.7019620000000018	55.7848510000000033	t	1355
+4029	Alliance Business Centre	alliance-business-centre	f	f	t	25.278846999999999	55.3318039999999982	t	915
+4030	Paradise Lakes Tower B5	paradise-lakes-tower-b5	f	f	t	25.3979239999999997	55.5797540000000012	t	2408
+4031	Damac Maison Canal Views	damac-maison-canal-views	f	f	t	25.1876719999999992	55.2840599999999966	t	909
+4032	A Sana 2	a-sana-2-2	f	f	t	24.4496140000000004	54.6059839999999994	t	2247
+4033	Al Waha	al-waha	f	f	t	24.4418879999999987	54.409202999999998	t	1341
+4034	O14	o14	f	f	t	25.190097999999999	55.284238000000002	t	909
+4035	Al Sabkha	al-sabkha	f	f	t	25.26905	55.3014399999999995	t	915
+4036	Hayat 2	hayat-2-2	f	f	t	25.2048489999999994	55.2707830000000016	t	1118
+4037	A Villas	a-villas	f	f	t	0	0	t	2389
+4038	Amaya Tower 1	amaya-tower-1	f	f	t	24.4896729999999998	54.394598000000002	t	809
+4039	The Kite Residences - Aabar Properties	the-kite-residences-aabar-properties	f	f	t	24.4942439999999984	54.4068600000000018	t	809
+4040	Time Crystal Hotel Apartments	time-crystal-hotel-apartments	f	f	t	25.0929310000000001	55.1768569999999983	t	1476
+4041	Executive Tower M	executive-tower-m	f	f	t	25.1920789999999997	55.2663560000000018	t	909
+4042	Executive Tower A	executive-tower-a	f	f	t	25.1920789999999997	55.2663560000000018	t	909
+4043	Executive Tower G	executive-tower-g	f	f	t	25.1905280000000005	55.2660059999999973	t	909
+4044	Al Sana	al-sana	f	f	t	24.4493130000000001	54.6047840000000022	t	2247
+4045	Aryam Tower	aryam-tower	f	f	t	24.5074000000000005	54.376654000000002	t	815
+4046	Hydra Avenue C4	hydra-avenue-c4	f	f	t	24.4989130000000017	54.4046840000000032	t	809
+4047	Al Attar Business Center	al-attar-business-center	f	f	t	25.1084090000000018	55.1839960000000005	t	1470
+4048	Yassat Gloria Hotel Apartments	yassat-gloria-hotel-apartments-2	f	f	t	0	0	t	1476
+4049	Ag Tower	ag-tower	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+4050	Emaar Square Bldg 2	emaar-square-bldg-2	f	f	t	25.2008639999999993	55.2722830000000016	t	1471
+4051	Al Qadsiya	al-qadsiya	f	f	t	25.3786120000000004	55.416879999999999	t	587
+4052	Al Bateen Complex	al-bateen-complex	f	f	t	24.4468029999999992	54.3566900000000004	t	2244
+4053	Al Khaili Tower	al-khaili-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	812
+4054	Sahara Complex	sahara-complex	f	f	t	24.3425879999999992	54.539439999999999	t	813
+4055	Mafco Building	mafco-building	f	f	t	24.4666670000000011	54.3666669999999996	t	1350
+4056	Abu Dhabi University Tower	abu-dhabi-university-tower	f	f	t	24.4651630000000004	54.3848249999999993	t	1350
+4057	M250	m250	f	f	t	24.313917	54.5606909999999985	t	814
+4058	Sas Al Nakhl Village	sas-al-nakhl-village	f	f	t	24.4064049999999995	54.5270239999999973	t	1351
+4059	Atrium 360	atrium-360	f	f	t	25.3994999999999997	55.4795999999999978	t	2405
+4060	Tower A1	tower-a1	f	f	t	25.3925710000000002	55.4673480000000012	t	2405
+4061	Tower B3	tower-b3	f	f	t	25.3923039999999993	55.4682630000000003	t	2405
+4062	Al Khail Tower 2	al-khail-tower-2	f	f	t	25.3994999999999997	55.4795999999999978	t	2405
+4063	Al Rashidiya Towers	al-rashidiya-towers	f	f	t	0	0	t	2405
+4064	Falcon Tower 2	falcon-tower-2	f	f	t	25.3992879999999985	55.4488920000000007	t	2405
+4065	Horizon Towers	horizon-towers	f	f	t	25.3994999999999997	55.4795999999999978	t	2405
+4066	Humaid Gate Tower	humaid-gate-tower	f	f	t	25.3994999999999997	55.4795999999999978	t	934
+4067	Al Rashed 1	al-rashed-1	f	f	t	25.4020639999999993	55.4398929999999979	t	934
+4068	Al Rashid 5	al-rashid-5	f	f	t	25.3947770000000013	55.4506840000000025	t	934
+4069	Blossom Tower 2	blossom-tower-2	f	f	t	25.3994999999999997	55.4795999999999978	t	934
+4070	The Cavendish Tower	the-cavendish-tower	f	f	t	25.3994999999999997	55.4795999999999978	t	1499
+4071	Al Ajyaal Residency	al-ajyaal-residency	f	f	t	25.3979239999999997	55.5792069999999967	t	2408
+4072	Chapal The Glory	chapal-the-glory	f	f	t	25.3979239999999997	55.5798830000000024	t	2408
+4073	Lake Signature	lake-signature	f	f	t	25.3979239999999997	55.5790179999999978	t	2408
+4074	Orbit Tower	orbit-tower	f	f	t	25.3979239999999997	55.5790580000000034	t	2408
+4075	Unique Tower	unique-tower	f	f	t	25.3979239999999997	55.5795049999999975	t	2408
+4076	Goldcrest Dreams 1	goldcrest-dreams-1	f	f	t	25.3933350000000004	55.574466000000001	t	2408
+4077	Lake View Tower 2	lake-view-tower-2	f	f	t	25.3979239999999997	55.5800320000000028	t	2408
+4078	Rainbow Tower 2	rainbow-tower-2	f	f	t	25.3979239999999997	55.5800720000000013	t	2408
+4079	Shami Tower 1	shami-tower-1	f	f	t	25.3979239999999997	55.5792760000000001	t	2408
+4080	Arc Tower	arc-tower	f	f	t	24.4950669999999988	54.4087790000000027	t	1500
+4081	Konig Tower	konig-tower	f	f	t	25.3994999999999997	55.4795999999999978	t	1500
+4082	Shami Garden Tower I	shami-garden-tower-i	f	f	t	25.3994999999999997	55.4795999999999978	t	1500
+4083	Al Hamra Golf Resort	al-hamra-golf-resort	f	f	t	25.691946999999999	55.7828530000000029	t	1355
+4084	Marmar	marmar	f	f	t	25.800692999999999	55.9761990000000011	t	1480
+4085	Starfish	starfish	f	f	t	25.800692999999999	55.9761990000000011	t	1480
+4086	Marbella Bay	marbella-bay	f	f	t	25.6778070000000014	55.7405060000000034	t	1480
+4087	Al Sahab	al-sahab	f	f	t	25.8619610000000009	56.0023720000000012	t	2259
+4088	Freish Al Siyabi Building	freish-al-siyabi-building	f	f	t	25.3363070000000015	55.3977580000000032	t	928
+4089	Al Khan Lagoon Tower	al-khan-lagoon-tower	f	f	t	25.3289200000000001	55.3685680000000033	t	2260
+4090	Rose Tower 1	rose-tower-1	f	f	t	25.3246329999999986	55.3761470000000031	t	2260
+4091	Al Safyia Building	al-safyia-building	f	f	t	25.3213380000000008	55.3840039999999973	t	822
+4092	Dar Al Majaz	dar-al-majaz	f	f	t	25.3213380000000008	55.3834969999999984	t	822
+4093	Al Nada Tower	al-nada-tower	f	f	t	25.3019199999999991	55.3741369999999975	t	929
+4094	Lootah Tower	lootah-tower	f	f	t	25.3019339999999993	55.3742799999999988	t	929
+4095	Sunlight Tower	sunlight-tower	f	f	t	25.3575000000000017	55.3908330000000007	t	1491
+4096	Al Marwa Tower 2	al-marwa-tower-2	f	f	t	25.31935	55.3633919999999975	t	2260
+4097	Industrial Area 13	industrial-area-13	f	f	t	25.3102100000000014	55.4388549999999967	t	1493
+4098	Industrial Area 4	industrial-area-4	f	f	t	25.3324210000000001	55.4056360000000012	t	1493
+4099	Industrial Area 9	industrial-area-9	f	f	t	25.2981300000000005	55.4007920000000027	t	1493
+4100	Frond A	frond-a	f	f	t	25.1196570000000001	55.1400810000000021	t	1159
+4101	Amaya Towers	amaya-towers	f	f	t	24.5047020000000018	54.4108200000000011	t	809
+4102	Burjside Terrace	burjside-terrace	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+4103	29 Boulevard Tower 1	29-boulevard-tower-1	f	f	t	25.1916779999999996	55.2717740000000006	t	1471
+4104	Saheel Tower	saheel-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	2250
+4105	East Village	east-village	f	f	t	25.0251669999999997	55.1458609999999965	t	919
+4106	Feirouz 3	feirouz-3	f	f	t	25.0251669999999997	55.1458609999999965	t	919
+4107	Hills Abu Dhabi	hills-abu-dhabi	f	f	t	24.4045750000000012	54.4677349999999976	t	2246
+4108	Radisson Blu Hotel	radisson-blu-hotel	f	f	t	25.1942880000000002	55.2894950000000023	t	909
+4109	The Address Blvd	the-address-blvd	f	f	t	25.2009000000000007	55.2762000000000029	t	1471
+4110	Beachfront Estate	beachfront-estate	f	f	t	24.6145889999999987	54.4788539999999983	t	2254
+4111	Sector Ht	sector-ht	f	f	t	25.0687169999999995	55.1734590000000011	t	2388
+4112	Musalla Mall	musalla-mall	f	f	t	25.2048489999999994	55.2707830000000016	t	910
+4113	Shams Abu Dhabi	shams-abu-dhabi	f	f	t	24.4941549999999992	54.4089120000000008	t	809
+4114	Yes Business Centre	yes-business-centre	f	f	t	25.111574000000001	55.2058779999999985	t	1470
+4115	First Central Hotel Apartments	first-central-hotel-apartments	f	f	t	0	0	t	1476
+4116	Skai Residency	skai-residency	f	f	t	25.0909569999999995	55.1745379999999983	t	911
+4117	Al Barsha South	al-barsha-south	f	f	t	25.076429000000001	55.2314450000000008	t	1470
+4118	Corp Hotel	corp-hotel	f	f	t	25.2644470000000005	55.3116669999999999	t	1470
+4119	Auris Hotel	auris-hotel	f	f	t	0	0	t	1476
+4120	Abidos Hotel	abidos-hotel	f	f	t	25.0902239999999992	55.3793270000000035	t	2389
+4121	Blue Bay Tower	blue-bay-tower	f	f	t	25.187069000000001	55.2715090000000018	t	909
+4122	World Trade Centre Residence A	world-trade-centre-residence-a	f	f	t	0	0	t	916
+4123	Cluster F	cluster-f	f	f	t	0	0	t	1159
+4124	Khalifa Park	khalifa-park	f	f	t	0	0	t	2251
+4125	The Address Sky View Tower 1	the-address-sky-view-tower-1	f	f	t	25.1935900000000004	55.2790820000000025	t	1471
+4126	Park Towers	park-towers	f	f	t	25.2095260000000003	55.2785129999999967	t	1474
+4127	Emaar Boulevard	emaar-boulevard	f	f	t	25.1896169999999984	55.2731959999999987	t	1471
+4128	The Light Building	the-light-building	f	f	t	25.0653809999999986	55.2456450000000032	t	1470
+4129	Burj Vista 2	burj-vista-2	f	f	t	25.198443000000001	55.2707580000000007	t	1471
+4130	Al Durrah Tower	al-durrah-tower	f	f	t	24.4893140000000002	54.4157340000000005	t	809
+4131	Al Quoz 2	al-quoz-2	f	f	t	25.1521299999999997	55.2728869999999972	t	2392
+4132	Akoya	akoya	f	f	t	25.0198579999999993	55.2618340000000003	t	1218
+4133	Trump International Golf Club	trump-international-golf-club	f	f	t	25.026135	55.2587180000000018	t	1218
+4134	Silver Springs	silver-springs	f	f	t	0	0	t	1218
+4135	Fayrouz	fayrouz	f	f	t	0	0	t	920
+4136	Solitaire Cascades	solitaire-cascades	f	f	t	0	0	t	2389
+4137	Picadilly Green	picadilly-green	f	f	t	0	0	t	1218
+4138	Golf Panorama	golf-panorama	f	f	t	0	0	t	1218
+4139	Amwaj	amwaj	f	f	t	25.6699979999999996	55.7977869999999996	t	920
+4140	Legacy Small	legacy-small	f	f	t	25.0484270000000002	55.1542090000000016	t	2391
+4141	Donna Tower	donna-tower	f	f	t	25.1207689999999992	55.3690700000000007	t	1477
+4142	Al Taawoon Tower 2	al-taawoon-tower-2	f	f	t	25.3137790000000003	55.3777469999999994	t	2260
+4143	Pacific Edmonton Elm	pacific-edmonton-elm	f	f	t	25.0472880000000018	55.1900229999999965	t	1173
+4144	Wimbledon Tower	wimbledon-tower	f	f	t	25.0415589999999995	55.2046449999999993	t	1475
+4145	Al Fattan Marine Tower	al-fattan-marine-tower	f	f	t	25.0797589999999992	55.1365059999999971	t	2386
+4146	Central Park tower	central-park-tower	f	f	t	25.2095619999999982	55.2769300000000001	t	1474
+4147	Golden Tulip	golden-tulip	f	f	t	25.2048489999999994	55.2707830000000016	t	1475
+4148	Rockwood	rockwood	f	f	t	0	0	t	1218
+4149	Elite Downtown Residence	elite-downtown-residence	f	f	t	25.1862889999999986	55.2782809999999998	t	1471
+4150	Arena Apartments	arena-apartments	f	f	t	25.0378129999999999	55.2181659999999965	t	1475
+4151	Pelham	pelham	f	f	t	25.0177939999999985	55.2518639999999976	t	1218
+4152	Fountain Views 3	fountain-views-3	f	f	t	25.1940530000000003	55.2820180000000008	t	1471
+4153	Abu Hail	abu-hail	f	f	t	0	0	t	915
+4154	Abu Dhabi Golf Club	abu-dhabi-golf-club	f	f	t	24.4414249999999988	54.5163300000000035	t	1351
+4155	Al Canay Building	al-canay-building	f	f	t	25.2918540000000007	55.3714510000000004	t	929
+4156	Long View	long-view	f	f	t	25.0273870000000009	55.2481170000000006	t	1218
+4157	The Atria	the-atria	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+4158	Elite Sports Residence 9	elite-sports-residence-9	f	f	t	25.0343680000000006	55.2227779999999981	t	1475
+4159	Bay Square Building 4	bay-square-building-4	f	f	t	25.1858779999999989	55.2736639999999966	t	909
+4160	Bay Square Building 8	bay-square-building-8	f	f	t	25.190097999999999	55.284238000000002	t	909
+4161	Bay Square Building 12	bay-square-building-12	f	f	t	25.1844609999999989	55.2786060000000035	t	909
+4162	Silicon Gate 1	silicon-gate-1	f	f	t	25.1168170000000011	55.3914430000000024	t	1477
+4163	Al Shaya Building	al-shaya-building	f	f	t	25.1154919999999997	55.2063699999999997	t	1470
+4164	Bin Khalid Building	bin-khalid-building	f	f	t	25.0952930000000016	55.1955450000000027	t	1470
+4165	Al Khail Heights Building 2A	al-khail-heights-building-2a	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+4166	Burooj Bin Ahmed	burooj-bin-ahmed	f	f	t	24.4666670000000011	54.3666669999999996	t	1350
+4167	Mangrove One	mangrove-one	f	f	t	24.4377679999999984	54.4537180000000021	t	2251
+4168	Golden Sands	golden-sands	f	f	t	25.11111	55.2019189999999966	t	1470
+4169	Onyx Tower 2	onyx-tower-2	f	f	t	25.0969620000000013	55.1775999999999982	t	1476
+4170	The Dreamz	the-dreamz	f	f	t	25.0251669999999997	55.1458609999999965	t	919
+4171	Boulevard Crescent 2	boulevard-crescent-2	f	f	t	25.1917790000000004	55.2706050000000033	t	1471
+4172	Al Khail Heights Building 4B	al-khail-heights-building-4b	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+4173	Al Khail Heights Building 11A	al-khail-heights-building-11a	f	f	t	25.1109459999999984	55.240637999999997	t	1227
+4174	Atria	atria	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+4175	Al Alka 4	al-alka-4	f	f	t	25.0903700000000001	55.1751709999999989	t	911
+4176	Shorouq	shorouq	f	f	t	25.2183059999999983	55.4291640000000001	t	914
+4177	Al Zeina Beachfront villa	al-zeina-beachfront-villa	f	f	t	24.4566039999999987	54.6132789999999986	t	2247
+4178	Al Qarain 4	al-qarain-4	f	f	t	0	0	t	2094
+4179	Victoria Tower	victoria-tower	f	f	t	0	0	t	1291
+4180	Gulf Oasis Hotel Apartment	gulf-oasis-hotel-apartment	f	f	t	25.0943959999999997	55.1773519999999991	t	1476
+4181	Maisan Residence	maisan-residence	f	f	t	0	0	t	917
+4182	Eros House	eros-house	f	f	t	25.1127059999999993	55.2045869999999965	t	1470
+4183	Tower 10	tower-10	f	f	t	0	0	t	2248
+4184	Tower 12	tower-12	f	f	t	0	0	t	2248
+4185	Tower 17	tower-17	f	f	t	0	0	t	2248
+4186	Tower 24	tower-24	f	f	t	0	0	t	2248
+4187	Bin Khadim Building	bin-khadim-building	f	f	t	25.3499049999999997	55.3960360000000023	t	1493
+4188	Park Hotel	park-hotel	f	f	t	0	0	t	917
+4189	Aldar HQ	aldar-hq	f	f	t	0	0	t	2247
+4190	Mayan 4	mayan-4	f	f	t	0	0	t	2255
+4191	Mayan 6	mayan-6	f	f	t	0	0	t	2255
+4192	Jumeirah Heights Tower D	jumeirah-heights-tower-d	f	f	t	0	0	t	1159
+4193	Serena Residences	serena-residences	f	f	t	25.0363110000000013	55.2849250000000012	t	2389
+4194	Syann Park 3	syann-park-3	f	f	t	0	0	t	2389
+4195	Hacienda-Canna	hacienda-canna	f	f	t	0	0	t	2389
+4196	Ponderosa-Butonia	ponderosa-butonia	f	f	t	0	0	t	2389
+4197	Ponderosa-Granada	ponderosa-granada	f	f	t	0	0	t	2389
+4198	Ponderosa-Marbella	ponderosa-marbella	f	f	t	0	0	t	2389
+4199	The Aldea-Basella	the-aldea-basella	f	f	t	0	0	t	2389
+4200	The Aldea-Mallorca	the-aldea-mallorca	f	f	t	0	0	t	2389
+4201	The Centro-Agava	the-centro-agava	f	f	t	0	0	t	2389
+4202	The Centro-Cordoba	the-centro-cordoba	f	f	t	0	0	t	2389
+4203	The Centro-Valencia	the-centro-valencia	f	f	t	0	0	t	2389
+4204	Sorouh Compound	sorouh-compound	f	f	t	0	0	t	1351
+4205	Al Thamam 8	al-thamam-8	f	f	t	0	0	t	2389
+4206	Ponderosa-Custom Built	ponderosa-custom-built	f	f	t	0	0	t	2389
+4207	Al Thamam 47	al-thamam-47	f	f	t	0	0	t	2389
+4208	Al Thamam 34	al-thamam-34	f	f	t	0	0	t	2389
+4209	District 8B	district-8b	f	f	t	0	0	t	1173
+4210	Silver Sands 1	silver-sands-1	f	f	t	0	0	t	910
+4211	Mai Tower	mai-tower	f	f	t	25.2878569999999989	55.364961000000001	t	918
+4212	Western Residence North	western-residence-north	f	f	t	0	0	t	2389
+4213	Al Thamam 57	al-thamam-57	f	f	t	0	0	t	2389
+4214	Altia Residence	altia-residence	f	f	t	25.1241289999999999	55.3769169999999988	t	1477
+4215	Terrace Apartments G	terrace-apartments-g	f	f	t	0	0	t	1473
+4216	Silver Stallion S 2	silver-stallion-s-2	f	f	t	25.0601979999999998	55.2093509999999981	t	3024
+4217	Meadows 2	meadows-2	f	f	t	25.0708699999999993	55.1500800000000027	t	912
+4218	Meadows 4	meadows-4	f	f	t	25.0664790000000011	55.1554119999999983	t	912
+4219	Meadows 9	meadows-9	f	f	t	25.0698140000000009	55.1493740000000017	t	912
+4220	Al Shafar Tower	al-shafar-tower	f	f	t	25.0983499999999999	55.1743000000000023	t	1476
+4221	Cayan Business Center	cayan-business-center	f	f	t	25.0955000000000013	55.1760299999999972	t	1476
+4222	Icon Tower	icon-tower	f	f	t	25.0977700000000006	55.1741600000000005	t	1476
+4223	Springs 15	springs-15	f	f	t	25.051634	55.1796379999999971	t	2387
+4224	Springs 6	springs-6	f	f	t	25.0685199999999995	55.1894800000000032	t	2387
+4225	Springs 8	springs-8	f	f	t	25.0602899999999984	55.1877599999999973	t	2387
+4226	Travo A	travo-a	f	f	t	25.0907300000000006	55.1717299999999966	t	911
+4227	umm suqeim 1	umm-suqeim-1	f	f	t	25.1636200000000017	55.2145399999999995	t	1472
+4228	Rimal 5	rimal-5	f	f	t	25.0761600000000016	55.1332000000000022	t	2386
+4229	Sadaf 5	sadaf-5	f	f	t	25.0802599999999991	55.136809999999997	t	2386
+4230	Shams 1	shams-1	f	f	t	25.072610000000001	55.1310799999999972	t	2386
+4231	Shams 3	shams-3	f	f	t	25.0724100000000014	55.1296899999999965	t	2386
+4232	Burj Park 2	burj-park-2	f	f	t	25.1967099999999995	55.27196	t	1471
+4233	The Residences 4	the-residences-4	f	f	t	25.1928200000000011	55.2737100000000012	t	1471
+4234	burj views A	burj-views-a	f	f	t	25.1902019999999993	55.281371	t	1471
+4235	Novelia	novelia	f	f	t	25.0309510000000017	55.2112920000000003	t	913
+4236	Moon Vilas	moon-vilas	f	f	t	25.2048489999999994	55.2707830000000016	t	913
+4237	santa fe villa Northa	santa-fe-villa-northa	f	f	t	0	0	t	2389
+4238	Jafaliya	jafaliya	f	f	t	25.234966	55.2791390000000007	t	2390
+4239	Old Labour Office	old-labour-office	f	f	t	25.278846999999999	55.3314159999999973	t	915
+4240	Arabian Oryx House (Art Tower 4)	arabian-oryx-house-art-tower-4	f	f	t	25.0956299999999999	55.1724000000000032	t	1476
+4241	Green View 1	green-view-1	f	f	t	0	0	t	1476
+4242	Oasis Residence	oasis-residence	f	f	t	0	0	t	1476
+4243	Jumeirah Al Khor	jumeirah-al-khor	f	f	t	25.2324279999999987	55.324818999999998	t	1478
+4244	@2	2	f	f	t	25.0946800000000003	55.1595700000000022	t	1479
+4245	@7	7	f	f	t	25.0920650000000016	55.1708690000000033	t	1479
+4246	@14	14	f	f	t	25.0984200000000008	55.1631399999999985	t	1479
+4247	Green Barsha Villas	green-barsha-villas	f	f	t	25.0948759999999993	55.1951090000000022	t	1470
+4248	Escape Tower	escape-tower	f	f	t	25.1918700000000015	55.2620900000000006	t	909
+4249	Al Thuraya Tower 1	al-thuraya-tower-1	f	f	t	25.0910599999999988	55.1534300000000002	t	1476
+4250	Nadd Shamma	nadd-shamma	f	f	t	25.278846999999999	55.3320719999999966	t	915
+4251	Masakin	masakin	f	f	t	25.0301490000000015	55.1492160000000027	t	919
+4252	I-Rise	i-rise	f	f	t	25.0969300000000004	55.1807500000000033	t	1476
+4253	al waha villas	al-waha-villas	f	f	t	25.0291320000000006	55.2860119999999995	t	2389
+4254	Zen Bldgs (1-37)	zen-bldgs-1-37	f	f	t	25.0492300000000014	55.1312599999999975	t	2385
+4255	Contemporary (Bldgs 108-137)	contemporary-bldgs-108-137	f	f	t	25.037939999999999	55.1472699999999989	t	2385
+4256	Alvorada (All)	alvorada-all	f	f	t	25.0428619999999995	55.2612019999999973	t	1469
+4257	Emirates Financial (All)	emirates-financial-all	f	f	t	25.2088199999999993	55.2765300000000011	t	1474
+4258	Claren (All)	claren-all	f	f	t	25.1907560000000004	55.2720839999999995	t	1471
+4259	Api (All)	api-all	f	f	t	25.09694	55.1741680000000017	t	1476
+4260	Golf (All)	golf-all	f	f	t	25.0920720000000017	55.1713889999999978	t	911
+4261	Sadaf (All)	sadaf-all	f	f	t	25.0808900000000001	55.1380359999999996	t	2386
+4262	Elite (All)	elite-all	f	f	t	25.0411040000000007	55.2220700000000022	t	1475
+4263	Zenith (All)	zenith-all	f	f	t	25.0352689999999996	55.2214329999999975	t	1475
+4264	Onyx (All)	onyx-all	f	f	t	25.0963950000000011	55.1684040000000024	t	1476
+4265	Al Manal Compound	al-manal-compound	f	f	t	25.2277999999999984	55.416870000000003	t	914
+4266	Champions 4	champions-4	f	f	t	25.0401309999999988	55.2189400000000035	t	1475
+4267	claren 1	claren-1	f	f	t	0	0	t	1471
+4268	Code	code	f	f	t	25.1139730000000014	55.2028790000000029	t	1470
+4269	Executive Villas	executive-villas	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+4270	Golf 2	golf-2	f	f	t	25.091386	55.1686720000000008	t	911
+4271	Lotus Residence B	lotus-residence-b	f	f	t	25.1831649999999989	55.2728869999999972	t	909
+4272	Maysan 3	maysan-3	f	f	t	25.2048489999999994	55.2707830000000016	t	2389
+4273	new world villa North	new-world-villa-north	f	f	t	0	0	t	2389
+4274	Spectrum	spectrum	f	f	t	25.2326949999999997	55.3109790000000032	t	910
+4275	Owaida Tower	owaida-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	2395
+4276	Al Bateen Villas	al-bateen-villas	f	f	t	24.4468029999999992	54.3567790000000031	t	2244
+4277	Al Khaleej Village	al-khaleej-village	f	f	t	24.8387269999999987	55.0144439999999975	t	1341
+4278	Beach Villas	beach-villas	f	f	t	24.4562190000000008	54.6128380000000035	t	2247
+4279	Mira Residence 4	mira-residence-4	f	f	t	24.4666670000000011	54.3666669999999996	t	2247
+4280	Al Reef Tower	al-reef-tower	f	f	t	24.4560959999999987	54.6719620000000006	t	2248
+4281	Mediterranean Style	mediterranean-style	f	f	t	24.4518270000000015	54.6757500000000007	t	2248
+4282	Bmc 7	bmc-7	f	f	t	24.4666670000000011	54.3666669999999996	t	1346
+4283	Park Rotana	park-rotana	f	f	t	24.4241649999999986	54.4734649999999974	t	2251
+4284	Royal Tower	royal-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	1485
+4285	Axis Residence 2	axis-residence-2	f	f	t	25.1266269999999992	55.4041670000000011	t	1477
+4286	Axis Residence 8	axis-residence-8	f	f	t	25.1207160000000016	55.3956310000000016	t	1477
+4287	Cambridge Business Centre	cambridge-business-centre	f	f	t	25.116848000000001	55.3721710000000016	t	1477
+4288	La Vista Residence	la-vista-residence	f	f	t	25.1171870000000013	55.3940440000000009	t	1477
+4289	Park Terrace	park-terrace	f	f	t	25.1122639999999997	55.3837130000000002	t	1477
+4290	Silicon Arch	silicon-arch	f	f	t	25.1100570000000012	55.3836259999999996	t	1477
+4291	silicon gates 2	silicon-gates-2	f	f	t	0	0	t	1477
+4292	Solarim Building	solarim-building	f	f	t	25.1210599999999999	55.3967340000000021	t	1477
+4293	Coral Hotel Apartment	coral-hotel-apartment	f	f	t	25.0432309999999987	55.2214420000000032	t	1475
+4294	Crown Avenue	crown-avenue	f	f	t	25.2048489999999994	55.2707830000000016	t	1475
+4295	Elite Sports Residence 2	elite-sports-residence-2	f	f	t	25.0438930000000006	55.2171319999999994	t	1475
+4296	Golf	golf	f	f	t	25.0391350000000017	55.2176350000000014	t	1475
+4297	\tMediterranean - Canal Residence	mediterranean-canal-residence-2	f	f	t	0	0	t	1475
+4298	Olympic Park 4	olympic-park-4	f	f	t	25.0433400000000006	55.215676000000002	t	1475
+4299	Profile Residence	profile-residence	f	f	t	25.0454539999999994	55.2149149999999977	t	1475
+4300	Rufi Twin	rufi-twin	f	f	t	25.0321800000000003	55.2235379999999978	t	1475
+4301	Bridge	bridge	f	f	t	25.0427660000000003	55.2218639999999965	t	1475
+4302	Spirit	spirit	f	f	t	25.040184	55.218238999999997	t	1475
+4303	Venetian - Canal Residence	venetian-canal-residence	f	f	t	0	0	t	1475
+4304	Sector L	sector-l	f	f	t	25.0687169999999995	55.1734590000000011	t	2388
+4305	almasah	almasah	f	f	t	0	0	t	2389
+4306	Green Community East	green-community-east	f	f	t	24.9969999999999999	55.1632999999999996	t	1473
+4307	Al Alka	al-alka	f	f	t	25.0909799999999983	55.1752800000000008	t	911
+4308	Al Alka 2	al-alka-2	f	f	t	25.0914600000000014	55.1751999999999967	t	911
+4309	Al Arta 3	al-arta-3	f	f	t	25.0899500000000018	55.1747299999999967	t	911
+4310	Al Ghaf 1	al-ghaf-1	f	f	t	25.0959199999999996	55.169550000000001	t	911
+4311	Al Ghozlan 1	al-ghozlan-1	f	f	t	25.0920099999999984	55.1735299999999995	t	911
+4312	Al Ghozlan 3	al-ghozlan-3	f	f	t	25.0919099999999986	55.174669999999999	t	911
+4313	Al Jaz 3	al-jaz-3	f	f	t	25.0947299999999984	55.1719200000000001	t	911
+4314	Al Samar 1	al-samar-1	f	f	t	25.0930800000000005	55.1724499999999978	t	911
+4315	Al Sidir 1	al-sidir-1	f	f	t	25.0949099999999987	55.1684300000000007	t	911
+4316	Al Sidir 3	al-sidir-3	f	f	t	25.0949400000000011	55.1696099999999987	t	911
+4317	Al Thayal 3	al-thayal-3	f	f	t	25.0910399999999996	55.1736900000000006	t	911
+4318	Murjan 2	murjan-2	f	f	t	25.0820100000000004	55.1390799999999999	t	2386
+4319	Bahar 3	bahar-3	f	f	t	25.078240000000001	55.1351299999999966	t	2386
+4320	Amwaj 5	amwaj-5	f	f	t	25.0741300000000003	55.1312500000000014	t	2386
+4321	Legacy	legacy	f	f	t	25.0481750000000005	55.1544079999999965	t	2391
+4322	Al Falasi Warehouse	al-falasi-warehouse	f	f	t	25.1347890000000014	55.236969000000002	t	2392
+4323	Badiya Warehouse	badiya-warehouse	f	f	t	25.1347890000000014	55.236969000000002	t	2392
+4324	Al Reem 2	al-reem-2	f	f	t	25.0564900000000002	55.2901600000000002	t	1469
+4325	Avenida	avenida	f	f	t	25.0518500000000017	55.271253999999999	t	1469
+4326	Mirador La Coleccion 1	mirador-la-coleccion-1	f	f	t	25.0463360000000002	55.2606219999999979	t	1469
+4327	Palmera 1	palmera-1	f	f	t	25.0432349999999992	55.2657480000000021	t	1469
+4328	Saheel 1	saheel-1	f	f	t	25.0544219999999989	55.2577590000000001	t	1469
+4329	Burj Square	burj-square	f	f	t	25.1898599999999995	55.2706670000000031	t	1471
+4330	Metro tower	metro-tower	f	f	t	0	0	t	2389
+4331	sky gardens	sky-gardens	f	f	t	25.2120059999999988	55.2820990000000023	t	1474
+4332	8 Boulevard Walk	8-boulevard-walk	f	f	t	25.1912500000000001	55.2700299999999984	t	1471
+4333	Grand Boulevard	grand-boulevard	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+4334	south ridge 5	south-ridge-5	f	f	t	25.1870550000000009	55.2787950000000023	t	1471
+4335	Lofts Podium	lofts-podium	f	f	t	25.1972750000000012	55.2700340000000025	t	1471
+4336	Schon Residences	schon-residences	f	f	t	25.2048489999999994	55.2707830000000016	t	1235
+4337	ajmal sarah	ajmal-sarah	f	f	t	0	0	t	2389
+4338	Bellagio Tower	bellagio-tower	f	f	t	0	0	t	2389
+4339	desert sun	desert-sun	f	f	t	0	0	t	2389
+4340	Durar Residence Complex	durar-residence-complex	f	f	t	25.0915089999999985	55.384132000000001	t	2389
+4341	Hacienda-marbella	hacienda-marbella	f	f	t	25.0871150000000007	55.3606580000000008	t	2389
+4342	Layan Villa	layan-villa	f	f	t	25.026764	55.2843299999999971	t	2389
+4343	District 8V	district-8v	f	f	t	25.0484110000000015	55.1861559999999969	t	1173
+4344	Lime Light Twin Tower	lime-light-twin-tower	f	f	t	25.0422049999999992	55.2160190000000028	t	1475
+4345	Park Towers Podium	park-towers-podium	f	f	t	25.2088399999999986	55.2770319999999984	t	1474
+4346	Al Zeina Sky Villas	al-zeina-sky-villas	f	f	t	24.456472999999999	54.6135360000000034	t	2247
+4347	Pinnacle Bldg	pinnacle-bldg	f	f	t	25.1089239999999982	55.1845110000000005	t	1470
+4348	Layan Community	layan-community	f	f	t	25.0275609999999986	55.2813370000000006	t	2389
+4349	Al Muroor Tower	al-muroor-tower	f	f	t	24.4757619999999996	54.3724789999999985	t	1350
+4350	Al Raha Mall	al-raha-mall	f	f	t	24.4387709999999991	54.5735760000000028	t	2247
+4351	Napoleon	napoleon	f	f	t	0	0	t	2389
+4352	Loft Cluster West	loft-cluster-west	f	f	t	0	0	t	1159
+4353	Ministries Complex	ministries-complex	f	f	t	24.4296469999999992	54.465009000000002	t	2251
+4354	Benkaram Tower	benkaram-tower	f	f	t	24.4953070000000004	54.3704520000000002	t	1485
+4355	Al Thamam 7	al-thamam-7	f	f	t	0	0	t	2389
+4356	Bellevue Tower 1	bellevue-tower-1	f	f	t	25.1871380000000009	55.2758889999999994	t	1471
+4357	Al Reem Plaza	al-reem-plaza	f	f	t	24.492521	54.3716399999999993	t	2099
+4358	The Field	the-field	f	f	t	25.0274220000000014	55.2494799999999984	t	1218
+4359	Meydan Racecourse	meydan-racecourse	f	f	t	25.157471000000001	55.3019079999999974	t	1984
+4360	Central Courtyard 1	central-courtyard-1	f	f	t	0	0	t	2389
+4361	District 7E	district-7e	f	f	t	0	0	t	1173
+4362	Suburbia Tower 2	suburbia-tower-2	f	f	t	0	0	t	1235
+4363	Ibn Battuta	ibn-battuta	f	f	t	0	0	t	2385
+4364	Garden East Apartments Bldg C	garden-east-apartments-bldg-c	f	f	t	0	0	t	1473
+4365	Garden East Apartments Bldg H	garden-east-apartments-bldg-h	f	f	t	0	0	t	1473
+4366	Silicon Star 2	silicon-star-2	f	f	t	25.1206490000000002	55.3970320000000029	t	1477
+4367	Grand Excelsior Hotel	grand-excelsior-hotel	f	f	t	25.1115220000000008	55.2034200000000013	t	1470
+4368	Al Ramth 29	al-ramth-29	f	f	t	0	0	t	2389
+4369	Al Ramth 30	al-ramth-30	f	f	t	0	0	t	2389
+4370	Al Ramth 40	al-ramth-40	f	f	t	0	0	t	2389
+4371	Al Ramth 07	al-ramth-07	f	f	t	0	0	t	2389
+4372	Al Ramth 44	al-ramth-44	f	f	t	0	0	t	2389
+4373	Al Ramth 53	al-ramth-53	f	f	t	0	0	t	2389
+4374	The Address Residence Fountain Views Sky Collection 1 	the-address-residence-fountain-views-sky-collect-2	f	f	t	25.1946879999999993	55.2823339999999988	t	1471
+4375	Gold Vista	gold-vista-3	f	f	t	0	0	t	1218
+4376	Gold Vista	gold-vista-5	f	f	t	0	0	t	1218
+4377	Gold Vista	gold-vista-10	f	f	t	0	0	t	1218
+4378	Gold Vista	gold-vista-16	f	f	t	0	0	t	1218
+4379	Gold Vista	gold-vista-21	f	f	t	0	0	t	1218
+4380	Golf Vista 1	golf-vista-1	f	f	t	0	0	t	1218
+4381	Golf Vista 2	golf-vista-2	f	f	t	0	0	t	1218
+4382	Al Thuraya Building	al-thuraya-building	f	f	t	0	0	t	1477
+4383	 District 1B	district-1b	f	f	t	25.0337780000000016	55.1723720000000029	t	1173
+4384	 District 1J	district-1j	f	f	t	25.0343319999999991	55.1744770000000031	t	1173
+4385	Rahat	rahat	f	f	t	25.0270660000000014	55.2673460000000034	t	2389
+4386	Zahra Apartments 1B	zahra-apartments-1b	f	f	t	25.0148960000000002	55.2834140000000005	t	1118
+4387	Al Ramth 4	al-ramth-4-2	f	f	t	0	0	t	2389
+4388	Al Ramth 9	al-ramth-9	f	f	t	0	0	t	2389
+4389	Al Ramth 23	al-ramth-23	f	f	t	0	0	t	2389
+4390	Al Ramth 50	al-ramth-50	f	f	t	0	0	t	2389
+4391	Al Ramth 52	al-ramth-52	f	f	t	0	0	t	2389
+4392	Al Thamam 5	al-thamam-5	f	f	t	0	0	t	2389
+4393	Al Thamam 19	al-thamam-19	f	f	t	0	0	t	2389
+4394	Al Thamam 25	al-thamam-25	f	f	t	0	0	t	2389
+4395	Al Thamam 28	al-thamam-28	f	f	t	0	0	t	2389
+4396	Al Thamam 35	al-thamam-35	f	f	t	0	0	t	2389
+4397	Al Thamam 43	al-thamam-43	f	f	t	0	0	t	2389
+4398	Al Thamam 50	al-thamam-50	f	f	t	0	0	t	2389
+4399	Al Thamam 59	al-thamam-59	f	f	t	0	0	t	2389
+4400	Badrah Townhouses	badrah-townhouses	f	f	t	0	0	t	1956
+4401	Binghatti Gardens	binghatti-gardens	f	f	t	25.123659	55.377321000000002	t	1477
+4402	Hayat Townhouses 1	hayat-townhouses-1	f	f	t	25.0006549999999983	55.3008030000000019	t	1118
+4403	Noor Townhouses	noor-townhouses	f	f	t	25.0171640000000011	55.2859169999999978	t	1118
+4404	Al Falak Residence	al-falak-residence	f	f	t	25.1189430000000016	55.3964089999999985	t	1477
+4405	Montrose 3	montrose-3	f	f	t	25.0705360000000006	55.2463339999999974	t	1470
+4406	Al Raha Tower	al-raha-tower	f	f	t	25.3267740000000003	55.3703360000000018	t	2260
+4407	Riviera Tower	riviera-tower	f	f	t	25.3241030000000009	55.3752459999999971	t	2260
+4408	Amaranta	amaranta	f	f	t	0	0	t	2389
+4409	Warda Apartments 1A	warda-apartments-1a	f	f	t	25.0148960000000002	55.2832310000000007	t	1118
+4410	Al Ramth 55	al-ramth-55	f	f	t	0	0	t	2389
+4411	District 3D	district-3d	f	f	t	25.0419580000000011	55.1863990000000015	t	1173
+4412	Tower 6	tower-6	f	f	t	0	0	t	2248
+4413	Tower 26	tower-26	f	f	t	0	0	t	2248
+4414	Tower 33	tower-33	f	f	t	0	0	t	2248
+4415	Tower 38	tower-38	f	f	t	0	0	t	2248
+4416	Tower 40	tower-40	f	f	t	0	0	t	2248
+4417	Tower 45	tower-45	f	f	t	0	0	t	2248
+4418	Building C	building-c	f	f	t	0	0	t	1473
+4419	Building H	building-h	f	f	t	0	0	t	1473
+4420	Binghatti Pearls	binghatti-pearls	f	f	t	25.1082740000000015	55.376382999999997	t	1477
+4421	Manazil Tower 2	manazil-tower-2	f	f	t	0	0	t	2260
+4422	Jimi Marejeb	jimi-marejeb	f	f	t	0	0	t	1352
+4423	Town Center	town-center	f	f	t	0	0	t	2653
+4424	Al Owainah	al-owainah	f	f	t	0	0	t	2501
+4425	Azizi Aura	azizi-aura	f	f	t	0	0	t	1235
+4426	Rawda	rawda	f	f	t	0	0	t	1118
+4427	API Silicon Residency	api-silicon-residency	f	f	t	25.1093040000000016	55.3833290000000034	t	1477
+4428	BQ2 Residence	bq2-residence	f	f	t	0	0	t	1173
+4429	Tulip 3	tulip-3	f	f	t	0	0	t	1477
+4430	Al Ramth 39	al-ramth-39	f	f	t	0	0	t	2389
+4431	Le Presidium	le-presidium	f	f	t	25.1292490000000015	55.3782980000000009	t	1477
+4432	Imperial Building	imperial-building	f	f	t	25.1183310000000013	55.3953010000000035	t	1477
+4433	Falcon City Villas	falcon-city-villas	f	f	t	25.095127999999999	55.3683660000000017	t	2389
+4434	skycourt towers E	skycourt-towers-e	f	f	t	25.0911630000000017	55.3851390000000023	t	2389
+4435	Skycourt towers	skycourt-towers	f	f	t	25.0918020000000013	55.3855879999999985	t	2389
+4436	La Avenida 2	la-avenida-2	f	f	t	25.0567789999999988	55.2915849999999978	t	1469
+4437	Ansam	ansam	f	f	t	24.4849430000000012	54.5981870000000029	t	2255
+4438	Zakher Time Residence	zakher-time-residence	f	f	t	24.4666670000000011	54.3666669999999996	t	1343
+4439	Semmer Villas	semmer-villas	f	f	t	25.1122300000000003	55.3769840000000002	t	1477
+4440	Townhouses Area East	townhouses-area-east	f	f	t	25.0007799999999989	55.155261000000003	t	1473
+4441	Royal Breeze Townhouses	royal-breeze-townhouses	f	f	t	25.691946999999999	55.7828530000000029	t	1355
+4442	Sheikh Nahyan Bin Zayed Tower	sheikh-nahyan-bin-zayed-tower	f	f	t	24.4730580000000018	54.3495139999999992	t	2395
+4443	Al Masaood Tower	al-masaood-tower	f	f	t	24.4902960000000007	54.3647729999999996	t	1343
+4444	Paradise Lakes Tower B9	paradise-lakes-tower-b9	f	f	t	25.3979239999999997	55.5792369999999991	t	2408
+4445	Al Reef Villas	al-reef-villas	f	f	t	24.4566020000000002	54.6739510000000024	t	2248
+4446	Jumeirah Heights Tower C	jumeirah-heights-tower-c	f	f	t	25.0655900000000003	55.1472410000000011	t	1159
+4447	Meera Tower	meera-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	2250
+4448	Hyatt Regency Creek Heights	hyatt-regency-creek-heights	f	f	t	25.2340370000000007	55.3239250000000027	t	1478
+4449	Grand Horizon 1	grand-horizon-1	f	f	t	0	0	t	1475
+4450	Elite Sports Residence 10	elite-sports-residence-10	f	f	t	25.0361590000000014	55.2061970000000031	t	1475
+4451	Crystal Blue Tower	crystal-blue-tower-2	f	f	t	25.0939790000000009	55.1742089999999976	t	1476
+4452	Al Zeina Podium Villas	al-zeina-podium-villas	f	f	t	24.5223189999999995	54.6259469999999965	t	2247
+4453	Dubai Health Care City (DHCC)	dubai-health-care-city-dhcc-2	f	f	t	0	0	t	1478
+4454	Rasis Business Center	rasis-business-center	f	f	t	25.1072699999999998	55.1982050000000015	t	1470
+4455	Al Noor 1	al-noor-1	f	f	t	0	0	t	1476
+4456	Abu Dhabi Airports - Airport Area	abu-dhabi-airports-airport-area	f	f	t	24.4419329999999988	54.6500699999999995	t	2395
+4457	Al Zeina - Residential Tower F	al-zeina-residential-tower-f	f	f	t	24.4571070000000006	54.6131499999999974	t	2247
+4458	Axis Silver	axis-silver	f	f	t	25.1092179999999985	55.3819110000000023	t	1477
+4459	Hawai Residence	hawai-residence	f	f	t	25.0981899999999989	55.1758140000000026	t	1476
+4460	Rihab Tower	rihab-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	2395
+4461	Glitz 3	glitz-3	f	f	t	25.0423229999999997	55.2514729999999972	t	1216
+4462	Zahra By Nshama	zahra-by-nshama	f	f	t	25.2048489999999994	55.2707830000000016	t	2389
+4463	World Trade Centre Residences	world-trade-centre-residences	f	f	t	25.2268040000000013	55.289085	t	1474
+4464	Al Zeina Villas	al-zeina-villas	f	f	t	24.5223189999999995	54.6259469999999965	t	2247
+4465	Emirates Financial South Tower	emirates-financial-south-tower	f	f	t	25.2082890000000006	55.2763029999999986	t	1474
+4466	Bahar 7	bahar-7	f	f	t	25.0780659999999997	55.1364060000000009	t	2386
+4467	Liwa Centre Tower 3	liwa-centre-tower-3	f	f	t	24.4666670000000011	54.3666669999999996	t	1485
+4468	Habib Bank Tower	habib-bank-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	1350
+4469	Staybridge Suites	staybridge-suites	f	f	t	24.4958390000000001	54.6040119999999973	t	2255
+4470	Falaknaz Pride	falaknaz-pride	f	f	t	25.3994999999999997	55.4795999999999978	t	2405
+4471	Tower B2	tower-b2	f	f	t	25.3925139999999985	55.4685479999999984	t	2405
+4472	Al Khail Tower 1	al-khail-tower-1	f	f	t	25.3994999999999997	55.4795999999999978	t	2405
+4473	Falcon Tower 6	falcon-tower-6	f	f	t	25.3992879999999985	55.4488920000000007	t	2405
+4474	Marina Bay	marina-bay	f	f	t	25.3994999999999997	55.4795999999999978	t	2406
+4475	Burj Al Furqan	burj-al-furqan	f	f	t	25.3979239999999997	55.5805289999999985	t	2408
+4476	Chocolate Tower	chocolate-tower	f	f	t	25.3979239999999997	55.5801220000000029	t	2408
+4477	Crystal Residency	crystal-residency	f	f	t	25.3979239999999997	55.5803500000000028	t	2408
+4478	Fortune Residency	fortune-residency	f	f	t	25.3979239999999997	55.5796539999999979	t	2408
+4479	Music Tower	music-tower	f	f	t	25.3979239999999997	55.5806690000000003	t	2408
+4480	Tawakal Twin Towers	tawakal-twin-towers	f	f	t	25.3979239999999997	55.5803999999999974	t	2408
+4481	Emirates Pearls	emirates-pearls	f	f	t	25.3979239999999997	55.5793060000000025	t	2408
+4482	Lake View Tower 1	lake-view-tower-1	f	f	t	25.3979239999999997	55.5802010000000024	t	2408
+4483	Rainbow Tower 1	rainbow-tower-1	f	f	t	25.3979239999999997	55.5792369999999991	t	2408
+4484	Rainbow Tower 3	rainbow-tower-3	f	f	t	25.3979239999999997	55.5791770000000014	t	2408
+4485	Tulip Residence	tulip-residence	f	f	t	25.3994999999999997	55.4795999999999978	t	1500
+4486	Al Hamra Fort Hotel	al-hamra-fort-hotel	f	f	t	25.691946999999999	55.7828530000000029	t	1355
+4487	Santorini	santorini	f	f	t	25.800692999999999	55.9761990000000011	t	1480
+4488	Terrapin	terrapin	f	f	t	25.800692999999999	55.9761990000000011	t	1480
+4489	Pacific Tonga	pacific-tonga	f	f	t	25.800692999999999	55.9856380000000016	t	1480
+4490	Al Marsa	al-marsa	f	f	t	25.8619610000000009	56.0009749999999968	t	2259
+4491	Al Ghazal Tower	al-ghazal-tower	f	f	t	25.3289200000000001	55.3694320000000033	t	2260
+4492	Beach Tower	beach-tower	f	f	t	25.329301000000001	55.3657719999999998	t	2260
+4493	Al Taawoon Tower 1	al-taawoon-tower-1	f	f	t	25.3071650000000012	55.3694759999999988	t	2260
+4494	Al Taawoon Tower 3	al-taawoon-tower-3	f	f	t	25.3066199999999988	55.3703110000000009	t	2260
+4495	Al Marwa Tower 1	al-marwa-tower-1	f	f	t	25.31935	55.3633919999999975	t	2260
+4496	Industrial Area 10	industrial-area-10	f	f	t	25.2991339999999987	55.4167070000000024	t	1493
+4497	Industrial Area 8	industrial-area-8	f	f	t	25.3037740000000007	55.3904139999999998	t	1493
+4498	Al Reef Downtown	al-reef-downtown	f	f	t	24.4558110000000006	54.672784	t	2248
+4499	Burjside Boulevard	burjside-boulevard	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+4500	Southridge Podium Villas	southridge-podium-villas	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+4501	Water Villa	water-villa	f	f	t	24.6143129999999992	54.4778450000000021	t	2254
+4502	Sector V	sector-v	f	f	t	25.0658980000000007	55.1701219999999992	t	2388
+4503	Suntech	suntech	f	f	t	25.1220029999999994	55.3737690000000029	t	1477
+4504	Dubai Grand Hotel	dubai-grand-hotel	f	f	t	24.1049000000000007	52.7241909999999976	t	2249
+4505	Tecom Two Towers	tecom-two-towers	f	f	t	0	0	t	1476
+4506	Burj Pacific	burj-pacific	f	f	t	0	0	t	1471
+4507	Marmara	marmara	f	f	t	25.1091949999999997	55.2033539999999974	t	1470
+4508	Indigo Valley	indigo-valley	f	f	t	25.0902239999999992	55.3793270000000035	t	2389
+4509	Majan	majan	f	f	t	25.0914670000000015	55.3171139999999966	t	2389
+4510	Standpoint Towers	standpoint-towers	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+4511	Cosmopolitan Building	cosmopolitan-building	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+4512	Veneto Villas	veneto-villas	f	f	t	24.9493389999999984	54.908020999999998	t	1956
+4513	Al Bateen Residences & Hotel Tower	al-bateen-residences-hotel-tower	f	f	t	25.073243999999999	55.1279630000000012	t	2386
+4514	Al Quoz 1	al-quoz-1	f	f	t	25.1683950000000003	55.2563079999999971	t	2392
+4515	48 Burjgate	48-burjgate	f	f	t	25.2007650000000005	55.2692690000000013	t	1471
+4516	Grand Central Hotel	grand-central-hotel	f	f	t	25.0969620000000013	55.1775999999999982	t	1476
+4517	Al Mahatah	al-mahatah	f	f	t	25.3485440000000004	55.3932130000000029	t	1491
+4518	The Distinction	the-distinction	f	f	t	25.1896169999999984	55.2731959999999987	t	1471
+4519	Al Fahad Tower 2	al-fahad-tower-2	f	f	t	25.1011169999999986	55.1783190000000019	t	1476
+4520	Sit Tower	sit-tower	f	f	t	25.1178260000000009	55.3905049999999974	t	1477
+4521	Al Shaiba Towers	al-shaiba-towers	f	f	t	25.0973000000000006	55.1709000000000032	t	1476
+4522	Rufi Water Front	rufi-water-front	f	f	t	25.0331709999999994	55.2251410000000007	t	1475
+4523	29 Boulevard Podium	29-boulevard-podium	f	f	t	25.1918979999999983	55.2726669999999984	t	1471
+4524	Lila Villas	lila-villas	f	f	t	25.0523680000000013	55.2673599999999965	t	1469
+4525	Fountain Views 1	fountain-views-1	f	f	t	25.1940530000000003	55.2820180000000008	t	1471
+4526	Hacienda-Granada	hacienda-granada	f	f	t	25.0871150000000007	55.3606580000000008	t	2389
+4527	Sonya Tower	sonya-tower	f	f	t	25.3896090000000001	55.4673190000000034	t	2033
+4528	Al Fattan Hotel Apartment	al-fattan-hotel-apartment	f	f	t	25.076944000000001	55.1341350000000006	t	2386
+4529	silicon gates 3	silicon-gates-3	f	f	t	25.1170000000000009	55.3915199999999999	t	1477
+4530	Polo Townhouse	polo-townhouse	f	f	t	25.1424190000000003	55.2958250000000007	t	1984
+4531	Celestia	celestia	f	f	t	24.9478539999999995	55.2032609999999977	t	2666
+4532	Twin Villa	twin-villa	f	f	t	25.1265970000000003	55.3953729999999993	t	1477
+4533	Bloomingdales	bloomingdales	f	f	t	25.0379660000000008	55.2063109999999995	t	1475
+4534	Opera Grand	opera-grand	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+4535	La Fontana	la-fontana	f	f	t	25.0633240000000015	55.2359480000000005	t	2389
+4536	Heritage Small	heritage-small	f	f	t	25.0473490000000005	55.1549029999999973	t	2391
+4537	Park Avenue Commercial Tower	park-avenue-commercial-tower	f	f	t	25.1201730000000012	55.3742050000000035	t	1477
+4538	The Address Sky View Tower 2	the-address-sky-view-tower-2	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+4539	Orient Towers	orient-towers	f	f	t	25.4124629999999989	55.4491719999999972	t	2076
+4540	Springs 13	springs-13	f	f	t	25.060490999999999	55.1852149999999995	t	2387
+4541	Armani Hotel Apartments	armani-hotel-apartments	f	f	t	25.2048489999999994	55.2707830000000016	t	1471
+4542	Al Qarain 3	al-qarain-3	f	f	t	0	0	t	2094
+4543	Tower 2	tower-2	f	f	t	0	0	t	2248
+4544	Tower 16	tower-16	f	f	t	0	0	t	2248
+4545	Tower 21	tower-21	f	f	t	0	0	t	2248
+4546	Tower 23	tower-23	f	f	t	0	0	t	2248
+4547	1 JBR	1-jbr	f	f	t	0	0	t	2386
+4548	The 118 Downtown	the-118-downtown	f	f	t	0	0	t	1471
+4549	Al Bateen Wharf	al-bateen-wharf	f	f	t	0	0	t	2244
+4550	Villa Lantana	villa-lantana-2	f	f	t	25.0779509999999988	55.2389579999999967	t	1470
+4551	Mayan 3	mayan-3	f	f	t	0	0	t	2255
+4552	Al Barsha South 2	al-barsha-south-2	f	f	t	25.0989700000000013	55.2120499999999979	t	1470
+4553	Rukan Community	rukan-community	f	f	t	0	0	t	2389
+4554	Bella Casa - Serena	bella-casa-serena	f	f	t	25.0368819999999985	55.281125000000003	t	2389
+4555	Orion Residences	orion-residences	f	f	t	0	0	t	1470
+4556	Elite Towers	elite-towers	f	f	t	0	0	t	2389
+4557	Syann Park 2	syann-park-2	f	f	t	0	0	t	2389
+4558	Hacienda-Basella	hacienda-basella	f	f	t	0	0	t	2389
+4559	Ponderosa-Basella	ponderosa-basella	f	f	t	0	0	t	2389
+4560	Ponderosa-Cordoba	ponderosa-cordoba	f	f	t	0	0	t	2389
+4561	The Aldea-Agava	the-aldea-agava	f	f	t	0	0	t	2389
+4562	The Aldea-Clavel	the-aldea-clavel	f	f	t	0	0	t	2389
+4563	The Aldea-Granada	the-aldea-granada	f	f	t	0	0	t	2389
+4564	The Centro-Achata	the-centro-achata	f	f	t	0	0	t	2389
+4565	The Centro-Clavel	the-centro-clavel	f	f	t	0	0	t	2389
+4566	The Centro-Mazaya	the-centro-mazaya	f	f	t	0	0	t	2389
+4567	Grand Horizon 2	grand-horizon-2	f	f	t	0	0	t	1475
+4568	Rosa Villas	rosa-villas	f	f	t	0	0	t	1469
+4569	Al Thamam 09	al-thamam-09	f	f	t	0	0	t	2389
+4570	Western Residence South	western-residence-south	f	f	t	0	0	t	2389
+4571	Yas Acres	yas-acres	f	f	t	24.4959769999999999	54.6040259999999975	t	2255
+4572	Terrace Apartments F	terrace-apartments-f	f	f	t	0	0	t	1473
+4573	Mirador La Coleccion (All)	mirador-la-coleccion-all	f	f	t	25.0458590000000001	55.2591919999999988	t	1469
+4574	Umm Sequeim (All)	umm-sequeim-all	f	f	t	25.1513400000000011	55.206470000000003	t	1472
+4575	Champions (All)	champions-all	f	f	t	25.0416659999999993	55.2194459999999978	t	1475
+4576	Olympic Park (All)	olympic-park-all	f	f	t	25.0436249999999987	55.2144890000000004	t	1475
+4577	Art Towers	art-towers	f	f	t	0	0	t	1476
+4578	Champions 3	champions-3	f	f	t	25.0334429999999983	55.2235099999999974	t	1475
+4579	claren 2	claren-2	f	f	t	0	0	t	1471
+4580	Maysan 2	maysan-2	f	f	t	25.2048489999999994	55.2707830000000016	t	2389
+4581	Skycourt	skycourt	f	f	t	25.0925949999999993	55.3855000000000004	t	2389
+4582	Al Taghreed Tower	al-taghreed-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	2395
+4583	Al Bateen Airport	al-bateen-airport	f	f	t	24.4283280000000005	54.4580610000000007	t	2244
+4584	Al Nada	al-nada	f	f	t	24.4491440000000004	54.6035820000000029	t	2247
+4585	Mira Residence 3	mira-residence-3	f	f	t	24.4666670000000011	54.3666669999999996	t	2247
+4586	Desert Style	desert-style	f	f	t	24.4537790000000008	54.6715909999999994	t	2248
+4587	Dalma Residence	dalma-residence	f	f	t	24.4666670000000011	54.3666669999999996	t	1485
+4588	Golden Falcon Tower	golden-falcon-tower	f	f	t	24.4666670000000011	54.3666669999999996	t	1485
+4589	Silver Stallion S 1	silver-stallion-s-1	f	f	t	25.0601979999999998	55.2093509999999981	t	3024
+4590	Al Diyafa Street	al-diyafa-street	f	f	t	25.232958	55.2825920000000011	t	2390
+4591	Al Noor 2	al-noor-2	f	f	t	0	0	t	1476
+4592	Grosvenor Business Tower	grosvenor-business-tower	f	f	t	25.0988900000000008	55.1777599999999993	t	1476
+4593	Springs 14	springs-14	f	f	t	25.0519010000000009	55.1738009999999974	t	2387
+4594	Springs 5	springs-5	f	f	t	25.0638900000000007	55.1873099999999965	t	2387
+4595	Rimal 4	rimal-4	f	f	t	25.0764299999999984	55.1337800000000016	t	2386
+4596	Sadaf 4	sadaf-4	f	f	t	25.0797799999999995	55.1375999999999991	t	2386
+4597	Sadaf 9	sadaf-9	f	f	t	25.0813099999999984	55.1387	t	2386
+4598	Burj Park 1	burj-park-1	f	f	t	25.1972899999999989	55.2718100000000021	t	1471
+4599	The Residences 3	the-residences-3	f	f	t	25.1928030000000014	55.2736269999999976	t	1471
+4600	The Residences 10	the-residences-10	f	f	t	25.1925980000000003	55.2733059999999981	t	1471
+4601	Burj Place 2	burj-place-2	f	f	t	25.2007539999999999	55.2690669999999997	t	1471
+4602	Art Tower 2	art-tower-2	f	f	t	0	0	t	1476
+4603	row house	row-house	f	f	t	0	0	t	1476
+4604	Silicon plaza	silicon-plaza	f	f	t	25.0988800000000012	55.172699999999999	t	1476
+4605	@1	1	f	f	t	25.0952100000000016	55.160420000000002	t	1479
+4606	@6	6	f	f	t	25.0938000000000017	55.1611100000000008	t	1479
+4607	@13	13	f	f	t	25.0982699999999994	55.1637100000000018	t	1479
+4608	Al Murad Tower	al-murad-tower	f	f	t	25.1135589999999986	55.2013400000000019	t	1470
+4609	Umm Al Sheif	umm-al-sheif	f	f	t	0	0	t	1472
+4610	Al Thanya	al-thanya	f	f	t	25.1397399999999998	55.2051159999999967	t	1472
+4611	Sevenam Crown	sevenam-crown	f	f	t	25.1213559999999987	55.3737690000000029	t	1477
+4612	Al Reem (All)	al-reem-all	f	f	t	25.0566250000000004	55.2901760000000024	t	1469
+4613	The Villa (All)	the-villa-all	f	f	t	25.0876729999999988	55.3619709999999969	t	2389
+4614	Axis Residences (All)	axis-residences-all	f	f	t	25.1238419999999998	55.4008830000000003	t	1477
+4615	i & m	i-m	f	f	t	0	0	t	2389
+4616	cleopatra	cleopatra	f	f	t	0	0	t	2389
+4617	Sector E	sector-e	f	f	t	25.0636849999999995	55.1736530000000016	t	2388
+4618	Sector J	sector-j	f	f	t	25.0687169999999995	55.1734590000000011	t	2388
+4619	Signature Homes	signature-homes	f	f	t	25.0687169999999995	55.1734590000000011	t	2388
+4620	Murjan 5	murjan-5	f	f	t	25.0825600000000009	55.1406700000000001	t	2386
+4621	Murjan 3	murjan-3	f	f	t	25.0825500000000012	55.1394599999999997	t	2386
+4622	Bahar 4	bahar-4	f	f	t	25.0784500000000001	55.1357300000000023	t	2386
+4623	Amwaj 1	amwaj-1	f	f	t	25.0749500000000012	55.131929999999997	t	2386
+4624	Heritage	heritage	f	f	t	25.0459040000000002	55.1533129999999971	t	2391
+4625	Nshama Townsquare	nshama-townsquare	f	f	t	25.1923050000000011	55.2780550000000019	t	2389
+4626	Nurai Resort	nurai-resort	f	f	t	24.2991740000000007	54.6972769999999997	t	2254
+4627	Al Riqa Suburb	al-riqa-suburb	f	f	t	25.3674159999999986	55.4307510000000008	t	2401
+4628	Hercules	hercules	f	f	t	25.0878410000000009	55.3030809999999988	t	2389
+4629	Al Thamam 26	al-thamam-26	f	f	t	0	0	t	2389
+4630	Al Fahad 4 Tower	al-fahad-4-tower	f	f	t	25.057379000000001	55.2378459999999976	t	2389
+4631	Hacienda-Courtyard 5	hacienda-courtyard-5	f	f	t	25.0905179999999994	55.3621759999999981	t	2389
+4632	Al Ramth 21	al-ramth-21	f	f	t	0	0	t	2389
+4633	Al Ramth 31	al-ramth-31	f	f	t	0	0	t	2389
+4634	Al Ramth 16	al-ramth-16	f	f	t	0	0	t	2389
+4635	Al Ramth 48	al-ramth-48	f	f	t	0	0	t	2389
+4636	Al Ramth 19	al-ramth-19	f	f	t	0	0	t	2389
+4637	Al Ramth 26	al-ramth-26	f	f	t	0	0	t	2389
+4638	Al Ramth 4	al-ramth-4	f	f	t	0	0	t	2389
+4639	Al Ramth 8	al-ramth-8	f	f	t	0	0	t	2389
+4640	Al Ramth 18	al-ramth-18	f	f	t	0	0	t	2389
+4641	Al Ramth 38	al-ramth-38	f	f	t	0	0	t	2389
+4642	Al Ramth 47	al-ramth-47	f	f	t	0	0	t	2389
+4643	Al Ramth 51	al-ramth-51	f	f	t	0	0	t	2389
+4644	Al Thamam 4	al-thamam-4	f	f	t	0	0	t	2389
+4645	Al Thamam 17	al-thamam-17	f	f	t	0	0	t	2389
+4646	Al Thamam 23	al-thamam-23	f	f	t	0	0	t	2389
+4647	Al Thamam 32	al-thamam-32	f	f	t	0	0	t	2389
+4648	Al Thamam 39	al-thamam-39	f	f	t	0	0	t	2389
+4649	Al Thamam 42	al-thamam-42	f	f	t	0	0	t	2389
+4650	Al Thamam 49	al-thamam-49	f	f	t	0	0	t	2389
+4651	Al Thamam 58	al-thamam-58	f	f	t	0	0	t	2389
+4652	Danat Al Khan Tower	danat-al-khan-tower	f	f	t	25.3132689999999982	55.3684099999999972	t	2260
+4653	Liwara 1	liwara-1	f	f	t	25.4167260000000006	55.4501539999999977	t	2076
+4654	Al Huda Tower 2	al-huda-tower-2	f	f	t	25.3275879999999987	55.3736099999999993	t	2260
+4655	Tower 3	tower-3	f	f	t	0	0	t	2248
+4656	Tower 5	tower-5	f	f	t	0	0	t	2248
+4657	Tower 25	tower-25	f	f	t	0	0	t	2248
+4658	Tower 32	tower-32	f	f	t	0	0	t	2248
+4659	Tower 37	tower-37	f	f	t	0	0	t	2248
+4660	Tower 39	tower-39	f	f	t	0	0	t	2248
+4661	Tower 44	tower-44	f	f	t	0	0	t	2248
+4662	Bloom Marina	bloom-marina	f	f	t	24.4517589999999991	54.3363230000000001	t	2244
+4663	Khaleefa Street	khaleefa-street	f	f	t	0	0	t	2653
+4664	Oud Ul Toba Street	oud-ul-toba-street	f	f	t	0	0	t	2653
+4665	Mnaizlah	mnaizlah	f	f	t	0	0	t	2501
+4666	Pearl Tower	pearl-tower	f	f	t	0	0	t	2260
+4667	Emirates Hills Villas	emirates-hills-villas	f	f	t	0	0	t	2388
+4668	Naseem	naseem	f	f	t	0	0	t	2389
+4669	Al Ramth	al-ramth	f	f	t	25.0029029999999999	55.2513890000000032	t	2389
+4670	skycourt towers B	skycourt-towers-b	f	f	t	25.091505999999999	55.3856419999999972	t	2389
+4671	Rahat Villas	rahat-villas	f	f	t	0	0	t	2389
+4672	Al Odaid Office Tower	al-odaid-office-tower	f	f	t	24.4907789999999999	54.3639129999999966	t	2395
+4673	Paradise Lakes Tower B6	paradise-lakes-tower-b6	f	f	t	25.3979239999999997	55.5792760000000001	t	2408
+4674	Mediterranean Cluster	mediterranean-cluster	f	f	t	25.0446129999999982	55.1377880000000005	t	2385
+4675	Time Meera Residence	time-meera-residence	f	f	t	24.4666670000000011	54.3666669999999996	t	2250
+4676	Al Zeina - Residential Tower A	al-zeina-residential-tower-a	f	f	t	24.4571070000000006	54.6131499999999974	t	2247
+4677	Al Zeina - Residential Tower C	al-zeina-residential-tower-c	f	f	t	24.4571070000000006	54.6131499999999974	t	2247
+4678	Al Khan Street	al-khan-street	f	f	t	25.3299580000000013	55.371571000000003	t	2260
+4679	Rawdhat	rawdhat-2	f	f	t	24.4199729999999988	54.4625259999999969	t	2395
+4680	Al Naseem (All)	al-naseem-all	f	f	t	24.451115999999999	54.5994480000000024	t	2247
+4681	Ponderosa	ponderosa	f	f	t	0	0	t	2389
+4682	Jannah Place	jannah-place	f	f	t	24.401726	54.5897590000000008	t	2395
+4683	Tower A2	tower-a2	f	f	t	25.392792	55.4675769999999986	t	2405
+4684	Tower C1	tower-c1	f	f	t	25.3909349999999989	55.5720370000000017	t	2405
+4685	Al Khail Tower 3	al-khail-tower-3	f	f	t	25.3994999999999997	55.4795999999999978	t	2405
+4686	Falcon Tower 3	falcon-tower-3	f	f	t	25.3992879999999985	55.4488920000000007	t	2405
+4687	Times Square	times-square	f	f	t	25.3994999999999997	55.4795999999999978	t	2405
+4688	Ajman One Tower 1	ajman-one-tower-1	f	f	t	0	0	t	2405
+4689	Al Hambra Towers	al-hambra-towers	f	f	t	25.3979239999999997	55.5799129999999977	t	2408
+4690	Chapal The Harmony	chapal-the-harmony	f	f	t	25.3979239999999997	55.5794550000000029	t	2408
+4691	Eye Tower	eye-tower	f	f	t	25.3979239999999997	55.5802210000000017	t	2408
+4692	Kahraman Tower	kahraman-tower	f	f	t	25.3979239999999997	55.5794550000000029	t	2408
+4693	Lavender Tower	lavender-tower	f	f	t	25.3979239999999997	55.580440000000003	t	2408
+4694	Venice Tower	venice-tower	f	f	t	25.3979239999999997	55.5807280000000006	t	2408
+4695	Goldcrest Dreams 2	goldcrest-dreams-2	f	f	t	25.3933350000000004	55.574466000000001	t	2408
+4696	Goldcrest Dreams 4	goldcrest-dreams-4	f	f	t	25.3933350000000004	55.574466000000001	t	2408
+4697	Lake View Tower 3	lake-view-tower-3	f	f	t	25.3979239999999997	55.5801019999999966	t	2408
+4698	Shami Tower 2	shami-tower-2	f	f	t	25.3979239999999997	55.5803799999999981	t	2408
+4699	Al Wahat	al-wahat	f	f	t	25.8619610000000009	56.000905000000003	t	2259
+4700	Al Anwar Tower	al-anwar-tower	f	f	t	25.3253209999999989	55.3734159999999989	t	2260
+4701	Al Kanana Building	al-kanana-building	f	f	t	25.3289200000000001	55.3686069999999972	t	2260
+4702	Al Rund Tower	al-rund-tower	f	f	t	25.3267960000000016	55.370320999999997	t	2260
+4703	Narjes Tower	narjes-tower	f	f	t	25.3289200000000001	55.3695319999999995	t	2260
+4704	Rose Tower 2	rose-tower-2	f	f	t	25.3246329999999986	55.3761470000000031	t	2260
+4705	Al Marwa Tower 3	al-marwa-tower-3	f	f	t	25.31935	55.3633919999999975	t	2260
+4706	Al Maqtaa Village	al-maqtaa-village	f	f	t	24.4346530000000008	54.4539290000000022	t	2246
+4707	Seaside Estate	seaside-estate	f	f	t	24.4666670000000011	54.3666669999999996	t	2254
+4708	Lincoln Park	lincoln-park	f	f	t	25.063407999999999	55.241382999999999	t	2389
+4709	Royal Beach Residence	royal-beach-residence	f	f	t	25.0774170000000005	55.1338950000000025	t	2386
+4710	Legacy Large	legacy-large	f	f	t	25.0477470000000011	55.1548689999999979	t	2391
+4711	Regional Large	regional-large	f	f	t	25.0518509999999992	55.1518859999999975	t	2391
+4712	Tenora	tenora	f	f	t	24.9105419999999995	55.1162929999999989	t	2666
+4713	Nova Villa	nova-villa	f	f	t	25.0471280000000007	55.1555200000000028	t	2391
+4714	Marks And Spencers Building	marks-and-spencers-building	f	f	t	24.4012260000000012	54.5908000000000015	t	2395
+4715	Bel Ghailam	bel-ghailam	f	f	t	24.4721000000000011	54.3412999999999968	t	2250
+4716	Al Thamam 63	al-thamam-63	f	f	t	0	0	t	2389
+4717	Tower 11	tower-11	f	f	t	0	0	t	2248
+4718	Tower 13	tower-13	f	f	t	0	0	t	2248
+4719	Tower 18	tower-18	f	f	t	0	0	t	2248
+4720	Mira Residences(all)	mira-residencesall	f	f	t	0	0	t	2247
+4721	Mayan 5	mayan-5	f	f	t	0	0	t	2255
+4722	Mayan 7	mayan-7	f	f	t	0	0	t	2255
+4723	Mag 220	mag-220	f	f	t	0	0	t	2389
+4724	Sienna	sienna	f	f	t	0	0	t	2389
+4725	Hacienda-Achata	hacienda-achata	f	f	t	0	0	t	2389
+4726	Hacienda-Cista	hacienda-cista	f	f	t	0	0	t	2389
+4727	Ponderosa-Canna	ponderosa-canna	f	f	t	0	0	t	2389
+4728	Ponderosa-Mallorca	ponderosa-mallorca	f	f	t	0	0	t	2389
+4729	Ponderosa-Mazaya	ponderosa-mazaya	f	f	t	0	0	t	2389
+4730	The Aldea-Butonia	the-aldea-butonia	f	f	t	0	0	t	2389
+4731	The Aldea-Marbella	the-aldea-marbella	f	f	t	0	0	t	2389
+4732	The Centro-Aralia	the-centro-aralia	f	f	t	0	0	t	2389
+4733	The Centro-Butonia	the-centro-butonia	f	f	t	0	0	t	2389
+4734	The Centro-Granada	the-centro-granada	f	f	t	0	0	t	2389
+4735	The Aldea-Custom Built	the-aldea-custom-built	f	f	t	0	0	t	2389
+4736	Al Muneera Island Villas	al-muneera-island-villas	f	f	t	24.4517939999999996	54.6041349999999994	t	2247
+4737	Al Thamam 33	al-thamam-33	f	f	t	0	0	t	2389
+4738	Al Thamam 53	al-thamam-53	f	f	t	0	0	t	2389
+4739	Al Thamam 13	al-thamam-13	f	f	t	0	0	t	2389
+4740	Springs 2	springs-2	f	f	t	25.0573399999999999	55.1654899999999984	t	2387
+4741	Springs 7	springs-7	f	f	t	25.0639499999999984	55.1907199999999989	t	2387
+4742	Springs 9	springs-9	f	f	t	25.0581199999999988	55.1863900000000029	t	2387
+4743	Rimal 1	rimal-1	f	f	t	25.0765600000000006	55.1350199999999973	t	2386
+4744	Rimal 6	rimal-6	f	f	t	25.0756900000000016	55.1326699999999974	t	2386
+4745	Sadaf 6	sadaf-6	f	f	t	25.0805299999999995	55.1372	t	2386
+4746	Shams 2	shams-2	f	f	t	25.07226	55.1304500000000033	t	2386
+4747	Shams 4	shams-4	f	f	t	25.072890000000001	55.1298900000000032	t	2386
+4748	Hacienda-valencia	hacienda-valencia	f	f	t	25.0871150000000007	55.3606580000000008	t	2389
+4749	Aegean villa North	aegean-villa-north	f	f	t	0	0	t	2389
+4750	Al Hudaiba	al-hudaiba	f	f	t	25.2318350000000002	55.268104000000001	t	2390
+4751	mediterranean (bldgs 38-107)	mediterranean-bldgs-38-107	f	f	t	25.0453800000000015	55.137360000000001	t	2385
+4752	Mogul (Bldgs 148-202)	mogul-bldgs-148-202	f	f	t	25.0332560000000015	55.1500360000000001	t	2385
+4753	Murjan (All)	murjan-all	f	f	t	25.0820690000000006	55.1399710000000027	t	2386
+4754	Shams (All)	shams-all	f	f	t	25.0726890000000004	55.1309340000000034	t	2386
+4755	Emirate Hills Villas (All)	emirate-hills-villas-all	f	f	t	25.0687299999999986	55.1715400000000002	t	2388
+4756	Hacienda-butonia	hacienda-butonia	f	f	t	0	0	t	2389
+4757	Sanali	sanali	f	f	t	25.2048489999999994	55.2707830000000016	t	2389
+4758	zenith twin tower	zenith-twin-tower	f	f	t	0	0	t	2389
+4759	Al Hambra Villa	al-hambra-villa	f	f	t	25.0658799999999999	55.1727399999999975	t	2388
+4760	Sector P	sector-p	f	f	t	25.0605070000000012	55.1762480000000011	t	2388
+4761	Andalusia North	andalusia-north	f	f	t	0	0	t	2389
+4762	Murjan 1	murjan-1	f	f	t	25.0814400000000006	55.1397499999999994	t	2386
+4763	Bahar 2	bahar-2	f	f	t	25.0775199999999998	55.1349400000000003	t	2386
+4764	Amwaj 4	amwaj-4	f	f	t	25.0732299999999988	55.1316199999999981	t	2386
+4765	Meditterranean	meditterranean	f	f	t	25.0481219999999993	55.1538940000000011	t	2391
+4766	Montrose	montrose	f	f	t	25.0692659999999989	55.2452200000000033	t	2667
+\.
+
+
+--
+-- Name: portal_location_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.portal_location_id_seq', 4766, true);
+
+
+--
+-- PostgreSQL database dump complete
+--
+

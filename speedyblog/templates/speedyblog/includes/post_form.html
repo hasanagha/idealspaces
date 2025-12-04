@@ -1,0 +1,58 @@
+{{ comment_form.media }}
+
+{% if request.GET.success %}
+    <div class="alert-message success">
+        Thank you for your comment. We will publish it after moderation.
+    </div>
+{% else %}
+
+<h2>Write Feedback</h2>
+<br />
+<div class="comment-create">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="comment-input-box" id="post-comment">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input class="form-control form-control-lg" name="user_name" id="id_user_name" placeholder="Your Name" type="text" value="{% if comment_form.user_name.value %}{{ comment_form.user_name.value }}{% endif %}" />
+                        {% if comment_form.user_name.errors %}
+                            {{ comment_form.user_name.errors }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input class="form-control form-control-lg" id="id_user_email" name="user_email" placeholder="Your Email" type="email" value="{% if comment_form.user_email.value %}{{ comment_form.user_email.value }}{% endif %}" />
+                        {% if comment_form.user_email.errors %}
+                            {{ comment_form.user_email.errors }}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="comment">
+                    Comment
+                </label>
+                <textarea class="form-control form-control-lg" id="id_comment" name="comment" placeholder="Your Comment">{% if comment_form.comment.value %}{{ comment_form.comment.value }}{% endif %}</textarea>
+                {% if comment_form.comment.errors %}
+                    {{ comment_form.comment.errors }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <div class="g-recaptcha" data-sitekey="6LelB7sUAAAAAC9ml-DXcIRrVIWT_deBZZhZ6CdQ"></div>
+                {% if invalid_captcha %}
+                <ul class="errorlist">
+                    <li>Invalid Captcha</li>
+                </ul>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary" type="submit">Post Comment</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endif %}

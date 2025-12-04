@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coming soon</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,300,700&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+    </head>
+    <body style="background-color: #FFF">
+        <div class="page-wrapper">
+
+            <center style="margin-top: 100px">
+                <h1 style="color: #4F5153">Coming Soon</h1>
+            </center>
+        </div>
+    </body>
+</html>

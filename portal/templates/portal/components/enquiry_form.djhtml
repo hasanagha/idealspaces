@@ -1,0 +1,65 @@
+{% load static %}
+<!-- Lead Form Modal -->
+<div class=" fade item-badge-rightm" id="leadform" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="media">
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            <span>Request details</span> for {{ listing.title }}
+                        </h4>
+                        {{ listing.location }}
+                    </div>
+                </div>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form method="post" id="enquiry_form" name="enquiry_form">
+                    {% csrf_token %}
+                    <input type="hidden" name="is_enquiry" id="id_is_enquiry" value="1" />
+                    <div class="form-group">
+                        <label>Your Name *</label>
+                        {{ enquiry_form.name }}
+                    </div>
+                    <div class="form-group">
+                        <label>Your Email *</label>
+                        {{ enquiry_form.email }}
+                    </div>
+                    <div class="form-group">
+                        <label>Your Phone</label>
+                        {{ enquiry_form.phone }}
+                    </div>
+                    <div class="for-enquiry-only form-group">
+                        <label>Message</label>
+                        <textarea name="message" class="form-control" id="id_message">I am interested in this property with reference number {{ listing.get_reference_code }}. Please message me at your earliest</textarea>
+                    </div>
+                    <small class="for-enquiry-only ">By submitting this form, I agree to the <a href="{% url "portal:policy" %}" target="_blank">Terms &amp; Conditions and Privacy Policy</a> of the website</small>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" data-dismiss="modal" type="button">
+                    Cancel
+                </button>
+                <button class="btn btn-primary enquiry-submit" type="button">
+                    <span class="loader"><i class="fa fa-circle-o-notch fa-spin"></i></span>
+                    <span class="label">Submit</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% block extra_js %}
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $("input[type=number]").keypress(function (e) {
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            return false;
+        }
+    });
+});
+</script>
+{% endblock %}
