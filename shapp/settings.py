@@ -275,4 +275,5 @@ GOOGLEPLUS_URL = 'https://www.googleplus.com/'
 try:
     from .localsettings import *
 except ImportError:
-    raise ImproperlyConfigured('No localsettings.py found. You need that file to start the application.')
+    pass
+    # raise ImproperlyConfigured('No localsettings.py found. You need that file to start the application.')
